@@ -398,10 +398,10 @@ function FAQ() {
             <li key={i} className="border-b border-ink/15">
               <button
                 onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex items-start justify-between gap-6 py-6 text-left group"
+                className="w-full flex items-start justify-between gap-4 sm:gap-6 py-5 sm:py-6 text-left group min-h-[56px]"
               >
-                <span className="font-display text-xl lg:text-2xl font-black uppercase tracking-tight">{f.q}</span>
-                <ChevronDown className={`size-6 shrink-0 transition-transform ${open === i ? "rotate-180" : ""}`} />
+                <span className="font-display text-base sm:text-xl lg:text-2xl font-black uppercase tracking-tight">{f.q}</span>
+                <ChevronDown className={`size-5 sm:size-6 shrink-0 mt-1 transition-transform ${open === i ? "rotate-180" : ""}`} />
               </button>
               {open === i && (
                 <motion.p
