@@ -249,7 +249,7 @@ function Subscribe() {
     { id: "weekly" as const, label: "Weekly", price: 15.99, sub: "Save 20%. Built for high-output.", badge: "Best Value" },
   ];
   return (
-    <section className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8 bg-ice">
+    <section className="py-16 sm:py-24 md:py-28 lg:py-32 px-5 md:px-6 lg:px-8 bg-ice">
       <div className="max-w-7xl mx-auto">
         <SectionNumber n="04" label="Never Run Out" />
         <h2 className="font-display text-[clamp(38px,8vw,108px)] font-black uppercase leading-[0.88] tracking-tighter mb-12">
