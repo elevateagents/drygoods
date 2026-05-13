@@ -207,7 +207,7 @@ function BuiltFor() {
       <div className="max-w-7xl mx-auto">
         <SectionNumber n="03" label="Built For" />
         <div className="flex items-end justify-between flex-wrap gap-4 mb-12">
-          <h2 className="font-display text-[clamp(40px,7vw,96px)] font-black uppercase leading-[0.9] tracking-tighter">
+          <h2 className="font-display text-[clamp(36px,7vw,96px)] font-black uppercase leading-[0.9] tracking-tighter">
             For the rep<br/>you didn't think<br/>you had.
           </h2>
           <p className="font-editorial italic text-xl max-w-[28ch]">
@@ -252,7 +252,7 @@ function Subscribe() {
     <section className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8 bg-ice">
       <div className="max-w-7xl mx-auto">
         <SectionNumber n="04" label="Never Run Out" />
-        <h2 className="font-display text-[clamp(44px,8vw,108px)] font-black uppercase leading-[0.88] tracking-tighter mb-12">
+        <h2 className="font-display text-[clamp(38px,8vw,108px)] font-black uppercase leading-[0.88] tracking-tighter mb-12">
           Never run out<br/>mid-<span className="italic font-editorial font-normal">season.</span>
         </h2>
         <div className="grid md:grid-cols-3 gap-3 lg:gap-4">
@@ -390,7 +390,7 @@ function FAQ() {
     <section id="faq" className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8">
       <div className="max-w-5xl mx-auto">
         <SectionNumber n="07" label="Questions" />
-        <h2 className="font-display text-[clamp(44px,8vw,108px)] font-black uppercase leading-[0.85] tracking-tighter mb-12">
+        <h2 className="font-display text-[clamp(38px,8vw,108px)] font-black uppercase leading-[0.85] tracking-tighter mb-12">
           You ask.<br/>We <span className="text-heat italic font-editorial font-normal">answer.</span>
         </h2>
         <ul className="border-t border-ink/15">

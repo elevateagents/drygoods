@@ -25,7 +25,7 @@ function Wholesale() {
     <Layout>
       <section className="px-5 lg:px-8 pt-16 pb-12">
         <div className="max-w-6xl mx-auto">
-          <h1 className="font-display text-[clamp(48px,10vw,128px)] font-black uppercase leading-[0.85] tracking-tighter">
+          <h1 className="font-display text-[clamp(40px,10vw,128px)] font-black uppercase leading-[0.85] tracking-tighter">
             Stock the<br/>only thing<br/>that <span className="text-heat italic font-editorial font-normal">works.</span>
           </h1>
           <p className="font-editorial italic text-2xl mt-6 max-w-[40ch]">
