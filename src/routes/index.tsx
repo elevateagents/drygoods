@@ -298,11 +298,11 @@ function Reviews() {
     { q: "Spray it. Forget it. Beat it. The order matters.", who: "K. Patel — Cycling Coach" },
   ];
   return (
-    <section className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8">
+    <section className="py-16 sm:py-24 md:py-28 lg:py-32 px-5 md:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <SectionNumber n="05" label="Field Reports" />
-        <div className="grid lg:grid-cols-12 gap-10">
-          <div className="lg:col-span-7 space-y-12">
+        <div className="grid md:grid-cols-12 gap-10">
+          <div className="md:col-span-7 space-y-12">
             {quotes.map((q, i) => (
               <motion.blockquote
                 key={i}
@@ -317,7 +317,7 @@ function Reviews() {
               </motion.blockquote>
             ))}
           </div>
-          <div className="lg:col-span-5 grid grid-cols-2 gap-3 content-start">
+          <div className="md:col-span-5 grid grid-cols-2 gap-3 content-start">
             <img src={runner} alt="" loading="lazy" className="aspect-[3/4] object-cover w-full" />
             <img src={lifter} alt="" loading="lazy" className="aspect-[3/4] object-cover w-full sm:mt-10" />
             <img src={military} alt="" loading="lazy" className="aspect-[3/4] object-cover w-full" />
