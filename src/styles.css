@@ -90,7 +90,10 @@
     color: var(--ink);
     font-family: var(--font-sans);
     font-feature-settings: "ss01", "cv11";
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
   }
+  img, svg, video { max-width: 100%; height: auto; }
   ::selection { background: var(--ice); color: var(--ink); }
   h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
 }
