@@ -36,7 +36,7 @@ function ProductPage() {
 
   return (
     <Layout>
-      <section className="px-5 lg:px-8 pt-10 pb-32">
+      <section className="px-5 lg:px-8 pt-8 lg:pt-10 pb-32 lg:pb-32">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-10 lg:gap-16">
           {/* Imagery */}
           <div className="lg:col-span-7 lg:sticky lg:top-20 lg:self-start">
