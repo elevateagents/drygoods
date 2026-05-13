@@ -318,10 +318,10 @@ function Reviews() {
             ))}
           </div>
           <div className="lg:col-span-5 grid grid-cols-2 gap-3 content-start">
-            <img src={runner} alt="" loading="lazy" className="aspect-[3/4] object-cover" />
-            <img src={lifter} alt="" loading="lazy" className="aspect-[3/4] object-cover mt-10" />
-            <img src={military} alt="" loading="lazy" className="aspect-[3/4] object-cover" />
-            <img src={cyclist} alt="" loading="lazy" className="aspect-[3/4] object-cover mt-10" />
+            <img src={runner} alt="" loading="lazy" className="aspect-[3/4] object-cover w-full" />
+            <img src={lifter} alt="" loading="lazy" className="aspect-[3/4] object-cover w-full sm:mt-10" />
+            <img src={military} alt="" loading="lazy" className="aspect-[3/4] object-cover w-full" />
+            <img src={cyclist} alt="" loading="lazy" className="aspect-[3/4] object-cover w-full sm:mt-10" />
           </div>
         </div>
       </div>
