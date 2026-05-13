@@ -135,15 +135,15 @@ function Problem() {
               You shouldn't have to choose between a chalk cloud in your gym bag and raw skin at mile 18. Dry Goods sprays on wet, dries to a powder barrier, and stays put.
             </p>
           </div>
-          <div className="lg:col-span-5 grid grid-cols-2 gap-3">
-            <figure className="bg-ink/90 aspect-[3/4] grid place-items-center text-center p-4 relative">
+          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <figure className="bg-ink/90 aspect-[5/3] sm:aspect-[3/4] grid place-items-center text-center p-4 relative overflow-hidden">
               <span className="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-widest text-paper/60">A. Dump-on</span>
-              <span className="font-display text-paper text-3xl font-black uppercase leading-none">Dust<br/>Cloud</span>
+              <span className="font-display text-paper text-2xl sm:text-3xl font-black uppercase leading-none break-words">Dust Cloud</span>
               <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-paper/30 to-transparent" />
             </figure>
-            <figure className="bg-ice aspect-[3/4] grid place-items-center text-center p-4 relative mt-10">
+            <figure className="bg-ice aspect-[5/3] sm:aspect-[3/4] grid place-items-center text-center p-4 relative sm:mt-10 overflow-hidden">
               <span className="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-widest text-ink/60">B. Dry Goods</span>
-              <span className="font-display text-ink text-3xl font-black uppercase leading-none">Targeted<br/>Spray</span>
+              <span className="font-display text-ink text-2xl sm:text-3xl font-black uppercase leading-none break-words">Targeted Spray</span>
             </figure>
           </div>
         </div>
