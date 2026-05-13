@@ -18,7 +18,7 @@ export const Route = createFileRoute("/about")({
 function About() {
   return (
     <Layout>
-      <section className="px-5 lg:px-8 pt-16 pb-24">
+      <section className="px-5 md:px-6 lg:px-8 pt-16 pb-24">
         <div className="max-w-5xl mx-auto">
           <div className="flex gap-2 mb-8"><StickerBadge variant="since" /><StickerBadge variant="patent" /></div>
           <h1 className="font-display text-[clamp(40px,12vw,148px)] font-black uppercase leading-[0.85] tracking-tighter">
@@ -27,14 +27,14 @@ function About() {
         </div>
       </section>
       <Marquee items={["Raleigh, NC", "Joyce Labs LLC", "Patented 2014", "Refined Every Season"]} />
-      <section className="px-5 lg:px-8 py-24">
-        <div className="max-w-5xl mx-auto grid lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-5">
-            <div className="bg-ice aspect-[4/5] grid place-items-center sticky top-20">
+      <section className="px-5 md:px-6 lg:px-8 py-20 md:py-24">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-12 gap-10 md:gap-12">
+          <div className="md:col-span-5">
+            <div className="bg-ice aspect-[4/5] grid place-items-center md:sticky md:top-20">
               <img src={canHero} alt="" className="h-[80%]" />
             </div>
           </div>
-          <div className="lg:col-span-7 space-y-10">
+          <div className="md:col-span-7 space-y-10">
             <SectionNumber n="01" label="Origin" />
             <p className="font-editorial italic text-3xl leading-[1.15]">
               "I dumped baby powder in my gym bag for ten years. The bag never recovered."
