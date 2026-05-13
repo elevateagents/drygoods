@@ -332,11 +332,11 @@ function Reviews() {
 /* ----------- PATENT ----------- */
 function Patent() {
   return (
-    <section id="patent" className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8 bg-ink text-paper">
+    <section id="patent" className="py-16 sm:py-24 md:py-28 lg:py-32 px-5 md:px-6 lg:px-8 bg-ink text-paper">
       <div className="max-w-7xl mx-auto">
         <SectionNumber n="06" label="The Science" />
-        <div className="grid lg:grid-cols-12 gap-10 items-center">
-          <div className="lg:col-span-7">
+        <div className="grid md:grid-cols-12 gap-10 items-center">
+          <div className="md:col-span-7">
             <p className="font-editorial italic text-paper/60 text-2xl mb-4">U.S. Patent</p>
             <h2 className="font-display text-[clamp(48px,15vw,200px)] font-black tracking-tighter leading-[0.85] uppercase break-all">
               8778406<span className="text-heat">B2</span>
@@ -353,7 +353,7 @@ function Patent() {
               <li>· Talc-free option</li>
             </ul>
           </div>
-          <div className="lg:col-span-5">
+          <div className="md:col-span-5">
             <div className="aspect-square bg-paper/5 border border-paper/15 grid place-items-center relative overflow-hidden">
               <img src={canHero} alt="Dry Goods can cross-section" className="h-[80%] w-auto rotate-12 opacity-80" />
               <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
