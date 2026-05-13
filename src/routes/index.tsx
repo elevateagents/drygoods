@@ -387,7 +387,7 @@ const FAQS = [
 function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="faq" className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8">
+    <section id="faq" className="py-16 sm:py-24 md:py-28 lg:py-32 px-5 md:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
         <SectionNumber n="07" label="Questions" />
         <h2 className="font-display text-[clamp(38px,8vw,108px)] font-black uppercase leading-[0.85] tracking-tighter mb-12">
