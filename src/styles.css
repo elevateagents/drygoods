@@ -1,69 +1,96 @@
-import { create } from "zustand";
-import { persist } from "zustand/middleware";
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
 
-export type Plan = "onetime" | "monthly" | "weekly";
+@custom-variant dark (&:is(.dark *));
 
-export const PLAN_META: Record<Plan, { label: string; price: number; sub?: string }> = {
-  onetime: { label: "One-time", price: 19.99 },
-  monthly: { label: "Subscribe Monthly", price: 16.99, sub: "Save 15%" },
-  weekly: { label: "Subscribe Weekly", price: 15.99, sub: "Save 20%" },
-};
+@theme inline {
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-ice: var(--ice);
+  --color-heat: var(--heat);
+  --color-cool: var(--cool);
+  --color-steel: var(--steel);
 
-export type CartLine = {
-  id: string;
-  plan: Plan;
-  qty: number;
-  title: string;
-  price: number;
-};
+  --color-background: var(--paper);
+  --color-foreground: var(--ink);
+  --color-card: var(--paper);
+  --color-card-foreground: var(--ink);
+  --color-popover: var(--paper);
+  --color-popover-foreground: var(--ink);
+  --color-primary: var(--ink);
+  --color-primary-foreground: var(--paper);
+  --color-secondary: var(--ice);
+  --color-secondary-foreground: var(--ink);
+  --color-muted: oklch(0.94 0.01 80);
+  --color-muted-foreground: var(--steel);
+  --color-accent: var(--ice);
+  --color-accent-foreground: var(--ink);
+  --color-destructive: var(--heat);
+  --color-destructive-foreground: var(--paper);
+  --color-border: oklch(0 0 0 / 0.1);
+  --color-input: oklch(0 0 0 / 0.15);
+  --color-ring: var(--ink);
+  --color-ring-offset-background: var(--paper);
+  --color-sidebar: var(--paper);
+  --color-sidebar-foreground: var(--ink);
+  --color-sidebar-primary: var(--ink);
+  --color-sidebar-primary-foreground: var(--paper);
+  --color-sidebar-accent: var(--ice);
+  --color-sidebar-accent-foreground: var(--ink);
+  --color-sidebar-border: oklch(0 0 0 / 0.1);
+  --color-sidebar-ring: var(--ink);
 
-type CartState = {
-  open: boolean;
-  lines: CartLine[];
-  setOpen: (v: boolean) => void;
-  add: (plan: Plan, qty?: number) => void;
-  setQty: (id: string, qty: number) => void;
-  remove: (id: string) => void;
-  subtotal: () => number;
-  count: () => number;
-};
+  --font-display: "Syne", "Inter Tight", sans-serif;
+  --font-sans: "Inter Tight", "Inter", sans-serif;
+  --font-editorial: "Fraunces", Georgia, serif;
 
-export const useCart = create<CartState>()(
-  persist(
-    (set, get) => ({
-      open: false,
-      lines: [],
-      setOpen: (v) => set({ open: v }),
-      add: (plan, qty = 1) => {
-        const id = `dry-goods-original--${plan}`;
-        const meta = PLAN_META[plan];
-        const lines = [...get().lines];
-        const existing = lines.find((l) => l.id === id);
-        if (existing) existing.qty += qty;
-        else
-          lines.push({
-            id,
-            plan,
-            qty,
-            title: "Dry Goods Original 5.4 oz",
-            price: meta.price,
-          });
-        set({ lines, open: true });
-      },
-      setQty: (id, qty) => {
-        if (qty <= 0) {
-          set({ lines: get().lines.filter((l) => l.id !== id) });
-          return;
-        }
-        set({
-          lines: get().lines.map((l) => (l.id === id ? { ...l, qty } : l)),
-        });
-      },
-      remove: (id) => set({ lines: get().lines.filter((l) => l.id !== id) }),
-      subtotal: () =>
-        get().lines.reduce((s, l) => s + l.price * l.qty, 0),
-      count: () => get().lines.reduce((s, l) => s + l.qty, 0),
-    }),
-    { name: "drygoods-cart" }
-  )
-);
+  --radius: 0;
+  --radius-sm: 0;
+  --radius-md: 2px;
+  --radius-lg: 4px;
+  --radius-xl: 6px;
+
+  --animate-marquee: marquee 28s linear infinite;
+  --animate-marquee-fast: marquee 16s linear infinite;
+  --animate-reveal-up: reveal-up 1.1s cubic-bezier(0.32, 0.72, 0, 1) both;
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes reveal-up {
+    0% { transform: translateY(100%); clip-path: inset(0 0 100% 0); }
+    100% { transform: translateY(0); clip-path: inset(0 0 0 0); }
+  }
+}
+
+:root {
+  --ink: oklch(0.15 0 0);
+  --paper: oklch(0.96 0.012 85);
+  --ice: oklch(0.93 0.05 230);
+  --heat: oklch(0.66 0.22 35);
+  --cool: oklch(0.58 0.05 155);
+  --steel: oklch(0.62 0.005 250);
+}
+
+.dark {
+  --ink: oklch(0.96 0.012 85);
+  --paper: oklch(0.15 0 0);
+  --ice: oklch(0.93 0.05 230);
+  --heat: oklch(0.66 0.22 35);
+  --cool: oklch(0.58 0.05 155);
+  --steel: oklch(0.62 0.005 250);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html, body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+  }
+  ::selection { background: var(--ice); color: var(--ink); }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+}
