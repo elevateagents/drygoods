@@ -158,8 +158,8 @@ function Bento() {
     <section className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8 bg-ink text-paper">
       <div className="max-w-7xl mx-auto">
         <SectionNumber n="02" label="Built Different" />
-        <div className="grid grid-cols-2 lg:grid-cols-4 grid-rows-[auto] gap-3">
-          <div className="col-span-2 lg:col-span-2 lg:row-span-2 bg-paper text-ink p-8 lg:p-10 flex flex-col justify-between min-h-[360px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <div className="sm:col-span-2 lg:col-span-2 lg:row-span-2 bg-paper text-ink p-7 sm:p-8 lg:p-10 flex flex-col justify-between min-h-[280px] sm:min-h-[360px]">
             <div className="flex justify-between items-start">
               <Wind className="size-10" strokeWidth={1.5} />
               <span className="text-[10px] font-black uppercase tracking-widest text-steel">01</span>
