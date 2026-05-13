@@ -73,8 +73,8 @@ function Hero() {
           </motion.span>
         </h1>
 
-        <div className="mt-8 sm:mt-10 grid lg:grid-cols-12 gap-8 lg:gap-12 items-end">
-          <div className="lg:col-span-5 order-2 lg:order-1">
+        <div className="mt-8 sm:mt-10 grid md:grid-cols-12 gap-8 md:gap-10 lg:gap-12 items-end">
+          <div className="md:col-span-5 order-2 md:order-1">
             <p className="font-editorial italic text-xl sm:text-2xl lg:text-3xl leading-[1.15] mb-6 sm:mb-8 text-pretty">
               The patented spray-to-powder armor for athletes who refuse to slow down.
             </p>
@@ -96,7 +96,7 @@ function Hero() {
               <li className="flex items-center gap-2"><span className="size-1.5 bg-heat shrink-0" /> Non-Asbestos Talc</li>
             </ul>
           </div>
-          <div className="lg:col-span-7 relative h-[300px] sm:h-[460px] lg:h-[640px] order-1 lg:order-2">
+          <div className="md:col-span-7 relative h-[300px] sm:h-[460px] md:h-[520px] lg:h-[640px] order-1 md:order-2">
             <motion.div style={{ y, rotate: rot }} className="absolute inset-0 grid place-items-center">
               <img
                 src={canHero}
