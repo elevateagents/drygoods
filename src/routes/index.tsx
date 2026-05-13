@@ -51,17 +51,17 @@ function Hero() {
   const { add } = useCart();
 
   return (
-    <header ref={ref} className="relative overflow-hidden pt-12 lg:pt-20 pb-24 lg:pb-32">
+    <header ref={ref} className="relative overflow-hidden pt-8 sm:pt-12 lg:pt-20 pb-16 sm:pb-24 lg:pb-32">
       <div className="max-w-7xl mx-auto px-5 lg:px-8 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-          className="mb-6 flex gap-2"
+          className="mb-6 flex flex-wrap gap-2"
         >
           <StickerBadge variant="since" />
           <StickerBadge variant="patent" />
         </motion.div>
 
-        <h1 className="font-display text-[clamp(56px,12vw,148px)] leading-[0.85] font-black tracking-tighter uppercase text-balance">
+        <h1 className="font-display text-[clamp(36px,10vw,148px)] leading-[0.88] font-black tracking-tighter uppercase text-balance break-words">
           <motion.span initial={{ y: 80, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }} className="block">
             STAY DRY.
           </motion.span>
@@ -73,30 +73,30 @@ function Hero() {
           </motion.span>
         </h1>
 
-        <div className="mt-10 grid lg:grid-cols-12 gap-10 lg:gap-12 items-end">
-          <div className="lg:col-span-5">
-            <p className="font-editorial italic text-2xl lg:text-3xl leading-[1.15] mb-8 text-pretty">
+        <div className="mt-8 sm:mt-10 grid lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+          <div className="lg:col-span-5 order-2 lg:order-1">
+            <p className="font-editorial italic text-xl sm:text-2xl lg:text-3xl leading-[1.15] mb-6 sm:mb-8 text-pretty">
               The patented spray-to-powder armor for athletes who refuse to slow down.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:items-center">
               <button
                 onClick={() => add("onetime")}
-                className="bg-ice text-ink font-display font-black uppercase tracking-tight text-lg px-8 py-5 border-2 border-ink hover:bg-ink hover:text-ice hover:-skew-x-3 transition-all duration-200"
+                className="bg-ice text-ink font-display font-black uppercase tracking-tight text-lg px-6 sm:px-8 py-4 sm:py-5 border-2 border-ink hover:bg-ink hover:text-ice hover:-skew-x-3 transition-all duration-200 min-h-[52px]"
               >
                 Shop — $19.99
               </button>
-              <Link to="/products/original" className="text-sm font-bold uppercase tracking-widest underline-offset-4 underline hover:text-heat">
+              <Link to="/products/original" className="text-sm font-bold uppercase tracking-widest underline-offset-4 underline hover:text-heat py-2">
                 Subscribe & save 20% →
               </Link>
             </div>
-            <ul className="mt-10 grid grid-cols-2 gap-3 text-[11px] uppercase tracking-widest font-bold text-steel">
-              <li className="flex items-center gap-2"><span className="size-1.5 bg-heat" /> Patented</li>
-              <li className="flex items-center gap-2"><span className="size-1.5 bg-heat" /> Made in USA</li>
-              <li className="flex items-center gap-2"><span className="size-1.5 bg-heat" /> 360° Spray</li>
-              <li className="flex items-center gap-2"><span className="size-1.5 bg-heat" /> Non-Asbestos Talc</li>
+            <ul className="mt-8 sm:mt-10 grid grid-cols-2 gap-3 text-[11px] uppercase tracking-widest font-bold text-steel">
+              <li className="flex items-center gap-2"><span className="size-1.5 bg-heat shrink-0" /> Patented</li>
+              <li className="flex items-center gap-2"><span className="size-1.5 bg-heat shrink-0" /> Made in USA</li>
+              <li className="flex items-center gap-2"><span className="size-1.5 bg-heat shrink-0" /> 360° Spray</li>
+              <li className="flex items-center gap-2"><span className="size-1.5 bg-heat shrink-0" /> Non-Asbestos Talc</li>
             </ul>
           </div>
-          <div className="lg:col-span-7 relative h-[420px] sm:h-[520px] lg:h-[640px]">
+          <div className="lg:col-span-7 relative h-[300px] sm:h-[460px] lg:h-[640px] order-1 lg:order-2">
             <motion.div style={{ y, rotate: rot }} className="absolute inset-0 grid place-items-center">
               <img
                 src={canHero}
@@ -106,12 +106,12 @@ function Hero() {
                 height={1200}
               />
             </motion.div>
-            <div className="absolute top-6 right-2 sm:right-10 hidden md:block">
+            <div className="absolute top-4 right-2 sm:right-10 hidden md:block">
               <StickerBadge variant="made" className="text-base px-4 py-2" />
             </div>
-            <div className="absolute bottom-10 left-2 sm:left-10 bg-paper border border-ink p-3 rotate-[-3deg] shadow-xl max-w-[180px]">
+            <div className="absolute bottom-4 sm:bottom-10 left-0 sm:left-10 bg-paper border border-ink p-2.5 sm:p-3 rotate-[-3deg] shadow-xl max-w-[150px] sm:max-w-[180px]">
               <span className="text-[10px] font-black uppercase tracking-widest block">U.S. Patent</span>
-              <span className="font-display text-lg font-black">8,778,406 B2</span>
+              <span className="font-display text-base sm:text-lg font-black">8,778,406 B2</span>
             </div>
           </div>
         </div>
@@ -123,7 +123,7 @@ function Hero() {
 /* ----------- PROBLEM ----------- */
 function Problem() {
   return (
-    <section className="py-24 lg:py-32 px-5 lg:px-8">
+    <section className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <SectionNumber n="01" label="The Friction Tax" />
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
@@ -155,11 +155,11 @@ function Problem() {
 /* ----------- BENTO ----------- */
 function Bento() {
   return (
-    <section className="py-24 lg:py-32 px-5 lg:px-8 bg-ink text-paper">
+    <section className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8 bg-ink text-paper">
       <div className="max-w-7xl mx-auto">
         <SectionNumber n="02" label="Built Different" />
-        <div className="grid grid-cols-2 lg:grid-cols-4 grid-rows-[auto] gap-3">
-          <div className="col-span-2 lg:col-span-2 lg:row-span-2 bg-paper text-ink p-8 lg:p-10 flex flex-col justify-between min-h-[360px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <div className="sm:col-span-2 lg:col-span-2 lg:row-span-2 bg-paper text-ink p-7 sm:p-8 lg:p-10 flex flex-col justify-between min-h-[280px] sm:min-h-[360px]">
             <div className="flex justify-between items-start">
               <Wind className="size-10" strokeWidth={1.5} />
               <span className="text-[10px] font-black uppercase tracking-widest text-steel">01</span>
@@ -203,11 +203,11 @@ function BuiltFor() {
     { img: military, name: "Military & Trades", line: "Boots on. All day. Every day." },
   ];
   return (
-    <section className="py-24 lg:py-32 px-5 lg:px-8">
+    <section className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <SectionNumber n="03" label="Built For" />
         <div className="flex items-end justify-between flex-wrap gap-4 mb-12">
-          <h2 className="font-display text-[clamp(40px,7vw,96px)] font-black uppercase leading-[0.9] tracking-tighter">
+          <h2 className="font-display text-[clamp(36px,7vw,96px)] font-black uppercase leading-[0.9] tracking-tighter">
             For the rep<br/>you didn't think<br/>you had.
           </h2>
           <p className="font-editorial italic text-xl max-w-[28ch]">
@@ -249,10 +249,10 @@ function Subscribe() {
     { id: "weekly" as const, label: "Weekly", price: 15.99, sub: "Save 20%. Built for high-output.", badge: "Best Value" },
   ];
   return (
-    <section className="py-24 lg:py-32 px-5 lg:px-8 bg-ice">
+    <section className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8 bg-ice">
       <div className="max-w-7xl mx-auto">
         <SectionNumber n="04" label="Never Run Out" />
-        <h2 className="font-display text-[clamp(44px,8vw,108px)] font-black uppercase leading-[0.88] tracking-tighter mb-12">
+        <h2 className="font-display text-[clamp(38px,8vw,108px)] font-black uppercase leading-[0.88] tracking-tighter mb-12">
           Never run out<br/>mid-<span className="italic font-editorial font-normal">season.</span>
         </h2>
         <div className="grid md:grid-cols-3 gap-3 lg:gap-4">
@@ -298,7 +298,7 @@ function Reviews() {
     { q: "Spray it. Forget it. Beat it. The order matters.", who: "K. Patel — Cycling Coach" },
   ];
   return (
-    <section className="py-24 lg:py-32 px-5 lg:px-8">
+    <section className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <SectionNumber n="05" label="Field Reports" />
         <div className="grid lg:grid-cols-12 gap-10">
@@ -318,10 +318,10 @@ function Reviews() {
             ))}
           </div>
           <div className="lg:col-span-5 grid grid-cols-2 gap-3 content-start">
-            <img src={runner} alt="" loading="lazy" className="aspect-[3/4] object-cover" />
-            <img src={lifter} alt="" loading="lazy" className="aspect-[3/4] object-cover mt-10" />
-            <img src={military} alt="" loading="lazy" className="aspect-[3/4] object-cover" />
-            <img src={cyclist} alt="" loading="lazy" className="aspect-[3/4] object-cover mt-10" />
+            <img src={runner} alt="" loading="lazy" className="aspect-[3/4] object-cover w-full" />
+            <img src={lifter} alt="" loading="lazy" className="aspect-[3/4] object-cover w-full sm:mt-10" />
+            <img src={military} alt="" loading="lazy" className="aspect-[3/4] object-cover w-full" />
+            <img src={cyclist} alt="" loading="lazy" className="aspect-[3/4] object-cover w-full sm:mt-10" />
           </div>
         </div>
       </div>
@@ -332,13 +332,13 @@ function Reviews() {
 /* ----------- PATENT ----------- */
 function Patent() {
   return (
-    <section id="patent" className="py-24 lg:py-32 px-5 lg:px-8 bg-ink text-paper">
+    <section id="patent" className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8 bg-ink text-paper">
       <div className="max-w-7xl mx-auto">
         <SectionNumber n="06" label="The Science" />
         <div className="grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-7">
             <p className="font-editorial italic text-paper/60 text-2xl mb-4">U.S. Patent</p>
-            <h2 className="font-display text-[clamp(64px,15vw,200px)] font-black tracking-tighter leading-[0.85] uppercase">
+            <h2 className="font-display text-[clamp(48px,15vw,200px)] font-black tracking-tighter leading-[0.85] uppercase break-all">
               8778406<span className="text-heat">B2</span>
             </h2>
             <p className="mt-6 max-w-[55ch] text-lg">
@@ -387,10 +387,10 @@ const FAQS = [
 function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="faq" className="py-24 lg:py-32 px-5 lg:px-8">
+    <section id="faq" className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8">
       <div className="max-w-5xl mx-auto">
         <SectionNumber n="07" label="Questions" />
-        <h2 className="font-display text-[clamp(44px,8vw,108px)] font-black uppercase leading-[0.85] tracking-tighter mb-12">
+        <h2 className="font-display text-[clamp(38px,8vw,108px)] font-black uppercase leading-[0.85] tracking-tighter mb-12">
           You ask.<br/>We <span className="text-heat italic font-editorial font-normal">answer.</span>
         </h2>
         <ul className="border-t border-ink/15">
@@ -398,10 +398,10 @@ function FAQ() {
             <li key={i} className="border-b border-ink/15">
               <button
                 onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex items-start justify-between gap-6 py-6 text-left group"
+                className="w-full flex items-start justify-between gap-4 sm:gap-6 py-5 sm:py-6 text-left group min-h-[56px]"
               >
-                <span className="font-display text-xl lg:text-2xl font-black uppercase tracking-tight">{f.q}</span>
-                <ChevronDown className={`size-6 shrink-0 transition-transform ${open === i ? "rotate-180" : ""}`} />
+                <span className="font-display text-base sm:text-xl lg:text-2xl font-black uppercase tracking-tight">{f.q}</span>
+                <ChevronDown className={`size-5 sm:size-6 shrink-0 mt-1 transition-transform ${open === i ? "rotate-180" : ""}`} />
               </button>
               {open === i && (
                 <motion.p

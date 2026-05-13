@@ -51,7 +51,7 @@ function Contact() {
                 <Field label="Email" name="email" type="email" />
                 <div>
                   <label className="text-xs font-bold uppercase tracking-widest text-steel">Message</label>
-                  <textarea required rows={6} className="w-full mt-2 border-2 border-ink/20 focus:border-ink p-3 bg-paper outline-none" />
+                  <textarea required rows={6} className="w-full mt-2 border-2 border-ink/20 focus:border-ink p-3 min-h-[48px] bg-paper outline-none text-base" />
                 </div>
                 <button className="w-full bg-ink text-paper py-4 font-display font-black uppercase tracking-tight hover:bg-heat">
                   Send →
@@ -69,7 +69,7 @@ function Field({ label, name, type = "text" }: { label: string; name: string; ty
   return (
     <div>
       <label className="text-xs font-bold uppercase tracking-widest text-steel">{label}</label>
-      <input required name={name} type={type} className="w-full mt-2 border-2 border-ink/20 focus:border-ink p-3 bg-paper outline-none" />
+      <input required name={name} type={type} className="w-full mt-2 border-2 border-ink/20 focus:border-ink p-3 min-h-[48px] bg-paper outline-none text-base" />
     </div>
   );
 }

@@ -5,12 +5,12 @@ export function Footer() {
   const [email, setEmail] = useState("");
   const [done, setDone] = useState(false);
   return (
-    <footer className="bg-ink text-paper pt-20 pb-10 px-5 lg:px-8 mt-24">
+    <footer className="bg-ink text-paper pt-16 sm:pt-20 pb-10 px-5 lg:px-8 mt-16 sm:mt-24">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-12 gap-12 mb-16">
           <div className="lg:col-span-7">
-            <h3 className="font-display text-[clamp(48px,8vw,120px)] leading-[0.85] font-black tracking-tighter uppercase">
-              DON'T <span className="stroke-text" style={{ WebkitTextStroke: "2px var(--color-paper)" }}>QUIT</span><br/>
+            <h3 className="font-display text-[clamp(40px,8vw,120px)] leading-[0.85] font-black tracking-tighter uppercase">
+              DON'T <span className="stroke-text" style={{ WebkitTextStroke: "1px var(--color-paper)" }}>QUIT</span><br/>
               ON <span className="text-ice">SWEAT.</span>
             </h3>
           </div>

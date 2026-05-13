@@ -21,7 +21,7 @@ function About() {
       <section className="px-5 lg:px-8 pt-16 pb-24">
         <div className="max-w-5xl mx-auto">
           <div className="flex gap-2 mb-8"><StickerBadge variant="since" /><StickerBadge variant="patent" /></div>
-          <h1 className="font-display text-[clamp(56px,12vw,148px)] font-black uppercase leading-[0.85] tracking-tighter">
+          <h1 className="font-display text-[clamp(40px,12vw,148px)] font-black uppercase leading-[0.85] tracking-tighter">
             We made it<br/>because <span className="text-heat italic font-editorial font-normal">nothing</span><br/>else worked.
           </h1>
         </div>
