@@ -142,7 +142,7 @@ function ProductPage() {
       </section>
 
       {/* Sticky mobile buy bar */}
-      <div className="fixed bottom-0 inset-x-0 lg:hidden z-30 bg-ink text-paper px-4 py-3 flex items-center gap-3 border-t-2 border-ice">
+      <div className="fixed bottom-0 inset-x-0 md:hidden z-30 bg-ink text-paper px-4 py-3 flex items-center gap-3 border-t-2 border-ice">
         <div>
           <p className="text-[10px] uppercase tracking-widest text-steel">{meta.label}</p>
           <p className="font-display font-black text-xl">${meta.price}</p>
