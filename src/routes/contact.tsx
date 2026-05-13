@@ -16,9 +16,9 @@ function Contact() {
   const [done, setDone] = useState(false);
   return (
     <Layout>
-      <section className="px-5 lg:px-8 pt-16 pb-24">
-        <div className="max-w-5xl mx-auto grid lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-6">
+      <section className="px-5 md:px-6 lg:px-8 pt-16 pb-24">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-12 gap-10 md:gap-12">
+          <div className="md:col-span-6">
             <h1 className="font-display text-[clamp(56px,11vw,140px)] font-black uppercase leading-[0.85] tracking-tighter">
               We answer<br/>the <span className="text-heat italic font-editorial font-normal">phone.</span>
             </h1>
@@ -37,7 +37,7 @@ function Contact() {
               </li>
             </ul>
           </div>
-          <div className="lg:col-span-6">
+          <div className="md:col-span-6">
             {done ? (
               <div className="bg-ice border-2 border-ink p-10 text-center h-full grid place-items-center">
                 <div>

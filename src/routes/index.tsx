@@ -51,8 +51,8 @@ function Hero() {
   const { add } = useCart();
 
   return (
-    <header ref={ref} className="relative overflow-hidden pt-8 sm:pt-12 lg:pt-20 pb-16 sm:pb-24 lg:pb-32">
-      <div className="max-w-7xl mx-auto px-5 lg:px-8 relative">
+    <header ref={ref} className="relative overflow-hidden pt-8 sm:pt-12 md:pt-16 lg:pt-20 pb-16 sm:pb-24 md:pb-28 lg:pb-32">
+      <div className="max-w-7xl mx-auto px-5 md:px-6 lg:px-8 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
           className="mb-6 flex flex-wrap gap-2"
@@ -73,8 +73,8 @@ function Hero() {
           </motion.span>
         </h1>
 
-        <div className="mt-8 sm:mt-10 grid lg:grid-cols-12 gap-8 lg:gap-12 items-end">
-          <div className="lg:col-span-5 order-2 lg:order-1">
+        <div className="mt-8 sm:mt-10 grid md:grid-cols-12 gap-8 md:gap-10 lg:gap-12 items-end">
+          <div className="md:col-span-5 order-2 md:order-1">
             <p className="font-editorial italic text-xl sm:text-2xl lg:text-3xl leading-[1.15] mb-6 sm:mb-8 text-pretty">
               The patented spray-to-powder armor for athletes who refuse to slow down.
             </p>
@@ -96,7 +96,7 @@ function Hero() {
               <li className="flex items-center gap-2"><span className="size-1.5 bg-heat shrink-0" /> Non-Asbestos Talc</li>
             </ul>
           </div>
-          <div className="lg:col-span-7 relative h-[300px] sm:h-[460px] lg:h-[640px] order-1 lg:order-2">
+          <div className="md:col-span-7 relative h-[300px] sm:h-[460px] md:h-[520px] lg:h-[640px] order-1 md:order-2">
             <motion.div style={{ y, rotate: rot }} className="absolute inset-0 grid place-items-center">
               <img
                 src={canHero}
@@ -123,11 +123,11 @@ function Hero() {
 /* ----------- PROBLEM ----------- */
 function Problem() {
   return (
-    <section className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8">
+    <section className="py-16 sm:py-24 md:py-28 lg:py-32 px-5 md:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <SectionNumber n="01" label="The Friction Tax" />
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
-          <div className="lg:col-span-7">
+        <div className="grid md:grid-cols-12 gap-10 md:gap-12 lg:gap-16">
+          <div className="md:col-span-7">
             <h2 className="font-editorial italic text-[clamp(40px,6vw,84px)] leading-[1.02] text-pretty">
               Dump-on powders are a <span className="text-heat">mess.</span> Sticks <span className="text-heat">melt.</span> Creams <span className="text-heat">sweat off.</span>
             </h2>
@@ -135,7 +135,7 @@ function Problem() {
               You shouldn't have to choose between a chalk cloud in your gym bag and raw skin at mile 18. Dry Goods sprays on wet, dries to a powder barrier, and stays put.
             </p>
           </div>
-          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="md:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
             <figure className="bg-ink/90 aspect-[5/3] sm:aspect-[3/4] grid place-items-center text-center p-4 relative overflow-hidden">
               <span className="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-widest text-paper/60">A. Dump-on</span>
               <span className="font-display text-paper text-2xl sm:text-3xl font-black uppercase leading-none break-words">Dust Cloud</span>
@@ -155,7 +155,7 @@ function Problem() {
 /* ----------- BENTO ----------- */
 function Bento() {
   return (
-    <section className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8 bg-ink text-paper">
+    <section className="py-16 sm:py-24 md:py-28 lg:py-32 px-5 md:px-6 lg:px-8 bg-ink text-paper">
       <div className="max-w-7xl mx-auto">
         <SectionNumber n="02" label="Built Different" />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
@@ -203,7 +203,7 @@ function BuiltFor() {
     { img: military, name: "Military & Trades", line: "Boots on. All day. Every day." },
   ];
   return (
-    <section className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8">
+    <section className="py-16 sm:py-24 md:py-28 lg:py-32 px-5 md:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <SectionNumber n="03" label="Built For" />
         <div className="flex items-end justify-between flex-wrap gap-4 mb-12">
@@ -214,7 +214,7 @@ function BuiltFor() {
             One can. Eight sports. Zero excuses.
           </p>
         </div>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {sports.map((s, i) => (
             <motion.figure
               key={s.name}
@@ -249,7 +249,7 @@ function Subscribe() {
     { id: "weekly" as const, label: "Weekly", price: 15.99, sub: "Save 20%. Built for high-output.", badge: "Best Value" },
   ];
   return (
-    <section className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8 bg-ice">
+    <section className="py-16 sm:py-24 md:py-28 lg:py-32 px-5 md:px-6 lg:px-8 bg-ice">
       <div className="max-w-7xl mx-auto">
         <SectionNumber n="04" label="Never Run Out" />
         <h2 className="font-display text-[clamp(38px,8vw,108px)] font-black uppercase leading-[0.88] tracking-tighter mb-12">
@@ -298,11 +298,11 @@ function Reviews() {
     { q: "Spray it. Forget it. Beat it. The order matters.", who: "K. Patel — Cycling Coach" },
   ];
   return (
-    <section className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8">
+    <section className="py-16 sm:py-24 md:py-28 lg:py-32 px-5 md:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <SectionNumber n="05" label="Field Reports" />
-        <div className="grid lg:grid-cols-12 gap-10">
-          <div className="lg:col-span-7 space-y-12">
+        <div className="grid md:grid-cols-12 gap-10">
+          <div className="md:col-span-7 space-y-12">
             {quotes.map((q, i) => (
               <motion.blockquote
                 key={i}
@@ -317,7 +317,7 @@ function Reviews() {
               </motion.blockquote>
             ))}
           </div>
-          <div className="lg:col-span-5 grid grid-cols-2 gap-3 content-start">
+          <div className="md:col-span-5 grid grid-cols-2 gap-3 content-start">
             <img src={runner} alt="" loading="lazy" className="aspect-[3/4] object-cover w-full" />
             <img src={lifter} alt="" loading="lazy" className="aspect-[3/4] object-cover w-full sm:mt-10" />
             <img src={military} alt="" loading="lazy" className="aspect-[3/4] object-cover w-full" />
@@ -332,11 +332,11 @@ function Reviews() {
 /* ----------- PATENT ----------- */
 function Patent() {
   return (
-    <section id="patent" className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8 bg-ink text-paper">
+    <section id="patent" className="py-16 sm:py-24 md:py-28 lg:py-32 px-5 md:px-6 lg:px-8 bg-ink text-paper">
       <div className="max-w-7xl mx-auto">
         <SectionNumber n="06" label="The Science" />
-        <div className="grid lg:grid-cols-12 gap-10 items-center">
-          <div className="lg:col-span-7">
+        <div className="grid md:grid-cols-12 gap-10 items-center">
+          <div className="md:col-span-7">
             <p className="font-editorial italic text-paper/60 text-2xl mb-4">U.S. Patent</p>
             <h2 className="font-display text-[clamp(48px,15vw,200px)] font-black tracking-tighter leading-[0.85] uppercase break-all">
               8778406<span className="text-heat">B2</span>
@@ -353,7 +353,7 @@ function Patent() {
               <li>· Talc-free option</li>
             </ul>
           </div>
-          <div className="lg:col-span-5">
+          <div className="md:col-span-5">
             <div className="aspect-square bg-paper/5 border border-paper/15 grid place-items-center relative overflow-hidden">
               <img src={canHero} alt="Dry Goods can cross-section" className="h-[80%] w-auto rotate-12 opacity-80" />
               <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -387,7 +387,7 @@ const FAQS = [
 function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="faq" className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8">
+    <section id="faq" className="py-16 sm:py-24 md:py-28 lg:py-32 px-5 md:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
         <SectionNumber n="07" label="Questions" />
         <h2 className="font-display text-[clamp(38px,8vw,108px)] font-black uppercase leading-[0.85] tracking-tighter mb-12">

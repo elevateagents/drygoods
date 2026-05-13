@@ -36,10 +36,10 @@ function ProductPage() {
 
   return (
     <Layout>
-      <section className="px-5 lg:px-8 pt-8 lg:pt-10 pb-32 lg:pb-32">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-10 lg:gap-16">
+      <section className="px-5 md:px-6 lg:px-8 pt-8 lg:pt-10 pb-32 md:pb-16 lg:pb-32">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-10 md:gap-12 lg:gap-16">
           {/* Imagery */}
-          <div className="lg:col-span-7 lg:sticky lg:top-20 lg:self-start">
+          <div className="md:col-span-7 md:sticky md:top-20 md:self-start">
             <div className="bg-ice/40 aspect-[4/5] grid place-items-center relative overflow-hidden">
               <img src={canHero} alt="Dry Goods Original 5.4 oz can" className="h-[85%] w-auto" width={800} height={1200} />
               <span className="absolute top-5 left-5 text-[10px] font-black uppercase tracking-widest bg-ink text-paper px-2 py-1">In Stock</span>
@@ -55,7 +55,7 @@ function ProductPage() {
           </div>
 
           {/* Info */}
-          <div className="lg:col-span-5 space-y-8">
+          <div className="md:col-span-5 space-y-8">
             <div>
               <Link to="/" className="text-[10px] uppercase tracking-widest font-bold text-steel hover:text-heat">← Back</Link>
               <h1 className="font-display text-5xl lg:text-6xl font-black uppercase leading-[0.9] tracking-tighter mt-4">
@@ -142,7 +142,7 @@ function ProductPage() {
       </section>
 
       {/* Sticky mobile buy bar */}
-      <div className="fixed bottom-0 inset-x-0 lg:hidden z-30 bg-ink text-paper px-4 py-3 flex items-center gap-3 border-t-2 border-ice">
+      <div className="fixed bottom-0 inset-x-0 md:hidden z-30 bg-ink text-paper px-4 py-3 flex items-center gap-3 border-t-2 border-ice">
         <div>
           <p className="text-[10px] uppercase tracking-widest text-steel">{meta.label}</p>
           <p className="font-display font-black text-xl">${meta.price}</p>

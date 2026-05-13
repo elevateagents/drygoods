@@ -23,7 +23,7 @@ function Wholesale() {
   const [done, setDone] = useState(false);
   return (
     <Layout>
-      <section className="px-5 lg:px-8 pt-16 pb-12">
+      <section className="px-5 md:px-6 lg:px-8 pt-16 pb-12">
         <div className="max-w-6xl mx-auto">
           <h1 className="font-display text-[clamp(40px,10vw,128px)] font-black uppercase leading-[0.85] tracking-tighter">
             Stock the<br/>only thing<br/>that <span className="text-heat italic font-editorial font-normal">works.</span>
@@ -34,7 +34,7 @@ function Wholesale() {
         </div>
       </section>
 
-      <section className="px-5 lg:px-8 py-12">
+      <section className="px-5 md:px-6 lg:px-8 py-12">
         <div className="max-w-6xl mx-auto">
           <SectionNumber n="01" label="Volume Tiers" />
           <div className="grid md:grid-cols-3 gap-3">
@@ -49,7 +49,7 @@ function Wholesale() {
         </div>
       </section>
 
-      <section className="px-5 lg:px-8 py-16">
+      <section className="px-5 md:px-6 lg:px-8 py-16">
         <div className="max-w-3xl mx-auto">
           <SectionNumber n="02" label="Inquiry" />
           {done ? (
