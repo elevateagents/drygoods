@@ -1,0 +1,68 @@
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
+
+export type Plan = "onetime" | "monthly" | "weekly";
+
+export const PLAN_META: Record<Plan, { label: string; price: number; sub?: string }> = {
+  onetime: { label: "One-time", price: 19.99 },
+  monthly: { label: "Subscribe Monthly", price: 16.99, sub: "Save 15%" },
+  weekly: { label: "Subscribe Weekly", price: 15.99, sub: "Save 20%" },
+};
+
+export type CartLine = {
+  id: string;
+  plan: Plan;
+  qty: number;
+  title: string;
+  price: number;
+};
+
+type CartState = {
+  open: boolean;
+  lines: CartLine[];
+  setOpen: (v: boolean) => void;
+  add: (plan: Plan, qty?: number) => void;
+  setQty: (id: string, qty: number) => void;
+  remove: (id: string) => void;
+  subtotal: () => number;
+  count: () => number;
+};
+
+export const useCart = create<CartState>()(
+  persist(
+    (set, get) => ({
+      open: false,
+      lines: [],
+      setOpen: (v) => set({ open: v }),
+      add: (plan, qty = 1) => {
+        const id = `dry-goods-original--${plan}`;
+        const meta = PLAN_META[plan];
+        const lines = [...get().lines];
+        const existing = lines.find((l) => l.id === id);
+        if (existing) existing.qty += qty;
+        else
+          lines.push({
+            id,
+            plan,
+            qty,
+            title: "Dry Goods Original 5.4 oz",
+            price: meta.price,
+          });
+        set({ lines, open: true });
+      },
+      setQty: (id, qty) => {
+        if (qty <= 0) {
+          set({ lines: get().lines.filter((l) => l.id !== id) });
+          return;
+        }
+        set({
+          lines: get().lines.map((l) => (l.id === id ? { ...l, qty } : l)),
+        });
+      },
+      remove: (id) => set({ lines: get().lines.filter((l) => l.id !== id) }),
+      subtotal: () => get().lines.reduce((s, l) => s + l.price * l.qty, 0),
+      count: () => get().lines.reduce((s, l) => s + l.qty, 0),
+    }),
+    { name: "drygoods-cart" }
+  )
+);
