@@ -123,11 +123,11 @@ function Hero() {
 /* ----------- PROBLEM ----------- */
 function Problem() {
   return (
-    <section className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8">
+    <section className="py-16 sm:py-24 md:py-28 lg:py-32 px-5 md:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <SectionNumber n="01" label="The Friction Tax" />
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
-          <div className="lg:col-span-7">
+        <div className="grid md:grid-cols-12 gap-10 md:gap-12 lg:gap-16">
+          <div className="md:col-span-7">
             <h2 className="font-editorial italic text-[clamp(40px,6vw,84px)] leading-[1.02] text-pretty">
               Dump-on powders are a <span className="text-heat">mess.</span> Sticks <span className="text-heat">melt.</span> Creams <span className="text-heat">sweat off.</span>
             </h2>
@@ -135,7 +135,7 @@ function Problem() {
               You shouldn't have to choose between a chalk cloud in your gym bag and raw skin at mile 18. Dry Goods sprays on wet, dries to a powder barrier, and stays put.
             </p>
           </div>
-          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="md:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
             <figure className="bg-ink/90 aspect-[5/3] sm:aspect-[3/4] grid place-items-center text-center p-4 relative overflow-hidden">
               <span className="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-widest text-paper/60">A. Dump-on</span>
               <span className="font-display text-paper text-2xl sm:text-3xl font-black uppercase leading-none break-words">Dust Cloud</span>
