@@ -268,7 +268,7 @@ function Subscribe() {
               )}
               <div>
                 <p className="text-xs font-bold uppercase tracking-widest opacity-70">{p.label}</p>
-                <p className="font-display text-6xl font-black tracking-tighter mt-2">${p.price}</p>
+                <p className="font-display text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter mt-2 break-words">${p.price}</p>
                 <p className="text-sm mt-3 opacity-80">{p.sub}</p>
               </div>
               <ul className="text-xs space-y-2 uppercase tracking-widest font-semibold opacity-80">
