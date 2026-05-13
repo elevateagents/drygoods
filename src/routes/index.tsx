@@ -203,7 +203,7 @@ function BuiltFor() {
     { img: military, name: "Military & Trades", line: "Boots on. All day. Every day." },
   ];
   return (
-    <section className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8">
+    <section className="py-16 sm:py-24 md:py-28 lg:py-32 px-5 md:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <SectionNumber n="03" label="Built For" />
         <div className="flex items-end justify-between flex-wrap gap-4 mb-12">
@@ -214,7 +214,7 @@ function BuiltFor() {
             One can. Eight sports. Zero excuses.
           </p>
         </div>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {sports.map((s, i) => (
             <motion.figure
               key={s.name}
