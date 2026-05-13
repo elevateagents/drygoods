@@ -51,8 +51,8 @@ function Hero() {
   const { add } = useCart();
 
   return (
-    <header ref={ref} className="relative overflow-hidden pt-8 sm:pt-12 lg:pt-20 pb-16 sm:pb-24 lg:pb-32">
-      <div className="max-w-7xl mx-auto px-5 lg:px-8 relative">
+    <header ref={ref} className="relative overflow-hidden pt-8 sm:pt-12 md:pt-16 lg:pt-20 pb-16 sm:pb-24 md:pb-28 lg:pb-32">
+      <div className="max-w-7xl mx-auto px-5 md:px-6 lg:px-8 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
           className="mb-6 flex flex-wrap gap-2"
