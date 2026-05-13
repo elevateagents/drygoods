@@ -155,7 +155,7 @@ function Problem() {
 /* ----------- BENTO ----------- */
 function Bento() {
   return (
-    <section className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8 bg-ink text-paper">
+    <section className="py-16 sm:py-24 md:py-28 lg:py-32 px-5 md:px-6 lg:px-8 bg-ink text-paper">
       <div className="max-w-7xl mx-auto">
         <SectionNumber n="02" label="Built Different" />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
