@@ -9,8 +9,8 @@ export function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-12 gap-12 mb-16">
           <div className="lg:col-span-7">
-            <h3 className="font-display text-[clamp(48px,8vw,120px)] leading-[0.85] font-black tracking-tighter uppercase">
-              DON'T <span className="stroke-text" style={{ WebkitTextStroke: "2px var(--color-paper)" }}>QUIT</span><br/>
+            <h3 className="font-display text-[clamp(40px,8vw,120px)] leading-[0.85] font-black tracking-tighter uppercase">
+              DON'T <span className="stroke-text" style={{ WebkitTextStroke: "1px var(--color-paper)" }}>QUIT</span><br/>
               ON <span className="text-ice">SWEAT.</span>
             </h3>
           </div>
