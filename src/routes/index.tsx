@@ -61,7 +61,7 @@ function Hero() {
           <StickerBadge variant="patent" />
         </motion.div>
 
-        <h1 className="font-display text-[clamp(44px,12vw,148px)] leading-[0.85] font-black tracking-tighter uppercase text-balance">
+        <h1 className="font-display text-[clamp(36px,10vw,148px)] leading-[0.88] font-black tracking-tighter uppercase text-balance break-words">
           <motion.span initial={{ y: 80, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }} className="block">
             STAY DRY.
           </motion.span>
