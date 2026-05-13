@@ -338,7 +338,7 @@ function Patent() {
         <div className="grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-7">
             <p className="font-editorial italic text-paper/60 text-2xl mb-4">U.S. Patent</p>
-            <h2 className="font-display text-[clamp(64px,15vw,200px)] font-black tracking-tighter leading-[0.85] uppercase">
+            <h2 className="font-display text-[clamp(48px,15vw,200px)] font-black tracking-tighter leading-[0.85] uppercase break-all">
               8778406<span className="text-heat">B2</span>
             </h2>
             <p className="mt-6 max-w-[55ch] text-lg">
