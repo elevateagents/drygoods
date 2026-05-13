@@ -123,7 +123,7 @@ function Hero() {
 /* ----------- PROBLEM ----------- */
 function Problem() {
   return (
-    <section className="py-24 lg:py-32 px-5 lg:px-8">
+    <section className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <SectionNumber n="01" label="The Friction Tax" />
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
@@ -155,7 +155,7 @@ function Problem() {
 /* ----------- BENTO ----------- */
 function Bento() {
   return (
-    <section className="py-24 lg:py-32 px-5 lg:px-8 bg-ink text-paper">
+    <section className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8 bg-ink text-paper">
       <div className="max-w-7xl mx-auto">
         <SectionNumber n="02" label="Built Different" />
         <div className="grid grid-cols-2 lg:grid-cols-4 grid-rows-[auto] gap-3">
@@ -203,7 +203,7 @@ function BuiltFor() {
     { img: military, name: "Military & Trades", line: "Boots on. All day. Every day." },
   ];
   return (
-    <section className="py-24 lg:py-32 px-5 lg:px-8">
+    <section className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <SectionNumber n="03" label="Built For" />
         <div className="flex items-end justify-between flex-wrap gap-4 mb-12">
@@ -249,7 +249,7 @@ function Subscribe() {
     { id: "weekly" as const, label: "Weekly", price: 15.99, sub: "Save 20%. Built for high-output.", badge: "Best Value" },
   ];
   return (
-    <section className="py-24 lg:py-32 px-5 lg:px-8 bg-ice">
+    <section className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8 bg-ice">
       <div className="max-w-7xl mx-auto">
         <SectionNumber n="04" label="Never Run Out" />
         <h2 className="font-display text-[clamp(44px,8vw,108px)] font-black uppercase leading-[0.88] tracking-tighter mb-12">
@@ -298,7 +298,7 @@ function Reviews() {
     { q: "Spray it. Forget it. Beat it. The order matters.", who: "K. Patel — Cycling Coach" },
   ];
   return (
-    <section className="py-24 lg:py-32 px-5 lg:px-8">
+    <section className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <SectionNumber n="05" label="Field Reports" />
         <div className="grid lg:grid-cols-12 gap-10">
@@ -332,7 +332,7 @@ function Reviews() {
 /* ----------- PATENT ----------- */
 function Patent() {
   return (
-    <section id="patent" className="py-24 lg:py-32 px-5 lg:px-8 bg-ink text-paper">
+    <section id="patent" className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8 bg-ink text-paper">
       <div className="max-w-7xl mx-auto">
         <SectionNumber n="06" label="The Science" />
         <div className="grid lg:grid-cols-12 gap-10 items-center">
@@ -387,7 +387,7 @@ const FAQS = [
 function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="faq" className="py-24 lg:py-32 px-5 lg:px-8">
+    <section id="faq" className="py-16 sm:py-24 lg:py-32 px-5 lg:px-8">
       <div className="max-w-5xl mx-auto">
         <SectionNumber n="07" label="Questions" />
         <h2 className="font-display text-[clamp(44px,8vw,108px)] font-black uppercase leading-[0.85] tracking-tighter mb-12">
