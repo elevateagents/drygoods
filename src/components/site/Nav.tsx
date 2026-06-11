@@ -3,6 +3,13 @@ import { ShoppingBag, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useCart } from "@/lib/cart-store";
 
+const sections = [
+  { href: "#why", label: "Why" },
+  { href: "#buy", label: "Shop" },
+  { href: "#reviews", label: "Reviews" },
+  { href: "mailto:tim@drygoods.com", label: "Contact" },
+];
+
 export function Nav() {
   const { setOpen, count } = useCart();
   const [menu, setMenu] = useState(false);
@@ -13,35 +20,31 @@ export function Nav() {
     return () => { document.body.style.overflow = ""; };
   }, [menu]);
 
-  const links = [
-    { to: "/products/original", label: "Shop" },
-    { to: "/about", label: "About" },
-    { to: "/wholesale", label: "Wholesale" },
-    { to: "/contact", label: "Contact" },
-  ] as const;
-
   return (
-    <nav className="sticky top-0 z-40 bg-paper/85 backdrop-blur-md border-b border-ink/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-5 lg:px-8 h-14 flex items-center justify-between gap-3">
-        <Link to="/" onClick={() => setMenu(false)} className="font-display font-black tracking-tighter text-xl shrink-0">
-          DRY<span className="text-heat">+</span>GOODS
+    <nav className="sticky top-0 z-40 bg-paper/90 backdrop-blur-md border-b border-ink/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
+        <Link to="/" onClick={() => setMenu(false)} className="font-display font-black tracking-tight text-xl shrink-0">
+          DRY<span className="text-sky">·</span>GOODS<span className="text-sky align-super text-xs">™</span>
         </Link>
-        <div className="hidden md:flex gap-8 text-sm font-semibold uppercase tracking-wide">
-          {links.map(l => (
-            <Link key={l.to} to={l.to} className="hover:text-heat transition-colors" activeProps={{ className: "text-heat" }}>
-              {l.label}
-            </Link>
+        <div className="hidden md:flex gap-8 text-sm font-bold uppercase tracking-wide">
+          {sections.map(s => (
+            <a key={s.href} href={s.href} className="hover:text-sky transition-colors">{s.label}</a>
           ))}
         </div>
         <div className="flex items-center gap-2">
+          <a
+            href="#buy"
+            className="hidden sm:inline-flex items-center bg-sky text-white px-4 py-2.5 text-xs font-bold uppercase tracking-widest hover:bg-sky-deep transition-colors rounded-full"
+          >
+            Shop Now
+          </a>
           <button
             onClick={() => setOpen(true)}
-            className="flex items-center gap-2 bg-ink text-paper px-3 py-2.5 min-h-[40px] text-xs font-bold uppercase tracking-widest hover:bg-heat transition-colors"
+            className="relative p-2.5 min-h-[40px] min-w-[40px] grid place-items-center hover:text-sky"
             aria-label="Open cart"
           >
-            <ShoppingBag className="size-4" />
-            <span className="hidden sm:inline">Cart</span>
-            {c > 0 && <span className="bg-ice text-ink px-1.5 ml-0.5">{c}</span>}
+            <ShoppingBag className="size-5" />
+            {c > 0 && <span className="absolute -top-0.5 -right-0.5 bg-sky text-white text-[10px] font-bold rounded-full size-5 grid place-items-center">{c}</span>}
           </button>
           <button
             onClick={() => setMenu(v => !v)}
@@ -55,20 +58,24 @@ export function Nav() {
       </div>
 
       {menu && (
-        <div className="md:hidden fixed inset-x-0 top-14 bottom-0 bg-paper z-30 overflow-y-auto">
+        <div className="md:hidden fixed inset-x-0 top-16 bottom-0 bg-paper z-30 overflow-y-auto">
           <ul className="flex flex-col py-2">
-            {links.map(l => (
-              <li key={l.to} className="border-b border-ink/10">
-                <Link
-                  to={l.to}
+            {sections.map(s => (
+              <li key={s.href} className="border-b border-ink/10">
+                <a
+                  href={s.href}
                   onClick={() => setMenu(false)}
-                  className="block px-5 py-5 font-display text-2xl font-black uppercase tracking-tight hover:bg-ink hover:text-paper"
-                  activeProps={{ className: "text-heat" }}
+                  className="block px-6 py-5 font-display text-2xl font-black uppercase tracking-tight hover:bg-sky hover:text-white"
                 >
-                  {l.label}
-                </Link>
+                  {s.label}
+                </a>
               </li>
             ))}
+            <li className="px-6 py-6">
+              <a href="#buy" onClick={() => setMenu(false)} className="block text-center bg-sky text-white py-4 font-bold uppercase tracking-widest rounded-full">
+                Shop Now
+              </a>
+            </li>
           </ul>
         </div>
       )}
