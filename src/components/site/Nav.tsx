@@ -24,8 +24,8 @@ export function Nav() {
   return (
     <nav className="sticky top-0 z-40 bg-paper/90 backdrop-blur-md border-b border-ink/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
-        <Link to="/" onClick={() => setMenu(false)} className="font-display font-black tracking-tight text-xl shrink-0">
-          DRY<span className="text-sky">·</span>GOODS<span className="text-sky align-super text-xs">™</span>
+        <Link to="/" onClick={() => setMenu(false)} className="flex items-center gap-2 shrink-0" aria-label="Dry Goods home">
+          <img src={logo.url} alt="Dry Goods" className="h-9 w-auto" />
         </Link>
         <div className="hidden md:flex gap-8 text-sm font-bold uppercase tracking-wide">
           {sections.map(s => (
