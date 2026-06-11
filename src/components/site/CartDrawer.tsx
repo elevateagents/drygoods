@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { X, Minus, Plus } from "lucide-react";
+import { X, Minus, Plus, Loader2 } from "lucide-react";
+import { useEffect } from "react";
 import { useCart, PLAN_META } from "@/lib/cart-store";
 import canHero from "@/assets/can-hero.png";
 
@@ -11,18 +12,19 @@ export function CartDrawer() {
   const remaining = Math.max(0, FREE_SHIP - total);
   const progress = Math.min(100, (total / FREE_SHIP) * 100);
 
-  // Re-sync with Shopify when drawer opens
-  if (typeof window !== "undefined") {
-    // noop — sync handled below via effect-like pattern is unnecessary; syncCart on open via setOpen wrapper would be better,
-    // but we trigger here lazily on each render when open transitions.
-  }
+  useEffect(() => {
+    if (open) void syncCart();
+  }, [open, syncCart]);
+
   const handleCheckout = () => {
     if (!checkoutUrl) {
       void syncCart();
       return;
     }
     checkout();
+    setOpen(false);
   };
+  const busy = isLoading || isSyncing;
 
   return (
     <AnimatePresence>
