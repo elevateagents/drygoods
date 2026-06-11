@@ -11,6 +11,10 @@
   --color-heat: var(--heat);
   --color-cool: var(--cool);
   --color-steel: var(--steel);
+  --color-sky: var(--sky);
+  --color-sky-deep: var(--sky-deep);
+  --color-sky-soft: var(--sky-soft);
+
 
   --color-background: var(--paper);
   --color-foreground: var(--ink);
