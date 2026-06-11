@@ -9,6 +9,7 @@ export const PLAN_META: Record<Plan, { label: string; price: number; sub?: strin
   weekly: { label: "Subscribe Weekly", price: 15.99, sub: "Save 20%" },
 };
 
+
 export type CartLine = {
   id: string;
   plan: Plan;
@@ -45,7 +46,7 @@ export const useCart = create<CartState>()(
             id,
             plan,
             qty,
-            title: "Dry Goods Original 5.4 oz",
+            title: "Dry Goods™ Athletic Spray Powder · 5.4 oz",
             price: meta.price,
           });
         set({ lines, open: true });

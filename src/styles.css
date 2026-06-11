@@ -11,6 +11,10 @@
   --color-heat: var(--heat);
   --color-cool: var(--cool);
   --color-steel: var(--steel);
+  --color-sky: var(--sky);
+  --color-sky-deep: var(--sky-deep);
+  --color-sky-soft: var(--sky-soft);
+
 
   --color-background: var(--paper);
   --color-foreground: var(--ink);
@@ -66,22 +70,29 @@
 }
 
 :root {
-  --ink: oklch(0.15 0 0);
-  --paper: oklch(0.96 0.012 85);
-  --ice: oklch(0.93 0.05 230);
-  --heat: oklch(0.66 0.22 35);
-  --cool: oklch(0.58 0.05 155);
-  --steel: oklch(0.62 0.005 250);
+  --ink: oklch(0.18 0.02 250);
+  --paper: oklch(1 0 0);
+  --sky: oklch(0.72 0.14 235);
+  --sky-deep: oklch(0.58 0.16 240);
+  --sky-soft: oklch(0.96 0.03 235);
+  --ice: oklch(0.96 0.03 235);
+  --heat: oklch(0.72 0.14 235);
+  --cool: oklch(0.58 0.16 240);
+  --steel: oklch(0.55 0.01 250);
 }
 
 .dark {
-  --ink: oklch(0.96 0.012 85);
-  --paper: oklch(0.15 0 0);
-  --ice: oklch(0.93 0.05 230);
-  --heat: oklch(0.66 0.22 35);
-  --cool: oklch(0.58 0.05 155);
-  --steel: oklch(0.62 0.005 250);
+  --ink: oklch(0.18 0.02 250);
+  --paper: oklch(1 0 0);
+  --sky: oklch(0.72 0.14 235);
+  --sky-deep: oklch(0.58 0.16 240);
+  --sky-soft: oklch(0.96 0.03 235);
+  --ice: oklch(0.96 0.03 235);
+  --heat: oklch(0.72 0.14 235);
+  --cool: oklch(0.58 0.16 240);
+  --steel: oklch(0.55 0.01 250);
 }
+
 
 @layer base {
   * { border-color: var(--color-border); }
