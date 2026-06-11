@@ -43,7 +43,7 @@ function Hero() {
   return (
     <section id="top" className="relative isolate min-h-[88vh] md:min-h-[92vh] flex items-end overflow-hidden bg-ink">
       <img
-        src={golfer}
+        src={golfer.url}
         alt="Golfer silhouette at sunset"
         width={1920}
         height={1280}
