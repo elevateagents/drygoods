@@ -163,14 +163,14 @@ function Why() {
         {/* Who it's for */}
         <div className="mt-20 grid md:grid-cols-2 gap-5">
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden group">
-            <img src={forest} alt="Forest trailhead" loading="lazy" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <img src={raceLine.url} alt="Dry Goods can at the starting line of a road race" loading="lazy" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent" />
-            <p className="absolute bottom-5 left-5 right-5 font-display font-black uppercase tracking-tight text-white text-2xl">On the trail.</p>
+            <p className="absolute bottom-5 left-5 right-5 font-display font-black uppercase tracking-tight text-white text-2xl">At the start line.</p>
           </div>
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden group">
-            <img src={pickleball} alt="Pickleball court gear" loading="lazy" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <img src={runnersBanner.url} alt="Runners in motion" loading="lazy" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent" />
-            <p className="absolute bottom-5 left-5 right-5 font-display font-black uppercase tracking-tight text-white text-2xl">On the court.</p>
+            <p className="absolute bottom-5 left-5 right-5 font-display font-black uppercase tracking-tight text-white text-2xl">Across every mile.</p>
           </div>
         </div>
 
