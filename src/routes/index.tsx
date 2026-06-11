@@ -6,10 +6,11 @@ import {
   Wind, Clock, Droplets, Sparkles, ShieldCheck, Leaf, Award, Flag,
   Star, ShoppingCart, ExternalLink, RotateCcw, CheckCircle2,
 } from "lucide-react";
-import golfer from "@/assets/golfer-silhouette.jpg";
-import productImg from "@/assets/rocks-golden-light.jpg";
-import forest from "@/assets/forest-trailhead.jpg";
-import pickleball from "@/assets/pickleball-court.jpg";
+import golfer from "@/assets/hero-golf.png.asset.json";
+import productImg from "@/assets/product-white.png.asset.json";
+import raceLine from "@/assets/race-line.png.asset.json";
+import runnersBanner from "@/assets/runners-banner.png.asset.json";
+import skinTypes from "@/assets/skin-types.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -18,9 +19,9 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "The fastest way to prevent chafing. 360° spray powder. 8–12 hrs protection. Talc Free. Dermatologist Approved. Made in USA." },
       { property: "og:title", content: "Dry Goods™ — The fastest way to prevent chafing." },
       { property: "og:description", content: "Patented spray powder. 360° valve. 8–12 hours of protection. No mess." },
-      { property: "og:image", content: golfer },
+      { property: "og:image", content: golfer.url },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: golfer },
+      { name: "twitter:image", content: golfer.url },
     ],
   }),
   component: HomePage,
@@ -31,9 +32,36 @@ function HomePage() {
     <Layout>
       <Hero />
       <Why />
+      <SkinTypes />
       <Buy />
       <Reviews />
     </Layout>
+  );
+}
+
+function SkinTypes() {
+  return (
+    <section className="bg-paper py-16 sm:py-20 md:py-24 px-5 sm:px-6 lg:px-8 border-t border-ink/5">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Whole-body protection</span>
+          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(30px,4.5vw,52px)] leading-[1] text-ink">
+            Safe on <span className="text-sky">all skin types.</span>
+          </h2>
+          <ul className="mt-6 space-y-3 text-ink/80">
+            <li>• Avoid underarm irritation</li>
+            <li>• Stop nipple &amp; bra-line chafing</li>
+            <li>• Reduce moisture under gloves</li>
+            <li>• Prevent inner thigh &amp; groin chafing</li>
+            <li>• Foot moisture &amp; odor control</li>
+            <li>• Blister prevention between toes</li>
+          </ul>
+        </div>
+        <div className="rounded-2xl overflow-hidden bg-white">
+          <img src={skinTypes.url} alt="Body diagram showing all areas Dry Goods protects" loading="lazy" className="w-full h-auto" />
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -42,7 +70,7 @@ function Hero() {
   return (
     <section id="top" className="relative isolate min-h-[88vh] md:min-h-[92vh] flex items-end overflow-hidden bg-ink">
       <img
-        src={golfer}
+        src={golfer.url}
         alt="Golfer silhouette at sunset"
         width={1920}
         height={1280}
@@ -162,14 +190,14 @@ function Why() {
         {/* Who it's for */}
         <div className="mt-20 grid md:grid-cols-2 gap-5">
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden group">
-            <img src={forest} alt="Forest trailhead" loading="lazy" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <img src={raceLine.url} alt="Dry Goods can at the starting line of a road race" loading="lazy" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent" />
-            <p className="absolute bottom-5 left-5 right-5 font-display font-black uppercase tracking-tight text-white text-2xl">On the trail.</p>
+            <p className="absolute bottom-5 left-5 right-5 font-display font-black uppercase tracking-tight text-white text-2xl">At the start line.</p>
           </div>
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden group">
-            <img src={pickleball} alt="Pickleball court gear" loading="lazy" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <img src={runnersBanner.url} alt="Runners in motion" loading="lazy" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent" />
-            <p className="absolute bottom-5 left-5 right-5 font-display font-black uppercase tracking-tight text-white text-2xl">On the court.</p>
+            <p className="absolute bottom-5 left-5 right-5 font-display font-black uppercase tracking-tight text-white text-2xl">Across every mile.</p>
           </div>
         </div>
 
@@ -218,7 +246,7 @@ function Buy() {
           {/* Product image */}
           <div className="relative aspect-square rounded-2xl overflow-hidden bg-sky-soft">
             <img
-              src={productImg}
+              src={productImg.url}
               alt="Dry Goods Athletic Spray Powder 5.4 oz can"
               width={1024}
               height={1024}
