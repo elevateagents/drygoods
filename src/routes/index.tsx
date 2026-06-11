@@ -6,10 +6,11 @@ import {
   Wind, Clock, Droplets, Sparkles, ShieldCheck, Leaf, Award, Flag,
   Star, ShoppingCart, ExternalLink, RotateCcw, CheckCircle2,
 } from "lucide-react";
-import golfer from "@/assets/golfer-silhouette.jpg";
-import productImg from "@/assets/rocks-golden-light.jpg";
-import forest from "@/assets/forest-trailhead.jpg";
-import pickleball from "@/assets/pickleball-court.jpg";
+import golfer from "@/assets/hero-golf.png.asset.json";
+import productImg from "@/assets/product-white.png.asset.json";
+import raceLine from "@/assets/race-line.png.asset.json";
+import runnersBanner from "@/assets/runners-banner.png.asset.json";
+import skinTypes from "@/assets/skin-types.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
