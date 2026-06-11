@@ -1,89 +1,20 @@
-import { Link } from "@tanstack/react-router";
-import { useState } from "react";
-
 export function Footer() {
-  const [email, setEmail] = useState("");
-  const [done, setDone] = useState(false);
   return (
-    <footer className="bg-ink text-paper pt-16 sm:pt-20 pb-10 px-5 lg:px-8 mt-16 sm:mt-24">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-12 gap-12 mb-16">
-          <div className="lg:col-span-7">
-            <h3 className="font-display text-[clamp(40px,8vw,120px)] leading-[0.85] font-black tracking-tighter uppercase">
-              DON'T <span className="stroke-text" style={{ WebkitTextStroke: "1px var(--color-paper)" }}>QUIT</span><br/>
-              ON <span className="text-ice">SWEAT.</span>
-            </h3>
-          </div>
-          <div className="lg:col-span-5 lg:pt-8">
-            <p className="font-editorial italic text-2xl mb-6 text-pretty">
-              Get drops, restocks, and the occasional uncomfortable opinion about chafing.
-            </p>
-            {done ? (
-              <p className="text-ice font-bold uppercase tracking-widest text-sm">
-                You're in. Welcome to the dry side.
-              </p>
-            ) : (
-              <form
-                onSubmit={(e) => { e.preventDefault(); if (email) setDone(true); }}
-                className="flex border-b border-paper/30 pb-2"
-              >
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="your@email.com"
-                  className="bg-transparent flex-1 outline-none placeholder:text-paper/40 py-2"
-                />
-                <button className="font-bold uppercase tracking-widest text-sm hover:text-ice transition-colors">
-                  Subscribe →
-                </button>
-              </form>
-            )}
-          </div>
+    <footer className="bg-ink text-white pt-16 pb-10 px-5 sm:px-6 lg:px-8 mt-16 sm:mt-24">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 pb-10 border-b border-white/15">
+          <a href="#top" className="font-display font-black tracking-tight text-2xl">
+            DRY<span className="text-sky">·</span>GOODS<span className="text-sky align-super text-xs">™</span>
+          </a>
+          <nav className="flex flex-wrap gap-x-8 gap-y-3 text-sm font-bold uppercase tracking-widest">
+            <a href="#buy" className="hover:text-sky">Shop</a>
+            <a href="https://www.amazon.com/dp/B003YTUWJ8" target="_blank" rel="noreferrer noopener" className="hover:text-sky">Amazon</a>
+            <a href="mailto:tim@drygoods.com" className="hover:text-sky">Contact</a>
+          </nav>
         </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 pt-12 border-t border-paper/15 text-sm">
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-steel mb-4">Shop</h4>
-            <ul className="space-y-2">
-              <li><Link to="/products/original" className="hover:text-ice">Original 5.4oz</Link></li>
-              <li><Link to="/products/original" className="hover:text-ice">Subscribe</Link></li>
-              <li><Link to="/wholesale" className="hover:text-ice">Wholesale</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-steel mb-4">Company</h4>
-            <ul className="space-y-2">
-              <li><Link to="/about" className="hover:text-ice">About</Link></li>
-              <li><Link to="/contact" className="hover:text-ice">Contact</Link></li>
-              <li><a className="hover:text-ice" href="#patent">Patent</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-steel mb-4">Support</h4>
-            <ul className="space-y-2">
-              <li><a className="hover:text-ice" href="#faq">FAQ</a></li>
-              <li><span className="text-paper/60">Returns</span></li>
-              <li><span className="text-paper/60">Shipping</span></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-steel mb-4">Contact</h4>
-            <ul className="space-y-2">
-              <li><a href="tel:3057698397" className="hover:text-ice">305-769-8397</a></li>
-              <li><a href="mailto:info@drygoods.com" className="hover:text-ice">info@drygoods.com</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-steel mb-4">Made by</h4>
-            <p className="text-paper/70">Joyce Labs LLC<br/>Raleigh, NC 27614</p>
-          </div>
-        </div>
-
-        <div className="mt-16 pt-8 border-t border-paper/15 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-[10px] uppercase tracking-[0.25em] text-steel">
-          <span>© 2026 Joyce Labs LLC · US Patent 8778406B2</span>
-          <span>Stay Dry · Destroy Friction</span>
+        <div className="pt-8 flex flex-col md:flex-row md:justify-between gap-3 text-xs text-white/60">
+          <p>© 2026 Dry Goods™ · drygoods.com</p>
+          <p className="font-editorial italic text-white/80">"No mess. No waste. Just powerful protection."</p>
         </div>
       </div>
     </footer>
