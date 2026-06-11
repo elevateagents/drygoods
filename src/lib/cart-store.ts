@@ -9,6 +9,7 @@ export const PLAN_META: Record<Plan, { label: string; price: number; sub?: strin
   weekly: { label: "Subscribe Weekly", price: 15.99, sub: "Save 20%" },
 };
 
+
 export type CartLine = {
   id: string;
   plan: Plan;
