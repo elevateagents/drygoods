@@ -122,10 +122,11 @@ export function CartDrawer() {
                   <span className="font-bold">${total.toFixed(2)}</span>
                 </div>
                 <button
-                  onClick={checkout}
-                  className="w-full bg-ice text-ink py-4 font-display font-black uppercase tracking-tight text-lg border-2 border-ink hover:bg-ink hover:text-ice transition-colors"
+                  onClick={handleCheckout}
+                  disabled={busy || !checkoutUrl}
+                  className="w-full bg-ice text-ink py-4 font-display font-black uppercase tracking-tight text-lg border-2 border-ink hover:bg-ink hover:text-ice transition-colors disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
                 >
-                  Checkout →
+                  {busy ? <Loader2 className="size-5 animate-spin" /> : <>Checkout →</>}
                 </button>
                 <p className="text-[10px] uppercase tracking-widest text-steel text-center">
                   Shipping & taxes calculated at checkout
