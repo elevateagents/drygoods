@@ -1,22 +1,30 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { X, Minus, Plus } from "lucide-react";
+import { X, Minus, Plus, Loader2 } from "lucide-react";
+import { useEffect } from "react";
 import { useCart, PLAN_META } from "@/lib/cart-store";
 import canHero from "@/assets/can-hero.png";
 
 const FREE_SHIP = 35;
 
 export function CartDrawer() {
-  const { open, setOpen, lines, setQty, remove, subtotal } = useCart();
+  const { open, setOpen, lines, setQty, remove, subtotal, checkout, checkoutUrl, isLoading, isSyncing, syncCart } = useCart();
   const total = subtotal();
   const remaining = Math.max(0, FREE_SHIP - total);
   const progress = Math.min(100, (total / FREE_SHIP) * 100);
 
-  const checkout = () => {
-    // Stub: in production redirect to cart.checkoutUrl from Shopify Storefront API
-    window.alert(
-      "Checkout would redirect to Shopify hosted checkout (cart.checkoutUrl). Wire up SHOPIFY_STORE_DOMAIN + SHOPIFY_STOREFRONT_TOKEN to enable."
-    );
+  useEffect(() => {
+    if (open) void syncCart();
+  }, [open, syncCart]);
+
+  const handleCheckout = () => {
+    if (!checkoutUrl) {
+      void syncCart();
+      return;
+    }
+    checkout();
+    setOpen(false);
   };
+  const busy = isLoading || isSyncing;
 
   return (
     <AnimatePresence>
@@ -114,10 +122,11 @@ export function CartDrawer() {
                   <span className="font-bold">${total.toFixed(2)}</span>
                 </div>
                 <button
-                  onClick={checkout}
-                  className="w-full bg-ice text-ink py-4 font-display font-black uppercase tracking-tight text-lg border-2 border-ink hover:bg-ink hover:text-ice transition-colors"
+                  onClick={handleCheckout}
+                  disabled={busy || !checkoutUrl}
+                  className="w-full bg-ice text-ink py-4 font-display font-black uppercase tracking-tight text-lg border-2 border-ink hover:bg-ink hover:text-ice transition-colors disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
                 >
-                  Checkout →
+                  {busy ? <Loader2 className="size-5 animate-spin" /> : <>Checkout →</>}
                 </button>
                 <p className="text-[10px] uppercase tracking-widest text-steel text-center">
                   Shipping & taxes calculated at checkout
