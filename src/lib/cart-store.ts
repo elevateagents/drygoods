@@ -46,7 +46,7 @@ export const useCart = create<CartState>()(
             id,
             plan,
             qty,
-            title: "Dry Goods Original 5.4 oz",
+            title: "Dry Goods™ Athletic Spray Powder · 5.4 oz",
             price: meta.price,
           });
         set({ lines, open: true });
