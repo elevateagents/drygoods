@@ -32,9 +32,36 @@ function HomePage() {
     <Layout>
       <Hero />
       <Why />
+      <SkinTypes />
       <Buy />
       <Reviews />
     </Layout>
+  );
+}
+
+function SkinTypes() {
+  return (
+    <section className="bg-paper py-16 sm:py-20 md:py-24 px-5 sm:px-6 lg:px-8 border-t border-ink/5">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Whole-body protection</span>
+          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(30px,4.5vw,52px)] leading-[1] text-ink">
+            Safe on <span className="text-sky">all skin types.</span>
+          </h2>
+          <ul className="mt-6 space-y-3 text-ink/80">
+            <li>• Avoid underarm irritation</li>
+            <li>• Stop nipple &amp; bra-line chafing</li>
+            <li>• Reduce moisture under gloves</li>
+            <li>• Prevent inner thigh &amp; groin chafing</li>
+            <li>• Foot moisture &amp; odor control</li>
+            <li>• Blister prevention between toes</li>
+          </ul>
+        </div>
+        <div className="rounded-2xl overflow-hidden bg-white">
+          <img src={skinTypes.url} alt="Body diagram showing all areas Dry Goods protects" loading="lazy" className="w-full h-auto" />
+        </div>
+      </div>
+    </section>
   );
 }
 
