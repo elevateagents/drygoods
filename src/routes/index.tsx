@@ -219,7 +219,7 @@ function Buy() {
           {/* Product image */}
           <div className="relative aspect-square rounded-2xl overflow-hidden bg-sky-soft">
             <img
-              src={productImg}
+              src={productImg.url}
               alt="Dry Goods Athletic Spray Powder 5.4 oz can"
               width={1024}
               height={1024}
