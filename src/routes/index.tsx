@@ -13,6 +13,12 @@ import productImg from "@/assets/product-white.png.asset.json";
 import raceLine from "@/assets/race-line.png.asset.json";
 import runnersBanner from "@/assets/runners-banner.png.asset.json";
 import skinTypes from "@/assets/skin-types.png.asset.json";
+import aboutBenefits from "@/assets/about-benefits.png.asset.json";
+import aboutBooth from "@/assets/about-booth.jpg.asset.json";
+import aboutTargeted from "@/assets/about-targeted.png.asset.json";
+import aboutUpsideDown from "@/assets/about-upsidedown.png.asset.json";
+import aboutLongLasting from "@/assets/about-longlasting.png.asset.json";
+import aboutShare from "@/assets/about-share.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -247,23 +253,86 @@ function Benefits() {
 
 /* ---------------------------------- ABOUT --------------------------------- */
 function About() {
+  const gallery = [
+    { src: aboutBenefits.url, alt: "Athlete with Dry Goods spray showing benefits" },
+    { src: aboutTargeted.url, alt: "Targeted application without the mess" },
+    { src: aboutUpsideDown.url, alt: "Sprayable upside down" },
+    { src: aboutLongLasting.url, alt: "Long lasting protection" },
+    { src: aboutShare.url, alt: "Share the goods" },
+    { src: aboutBooth.url, alt: "Dry Goods athletes at trade show booth" },
+  ];
   return (
-    <section className="bg-paper py-20 sm:py-24 px-5 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto text-center">
-        <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">About Dry Goods™</span>
-        <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(28px,4.5vw,48px)] leading-[1.05] text-ink">
-          Keeps skin dry. Prevents blisters &amp; chafing during athletic activities.
-        </h2>
-        <p className="mt-6 text-lg text-ink/75 leading-relaxed">
-          Athletes push their limits, and Dry Goods™ Athletic Spray Powder is built to keep up.
-          Designed to combat sweat, moisture, and friction, our advanced formula delivers long-lasting
-          dryness and all-day comfort.
-        </p>
-        <p className="mt-4 text-lg text-ink/75 leading-relaxed">
-          Whether you're on the field, in the gym, or pushing through intense training, Dry Goods™ helps
-          you stay cool, dry, and performing at your best. No mess, no residue — just powerful protection
-          when you need it most. Try it once, and you'll never train without it.
-        </p>
+    <section id="about" className="bg-paper py-20 sm:py-24 px-5 sm:px-6 lg:px-8 scroll-mt-16">
+      <div className="max-w-6xl mx-auto">
+        <div className="max-w-4xl mx-auto text-center">
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">About Us</span>
+          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(28px,4.5vw,48px)] leading-[1.05] text-ink">
+            Keeps skin dry. Prevents blisters &amp; chafing during athletic activities.
+          </h2>
+          <p className="mt-6 text-lg text-ink/75 leading-relaxed">
+            Athletes push their limits, and Dry Goods™ Athletic Spray Powder is built to keep up.
+            Designed to combat sweat, moisture, and friction, our advanced formula delivers long-lasting
+            dryness and all-day comfort.
+          </p>
+          <p className="mt-4 text-lg text-ink/75 leading-relaxed">
+            Whether you're on the field, in the gym, or pushing through intense training, Dry Goods™ helps
+            you stay cool, dry, and performing at your best. No mess, no residue — just powerful protection
+            when you need it most. Try it once, and you'll never train without it.
+          </p>
+        </div>
+
+        {/* Image gallery */}
+        <div className="mt-14 grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5">
+          {gallery.map((g) => (
+            <div key={g.src} className="aspect-square overflow-hidden rounded-2xl bg-white">
+              <img src={g.src} alt={g.alt} loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+            </div>
+          ))}
+        </div>
+
+        {/* Story */}
+        <div className="mt-16 grid md:grid-cols-2 gap-10 lg:gap-16 max-w-5xl mx-auto">
+          <div>
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">How it all began</span>
+            <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(24px,3.5vw,36px)] leading-[1.05] text-ink">
+              Born out of a real need.
+            </h3>
+            <p className="mt-5 text-ink/75 leading-relaxed">
+              Like all revolutionary products, Dry Goods™ was born out of a real need.
+            </p>
+            <p className="mt-4 text-ink/75 leading-relaxed">
+              Tim Joyce was a champion rower in college. Practicing at 5 a.m. every morning taught him a
+              lot about perseverance and athletic discipline… it also taught him that "dump-on" powder
+              didn't work. Tim had spent way too many workouts wet, chafed and uncomfortable. He knew
+              that if he were suffering, so were millions of other people.
+            </p>
+            <p className="mt-4 text-ink/75 leading-relaxed">
+              After years of product testing (always on athletes, never animals) Dry Goods™ was launched.
+              What started as a cult product in 2010 with a small legion of devoted fans has steadily
+              grown for the past decade.
+            </p>
+          </div>
+          <div>
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Why we are better</span>
+            <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(24px,3.5vw,36px)] leading-[1.05] text-ink">
+              Built for the most strenuous conditions.
+            </h3>
+            <p className="mt-5 text-ink/75 leading-relaxed">
+              Most people are familiar with our competition. They know it by powder clouds, powder
+              pancakes, or sticks that make your skin…sticky. And they know it by chafe marks and
+              blisters when the product failed them.
+            </p>
+            <p className="mt-4 text-ink/75 leading-relaxed">
+              As opposed to the competition — who targets the casual user — Dry Goods™ was designed to
+              be durable under the most strenuous athletic conditions and with endurance in mind from
+              the start.
+            </p>
+            <p className="mt-4 text-ink/75 leading-relaxed">
+              Funny enough, shortly after gaining traction a major powder competitor immediately tried
+              to recreate our spray product, but Dry Goods™ outperformed theirs — and still does today.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
