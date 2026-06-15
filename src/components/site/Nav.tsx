@@ -14,7 +14,9 @@ const sections = [
 export function Nav() {
   const { setOpen, count } = useCart();
   const [menu, setMenu] = useState(false);
-  const c = count();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
+  const c = mounted ? count() : 0;
 
   useEffect(() => {
     document.body.style.overflow = menu ? "hidden" : "";
