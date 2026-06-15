@@ -60,16 +60,15 @@ function Hero() {
           aria-hidden="true"
           className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/50 to-ink/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/55 to-ink/10" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-32 grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
-        {/* Text */}
+      <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 py-24 md:py-32 lg:py-40 min-h-[80vh] flex flex-col justify-end">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
-          className="text-center md:text-left"
+          className="text-center mx-auto max-w-3xl"
         >
           <span className="inline-block px-3 py-1 bg-sky text-white text-[11px] font-bold uppercase tracking-[0.2em] rounded-full mb-5">
             New · Patented Formula
@@ -80,11 +79,11 @@ function Hero() {
           <p className="mt-5 text-lg sm:text-xl font-bold text-white/95">
             Never miss another workout.
           </p>
-          <p className="mt-4 text-base sm:text-lg text-white/80 max-w-xl mx-auto md:mx-0 leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-white/85 max-w-xl mx-auto leading-relaxed">
             Dry Goods™ stops chafing and blisters in seconds with one spray. No mess. No residue.
             8–12 hours of protection.
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center md:justify-start gap-4">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <button
               onClick={() => add("onetime", 1)}
               className="inline-flex items-center gap-2 bg-sky hover:bg-sky-deep transition-colors text-white px-8 py-4 font-bold text-base uppercase tracking-widest rounded-full shadow-lg shadow-sky/30"
@@ -95,27 +94,13 @@ function Hero() {
               See Details →
             </a>
           </div>
-          <div className="mt-6 flex items-center justify-center md:justify-start gap-2 text-sm text-white/80">
+          <div className="mt-6 flex items-center justify-center gap-2 text-sm text-white/80">
             <Stars />
             <span className="font-semibold">Trusted by athletes since day one</span>
           </div>
         </motion.div>
-
-        {/* Product image — visible, not hidden */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.15, ease: [0.32, 0.72, 0, 1] }}
-          className="relative mx-auto w-full max-w-md md:max-w-none"
-        >
-          <div className="absolute inset-0 -m-6 bg-sky/20 blur-3xl rounded-full" />
-          <img
-            src={productImg.url}
-            alt="Dry Goods™ Athletic Spray Powder 5.4 oz can"
-            className="relative w-full h-auto drop-shadow-2xl"
-          />
-        </motion.div>
       </div>
+
     </section>
   );
 }
