@@ -298,6 +298,13 @@ function SkinTypes() {
 /* ----------------------------------- BUY ---------------------------------- */
 function Buy() {
   const { add } = useCart();
+  const [plan, setPlan] = useState<"onetime" | "weekly" | "monthly">("onetime");
+  const PLANS = [
+    { id: "onetime" as const, label: "One-time purchase", price: 19.99, sub: null as string | null, save: null as string | null },
+    { id: "weekly" as const, label: "Weekly Subscription", price: 15.99, sub: "every week until canceled", save: "Save 20%" },
+    { id: "monthly" as const, label: "Monthly Subscription", price: 16.99, sub: "every month until canceled", save: "Save 15%" },
+  ];
+  const selected = PLANS.find(p => p.id === plan)!;
   const bullets = [
     "Patented 360° spray-to-powder formula",
     "8–12 hours of chafe & blister protection",
