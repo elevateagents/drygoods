@@ -24,16 +24,47 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Dry Goods™ Athletic Spray Powder — Stop Chafing & Blisters" },
-      { name: "description", content: "The fastest way to prevent chafing. 360° spray powder. 8–12 hrs protection. Talc Free. Dermatologist Approved. Made in USA." },
+      { name: "description", content: "The fastest way to prevent chafing. Patented 360° spray-to-powder. 8–12 hrs protection. Talc Free. Dermatologist Approved. Made in USA." },
+      { name: "keywords", content: "anti chafing spray, athletic powder, spray powder, prevent blisters, prevent chafing, dry goods, talc free powder, athletes spray" },
       { property: "og:title", content: "Dry Goods™ — The fastest way to prevent chafing." },
       { property: "og:description", content: "Patented spray powder. 360° valve. 8–12 hours of protection. No mess." },
+      { property: "og:type", content: "product" },
+      { property: "og:url", content: "https://drygoods.lovable.app/" },
       { property: "og:image", content: productImg.url },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Dry Goods™ — The fastest way to prevent chafing." },
+      { name: "twitter:description", content: "Patented spray powder. 360° valve. 8–12 hours of protection. No mess." },
       { name: "twitter:image", content: productImg.url },
+    ],
+    links: [
+      { rel: "canonical", href: "https://drygoods.lovable.app/" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: "Dry Goods™ Athletic Spray Powder",
+          description: "Patented 360° spray-to-powder. Prevents chafing and blisters for 8–12 hours. Talc-free, dermatologist approved, made in USA.",
+          brand: { "@type": "Brand", name: "Dry Goods" },
+          image: [productImg.url],
+          sku: "DG-5.4OZ",
+          aggregateRating: { "@type": "AggregateRating", ratingValue: "5", reviewCount: "200" },
+          offers: {
+            "@type": "Offer",
+            url: "https://drygoods.lovable.app/#buy",
+            priceCurrency: "USD",
+            price: "19.99",
+            availability: "https://schema.org/InStock",
+          },
+        }),
+      },
     ],
   }),
   component: HomePage,
 });
+
 
 function HomePage() {
   return (
@@ -333,10 +364,57 @@ function About() {
             </p>
           </div>
         </div>
+
+        {/* CTA — choose plan, go straight to cart */}
+        <AboutCTA />
       </div>
     </section>
   );
 }
+
+function AboutCTA() {
+  const { add, setOpen } = useCart();
+  const PLANS = [
+    { id: "onetime" as const, label: "One-time purchase", price: 19.99, sub: "Try it once", save: null as string | null },
+    { id: "weekly" as const, label: "Weekly Subscription", price: 15.99, sub: "Every week · cancel anytime", save: "Save 20%" },
+    { id: "monthly" as const, label: "Monthly Subscription", price: 16.99, sub: "Every month · cancel anytime", save: "Save 15%" },
+  ];
+  const choose = (id: "onetime" | "weekly" | "monthly") => {
+    add(id, 1);
+    setOpen(true);
+  };
+  return (
+    <div className="mt-16 max-w-4xl mx-auto rounded-3xl bg-ink text-white p-8 sm:p-10 lg:p-12 text-center shadow-xl shadow-ink/20">
+      <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Ready to stay dry?</span>
+      <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(24px,4vw,40px)] leading-[1.05]">
+        Pick your plan. We'll handle the rest.
+      </h3>
+      <p className="mt-4 text-white/75 max-w-xl mx-auto">
+        One-time or subscribe and save — add to cart in one tap.
+      </p>
+      <div className="mt-8 grid sm:grid-cols-3 gap-3 sm:gap-4 text-left">
+        {PLANS.map(p => (
+          <button
+            key={p.id}
+            onClick={() => choose(p.id)}
+            className="group relative rounded-2xl bg-white/5 border border-white/15 hover:border-sky hover:bg-white/10 transition-colors p-5 flex flex-col"
+          >
+            {p.save && (
+              <span className="absolute -top-2 right-4 bg-sky text-white text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-full">{p.save}</span>
+            )}
+            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/60">{p.label}</span>
+            <span className="mt-3 font-display font-black text-3xl">${p.price.toFixed(2)}</span>
+            <span className="mt-1 text-xs text-white/60">{p.sub}</span>
+            <span className="mt-5 inline-flex items-center justify-center gap-2 bg-sky group-hover:bg-sky-deep transition-colors text-white px-4 py-2.5 font-bold text-xs uppercase tracking-widest rounded-full">
+              Add to cart <ShoppingCart className="size-3.5" />
+            </span>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 
 function SkinTypes() {
   return (
