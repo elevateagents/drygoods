@@ -344,7 +344,7 @@ function Buy() {
             </h3>
             <p className="mt-2 text-ink/70">5.4 oz · The fastest way to prevent chafing.</p>
             <div className="mt-5 flex items-baseline gap-3">
-              <span className="font-display font-black text-5xl text-ink">$19.99</span>
+              <span className="font-display font-black text-5xl text-ink">${selected.price.toFixed(2)}</span>
               <span className="text-sm text-ink/60">Free shipping over $35</span>
             </div>
             <ul className="mt-6 space-y-2.5">
@@ -355,15 +355,42 @@ function Buy() {
                 </li>
               ))}
             </ul>
-            <div className="mt-7 space-y-3">
-              <button onClick={() => add("onetime", 1)} className="w-full inline-flex items-center justify-center gap-2 bg-sky hover:bg-sky-deep transition-colors text-white py-5 text-base font-bold uppercase tracking-widest rounded-full shadow-lg shadow-sky/30 active:scale-[0.99]">
+            <div className="mt-6 space-y-2.5">
+              {PLANS.map(p => {
+                const active = plan === p.id;
+                return (
+                  <button
+                    key={p.id}
+                    onClick={() => setPlan(p.id)}
+                    className={`w-full text-left rounded-2xl border-2 px-4 py-3.5 transition-colors ${active ? "border-sky bg-sky-soft/60" : "border-ink/15 bg-white hover:border-ink/40"}`}
+                  >
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="flex items-center gap-3">
+                        <span className={`size-4 rounded-full border-2 ${active ? "border-sky bg-sky" : "border-ink/30"}`} />
+                        <div>
+                          <div className="font-bold text-ink text-sm">{p.label}</div>
+                          {p.sub && <div className="text-[11px] text-ink/60">{p.sub}</div>}
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <div className="font-display font-black text-ink">${p.price.toFixed(2)}</div>
+                        {p.save && <div className="text-[10px] font-bold uppercase tracking-widest text-sky">{p.save}</div>}
+                      </div>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+            <div className="mt-5 space-y-3">
+              <button onClick={() => add(plan, 1)} className="w-full inline-flex items-center justify-center gap-2 bg-sky hover:bg-sky-deep transition-colors text-white py-5 text-base font-bold uppercase tracking-widest rounded-full shadow-lg shadow-sky/30 active:scale-[0.99]">
                 <ShoppingCart className="size-5" />
-                Add to Cart — $19.99
+                Add to Cart — ${selected.price.toFixed(2)}
               </button>
               <a href="https://www.amazon.com/dp/B003YTUWJ8" target="_blank" rel="noreferrer noopener" className="w-full inline-flex items-center justify-center gap-2 border-2 border-ink/80 text-ink hover:bg-ink hover:text-white transition-colors py-4 text-sm font-bold uppercase tracking-widest rounded-full">
                 Also on Amazon <ExternalLink className="size-4" />
               </a>
             </div>
+
           </div>
         </div>
 
