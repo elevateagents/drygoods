@@ -13,11 +13,11 @@ export default function AmazonReviewsSection() {
 
   return (
     <section
-      id="amazon-reviews"
-      className="bg-white py-20 sm:py-24 md:py-32 px-5 sm:px-6 lg:px-8"
+      id="reviews"
+      className="bg-paper py-20 sm:py-24 md:py-32 px-5 sm:px-6 lg:px-8"
     >
       <div className="max-w-6xl mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+        <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">
             Amazon Reviews
           </span>
@@ -29,7 +29,7 @@ export default function AmazonReviewsSection() {
           </p>
         </div>
 
-        <div className="bg-paper border border-ink/10 rounded-2xl p-4 sm:p-6 md:p-8 overflow-hidden">
+        <div className="bg-white border border-ink/10 rounded-2xl p-4 sm:p-6 md:p-8 hover:border-sky hover:shadow-xl hover:shadow-sky/10 transition-all overflow-hidden">
           <div className="elfsight-app-ac7d1b96-f589-41c9-bc4c-d318faa011fb" data-elfsight-app-lazy />
         </div>
       </div>
