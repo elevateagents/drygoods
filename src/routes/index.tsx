@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Layout } from "@/components/site/Layout";
+import AmazonReviewsSection from "@/components/site/AmazonReviewsSection";
 import { useCart } from "@/lib/cart-store";
 import {
   Wind, Clock, Droplets, Sparkles, ShieldCheck, Leaf, Award, Flag,
