@@ -24,7 +24,7 @@ export function Nav() {
   }, [menu]);
 
   return (
-    <nav className="sticky top-0 z-40 bg-paper/90 backdrop-blur-md border-b border-ink/10">
+    <nav className="fixed top-0 inset-x-0 z-50 bg-paper/90 backdrop-blur-md border-b border-ink/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
         <Link to="/" onClick={() => setMenu(false)} className="flex items-center gap-2 shrink-0" aria-label="Dry Goods home">
           <img src={logo.url} alt="Dry Goods" className="h-9 w-auto" />
