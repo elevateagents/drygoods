@@ -77,7 +77,6 @@ function HomePage() {
       <About />
       <SkinTypes />
       <Buy />
-      <Reviews />
       <AmazonReviewsSection />
       <Ingredients />
       <FAQ />
