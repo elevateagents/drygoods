@@ -566,9 +566,10 @@ function Ingredients() {
       <div className="max-w-4xl mx-auto">
         <div>
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Product details</span>
-          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(28px,4.5vw,48px)] leading-[1]">
+          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(22px,4.5vw,48px)] leading-[1.05] break-words hyphens-auto">
             Patented. <span className="text-sky">Talc-free.</span> Dermatologist approved.
           </h2>
+
           <p className="mt-5 text-white/75 leading-relaxed">
             Dry Goods™ is built on a US-patented spray-to-powder mechanism that delivers an ultra-fine
             mist that dries instantly on skin. Every can is formulated and assembled in the USA.
