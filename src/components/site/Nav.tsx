@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ShoppingBag, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useCart } from "@/lib/cart-store";
-import logo from "@/assets/logo.png.asset.json";
+import logo from "@/assets/logo-dg.png.asset.json";
 
 const sections = [
   { href: "#why", label: "Why" },
