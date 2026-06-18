@@ -570,6 +570,131 @@ function Buy() {
   );
 }
 
+/* ------------------------------ SUBSCRIBE -------------------------------- */
+function Subscribe() {
+  const plans = [
+    {
+      id: "onetime",
+      name: "One-Time Purchase",
+      desc: "Try it once. No commitment. Ships when you order.",
+      price: "$19.99",
+      cadence: "one-time",
+      cta: "Buy Once",
+      url: "[SHOPIFY_ONE_TIME_PRODUCT_URL]",
+      benefits: [
+        "Single 5.4 oz can",
+        "No subscription required",
+        "Free shipping over $35",
+      ],
+      featured: false,
+    },
+    {
+      id: "monthly",
+      name: "Monthly Subscription",
+      desc: "Best for daily athletes. Never run out mid-season.",
+      price: "$16.99",
+      cadence: "/month · Save 15%",
+      cta: "Subscribe Monthly",
+      url: "[SHOPIFY_MONTHLY_SUBSCRIPTION_URL]",
+      benefits: [
+        "Auto-delivered every month",
+        "Save 15% on every can",
+        "Free shipping, always",
+        "Pause or cancel anytime",
+      ],
+      featured: true,
+    },
+    {
+      id: "bimonthly",
+      name: "Every 2 Months",
+      desc: "For weekend warriors who want steady backup.",
+      price: "$17.99",
+      cadence: "/2 months · Save 10%",
+      cta: "Subscribe Every 2 Months",
+      url: "[SHOPIFY_EVERY_2_MONTHS_URL]",
+      benefits: [
+        "Auto-delivered every 8 weeks",
+        "Save 10% on every can",
+        "Free shipping, always",
+        "Pause or cancel anytime",
+      ],
+      featured: false,
+    },
+  ];
+
+  return (
+    <section id="subscribe" className="bg-paper py-20 sm:py-24 md:py-32 px-5 sm:px-6 lg:px-8 scroll-mt-16 border-t border-ink/5">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Subscribe & Save</span>
+          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(32px,5vw,56px)] leading-[1] text-ink">
+            Subscribe <span className="text-sky">& Save.</span>
+          </h2>
+          <p className="mt-4 text-ink/70 text-base sm:text-lg">
+            Buy once or stay stocked on autopilot. Pick a one-time can or a recurring delivery — your skin's covered either way.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+          {plans.map((p) => (
+            <div
+              key={p.id}
+              className={`group relative flex flex-col rounded-3xl p-7 sm:p-8 border-2 transition-all duration-300 hover:-translate-y-1 ${
+                p.featured
+                  ? "bg-ink text-white border-ink shadow-xl shadow-ink/20 hover:shadow-2xl hover:shadow-ink/30"
+                  : "bg-white text-ink border-ink/10 hover:border-sky hover:shadow-xl hover:shadow-sky/10"
+              }`}
+            >
+              {p.featured && (
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-sky text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">
+                  Most Popular
+                </span>
+              )}
+              <h3 className={`font-display font-black uppercase tracking-tight text-2xl ${p.featured ? "text-white" : "text-ink"}`}>
+                {p.name}
+              </h3>
+              <p className={`mt-2 text-sm ${p.featured ? "text-white/70" : "text-ink/60"}`}>{p.desc}</p>
+
+              <div className="mt-6 flex items-baseline gap-2">
+                <span className={`font-display font-black text-5xl ${p.featured ? "text-white" : "text-ink"}`}>{p.price}</span>
+                <span className={`text-xs font-semibold uppercase tracking-widest ${p.featured ? "text-sky" : "text-ink/50"}`}>
+                  {p.cadence}
+                </span>
+              </div>
+
+              <ul className="mt-6 space-y-2.5 flex-1">
+                {p.benefits.map((b) => (
+                  <li key={b} className={`flex items-start gap-2.5 text-sm ${p.featured ? "text-white/85" : "text-ink/80"}`}>
+                    <CheckCircle2 className={`size-5 shrink-0 mt-0.5 ${p.featured ? "text-sky" : "text-sky"}`} />
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href={p.url}
+                target="_blank"
+                rel="noreferrer noopener"
+                className={`mt-7 inline-flex items-center justify-center gap-2 py-4 text-sm font-bold uppercase tracking-widest rounded-full transition-colors ${
+                  p.featured
+                    ? "bg-sky hover:bg-sky-deep text-white shadow-lg shadow-sky/30"
+                    : "border-2 border-ink/80 text-ink hover:bg-ink hover:text-white"
+                }`}
+              >
+                {p.cta}
+              </a>
+            </div>
+          ))}
+        </div>
+
+        <p className="mt-10 text-center text-xs sm:text-sm text-ink/60 max-w-2xl mx-auto">
+          Subscriptions are managed securely through Shopify. You can update, pause, or cancel your subscription through your customer account.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 /* --------------------------------- REVIEWS -------------------------------- */
 function Reviews() {
   const reviews = [
