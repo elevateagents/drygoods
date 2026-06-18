@@ -19,8 +19,8 @@ function Contact() {
       <section className="px-5 md:px-6 lg:px-8 pt-16 pb-24">
         <div className="max-w-5xl mx-auto grid md:grid-cols-12 gap-10 md:gap-12">
           <div className="md:col-span-6">
-            <h1 className="font-display text-[clamp(56px,11vw,140px)] font-black uppercase leading-[0.85] tracking-tighter">
-              We answer<br/>the <span className="text-heat italic font-editorial font-normal">phone.</span>
+            <h1 className="font-display text-[clamp(40px,8vw,96px)] font-black uppercase leading-[0.9] tracking-tight break-words">
+              We answer the <span className="text-heat italic font-editorial font-normal">phone.</span>
             </h1>
             <ul className="mt-10 space-y-5">
               <li>
