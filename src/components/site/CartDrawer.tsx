@@ -7,7 +7,7 @@ import canHero from "@/assets/can-hero.png";
 const FREE_SHIP = 35;
 
 export function CartDrawer() {
-  const { open, setOpen, lines, setQty, remove, subtotal, checkout, checkoutUrl, isLoading, isSyncing, syncCart } = useCart();
+  const { open, setOpen, lines, setQty, remove, subtotal, checkoutUrl, isLoading, isSyncing, syncCart } = useCart();
   const total = subtotal();
   const remaining = Math.max(0, FREE_SHIP - total);
   const progress = Math.min(100, (total / FREE_SHIP) * 100);
@@ -16,14 +16,6 @@ export function CartDrawer() {
     if (open) void syncCart();
   }, [open, syncCart]);
 
-  const handleCheckout = () => {
-    if (!checkoutUrl) {
-      void syncCart();
-      return;
-    }
-    checkout();
-    setOpen(false);
-  };
   const busy = isLoading || isSyncing;
 
   return (
@@ -121,13 +113,26 @@ export function CartDrawer() {
                   <span className="uppercase tracking-widest font-semibold">Subtotal</span>
                   <span className="font-bold">${total.toFixed(2)}</span>
                 </div>
-                <button
-                  onClick={handleCheckout}
-                  disabled={busy || !checkoutUrl}
-                  className="w-full bg-ice text-ink py-4 font-display font-black uppercase tracking-tight text-lg border-2 border-ink hover:bg-ink hover:text-ice transition-colors disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
-                >
-                  {busy ? <Loader2 className="size-5 animate-spin" /> : <>Checkout →</>}
-                </button>
+                {checkoutUrl && !busy ? (
+                  <a
+                    href={checkoutUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setOpen(false)}
+                    className="w-full bg-ice text-ink py-4 font-display font-black uppercase tracking-tight text-lg border-2 border-ink hover:bg-ink hover:text-ice transition-colors inline-flex items-center justify-center gap-2"
+                  >
+                    Checkout →
+                  </a>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => void syncCart()}
+                    disabled={busy}
+                    className="w-full bg-ice text-ink py-4 font-display font-black uppercase tracking-tight text-lg border-2 border-ink hover:bg-ink hover:text-ice transition-colors disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
+                  >
+                    <Loader2 className="size-5 animate-spin" />
+                  </button>
+                )}
                 <p className="text-[10px] uppercase tracking-widest text-steel text-center">
                   Shipping & taxes calculated at checkout
                 </p>
