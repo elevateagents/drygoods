@@ -75,7 +75,7 @@ export function Nav() {
               </li>
             ))}
             <li className="px-6 py-6">
-              <a href="#buy" onClick={() => setMenu(false)} className="block text-center bg-sky text-white py-4 font-bold uppercase tracking-widest rounded-full">
+              <a href="/#buy" onClick={() => setMenu(false)} className="block text-center bg-sky text-white py-4 font-bold uppercase tracking-widest rounded-full">
                 Shop Now
               </a>
             </li>
