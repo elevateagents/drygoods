@@ -8,7 +8,7 @@ const sections = [
   { href: "#why", label: "Why" },
   { href: "#buy", label: "Shop" },
   { href: "#reviews", label: "Reviews" },
-  { href: "mailto:tim@drygoods.com", label: "Contact" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function Nav() {
