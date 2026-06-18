@@ -5,9 +5,9 @@ import { useCart } from "@/lib/cart-store";
 import logo from "@/assets/logo-dg.png.asset.json";
 
 const sections = [
-  { href: "#why", label: "Why" },
-  { href: "#buy", label: "Shop" },
-  { href: "#reviews", label: "Reviews" },
+  { href: "/#why", label: "Why" },
+  { href: "/#buy", label: "Shop" },
+  { href: "/#reviews", label: "Reviews" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -36,7 +36,7 @@ export function Nav() {
         </div>
         <div className="flex items-center gap-2">
           <a
-            href="#buy"
+            href="/#buy"
             className="hidden sm:inline-flex items-center bg-sky text-white px-4 py-2.5 text-xs font-bold uppercase tracking-widest hover:bg-sky-deep transition-colors rounded-full"
           >
             Shop Now
@@ -75,7 +75,7 @@ export function Nav() {
               </li>
             ))}
             <li className="px-6 py-6">
-              <a href="#buy" onClick={() => setMenu(false)} className="block text-center bg-sky text-white py-4 font-bold uppercase tracking-widest rounded-full">
+              <a href="/#buy" onClick={() => setMenu(false)} className="block text-center bg-sky text-white py-4 font-bold uppercase tracking-widest rounded-full">
                 Shop Now
               </a>
             </li>
