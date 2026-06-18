@@ -36,7 +36,7 @@ export function Nav() {
         </div>
         <div className="flex items-center gap-2">
           <a
-            href="#buy"
+            href="/#buy"
             className="hidden sm:inline-flex items-center bg-sky text-white px-4 py-2.5 text-xs font-bold uppercase tracking-widest hover:bg-sky-deep transition-colors rounded-full"
           >
             Shop Now
