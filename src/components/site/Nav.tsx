@@ -5,9 +5,9 @@ import { useCart } from "@/lib/cart-store";
 import logo from "@/assets/logo-dg.png.asset.json";
 
 const sections = [
-  { href: "#why", label: "Why" },
-  { href: "#buy", label: "Shop" },
-  { href: "#reviews", label: "Reviews" },
+  { href: "/#why", label: "Why" },
+  { href: "/#buy", label: "Shop" },
+  { href: "/#reviews", label: "Reviews" },
   { href: "/contact", label: "Contact" },
 ];
 
