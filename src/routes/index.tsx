@@ -563,7 +563,7 @@ function Reviews() {
 function Ingredients() {
   return (
     <section className="bg-ink text-white py-20 sm:py-24 px-5 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <div className="max-w-4xl mx-auto">
         <div>
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Product details</span>
           <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(28px,4.5vw,48px)] leading-[1]">
@@ -592,9 +592,7 @@ function Ingredients() {
             </div>
           </dl>
         </div>
-        <div className="relative aspect-square rounded-2xl overflow-hidden bg-white/5">
-          <img src={productImg.url} alt="Dry Goods™ 5.4 oz can" loading="lazy" className="w-full h-full object-cover" />
-        </div>
+
       </div>
     </section>
   );
