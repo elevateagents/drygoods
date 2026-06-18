@@ -77,7 +77,6 @@ function HomePage() {
       <About />
       <SkinTypes />
       <Buy />
-      <Subscribe />
       <AmazonReviewsSection />
       <Ingredients />
       <FAQ />
@@ -376,42 +375,30 @@ function About() {
 
 function AboutCTA() {
   const { add, setOpen } = useCart();
-  const PLANS = [
-    { id: "onetime" as const, label: "One-time purchase", price: 19.99, sub: "Try it once", save: null as string | null },
-    { id: "weekly" as const, label: "Weekly Subscription", price: 15.99, sub: "Every week · cancel anytime", save: "Save 20%" },
-    { id: "monthly" as const, label: "Monthly Subscription", price: 16.99, sub: "Every month · cancel anytime", save: "Save 15%" },
-  ];
-  const choose = (id: "onetime" | "weekly" | "monthly") => {
-    add(id, 1);
+  const handleAdd = () => {
+    void add("onetime", 1);
     setOpen(true);
   };
   return (
-    <div className="mt-16 max-w-4xl mx-auto rounded-3xl bg-ink text-white p-8 sm:p-10 lg:p-12 text-center shadow-xl shadow-ink/20">
+    <div className="mt-16 max-w-3xl mx-auto rounded-3xl bg-ink text-white p-8 sm:p-10 lg:p-12 text-center shadow-xl shadow-ink/20">
       <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Ready to stay dry?</span>
       <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(24px,4vw,40px)] leading-[1.05]">
-        Pick your plan. We'll handle the rest.
+        Grab a can. We'll handle the rest.
       </h3>
       <p className="mt-4 text-white/75 max-w-xl mx-auto">
-        One-time or subscribe and save — add to cart in one tap.
+        One 5.4 oz can — add to cart in one tap.
       </p>
-      <div className="mt-8 grid sm:grid-cols-3 gap-3 sm:gap-4 text-left">
-        {PLANS.map(p => (
-          <button
-            key={p.id}
-            onClick={() => choose(p.id)}
-            className="group relative rounded-2xl bg-white/5 border border-white/15 hover:border-sky hover:bg-white/10 transition-colors p-5 flex flex-col"
-          >
-            {p.save && (
-              <span className="absolute -top-2 right-4 bg-sky text-white text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-full">{p.save}</span>
-            )}
-            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/60">{p.label}</span>
-            <span className="mt-3 font-display font-black text-3xl">${p.price.toFixed(2)}</span>
-            <span className="mt-1 text-xs text-white/60">{p.sub}</span>
-            <span className="mt-5 inline-flex items-center justify-center gap-2 bg-sky group-hover:bg-sky-deep transition-colors text-white px-4 py-2.5 font-bold text-xs uppercase tracking-widest rounded-full">
-              Add to cart <ShoppingCart className="size-3.5" />
-            </span>
-          </button>
-        ))}
+      <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="text-left">
+          <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/60">One-time purchase</div>
+          <div className="font-display font-black text-3xl">$19.99</div>
+        </div>
+        <button
+          onClick={handleAdd}
+          className="inline-flex items-center justify-center gap-2 bg-sky hover:bg-sky-deep transition-colors text-white px-6 py-3.5 font-bold text-sm uppercase tracking-widest rounded-full shadow-lg shadow-sky/30"
+        >
+          Add to cart <ShoppingCart className="size-4" />
+        </button>
       </div>
     </div>
   );
@@ -447,13 +434,7 @@ function SkinTypes() {
 /* ----------------------------------- BUY ---------------------------------- */
 function Buy() {
   const { add } = useCart();
-  const [plan, setPlan] = useState<"onetime" | "weekly" | "monthly">("onetime");
-  const PLANS = [
-    { id: "onetime" as const, label: "One-time purchase", price: 19.99, sub: null as string | null, save: null as string | null },
-    { id: "weekly" as const, label: "Weekly Subscription", price: 15.99, sub: "every week until canceled", save: "Save 20%" },
-    { id: "monthly" as const, label: "Monthly Subscription", price: 16.99, sub: "every month until canceled", save: "Save 15%" },
-  ];
-  const selected = PLANS.find(p => p.id === plan)!;
+  const selected = { price: 19.99 };
   const bullets = [
     "Patented 360° spray-to-powder formula",
     "8–12 hours of chafe & blister protection",
@@ -504,34 +485,8 @@ function Buy() {
                 </li>
               ))}
             </ul>
-            <div className="mt-6 space-y-2.5">
-              {PLANS.map(p => {
-                const active = plan === p.id;
-                return (
-                  <button
-                    key={p.id}
-                    onClick={() => setPlan(p.id)}
-                    className={`w-full text-left rounded-2xl border-2 px-4 py-3.5 transition-colors ${active ? "border-sky bg-sky-soft/60" : "border-ink/15 bg-white hover:border-ink/40"}`}
-                  >
-                    <div className="flex items-center justify-between gap-3">
-                      <div className="flex items-center gap-3">
-                        <span className={`size-4 rounded-full border-2 ${active ? "border-sky bg-sky" : "border-ink/30"}`} />
-                        <div>
-                          <div className="font-bold text-ink text-sm">{p.label}</div>
-                          {p.sub && <div className="text-[11px] text-ink/60">{p.sub}</div>}
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <div className="font-display font-black text-ink">${p.price.toFixed(2)}</div>
-                        {p.save && <div className="text-[10px] font-bold uppercase tracking-widest text-sky">{p.save}</div>}
-                      </div>
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
-            <div className="mt-5 space-y-3">
-              <button onClick={() => add(plan, 1)} className="w-full inline-flex items-center justify-center gap-2 bg-sky hover:bg-sky-deep transition-colors text-white py-5 text-base font-bold uppercase tracking-widest rounded-full shadow-lg shadow-sky/30 active:scale-[0.99]">
+            <div className="mt-6 space-y-3">
+              <button onClick={() => add("onetime", 1)} className="w-full inline-flex items-center justify-center gap-2 bg-sky hover:bg-sky-deep transition-colors text-white py-5 text-base font-bold uppercase tracking-widest rounded-full shadow-lg shadow-sky/30 active:scale-[0.99]">
                 <ShoppingCart className="size-5" />
                 Add to Cart — ${selected.price.toFixed(2)}
               </button>
@@ -570,150 +525,6 @@ function Buy() {
   );
 }
 
-/* ------------------------------ SUBSCRIBE -------------------------------- */
-function Subscribe() {
-  const { add } = useCart();
-
-  type SubPlan = {
-    id: string;
-    name: string;
-    desc: string;
-    price: string;
-    cadence: string;
-    cta: string;
-    benefits: string[];
-    featured: boolean;
-    action: "onetime" | "monthly" | "disabled";
-  };
-
-  const plans: SubPlan[] = [
-    {
-      id: "onetime",
-      name: "One-Time Purchase",
-      desc: "Try it once. No commitment. Ships when you order.",
-      price: "$19.99",
-      cadence: "one-time",
-      cta: "Buy Once",
-      benefits: ["Single 5.4 oz can", "No subscription required", "Free shipping over $35"],
-      featured: false,
-      action: "onetime",
-    },
-    {
-      id: "monthly",
-      name: "Monthly Subscription",
-      desc: "Best for daily athletes. Never run out mid-season.",
-      price: "$16.99",
-      cadence: "/month · Save 15%",
-      cta: "Subscribe Monthly",
-      benefits: [
-        "Auto-delivered every month",
-        "Save 15% on every can",
-        "Free shipping, always",
-        "Pause or cancel anytime",
-      ],
-      featured: true,
-      action: "monthly",
-    },
-    {
-      id: "bimonthly",
-      name: "Every 2 Months",
-      desc: "For weekend warriors who want steady backup.",
-      price: "$17.99",
-      cadence: "/2 months · Save 10%",
-      cta: "Coming Soon",
-      benefits: [
-        "Auto-delivered every 8 weeks",
-        "Save 10% on every can",
-        "Free shipping, always",
-        "Pause or cancel anytime",
-      ],
-      featured: false,
-      action: "disabled",
-    },
-  ];
-
-  const handleClick = (action: SubPlan["action"]) => {
-    if (action === "onetime") void add("onetime", 1);
-    else if (action === "monthly") void add("monthly", 1);
-  };
-
-  return (
-    <section id="subscribe" className="bg-paper py-20 sm:py-24 md:py-32 px-5 sm:px-6 lg:px-8 scroll-mt-16 border-t border-ink/5">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Subscribe & Save</span>
-          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(32px,5vw,56px)] leading-[1] text-ink">
-            Subscribe <span className="text-sky">& Save.</span>
-          </h2>
-          <p className="mt-4 text-ink/70 text-base sm:text-lg">
-            Buy once or stay stocked on autopilot. Pick a one-time can or a recurring delivery — your skin's covered either way.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-          {plans.map((p) => {
-            const disabled = p.action === "disabled";
-            return (
-              <div
-                key={p.id}
-                className={`group relative flex flex-col rounded-3xl p-7 sm:p-8 border-2 transition-all duration-300 hover:-translate-y-1 ${
-                  p.featured
-                    ? "bg-ink text-white border-ink shadow-xl shadow-ink/20 hover:shadow-2xl hover:shadow-ink/30"
-                    : "bg-white text-ink border-ink/10 hover:border-sky hover:shadow-xl hover:shadow-sky/10"
-                }`}
-              >
-                {p.featured && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-sky text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">
-                    Most Popular
-                  </span>
-                )}
-                <h3 className={`font-display font-black uppercase tracking-tight text-2xl ${p.featured ? "text-white" : "text-ink"}`}>
-                  {p.name}
-                </h3>
-                <p className={`mt-2 text-sm ${p.featured ? "text-white/70" : "text-ink/60"}`}>{p.desc}</p>
-
-                <div className="mt-6 flex items-baseline gap-2">
-                  <span className={`font-display font-black text-5xl ${p.featured ? "text-white" : "text-ink"}`}>{p.price}</span>
-                  <span className={`text-xs font-semibold uppercase tracking-widest ${p.featured ? "text-sky" : "text-ink/50"}`}>
-                    {p.cadence}
-                  </span>
-                </div>
-
-                <ul className="mt-6 space-y-2.5 flex-1">
-                  {p.benefits.map((b) => (
-                    <li key={b} className={`flex items-start gap-2.5 text-sm ${p.featured ? "text-white/85" : "text-ink/80"}`}>
-                      <CheckCircle2 className="size-5 shrink-0 mt-0.5 text-sky" />
-                      <span>{b}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <button
-                  type="button"
-                  onClick={() => handleClick(p.action)}
-                  disabled={disabled}
-                  className={`mt-7 inline-flex items-center justify-center gap-2 py-4 text-sm font-bold uppercase tracking-widest rounded-full transition-colors ${
-                    disabled
-                      ? "bg-ink/10 text-ink/40 cursor-not-allowed"
-                      : p.featured
-                      ? "bg-sky hover:bg-sky-deep text-white shadow-lg shadow-sky/30"
-                      : "border-2 border-ink/80 text-ink hover:bg-ink hover:text-white"
-                  }`}
-                >
-                  {p.cta}
-                </button>
-              </div>
-            );
-          })}
-        </div>
-
-        <p className="mt-10 text-center text-xs sm:text-sm text-ink/60 max-w-2xl mx-auto">
-          Subscriptions are managed securely through Shopify. You can update, pause, or cancel your subscription through your customer account.
-        </p>
-      </div>
-    </section>
-  );
-}
 
 /* --------------------------------- REVIEWS -------------------------------- */
 function Reviews() {
