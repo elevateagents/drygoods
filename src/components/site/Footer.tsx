@@ -10,7 +10,6 @@ export function Footer() {
             <a href="#buy" className="hover:text-sky">Shop</a>
             <a href="https://www.amazon.com/dp/B003YTUWJ8" target="_blank" rel="noreferrer noopener" className="hover:text-sky">Amazon</a>
             <a href="mailto:tim@drygoods.com" className="hover:text-sky">Contact</a>
-            <a href="https://shopify.com/81878384866/account/pages/6971b1a1-27f6-4c27-b8b0-3009fd3b921d" target="_blank" rel="noreferrer noopener" className="hover:text-sky">Manage Subscription</a>
           </nav>
         </div>
         <div className="pt-8 flex flex-col md:flex-row md:justify-between gap-3 text-xs text-white/60">
