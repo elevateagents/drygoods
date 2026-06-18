@@ -156,7 +156,7 @@ function Stars({ className = "" }: { className?: string }) {
 /* --------------------------- PROBLEM / SOLUTION --------------------------- */
 function ProblemSolution() {
   return (
-    <section className="bg-paper py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 border-t border-ink/5">
+    <section id="why" className="bg-paper py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 border-t border-ink/5 scroll-mt-16">
       <div className="max-w-6xl mx-auto">
         <div className="max-w-3xl mx-auto text-center">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Problem · Solution</span>
