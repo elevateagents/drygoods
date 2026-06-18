@@ -13,6 +13,7 @@ import golfer from "@/assets/hero-golf.png.asset.json";
 import productImg from "@/assets/product-white.png.asset.json";
 import raceLine from "@/assets/race-line.png.asset.json";
 import runnersBanner from "@/assets/runners-banner.png.asset.json";
+import runnersOnly from "@/assets/runners-only.jpg.asset.json";
 import skinTypes from "@/assets/skin-types.png.asset.json";
 import aboutBenefits from "@/assets/about-benefits.png.asset.json";
 import aboutBooth from "@/assets/about-booth.jpg.asset.json";
@@ -515,7 +516,7 @@ function Buy() {
             <p className="absolute bottom-5 left-5 right-5 font-display font-black uppercase tracking-tight text-white text-2xl">At the start line.</p>
           </div>
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
-            <img src={runnersBanner.url} alt="Runners in motion" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
+            <img src={runnersOnly.url} alt="Runners in motion" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent" />
             <p className="absolute bottom-5 left-5 right-5 font-display font-black uppercase tracking-tight text-white text-2xl">Across every mile.</p>
           </div>
