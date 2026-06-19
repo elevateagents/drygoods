@@ -25,17 +25,17 @@ import aboutShare from "@/assets/about-share.png.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Dry Goods™ Athletic Spray Powder — Stop Chafing & Blisters" },
+      { title: "Dry Goods™ Athletic — Stop Chafing & Blisters" },
       { name: "description", content: "The fastest way to prevent chafing. Patented 360° spray-to-powder. 8–12 hrs protection. Talc Free. Dermatologist Approved. Made in USA." },
-      { name: "keywords", content: "anti chafing spray, athletic powder, spray powder, prevent blisters, prevent chafing, dry goods, talc free powder, athletes spray" },
+      { name: "keywords", content: "anti chafing spray, athletic powder, dry goods, prevent blisters, prevent chafing, dry goods, talc free powder, athletes spray" },
       { property: "og:title", content: "Dry Goods™ — The fastest way to prevent chafing." },
-      { property: "og:description", content: "Patented spray powder. 360° valve. 8–12 hours of protection. No mess." },
+      { property: "og:description", content: "Patented dry goods. 360° valve. 8–12 hours of protection. No mess." },
       { property: "og:type", content: "product" },
       { property: "og:url", content: "https://drygoods.lovable.app/" },
       { property: "og:image", content: productImg.url },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Dry Goods™ — The fastest way to prevent chafing." },
-      { name: "twitter:description", content: "Patented spray powder. 360° valve. 8–12 hours of protection. No mess." },
+      { name: "twitter:description", content: "Patented dry goods. 360° valve. 8–12 hours of protection. No mess." },
       { name: "twitter:image", content: productImg.url },
     ],
     links: [
@@ -47,7 +47,7 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",
-          name: "Dry Goods™ Athletic Spray Powder",
+          name: "Dry Goods™ Athletic",
           description: "Patented 360° spray-to-powder. Prevents chafing and blisters for 8–12 hours. Talc-free, dermatologist approved, made in USA.",
           brand: { "@type": "Brand", name: "Dry Goods" },
           image: [productImg.url],
@@ -162,7 +162,7 @@ function ProblemSolution() {
         <div className="max-w-3xl mx-auto text-center">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Problem · Solution</span>
           <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(30px,5vw,52px)] leading-[1] text-ink">
-            Why spray powder beats <span className="text-sky">the bottle.</span>
+            Why dry goods beat <span className="text-sky">the bottle.</span>
           </h2>
           <p className="mt-5 text-lg text-ink/70 leading-relaxed">
             Traditional powders cake on skin, dust the air, miss the spots that need protection most,
@@ -193,7 +193,7 @@ function ProblemSolution() {
           {/* New way */}
           <div className="rounded-2xl border-2 border-sky bg-sky-soft p-7">
             <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-sky-deep">Dry Goods™</p>
-            <h3 className="mt-2 font-display font-black uppercase tracking-tight text-2xl text-ink">Patented spray powder</h3>
+            <h3 className="mt-2 font-display font-black uppercase tracking-tight text-2xl text-ink">Patented dry goods</h3>
             <ul className="mt-5 space-y-3 text-sm text-ink/85">
               {[
                 "Sprays on wet — dries to powder instantly",
@@ -303,7 +303,7 @@ function About() {
             Keeps skin dry. Prevents blisters &amp; chafing during athletic activities.
           </h2>
           <p className="mt-6 text-lg text-ink/75 leading-relaxed">
-            Athletes push their limits, and Dry Goods™ Athletic Spray Powder is built to keep up.
+            Athletes push their limits, and Dry Goods™ Athletic is built to keep up.
             Designed to combat sweat, moisture, and friction, our advanced formula delivers long-lasting
             dryness and all-day comfort.
           </p>
@@ -462,7 +462,7 @@ function Buy() {
 
         <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center bg-white rounded-3xl p-6 sm:p-10 lg:p-14 shadow-xl shadow-sky/10">
           <div className="relative aspect-square rounded-2xl overflow-hidden bg-sky-soft">
-            <img src={productImg.url} alt="Dry Goods Athletic Spray Powder 5.4 oz can" loading="lazy" className="w-full h-full object-cover" />
+            <img src={productImg.url} alt="Dry Goods Athletic 5.4 oz can" loading="lazy" className="w-full h-full object-cover" />
             <span className="absolute top-4 left-4 bg-ink text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">In Stock</span>
           </div>
           <div>

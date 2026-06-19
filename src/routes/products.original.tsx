@@ -8,8 +8,8 @@ import canHero from "@/assets/can-hero.png";
 export const Route = createFileRoute("/products/original")({
   head: () => ({
     meta: [
-      { title: "Dry Goods Original 5.4 oz — $19.99 | Patented Spray Powder" },
-      { name: "description", content: "Patented athletic spray powder. 5.4 oz can. Subscribe weekly (-20%) or monthly (-15%). Free shipping over $35." },
+      { title: "Dry Goods Original 5.4 oz — $19.99 | Patented Dry Goods" },
+      { name: "description", content: "Patented athletic dry goods. 5.4 oz can. Subscribe weekly (-20%) or monthly (-15%). Free shipping over $35." },
     ],
     scripts: [
       {
@@ -17,7 +17,7 @@ export const Route = createFileRoute("/products/original")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",
-          name: "Dry Goods Original Athletic Spray Powder 5.4 oz",
+          name: "Dry Goods Original Athletic 5.4 oz",
           brand: { "@type": "Brand", name: "Dry Goods" },
           description: "Patented spray-to-powder formula. Prevents chafing, blisters, sweat-driven friction.",
           offers: { "@type": "Offer", priceCurrency: "USD", price: "19.99", availability: "https://schema.org/InStock" },
