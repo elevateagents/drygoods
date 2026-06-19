@@ -338,7 +338,7 @@ function Buy() {
           </h2>
         </div>
 
-        <div id="buy" className="scroll-mt-24 grid md:grid-cols-2 gap-8 lg:gap-16 items-center bg-white rounded-3xl p-6 sm:p-10 lg:p-14 shadow-xl shadow-sky/10">
+        <div id="buy" className="scroll-mt-24 grid md:grid-cols-2 gap-8 lg:gap-16 items-center bg-white rounded-3xl p-4 sm:p-10 lg:p-14 shadow-xl shadow-sky/10">
           <div className="relative aspect-square rounded-2xl overflow-hidden bg-sky-soft flex items-center justify-center p-6 sm:p-8">
             <img src={productImg.url} alt="Dry+Goods Athletic 5.4 oz can" loading="lazy" className="max-w-full max-h-full w-auto h-auto object-contain" />
             <span className="absolute top-4 left-4 bg-ink text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">In Stock</span>
