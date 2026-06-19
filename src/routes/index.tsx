@@ -329,21 +329,21 @@ function About() {
           <div>
             <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">How it all began</span>
             <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(24px,3.5vw,36px)] leading-[1.05] text-ink">
-              Born out of a real need.
+              We didn't set out to build a brand. We set out to solve a problem.
             </h3>
             <p className="mt-5 text-ink/75 leading-relaxed">
-              Like all revolutionary products, Dry Goods™ was born out of a real need.
+              Early mornings, double sessions, two a days, competitions that push you past what you
+              thought possible. At that level, every detail matters — and the wrong gear can cost you.
             </p>
             <p className="mt-4 text-ink/75 leading-relaxed">
-              Tim Joyce was a champion rower in college. Practicing at 5 a.m. every morning taught him a
-              lot about perseverance and athletic discipline… it also taught him that "dump-on" powder
-              didn't work. Tim had spent way too many workouts wet, chafed and uncomfortable. He knew
-              that if he were suffering, so were millions of other people.
+              Dump-on powder was one of those details that never worked. Wet, chalky, uncomfortable — it
+              was a problem athletes just learned to tolerate. We didn't.
             </p>
             <p className="mt-4 text-ink/75 leading-relaxed">
-              After years of product testing (always on athletes, never animals) Dry Goods™ was launched.
-              What started as a cult product in 2010 with a small legion of devoted fans has steadily
-              grown for the past decade.
+              Dry Goods™ was built by athletes who refused to accept "good enough." After years of
+              real-world testing on athletes, we launched in 2010. What started as a cult product among
+              serious competitors has grown into a trusted solution for anyone who trains, competes, and
+              refuses to slow down.
             </p>
           </div>
         </div>
