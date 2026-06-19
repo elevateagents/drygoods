@@ -72,7 +72,6 @@ function HomePage() {
       <SkinTypes />
       <Buy />
       <AmazonReviewsSection />
-      <Ingredients />
       <FAQ />
       <FinalCTA />
     </Layout>
@@ -439,58 +438,40 @@ function Reviews() {
   );
 }
 
-/* ----------------------- INGREDIENTS & PATENT ----------------------------- */
-function Ingredients() {
-  return (
-    <section className="bg-ink text-white py-20 sm:py-24 px-5 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        <div>
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Product details</span>
-          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(22px,4.5vw,48px)] leading-[1.05] break-words hyphens-auto">
-            Patented. <span className="text-sky">Talc-free.</span> Dermatologist approved.
-          </h2>
-
-          <p className="mt-5 text-white/75 leading-relaxed">
-            Dry+Goods™ is built on a US-patented spray-to-powder mechanism that delivers an ultra-fine
-            mist that dries instantly on skin. Every can is formulated and assembled in the USA.
-          </p>
-          <dl className="mt-8 grid sm:grid-cols-2 gap-4 text-sm">
-            <div className="rounded-xl bg-white/5 border border-white/10 p-4">
-              <dt className="font-bold uppercase tracking-widest text-sky text-[11px]">Size</dt>
-              <dd className="mt-1">5.4 oz / 153 g</dd>
-            </div>
-            <div className="rounded-xl bg-white/5 border border-white/10 p-4">
-              <dt className="font-bold uppercase tracking-widest text-sky text-[11px]">Patent</dt>
-              <dd className="mt-1">US Patented 360° valve technology</dd>
-            </div>
-            <div className="rounded-xl bg-white/5 border border-white/10 p-4">
-              <dt className="font-bold uppercase tracking-widest text-sky text-[11px]">Key ingredients</dt>
-              <dd className="mt-1">Aluminum starch octenylsuccinate, isobutane, dimethyl ether, fragrance</dd>
-            </div>
-            <div className="rounded-xl bg-white/5 border border-white/10 p-4">
-              <dt className="font-bold uppercase tracking-widest text-sky text-[11px]">Free from</dt>
-              <dd className="mt-1">Talc-free · Asbestos-free · Cruelty-free</dd>
-            </div>
-          </dl>
-        </div>
-
-      </div>
-    </section>
-  );
-}
-
 /* ------------------------------------ FAQ --------------------------------- */
 function FAQ() {
-  const faqs = [
+  const faqs: { q: string; a: React.ReactNode }[] = [
+    {
+      q: "What's in Dry+Goods? (Key Ingredients)",
+      a: (
+        <div className="space-y-4">
+          <p>Every ingredient earns its place. Here's what's doing the work:</p>
+          <div>
+            <p className="font-bold text-ink">Arrowroot Extract</p>
+            <p>A plant-derived powder that pulls moisture from skin on contact. One of nature's most effective natural absorbents.</p>
+          </div>
+          <div>
+            <p className="font-bold text-ink">Zinc Oxide</p>
+            <p>A skin-protective mineral that calms irritation and creates a barrier against friction.</p>
+          </div>
+          <div>
+            <p className="font-bold text-ink">Menthol</p>
+            <p>Activates the skin's cold receptors for an immediate, lasting cooling sensation.</p>
+          </div>
+        </div>
+      ),
+    },
+    { q: "What size is the can?", a: "5.4 oz / 153 g — TSA-friendly and built to last through weeks of daily use." },
+    { q: "Is it patented?", a: "Yes. Dry+Goods™ is built on a US-patented 360° spray-to-powder valve that delivers an ultra-fine mist and dries instantly on skin." },
+    { q: "Where is it made?", a: "Designed, formulated, and assembled in the USA." },
+    { q: "Is it talc-free?", a: "Yes. Talc-free, asbestos-free, and cruelty-free — dermatologist approved and safe for all skin types." },
     { q: "How long does one spray last?", a: "One application delivers 8–12 hours of chafe and blister protection — typically enough for a full workout, long run, or shift." },
     { q: "Will it stain my clothes or gear?", a: "No. Dry+Goods™ dries to a fine powder on contact and won't leave white residue on skin or fabric." },
-    { q: "Is it safe for sensitive skin?", a: "Yes. Our formula is talc-free, asbestos-free, and dermatologist approved — safe on all skin types." },
     { q: "Can I spray upside down?", a: "Yes. The patented 360° valve sprays from any angle, including upside down, so you can reach hard-to-cover spots." },
-    { q: "Where is it made?", a: "Designed, formulated, and assembled in the USA." },
     { q: "What is the return policy?", a: "30-day satisfaction guarantee. If it's not for you, email us for a free return." },
   ];
   return (
-    <section className="bg-paper py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8">
+    <section id="faq" className="scroll-mt-24 bg-paper py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-12">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">FAQ</span>
@@ -505,7 +486,7 @@ function FAQ() {
                 <span>{f.q}</span>
                 <Plus className="size-5 shrink-0 mt-1 text-sky transition-transform group-open:rotate-45" />
               </summary>
-              <p className="mt-3 text-ink/70 leading-relaxed">{f.a}</p>
+              <div className="mt-3 text-ink/70 leading-relaxed">{f.a}</div>
             </details>
           ))}
         </div>
