@@ -15,12 +15,6 @@ import raceLine from "@/assets/race-line.png.asset.json";
 import runnersBanner from "@/assets/runners-banner.png.asset.json";
 import runnersOnly from "@/assets/runners-only.jpg.asset.json";
 import skinTypes from "@/assets/skin-types.png.asset.json";
-import aboutBenefits from "@/assets/about-benefits.png.asset.json";
-import aboutBooth from "@/assets/about-booth.jpg.asset.json";
-import aboutTargeted from "@/assets/about-targeted.png.asset.json";
-import aboutUpsideDown from "@/assets/about-upsidedown.png.asset.json";
-import aboutLongLasting from "@/assets/about-longlasting.png.asset.json";
-import aboutShare from "@/assets/about-share.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
