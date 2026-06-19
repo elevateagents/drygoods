@@ -535,7 +535,7 @@ function Reviews() {
     { quote: "My husband works construction sweating all day and has ZERO chafing while using this.", name: "Kendra", meta: "Verified Customer" },
   ];
   return (
-    <section id="reviews" className="bg-paper py-20 sm:py-24 md:py-32 px-5 sm:px-6 lg:px-8">
+    <section id="reviews" className="bg-paper py-20 sm:py-24 md:py-32 px-5 sm:px-6 lg:px-8 scroll-mt-16">
       <div className="max-w-6xl mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Reviews</span>
