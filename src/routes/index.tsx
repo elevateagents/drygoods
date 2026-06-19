@@ -329,8 +329,8 @@ function Buy() {
     { icon: RotateCcw, label: "Free Returns" },
   ];
   return (
-    <section className="bg-sky-soft/40 py-20 sm:py-24 md:py-32 px-5 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+    <section className="bg-sky-soft/40 py-16 sm:py-24 md:py-32 px-3 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="max-w-6xl mx-auto min-w-0">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Get Yours</span>
           <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(32px,5vw,56px)] leading-[1] text-ink">
@@ -338,50 +338,50 @@ function Buy() {
           </h2>
         </div>
 
-        <div id="buy" className="scroll-mt-24 grid md:grid-cols-2 gap-8 lg:gap-16 items-center bg-white rounded-3xl p-4 sm:p-10 lg:p-14 shadow-xl shadow-sky/10">
+        <div id="buy" className="scroll-mt-24 grid min-w-0 md:grid-cols-2 gap-6 lg:gap-16 items-center bg-white rounded-3xl p-4 sm:p-10 lg:p-14 shadow-xl shadow-sky/10 overflow-hidden">
           <div className="relative aspect-square rounded-2xl overflow-hidden bg-sky-soft flex items-center justify-center p-6 sm:p-8">
             <img src={productImg.url} alt="Dry+Goods Athletic 5.4 oz can" loading="lazy" className="max-w-full max-h-full w-auto h-auto object-contain" />
             <span className="absolute top-4 left-4 bg-ink text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">In Stock</span>
           </div>
-          <div>
-            <div className="flex items-center gap-2">
-              <Stars />
-              <span className="text-xs font-semibold text-ink/60 uppercase tracking-widest">Athlete Approved</span>
+          <div className="min-w-0">
+            <div className="flex min-w-0 items-center gap-2">
+              <Stars className="shrink-0" />
+              <span className="min-w-0 text-[11px] sm:text-xs font-semibold text-ink/60 uppercase tracking-wide sm:tracking-widest break-words leading-tight">Athlete Approved</span>
             </div>
-            <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(26px,7vw,40px)] leading-[1.05] text-ink break-words">
+            <h3 className="mt-3 font-display font-black uppercase tracking-normal text-[clamp(24px,6.5vw,40px)] leading-[1.05] text-ink break-words">
               Dry+Goods™<br />Athletic
             </h3>
-            <p className="mt-2 text-sm sm:text-base text-ink/70">5.4 oz · The fastest way to prevent chafing.</p>
-            <div className="mt-5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-              <span className="font-display font-black text-4xl sm:text-5xl text-ink">${selected.price.toFixed(2)}</span>
-              <span className="text-xs sm:text-sm text-ink/60">Free shipping over $35</span>
+            <p className="mt-2 max-w-full text-sm sm:text-base text-ink/70 leading-relaxed break-words">5.4 oz · The fastest way to prevent chafing.</p>
+            <div className="mt-5 grid min-w-0 gap-1 sm:flex sm:flex-wrap sm:items-baseline sm:gap-x-3">
+              <span className="font-display font-black text-4xl sm:text-5xl text-ink leading-none">${selected.price.toFixed(2)}</span>
+              <span className="text-xs sm:text-sm text-ink/60 leading-snug break-words">Free shipping over $35</span>
             </div>
             <ul className="mt-6 space-y-2.5">
               {bullets.map(b => (
-                <li key={b} className="flex items-start gap-2.5 text-sm text-ink/80">
+                <li key={b} className="flex min-w-0 items-start gap-2.5 text-sm text-ink/80 leading-snug">
                   <CheckCircle2 className="size-5 text-sky shrink-0 mt-0.5" />
                   <span className="min-w-0 break-words">{b}</span>
                 </li>
               ))}
             </ul>
             <div className="mt-6 space-y-3">
-              <button onClick={() => add("onetime", 1)} className="w-full inline-flex flex-wrap items-center justify-center gap-2 bg-sky hover:bg-sky-deep transition-colors text-white px-4 py-5 text-sm sm:text-base font-bold uppercase tracking-wider sm:tracking-widest rounded-full shadow-lg shadow-sky/30 active:scale-[0.99]">
+              <button onClick={() => add("onetime", 1)} className="w-full min-w-0 inline-flex items-center justify-center gap-2 bg-sky hover:bg-sky-deep transition-colors text-white px-3 sm:px-4 py-4 sm:py-5 text-[13px] sm:text-base font-bold uppercase tracking-wide sm:tracking-widest rounded-full shadow-lg shadow-sky/30 active:scale-[0.99] leading-tight">
                 <ShoppingCart className="size-5 shrink-0" />
-                <span>Add to Cart — ${selected.price.toFixed(2)}</span>
+                <span className="min-w-0 text-center break-words">Add to Cart — ${selected.price.toFixed(2)}</span>
               </button>
-              <a href="https://www.amazon.com/dp/B003YTUWJ8" target="_blank" rel="noreferrer noopener" className="w-full inline-flex items-center justify-center gap-2 border-2 border-ink/80 text-ink hover:bg-ink hover:text-white transition-colors px-4 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider sm:tracking-widest rounded-full">
-                Also on Amazon <ExternalLink className="size-4 shrink-0" />
+              <a href="https://www.amazon.com/dp/B003YTUWJ8" target="_blank" rel="noreferrer noopener" className="w-full min-w-0 inline-flex items-center justify-center gap-2 border-2 border-ink/80 text-ink hover:bg-ink hover:text-white transition-colors px-3 sm:px-4 py-4 text-xs sm:text-sm font-bold uppercase tracking-wide sm:tracking-widest rounded-full leading-tight">
+                <span className="min-w-0 text-center break-words">Also on Amazon</span> <ExternalLink className="size-4 shrink-0" />
               </a>
             </div>
 
           </div>
         </div>
 
-        <div className="mt-10 flex flex-wrap justify-center gap-2 sm:gap-3">
+        <div className="mt-10 grid grid-cols-2 justify-center gap-2 sm:flex sm:flex-wrap sm:gap-3">
           {badges.map((b) => (
-            <div key={b.label} className="inline-flex items-center gap-2 bg-white border border-ink/10 text-ink rounded-full px-4 py-2 text-xs font-bold uppercase tracking-widest">
-              <b.icon className="size-3.5 text-sky" />
-              {b.label}
+            <div key={b.label} className="min-w-0 inline-flex items-center justify-center gap-1.5 bg-white border border-ink/10 text-ink rounded-full px-2.5 sm:px-4 py-2 text-[10px] sm:text-xs font-bold uppercase tracking-wide sm:tracking-widest leading-tight text-center">
+              <b.icon className="size-3.5 text-sky shrink-0" />
+              <span className="min-w-0 break-words">{b.label}</span>
             </div>
           ))}
         </div>
