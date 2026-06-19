@@ -9,7 +9,7 @@ import {
   Star, ShoppingCart, ExternalLink, RotateCcw, CheckCircle2,
   Target, Snowflake, Plus, Mail, XCircle,
 } from "lucide-react";
-import golfer from "@/assets/hero-golf.png.asset.json";
+import golfer from "@/assets/hero-golf-sunset.png.asset.json";
 import productImg from "@/assets/product-white.png.asset.json";
 import raceLine from "@/assets/race-line.png.asset.json";
 import runnersBanner from "@/assets/runners-banner.png.asset.json";
