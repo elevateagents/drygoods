@@ -72,10 +72,10 @@ function HomePage() {
   return (
     <Layout>
       <Hero />
+      <About />
       <ProblemSolution />
       <HowItWorks />
       <Benefits />
-      <About />
       <SkinTypes />
       <Buy />
       <AmazonReviewsSection />
@@ -97,9 +97,10 @@ function Hero() {
           src={golfer.url}
           alt=""
           aria-hidden="true"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-[center_30%]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/55 to-ink/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/75 to-ink/30" />
+        <div className="absolute inset-0 bg-ink/25" />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 py-24 md:py-32 lg:py-40 min-h-[80vh] flex flex-col justify-end">
@@ -324,7 +325,7 @@ function About() {
         </div>
 
         {/* Story */}
-        <div className="mt-16 grid md:grid-cols-2 gap-10 lg:gap-16 max-w-5xl mx-auto">
+        <div className="mt-16 max-w-3xl mx-auto">
           <div>
             <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">How it all began</span>
             <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(24px,3.5vw,36px)] leading-[1.05] text-ink">
@@ -343,26 +344,6 @@ function About() {
               After years of product testing (always on athletes, never animals) Dry Goods™ was launched.
               What started as a cult product in 2010 with a small legion of devoted fans has steadily
               grown for the past decade.
-            </p>
-          </div>
-          <div>
-            <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Why we are better</span>
-            <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(24px,3.5vw,36px)] leading-[1.05] text-ink">
-              Built for the most strenuous conditions.
-            </h3>
-            <p className="mt-5 text-ink/75 leading-relaxed">
-              Most people are familiar with our competition. They know it by powder clouds, powder
-              pancakes, or sticks that make your skin…sticky. And they know it by chafe marks and
-              blisters when the product failed them.
-            </p>
-            <p className="mt-4 text-ink/75 leading-relaxed">
-              As opposed to the competition — who targets the casual user — Dry Goods™ was designed to
-              be durable under the most strenuous athletic conditions and with endurance in mind from
-              the start.
-            </p>
-            <p className="mt-4 text-ink/75 leading-relaxed">
-              Funny enough, shortly after gaining traction a major powder competitor immediately tried
-              to recreate our spray product, but Dry Goods™ outperformed theirs — and still does today.
             </p>
           </div>
         </div>
