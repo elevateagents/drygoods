@@ -1,55 +1,108 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { ShoppingCart } from "lucide-react";
 import { Layout } from "@/components/site/Layout";
-import { Marquee } from "@/components/site/Marquee";
-import { SectionNumber } from "@/components/site/SectionNumber";
-import { StickerBadge } from "@/components/site/StickerBadge";
-import canHero from "@/assets/can-hero.png";
+import { useCart } from "@/lib/cart-store";
+import aboutBenefits from "@/assets/about-benefits.png.asset.json";
+import aboutBooth from "@/assets/about-booth.jpg.asset.json";
+import aboutTargeted from "@/assets/about-targeted.png.asset.json";
+import aboutUpsideDown from "@/assets/about-upsidedown.png.asset.json";
+import aboutLongLasting from "@/assets/about-longlasting.png.asset.json";
+import aboutShare from "@/assets/about-share.png.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Dry Goods — Patented in Raleigh. Refined Every Season." },
-      { name: "description", content: "Joyce Labs LLC built Dry Goods because dump-on powders, sticks, and creams all failed athletes. The patented valve was just the beginning." },
+      { title: "About Dry+Goods™ — Built by Athletes Who Refused 'Good Enough'" },
+      { name: "description", content: "How Dry+Goods™ Athletic was born from real-world testing — the story behind the patented spray-to-powder formula." },
+      { property: "og:title", content: "About Dry+Goods™" },
+      { property: "og:description", content: "We didn't set out to build a brand. We set out to solve a problem." },
     ],
   }),
-  component: About,
+  component: AboutPage,
 });
 
-function About() {
+function AboutPage() {
+  const { add, setOpen } = useCart();
+  const gallery = [
+    { src: aboutBenefits.url, alt: "Athlete with Dry+Goods spray showing benefits" },
+    { src: aboutTargeted.url, alt: "Targeted application without the mess" },
+    { src: aboutUpsideDown.url, alt: "Sprayable upside down" },
+    { src: aboutLongLasting.url, alt: "Long lasting protection" },
+    { src: aboutShare.url, alt: "Share the goods" },
+    { src: aboutBooth.url, alt: "Dry+Goods athletes at trade show booth" },
+  ];
+  const handleAdd = () => {
+    void add("onetime", 1);
+    setOpen(true);
+  };
   return (
     <Layout>
-      <section className="px-5 md:px-6 lg:px-8 pt-16 pb-24">
-        <div className="max-w-5xl mx-auto">
-          <div className="flex gap-2 mb-8"><StickerBadge variant="since" /><StickerBadge variant="patent" /></div>
-          <h1 className="font-display text-[clamp(40px,12vw,148px)] font-black uppercase leading-[0.85] tracking-tighter">
-            We made it<br/>because <span className="text-heat italic font-editorial font-normal">nothing</span><br/>else worked.
-          </h1>
-        </div>
-      </section>
-      <Marquee items={["Raleigh, NC", "Joyce Labs LLC", "Patented 2014", "Refined Every Season"]} />
-      <section className="px-5 md:px-6 lg:px-8 py-20 md:py-24">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-12 gap-10 md:gap-12">
-          <div className="md:col-span-5">
-            <div className="bg-ice aspect-[4/5] grid place-items-center md:sticky md:top-20">
-              <img src={canHero} alt="" className="h-[80%]" />
-            </div>
+      <section className="bg-paper pt-28 pb-20 sm:pt-32 sm:pb-24 px-5 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-4xl mx-auto text-center">
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">About Us</span>
+            <h1 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(28px,4.5vw,48px)] leading-[1.05] text-ink">
+              Keeps skin dry. Prevents blisters &amp; chafing during athletic activities.
+            </h1>
+            <p className="mt-6 text-lg text-ink/75 leading-relaxed">
+              Athletes push their limits, and Dry+Goods™ Athletic is built to keep up.
+              Designed to combat sweat, moisture, and friction, our advanced formula delivers long-lasting
+              dryness and all-day comfort.
+            </p>
+            <p className="mt-4 text-lg text-ink/75 leading-relaxed">
+              Whether you're on the field, in the gym, or pushing through intense training, Dry+Goods™ helps
+              you stay cool, dry, and performing at your best. No mess, no residue — just powerful protection
+              when you need it most. Try it once, and you'll never train without it.
+            </p>
           </div>
-          <div className="md:col-span-7 space-y-10">
-            <SectionNumber n="01" label="Origin" />
-            <p className="font-editorial italic text-3xl leading-[1.15]">
-              "I dumped baby powder in my gym bag for ten years. The bag never recovered."
+
+          <div className="mt-14 grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5">
+            {gallery.map((g) => (
+              <div key={g.src} className="aspect-square overflow-hidden rounded-2xl bg-white">
+                <img src={g.src} alt={g.alt} loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-16 max-w-3xl mx-auto">
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">How it all began</span>
+            <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(24px,3.5vw,36px)] leading-[1.05] text-ink">
+              We didn't set out to build a brand. We set out to solve a problem.
+            </h2>
+            <p className="mt-5 text-ink/75 leading-relaxed">
+              Early mornings, double sessions, two a days, competitions that push you past what you
+              thought possible. At that level, every detail matters — and the wrong gear can cost you.
             </p>
-            <p className="text-lg max-w-[60ch]">
-              Dry Goods started in a Raleigh garage in 2009. The founder, a CrossFit coach and ex-Marine, was tired of the trade-offs. Sticks melted. Sprays went on wet and stayed wet. Powders made a mess. He worked with chemists for five years to engineer a pressurized spray-to-powder valve that fired from any angle, dried instantly, and stayed put through the worst sets of his life.
+            <p className="mt-4 text-ink/75 leading-relaxed">
+              Dump-on powder was one of those details that never worked. Wet, chalky, uncomfortable — it
+              was a problem athletes just learned to tolerate. We didn't.
             </p>
-            <SectionNumber n="02" label="The Patent" />
-            <p className="text-lg max-w-[60ch]">
-              In 2014 the United States Patent Office granted U.S. Patent 8,778,406 B2 for the aerosol delivery system. We've refined the formula every season since — adding talc-free options, eliminating parabens, and listening to the runners, lifters, cyclists, and operators who put it through hell.
+            <p className="mt-4 text-ink/75 leading-relaxed">
+              Dry+Goods™ was built by athletes who refused to accept "good enough." After years of
+              real-world testing on athletes, we launched in 2010. What started as a cult product among
+              serious competitors has grown into a trusted solution for anyone who trains, competes, and
+              refuses to slow down.
             </p>
-            <SectionNumber n="03" label="Made Here" />
-            <p className="text-lg max-w-[60ch]">
-              Designed and manufactured in the USA. Bottled and shipped from Raleigh, NC. Family-owned. Athlete-tested. We answer the phone.
-            </p>
+          </div>
+
+          <div className="mt-16 max-w-3xl mx-auto rounded-3xl bg-ink text-white p-8 sm:p-10 lg:p-12 text-center shadow-xl shadow-ink/20">
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Ready to stay dry?</span>
+            <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(24px,4vw,40px)] leading-[1.05]">
+              Grab a can. We'll handle the rest.
+            </h3>
+            <p className="mt-4 text-white/75 max-w-xl mx-auto">One 5.4 oz can — add to cart in one tap.</p>
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="text-left">
+                <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/60">One-time purchase</div>
+                <div className="font-display font-black text-3xl">$19.99</div>
+              </div>
+              <button
+                onClick={handleAdd}
+                className="inline-flex items-center justify-center gap-2 bg-sky hover:bg-sky-deep transition-colors text-white px-6 py-3.5 font-bold text-sm uppercase tracking-widest rounded-full shadow-lg shadow-sky/30"
+              >
+                Add to cart <ShoppingCart className="size-4" />
+              </button>
+            </div>
           </div>
         </div>
       </section>
