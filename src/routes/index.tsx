@@ -328,7 +328,7 @@ function Buy() {
     { icon: RotateCcw, label: "Free Returns" },
   ];
   return (
-    <section id="buy" className="bg-sky-soft/40 py-20 sm:py-24 md:py-32 px-5 sm:px-6 lg:px-8 scroll-mt-16">
+    <section className="bg-sky-soft/40 py-20 sm:py-24 md:py-32 px-5 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Get Yours</span>
@@ -337,7 +337,7 @@ function Buy() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center bg-white rounded-3xl p-6 sm:p-10 lg:p-14 shadow-xl shadow-sky/10">
+        <div id="buy" className="scroll-mt-24 grid md:grid-cols-2 gap-8 lg:gap-16 items-center bg-white rounded-3xl p-6 sm:p-10 lg:p-14 shadow-xl shadow-sky/10">
           <div className="relative aspect-square rounded-2xl overflow-hidden bg-sky-soft">
             <img src={productImg.url} alt="Dry+Goods Athletic 5.4 oz can" loading="lazy" className="w-full h-full object-cover" />
             <span className="absolute top-4 left-4 bg-ink text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">In Stock</span>
