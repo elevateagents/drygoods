@@ -8,6 +8,7 @@ const sections = [
   { href: "/about", label: "About", route: true },
   { href: "/#buy", label: "Shop" },
   { href: "/#reviews", label: "Reviews" },
+  { href: "/#faq", label: "FAQ" },
   { href: "/contact", label: "Contact", route: true },
 ];
 
