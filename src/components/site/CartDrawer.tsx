@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { X, Minus, Plus, Loader2 } from "lucide-react";
 import { useEffect } from "react";
 import { useCart, PLAN_META } from "@/lib/cart-store";
-import canHero from "@/assets/can-hero.png";
+import canHero from "@/assets/product-white.png.asset.json";
 
 const FREE_SHIP = 35;
 
