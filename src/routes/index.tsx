@@ -72,10 +72,10 @@ function HomePage() {
   return (
     <Layout>
       <Hero />
+      <About />
       <ProblemSolution />
       <HowItWorks />
       <Benefits />
-      <About />
       <SkinTypes />
       <Buy />
       <AmazonReviewsSection />
