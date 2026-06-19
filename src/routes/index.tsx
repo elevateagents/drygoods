@@ -72,7 +72,6 @@ function HomePage() {
   return (
     <Layout>
       <Hero />
-      <About />
       <ProblemSolution />
       <HowItWorks />
       <Benefits />
