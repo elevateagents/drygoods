@@ -90,13 +90,15 @@ function Hero() {
           src={golfer.url}
           alt=""
           aria-hidden="true"
-          className="w-full h-full object-cover object-[85%_30%] sm:object-[80%_30%]"
+          className="w-full h-full object-cover object-[center_30%]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/90 to-ink/60" />
-        <div className="absolute inset-0 bg-ink/45" />
+        {/* Top gradient for text legibility; fades out so the can stays visible below */}
+        <div className="absolute inset-x-0 top-0 h-[60%] bg-gradient-to-b from-ink/85 via-ink/45 to-transparent" />
+        {/* Soft bottom vignette */}
+        <div className="absolute inset-x-0 bottom-0 h-[20%] bg-gradient-to-t from-ink/40 to-transparent" />
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 py-24 md:py-32 lg:py-40 min-h-[80vh] flex flex-col justify-end">
+      <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 pt-20 md:pt-28 lg:pt-32 pb-12 min-h-[95vh] flex flex-col">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -106,13 +108,13 @@ function Hero() {
           <span className="inline-block px-3 py-1 bg-sky text-white text-[11px] font-bold uppercase tracking-[0.2em] rounded-full mb-5">
             New · Patented Formula
           </span>
-          <h1 className="font-display font-black uppercase tracking-tight leading-[0.95] text-[clamp(36px,7vw,76px)]">
+          <h1 className="font-display font-black uppercase tracking-tight leading-[0.95] text-[clamp(36px,7vw,76px)] [text-shadow:0_2px_16px_rgba(0,0,0,0.45)]">
             Meet the <span className="text-sky">fastest way</span> to prevent chafing.
           </h1>
-          <p className="mt-5 text-lg sm:text-xl font-bold text-white/95">
+          <p className="mt-5 text-lg sm:text-xl font-bold text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.55)]">
             Never miss another workout.
           </p>
-          <p className="mt-4 text-base sm:text-lg text-white/85 max-w-xl mx-auto leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-white max-w-xl mx-auto leading-relaxed [text-shadow:0_2px_10px_rgba(0,0,0,0.55)]">
             Dry+Goods™ stops chafing and blisters in seconds with one spray. No mess. No residue.
             8–12 hours of protection.
           </p>
@@ -123,11 +125,11 @@ function Hero() {
             >
               Shop Now <ShoppingCart className="size-4" />
             </button>
-            <a href="#buy" className="text-sm font-bold uppercase tracking-widest text-white/90 hover:text-sky underline-offset-4 hover:underline">
+            <a href="#buy" className="text-sm font-bold uppercase tracking-widest text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.6)] hover:text-sky underline-offset-4 hover:underline">
               See Details →
             </a>
           </div>
-          <div className="mt-6 flex items-center justify-center gap-2 text-sm text-white/80">
+          <div className="mt-6 flex items-center justify-center gap-2 text-sm text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.6)]">
             <Stars />
             <span className="font-semibold">Trusted by athletes since day one</span>
           </div>
