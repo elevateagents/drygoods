@@ -6,7 +6,7 @@ export function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 pb-10 border-b border-white/15">
           <a href="#top" className="font-display font-black tracking-tight text-2xl">
-            DRY<span className="text-sky">·</span>GOODS<span className="text-sky align-super text-xs">™</span>
+            DRY<span className="text-sky">+</span>GOODS<span className="text-sky align-super text-xs">™</span>
           </a>
           <nav className="flex flex-wrap gap-x-8 gap-y-3 text-sm font-bold uppercase tracking-widest">
             <a href="/#buy" className="hover:text-sky">Shop</a>
