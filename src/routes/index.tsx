@@ -348,29 +348,29 @@ function Buy() {
               <Stars />
               <span className="text-xs font-semibold text-ink/60 uppercase tracking-widest">Athlete Approved</span>
             </div>
-            <h3 className="mt-3 font-display font-black uppercase tracking-tight text-3xl sm:text-4xl leading-[1.05] text-ink">
+            <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(26px,7vw,40px)] leading-[1.05] text-ink break-words">
               Dry+Goods™<br />Athletic
             </h3>
-            <p className="mt-2 text-ink/70">5.4 oz · The fastest way to prevent chafing.</p>
-            <div className="mt-5 flex items-baseline gap-3">
-              <span className="font-display font-black text-5xl text-ink">${selected.price.toFixed(2)}</span>
-              <span className="text-sm text-ink/60">Free shipping over $35</span>
+            <p className="mt-2 text-sm sm:text-base text-ink/70">5.4 oz · The fastest way to prevent chafing.</p>
+            <div className="mt-5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+              <span className="font-display font-black text-4xl sm:text-5xl text-ink">${selected.price.toFixed(2)}</span>
+              <span className="text-xs sm:text-sm text-ink/60">Free shipping over $35</span>
             </div>
             <ul className="mt-6 space-y-2.5">
               {bullets.map(b => (
                 <li key={b} className="flex items-start gap-2.5 text-sm text-ink/80">
                   <CheckCircle2 className="size-5 text-sky shrink-0 mt-0.5" />
-                  <span>{b}</span>
+                  <span className="min-w-0 break-words">{b}</span>
                 </li>
               ))}
             </ul>
             <div className="mt-6 space-y-3">
-              <button onClick={() => add("onetime", 1)} className="w-full inline-flex items-center justify-center gap-2 bg-sky hover:bg-sky-deep transition-colors text-white py-5 text-base font-bold uppercase tracking-widest rounded-full shadow-lg shadow-sky/30 active:scale-[0.99]">
-                <ShoppingCart className="size-5" />
-                Add to Cart — ${selected.price.toFixed(2)}
+              <button onClick={() => add("onetime", 1)} className="w-full inline-flex flex-wrap items-center justify-center gap-2 bg-sky hover:bg-sky-deep transition-colors text-white px-4 py-5 text-sm sm:text-base font-bold uppercase tracking-wider sm:tracking-widest rounded-full shadow-lg shadow-sky/30 active:scale-[0.99]">
+                <ShoppingCart className="size-5 shrink-0" />
+                <span>Add to Cart — ${selected.price.toFixed(2)}</span>
               </button>
-              <a href="https://www.amazon.com/dp/B003YTUWJ8" target="_blank" rel="noreferrer noopener" className="w-full inline-flex items-center justify-center gap-2 border-2 border-ink/80 text-ink hover:bg-ink hover:text-white transition-colors py-4 text-sm font-bold uppercase tracking-widest rounded-full">
-                Also on Amazon <ExternalLink className="size-4" />
+              <a href="https://www.amazon.com/dp/B003YTUWJ8" target="_blank" rel="noreferrer noopener" className="w-full inline-flex items-center justify-center gap-2 border-2 border-ink/80 text-ink hover:bg-ink hover:text-white transition-colors px-4 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider sm:tracking-widest rounded-full">
+                Also on Amazon <ExternalLink className="size-4 shrink-0" />
               </a>
             </div>
 
