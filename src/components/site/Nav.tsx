@@ -24,10 +24,10 @@ export function Nav() {
   }, [menu]);
 
   return (
-    <nav className="fixed top-0 inset-x-0 z-50 bg-paper/90 backdrop-blur-md border-b border-ink/10">
+    <nav className="fixed top-0 inset-x-0 z-50 bg-paper border-b border-ink/10 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
         <Link to="/" onClick={() => setMenu(false)} className="flex items-center gap-2 shrink-0" aria-label="Dry Goods home">
-          <img src={logo.url} alt="Dry Goods" className="h-9 w-auto" />
+          <img src={logo.url} alt="Dry Goods" className="h-10 w-auto" />
         </Link>
         <div className="hidden md:flex gap-8 text-sm font-bold uppercase tracking-wide">
           {sections.map(s => (
@@ -43,11 +43,11 @@ export function Nav() {
           </a>
           <button
             onClick={() => setOpen(true)}
-            className="relative p-2.5 min-h-[40px] min-w-[40px] grid place-items-center hover:text-sky"
+            className="relative p-2.5 min-h-[44px] min-w-[44px] grid place-items-center hover:text-sky"
             aria-label="Open cart"
           >
-            <ShoppingBag className="size-5" />
-            {c > 0 && <span className="absolute -top-0.5 -right-0.5 bg-sky text-white text-[10px] font-bold rounded-full size-5 grid place-items-center">{c}</span>}
+            <ShoppingBag className="size-7" strokeWidth={2.25} />
+            {c > 0 && <span className="absolute top-0 right-0 bg-sky text-white text-[10px] font-bold rounded-full size-5 grid place-items-center">{c}</span>}
           </button>
           <button
             onClick={() => setMenu(v => !v)}
