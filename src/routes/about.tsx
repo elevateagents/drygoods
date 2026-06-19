@@ -8,8 +8,8 @@ import canHero from "@/assets/can-hero.png";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Dry Goods — Patented in Raleigh. Refined Every Season." },
-      { name: "description", content: "Joyce Labs LLC built Dry Goods because dump-on powders, sticks, and creams all failed athletes. The patented valve was just the beginning." },
+      { title: "About Dry+Goods — Patented in Raleigh. Refined Every Season." },
+      { name: "description", content: "Joyce Labs LLC built Dry+Goods because dump-on powders, sticks, and creams all failed athletes. The patented valve was just the beginning." },
     ],
   }),
   component: About,
@@ -40,7 +40,7 @@ function About() {
               "I dumped baby powder in my gym bag for ten years. The bag never recovered."
             </p>
             <p className="text-lg max-w-[60ch]">
-              Dry Goods started in a Raleigh garage in 2009. The founder, a CrossFit coach and ex-Marine, was tired of the trade-offs. Sticks melted. Sprays went on wet and stayed wet. Powders made a mess. He worked with chemists for five years to engineer a pressurized spray-to-powder valve that fired from any angle, dried instantly, and stayed put through the worst sets of his life.
+              Dry+Goods started in a Raleigh garage in 2009. The founder, a CrossFit coach and ex-Marine, was tired of the trade-offs. Sticks melted. Sprays went on wet and stayed wet. Powders made a mess. He worked with chemists for five years to engineer a pressurized spray-to-powder valve that fired from any angle, dried instantly, and stayed put through the worst sets of his life.
             </p>
             <SectionNumber n="02" label="The Patent" />
             <p className="text-lg max-w-[60ch]">

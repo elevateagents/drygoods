@@ -15,7 +15,7 @@ export function Footer() {
           </nav>
         </div>
         <div className="pt-8 flex flex-col md:flex-row md:justify-between gap-3 text-xs text-white/60">
-          <p>© 2026 Dry Goods™ · drygoods.com</p>
+          <p>© 2026 Dry+Goods™ · drygoods.com</p>
           <p className="font-editorial italic text-white/80">"No mess. No waste. Just powerful protection."</p>
         </div>
       </div>

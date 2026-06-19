@@ -8,8 +8,8 @@ import canHero from "@/assets/can-hero.png";
 export const Route = createFileRoute("/products/original")({
   head: () => ({
     meta: [
-      { title: "Dry Goods Original 5.4 oz — $19.99 | Patented Dry Goods" },
-      { name: "description", content: "Patented athletic dry goods. 5.4 oz can. Subscribe weekly (-20%) or monthly (-15%). Free shipping over $35." },
+      { title: "Dry+Goods Original 5.4 oz — $19.99 | Patented Dry+Goods" },
+      { name: "description", content: "Patented athletic dry+goods. 5.4 oz can. Subscribe weekly (-20%) or monthly (-15%). Free shipping over $35." },
     ],
     scripts: [
       {
@@ -17,8 +17,8 @@ export const Route = createFileRoute("/products/original")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",
-          name: "Dry Goods Original Athletic 5.4 oz",
-          brand: { "@type": "Brand", name: "Dry Goods" },
+          name: "Dry+Goods Original Athletic 5.4 oz",
+          brand: { "@type": "Brand", name: "Dry+Goods" },
           description: "Patented spray-to-powder formula. Prevents chafing, blisters, sweat-driven friction.",
           offers: { "@type": "Offer", priceCurrency: "USD", price: "19.99", availability: "https://schema.org/InStock" },
         }),
@@ -41,7 +41,7 @@ function ProductPage() {
           {/* Imagery */}
           <div className="md:col-span-7 md:sticky md:top-20 md:self-start">
             <div className="bg-ice/40 aspect-[4/5] grid place-items-center relative overflow-hidden">
-              <img src={canHero} alt="Dry Goods Original 5.4 oz can" className="h-[85%] w-auto" width={800} height={1200} />
+              <img src={canHero} alt="Dry+Goods Original 5.4 oz can" className="h-[85%] w-auto" width={800} height={1200} />
               <span className="absolute top-5 left-5 text-[10px] font-black uppercase tracking-widest bg-ink text-paper px-2 py-1">In Stock</span>
               <span className="absolute bottom-5 right-5 font-editorial italic text-ink/60">5.4 oz / 153 g</span>
             </div>
@@ -59,7 +59,7 @@ function ProductPage() {
             <div>
               <Link to="/" className="text-[10px] uppercase tracking-widest font-bold text-steel hover:text-heat">← Back</Link>
               <h1 className="font-display text-5xl lg:text-6xl font-black uppercase leading-[0.9] tracking-tighter mt-4">
-                Dry Goods<br/>Original 5.4 oz
+                Dry+Goods<br/>Original 5.4 oz
               </h1>
               <p className="mt-4 font-editorial italic text-xl text-ink/80">
                 The patented spray-to-powder armor. One can. Every sport.

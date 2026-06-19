@@ -6,8 +6,8 @@ import { SectionNumber } from "@/components/site/SectionNumber";
 export const Route = createFileRoute("/wholesale")({
   head: () => ({
     meta: [
-      { title: "Wholesale — Dry Goods for Gyms, Teams & Retailers" },
-      { name: "description", content: "Stock Dry Goods. Volume tiers for gyms, teams, military, and specialty retailers. Submit a wholesale inquiry." },
+      { title: "Wholesale — Dry+Goods for Gyms, Teams & Retailers" },
+      { name: "description", content: "Stock Dry+Goods. Volume tiers for gyms, teams, military, and specialty retailers. Submit a wholesale inquiry." },
     ],
   }),
   component: Wholesale,

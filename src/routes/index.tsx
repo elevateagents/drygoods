@@ -25,17 +25,17 @@ import aboutShare from "@/assets/about-share.png.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Dry Goods™ Athletic — Stop Chafing & Blisters" },
+      { title: "Dry+Goods™ Athletic — Stop Chafing & Blisters" },
       { name: "description", content: "The fastest way to prevent chafing. Patented 360° spray-to-powder. 8–12 hrs protection. Talc Free. Dermatologist Approved. Made in USA." },
-      { name: "keywords", content: "anti chafing spray, athletic powder, dry goods, prevent blisters, prevent chafing, dry goods, talc free powder, athletes spray" },
-      { property: "og:title", content: "Dry Goods™ — The fastest way to prevent chafing." },
-      { property: "og:description", content: "Patented dry goods. 360° valve. 8–12 hours of protection. No mess." },
+      { name: "keywords", content: "anti chafing spray, athletic powder, dry+goods, prevent blisters, prevent chafing, dry+goods, talc free powder, athletes spray" },
+      { property: "og:title", content: "Dry+Goods™ — The fastest way to prevent chafing." },
+      { property: "og:description", content: "Patented dry+goods. 360° valve. 8–12 hours of protection. No mess." },
       { property: "og:type", content: "product" },
       { property: "og:url", content: "https://drygoods.lovable.app/" },
       { property: "og:image", content: productImg.url },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Dry Goods™ — The fastest way to prevent chafing." },
-      { name: "twitter:description", content: "Patented dry goods. 360° valve. 8–12 hours of protection. No mess." },
+      { name: "twitter:title", content: "Dry+Goods™ — The fastest way to prevent chafing." },
+      { name: "twitter:description", content: "Patented dry+goods. 360° valve. 8–12 hours of protection. No mess." },
       { name: "twitter:image", content: productImg.url },
     ],
     links: [
@@ -47,9 +47,9 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",
-          name: "Dry Goods™ Athletic",
+          name: "Dry+Goods™ Athletic",
           description: "Patented 360° spray-to-powder. Prevents chafing and blisters for 8–12 hours. Talc-free, dermatologist approved, made in USA.",
-          brand: { "@type": "Brand", name: "Dry Goods" },
+          brand: { "@type": "Brand", name: "Dry+Goods" },
           image: [productImg.url],
           sku: "DG-5.4OZ",
           aggregateRating: { "@type": "AggregateRating", ratingValue: "5", reviewCount: "200" },
@@ -120,7 +120,7 @@ function Hero() {
             Never miss another workout.
           </p>
           <p className="mt-4 text-base sm:text-lg text-white/85 max-w-xl mx-auto leading-relaxed">
-            Dry Goods™ stops chafing and blisters in seconds with one spray. No mess. No residue.
+            Dry+Goods™ stops chafing and blisters in seconds with one spray. No mess. No residue.
             8–12 hours of protection.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -163,11 +163,11 @@ function ProblemSolution() {
         <div className="max-w-3xl mx-auto text-center">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Problem · Solution</span>
           <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(30px,5vw,52px)] leading-[1] text-ink">
-            Why dry goods beat <span className="text-sky">the bottle.</span>
+            Why dry+goods beat <span className="text-sky">the bottle.</span>
           </h2>
           <p className="mt-5 text-lg text-ink/70 leading-relaxed">
             Traditional powders cake on skin, dust the air, miss the spots that need protection most,
-            and leave white residue on your gear. Dry Goods™ fixes every one of those problems.
+            and leave white residue on your gear. Dry+Goods™ fixes every one of those problems.
           </p>
         </div>
 
@@ -193,8 +193,8 @@ function ProblemSolution() {
           </div>
           {/* New way */}
           <div className="rounded-2xl border-2 border-sky bg-sky-soft p-7">
-            <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-sky-deep">Dry Goods™</p>
-            <h3 className="mt-2 font-display font-black uppercase tracking-tight text-2xl text-ink">Patented dry goods</h3>
+            <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-sky-deep">Dry+Goods™</p>
+            <h3 className="mt-2 font-display font-black uppercase tracking-tight text-2xl text-ink">Patented dry+goods</h3>
             <ul className="mt-5 space-y-3 text-sm text-ink/85">
               {[
                 "Sprays on wet — dries to powder instantly",
@@ -288,12 +288,12 @@ function Benefits() {
 /* ---------------------------------- ABOUT --------------------------------- */
 function About() {
   const gallery = [
-    { src: aboutBenefits.url, alt: "Athlete with Dry Goods spray showing benefits" },
+    { src: aboutBenefits.url, alt: "Athlete with Dry+Goods spray showing benefits" },
     { src: aboutTargeted.url, alt: "Targeted application without the mess" },
     { src: aboutUpsideDown.url, alt: "Sprayable upside down" },
     { src: aboutLongLasting.url, alt: "Long lasting protection" },
     { src: aboutShare.url, alt: "Share the goods" },
-    { src: aboutBooth.url, alt: "Dry Goods athletes at trade show booth" },
+    { src: aboutBooth.url, alt: "Dry+Goods athletes at trade show booth" },
   ];
   return (
     <section id="about" className="bg-paper py-20 sm:py-24 px-5 sm:px-6 lg:px-8 scroll-mt-16">
@@ -304,12 +304,12 @@ function About() {
             Keeps skin dry. Prevents blisters &amp; chafing during athletic activities.
           </h2>
           <p className="mt-6 text-lg text-ink/75 leading-relaxed">
-            Athletes push their limits, and Dry Goods™ Athletic is built to keep up.
+            Athletes push their limits, and Dry+Goods™ Athletic is built to keep up.
             Designed to combat sweat, moisture, and friction, our advanced formula delivers long-lasting
             dryness and all-day comfort.
           </p>
           <p className="mt-4 text-lg text-ink/75 leading-relaxed">
-            Whether you're on the field, in the gym, or pushing through intense training, Dry Goods™ helps
+            Whether you're on the field, in the gym, or pushing through intense training, Dry+Goods™ helps
             you stay cool, dry, and performing at your best. No mess, no residue — just powerful protection
             when you need it most. Try it once, and you'll never train without it.
           </p>
@@ -340,7 +340,7 @@ function About() {
               was a problem athletes just learned to tolerate. We didn't.
             </p>
             <p className="mt-4 text-ink/75 leading-relaxed">
-              Dry Goods™ was built by athletes who refused to accept "good enough." After years of
+              Dry+Goods™ was built by athletes who refused to accept "good enough." After years of
               real-world testing on athletes, we launched in 2010. What started as a cult product among
               serious competitors has grown into a trusted solution for anyone who trains, competes, and
               refuses to slow down.
@@ -406,7 +406,7 @@ function SkinTypes() {
           </ul>
         </div>
         <div className="rounded-2xl overflow-hidden bg-white">
-          <img src={skinTypes.url} alt="Body diagram showing all areas Dry Goods protects" loading="lazy" className="w-full h-auto" />
+          <img src={skinTypes.url} alt="Body diagram showing all areas Dry+Goods protects" loading="lazy" className="w-full h-auto" />
         </div>
       </div>
     </section>
@@ -443,7 +443,7 @@ function Buy() {
 
         <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center bg-white rounded-3xl p-6 sm:p-10 lg:p-14 shadow-xl shadow-sky/10">
           <div className="relative aspect-square rounded-2xl overflow-hidden bg-sky-soft">
-            <img src={productImg.url} alt="Dry Goods Athletic 5.4 oz can" loading="lazy" className="w-full h-full object-cover" />
+            <img src={productImg.url} alt="Dry+Goods Athletic 5.4 oz can" loading="lazy" className="w-full h-full object-cover" />
             <span className="absolute top-4 left-4 bg-ink text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">In Stock</span>
           </div>
           <div>
@@ -452,7 +452,7 @@ function Buy() {
               <span className="text-xs font-semibold text-ink/60 uppercase tracking-widest">Athlete Approved</span>
             </div>
             <h3 className="mt-3 font-display font-black uppercase tracking-tight text-3xl sm:text-4xl leading-[1.05] text-ink">
-              Dry Goods™<br />Athletic
+              Dry+Goods™<br />Athletic
             </h3>
             <p className="mt-2 text-ink/70">5.4 oz · The fastest way to prevent chafing.</p>
             <div className="mt-5 flex items-baseline gap-3">
@@ -492,7 +492,7 @@ function Buy() {
         {/* Built-for strip */}
         <div className="mt-10 grid md:grid-cols-2 gap-5">
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
-            <img src={raceLine.url} alt="Dry Goods at the starting line of a road race" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
+            <img src={raceLine.url} alt="Dry+Goods at the starting line of a road race" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent" />
             <p className="absolute bottom-5 left-5 right-5 font-display font-black uppercase tracking-tight text-white text-2xl">At the start line.</p>
           </div>
@@ -553,7 +553,7 @@ function Ingredients() {
           </h2>
 
           <p className="mt-5 text-white/75 leading-relaxed">
-            Dry Goods™ is built on a US-patented spray-to-powder mechanism that delivers an ultra-fine
+            Dry+Goods™ is built on a US-patented spray-to-powder mechanism that delivers an ultra-fine
             mist that dries instantly on skin. Every can is formulated and assembled in the USA.
           </p>
           <dl className="mt-8 grid sm:grid-cols-2 gap-4 text-sm">
@@ -585,7 +585,7 @@ function Ingredients() {
 function FAQ() {
   const faqs = [
     { q: "How long does one spray last?", a: "One application delivers 8–12 hours of chafe and blister protection — typically enough for a full workout, long run, or shift." },
-    { q: "Will it stain my clothes or gear?", a: "No. Dry Goods™ dries to a fine powder on contact and won't leave white residue on skin or fabric." },
+    { q: "Will it stain my clothes or gear?", a: "No. Dry+Goods™ dries to a fine powder on contact and won't leave white residue on skin or fabric." },
     { q: "Is it safe for sensitive skin?", a: "Yes. Our formula is talc-free, asbestos-free, and dermatologist approved — safe on all skin types." },
     { q: "Can I spray upside down?", a: "Yes. The patented 360° valve sprays from any angle, including upside down, so you can reach hard-to-cover spots." },
     { q: "Where is it made?", a: "Designed, formulated, and assembled in the USA." },
@@ -643,7 +643,7 @@ function FinalCTA() {
           Ready to stop chafing for good?
         </h2>
         <p className="mt-5 text-lg text-white/90 max-w-xl mx-auto">
-          Join the athletes who never train without Dry Goods™. Get 10% off your first can when you join the list.
+          Join the athletes who never train without Dry+Goods™. Get 10% off your first can when you join the list.
         </p>
 
         <div className="mt-8 flex justify-center">
@@ -651,7 +651,7 @@ function FinalCTA() {
             onClick={() => add("onetime", 1)}
             className="inline-flex items-center gap-2 bg-white text-sky-deep hover:bg-ink hover:text-white transition-colors px-8 py-4 font-bold text-base uppercase tracking-widest rounded-full shadow-lg"
           >
-            <ShoppingCart className="size-5" /> Shop Dry Goods — $19.99
+            <ShoppingCart className="size-5" /> Shop Dry+Goods — $19.99
           </button>
         </div>
 
