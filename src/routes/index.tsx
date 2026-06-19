@@ -471,7 +471,7 @@ function Buy() {
               <span className="text-xs font-semibold text-ink/60 uppercase tracking-widest">Athlete Approved</span>
             </div>
             <h3 className="mt-3 font-display font-black uppercase tracking-tight text-3xl sm:text-4xl leading-[1.05] text-ink">
-              Dry Goods™ Athletic<br />Spray Powder
+              Dry Goods™<br />Athletic
             </h3>
             <p className="mt-2 text-ink/70">5.4 oz · The fastest way to prevent chafing.</p>
             <div className="mt-5 flex items-baseline gap-3">
