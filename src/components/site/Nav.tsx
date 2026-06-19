@@ -5,10 +5,10 @@ import { useCart } from "@/lib/cart-store";
 import logo from "@/assets/dg-logo.png.asset.json";
 
 const sections = [
-  { href: "/#about", label: "About" },
+  { href: "/about", label: "About", route: true },
   { href: "/#buy", label: "Shop" },
   { href: "/#reviews", label: "Reviews" },
-  { href: "/contact", label: "Contact" },
+  { href: "/contact", label: "Contact", route: true },
 ];
 
 export function Nav() {
