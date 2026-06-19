@@ -97,9 +97,10 @@ function Hero() {
           src={golfer.url}
           alt=""
           aria-hidden="true"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-[center_30%]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/55 to-ink/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/75 to-ink/30" />
+        <div className="absolute inset-0 bg-ink/25" />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 py-24 md:py-32 lg:py-40 min-h-[80vh] flex flex-col justify-end">
