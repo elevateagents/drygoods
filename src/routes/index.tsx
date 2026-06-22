@@ -453,7 +453,7 @@ function FAQ() {
         </div>
       ),
     },
-    { q: "What size is the can?", a: "5.4 oz / 153 g — TSA-friendly and built to last through weeks of daily use." },
+    
     { q: "Is it patented?", a: "Yes. Dry+Goods™ is built on a US-patented 360° spray-to-powder valve that delivers an ultra-fine mist and dries instantly on skin." },
     { q: "Where is it made?", a: "Designed, formulated, and assembled in the USA." },
     { q: "Is it talc-free?", a: "Yes. Talc-free, asbestos-free, and cruelty-free — dermatologist approved and safe for all skin types." },
