@@ -2,12 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ShoppingCart } from "lucide-react";
 import { Layout } from "@/components/site/Layout";
 import { useCart } from "@/lib/cart-store";
-import aboutBenefits from "@/assets/about-benefits.png.asset.json";
-import aboutBooth from "@/assets/about-booth.jpg.asset.json";
-import aboutTargeted from "@/assets/about-targeted.png.asset.json";
-import aboutUpsideDown from "@/assets/about-upsidedown.png.asset.json";
-import aboutLongLasting from "@/assets/about-longlasting.png.asset.json";
-import aboutShare from "@/assets/about-share.png.asset.json";
+import aboutPickleballCourt from "@/assets/about-pickleball-court.png.asset.json";
+import aboutPickleballPaddle from "@/assets/about-pickleball-paddle.png.asset.json";
+import aboutGolfDusk from "@/assets/about-golf-dusk.png.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
