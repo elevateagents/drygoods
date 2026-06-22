@@ -1,35 +1,32 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { Layout } from "@/components/site/Layout";
 import AmazonReviewsSection from "@/components/site/AmazonReviewsSection";
 import { useCart } from "@/lib/cart-store";
 import {
-  Wind, Clock, Droplets, Sparkles, ShieldCheck, Leaf, Award, Flag,
-  Star, ShoppingCart, ExternalLink, RotateCcw, CheckCircle2,
-  Target, Snowflake, Plus, Mail, XCircle,
+  Clock, ShieldCheck, Leaf, Award, Flag,
+  ShoppingCart, ExternalLink, RotateCcw, CheckCircle2,
+  Target, Snowflake, Plus, XCircle, Sparkles, Zap,
 } from "lucide-react";
 import golfer from "@/assets/hero-golf-sunset.png.asset.json";
 import productImg from "@/assets/product-white.png.asset.json";
-import raceLine from "@/assets/race-line.png.asset.json";
-import runnersBanner from "@/assets/runners-banner.png.asset.json";
-import runnersOnly from "@/assets/runners-only.jpg.asset.json";
 import skinTypes from "@/assets/skin-types.png.asset.json";
+import pickleballPaddle from "@/assets/about-pickleball-paddle.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Dry+Goods™ Athletic — Stop Chafing & Blisters" },
+      { title: "DryGoods™ Athletic — Prevent Chafing & Blisters" },
       { name: "description", content: "The fastest way to prevent chafing. Patented 360° spray-to-powder. 8–12 hrs protection. Talc Free. Dermatologist Approved. Made in USA." },
-      { name: "keywords", content: "anti chafing spray, athletic powder, dry+goods, prevent blisters, prevent chafing, dry+goods, talc free powder, athletes spray" },
-      { property: "og:title", content: "Dry+Goods™ — The fastest way to prevent chafing." },
-      { property: "og:description", content: "Patented dry+goods. 360° valve. 8–12 hours of protection. No mess." },
+      { name: "keywords", content: "anti chafing spray, athletic powder, drygoods, prevent blisters, prevent chafing, talc free powder" },
+      { property: "og:title", content: "DryGoods™ — The fastest way to prevent chafing." },
+      { property: "og:description", content: "Patented 360° spray-to-powder valve. 8–12 hours of protection. No mess." },
       { property: "og:type", content: "product" },
       { property: "og:url", content: "https://drygoods.lovable.app/" },
       { property: "og:image", content: productImg.url },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Dry+Goods™ — The fastest way to prevent chafing." },
-      { name: "twitter:description", content: "Patented dry+goods. 360° valve. 8–12 hours of protection. No mess." },
+      { name: "twitter:title", content: "DryGoods™ — The fastest way to prevent chafing." },
+      { name: "twitter:description", content: "Patented 360° spray-to-powder valve. 8–12 hours of protection. No mess." },
       { name: "twitter:image", content: productImg.url },
     ],
     links: [
@@ -41,9 +38,9 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",
-          name: "Dry+Goods™ Athletic",
+          name: "DryGoods™ Athletic",
           description: "Patented 360° spray-to-powder. Prevents chafing and blisters for 8–12 hours. Talc-free, dermatologist approved, made in USA.",
-          brand: { "@type": "Brand", name: "Dry+Goods" },
+          brand: { "@type": "Brand", name: "DryGoods" },
           image: [productImg.url],
           sku: "DG-5.4OZ",
           aggregateRating: { "@type": "AggregateRating", ratingValue: "5", reviewCount: "200" },
@@ -66,6 +63,7 @@ function HomePage() {
   return (
     <Layout>
       <Hero />
+      <Introducing />
       <ProblemSolution />
       <HowItWorks />
       <Benefits />
@@ -83,7 +81,6 @@ function Hero() {
   const { add } = useCart();
   return (
     <section id="top" className="relative isolate overflow-hidden bg-ink text-white">
-      {/* Background image — visible, no longer hidden behind text */}
       <div className="absolute inset-0">
         <img
           src={golfer.url}
@@ -91,10 +88,9 @@ function Hero() {
           aria-hidden="true"
           className="w-full h-full object-cover object-[center_30%]"
         />
-        {/* Top gradient for text legibility; fades out so the can stays visible below */}
-        <div className="absolute inset-x-0 top-0 h-[60%] bg-gradient-to-b from-ink/85 via-ink/45 to-transparent" />
-        {/* Soft bottom vignette */}
-        <div className="absolute inset-x-0 bottom-0 h-[20%] bg-gradient-to-t from-ink/40 to-transparent" />
+        {/* Stronger top wash for nav contrast */}
+        <div className="absolute inset-x-0 top-0 h-[70%] bg-gradient-to-b from-ink/95 via-ink/65 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-[25%] bg-gradient-to-t from-ink/55 to-transparent" />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 pt-20 md:pt-28 lg:pt-32 pb-12 min-h-[95vh] flex flex-col">
@@ -114,7 +110,7 @@ function Hero() {
             Never miss another workout.
           </p>
           <p className="mt-4 text-base sm:text-lg text-white max-w-xl mx-auto leading-relaxed [text-shadow:0_2px_10px_rgba(0,0,0,0.55)]">
-            Dry+Goods™ stops chafing and blisters in seconds with one spray. No mess. No residue.
+            DryGoods™ prevents chafing and blisters in seconds with one spray. No mess. No residue.
             8–12 hours of protection.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -129,23 +125,49 @@ function Hero() {
             </a>
           </div>
           <div className="mt-6 flex items-center justify-center gap-2 text-sm text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.6)]">
-            <Stars />
-            <span className="font-semibold">Trusted by athletes since day one</span>
+            <span className="font-semibold">Trusted by customers since 2010</span>
           </div>
         </motion.div>
       </div>
-
     </section>
   );
 }
 
-function Stars({ className = "" }: { className?: string }) {
+/* ----------------------------- INTRODUCING ------------------------------- */
+function Introducing() {
   return (
-    <div className={`flex gap-0.5 ${className}`} aria-label="5 out of 5 stars">
-      {Array.from({ length: 5 }).map((_, i) => (
-        <Star key={i} className="size-4 fill-sky text-sky" />
-      ))}
-    </div>
+    <section id="introducing" className="bg-white py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 border-t border-ink/5">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className="relative aspect-square rounded-3xl overflow-hidden bg-sky-soft flex items-center justify-center">
+          <img src={productImg.url} alt="DryGoods Athletic can" loading="lazy" className="w-[90%] h-[90%] object-contain" />
+        </div>
+        <div>
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Introducing DryGoods™</span>
+          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(30px,5vw,52px)] leading-[1] text-ink">
+            A new kind of <span className="text-sky">anti-chafe spray.</span>
+          </h2>
+          <p className="mt-5 text-lg text-ink/75 leading-relaxed">
+            DryGoods™ Athletic is a patented spray that goes on wet and instantly dries to a fine, invisible powder.
+            One quick spray creates a smooth, moisture-wicking barrier that keeps your skin dry and friction-free —
+            all day, no mess, no residue.
+          </p>
+          <ul className="mt-6 space-y-3 text-ink/85">
+            <li className="flex items-start gap-3">
+              <Sparkles className="size-5 text-sky shrink-0 mt-0.5" />
+              <span><strong>Wet-to-powder formula</strong> — sprays on cool, dries instantly.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <Zap className="size-5 text-sky shrink-0 mt-0.5" />
+              <span><strong>360° patented valve</strong> — reaches anywhere, even upside down.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <ShieldCheck className="size-5 text-sky shrink-0 mt-0.5" />
+              <span><strong>Talc-free & dermatologist approved</strong> — safe on all skin types.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -155,18 +177,17 @@ function ProblemSolution() {
     <section id="why" className="bg-paper py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 border-t border-ink/5 scroll-mt-16">
       <div className="max-w-6xl mx-auto">
         <div className="max-w-3xl mx-auto text-center">
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Problem · Solution</span>
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Why it exists</span>
           <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(30px,5vw,52px)] leading-[1] text-ink">
-            Why dry+goods beat <span className="text-sky">the bottle.</span>
+            The problem with <span className="text-sky">old-school powder.</span>
           </h2>
           <p className="mt-5 text-lg text-ink/70 leading-relaxed">
             Traditional powders cake on skin, dust the air, miss the spots that need protection most,
-            and leave white residue on your gear. Dry+Goods™ fixes every one of those problems.
+            and leave white residue on your gear. DryGoods™ fixes every one of those problems.
           </p>
         </div>
 
         <div className="mt-12 grid md:grid-cols-2 gap-6">
-          {/* Old way */}
           <div className="rounded-2xl border border-ink/10 bg-white p-7">
             <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-ink/50">The old way</p>
             <h3 className="mt-2 font-display font-black uppercase tracking-tight text-2xl text-ink">Bottle powder</h3>
@@ -185,17 +206,16 @@ function ProblemSolution() {
               ))}
             </ul>
           </div>
-          {/* New way */}
           <div className="rounded-2xl border-2 border-sky bg-sky-soft p-7">
-            <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-sky-deep">Dry+Goods™</p>
-            <h3 className="mt-2 font-display font-black uppercase tracking-tight text-2xl text-ink">Patented dry+goods</h3>
+            <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-sky-deep">DryGoods™</p>
+            <h3 className="mt-2 font-display font-black uppercase tracking-tight text-2xl text-ink">Patented spray-to-powder</h3>
             <ul className="mt-5 space-y-3 text-sm text-ink/85">
               {[
                 "Sprays on wet — dries to powder instantly",
                 "Zero cloud · zero mess",
                 "360° valve reaches anywhere, even upside down",
                 "No white residue · won't stain",
-                "One spray = 8–12 hours of protection",
+                "One application = 8–12 hours of protection",
               ].map(x => (
                 <li key={x} className="flex items-start gap-2.5">
                   <CheckCircle2 className="size-5 text-sky shrink-0 mt-0.5" />
@@ -257,10 +277,10 @@ function HowItWorks() {
 function Benefits() {
   const items = [
     { icon: Target, t: "Targeted Application", b: "No mess. No waste." },
-    { icon: RotateCcw, t: "Easy to Use", b: "360° spray valve means you can spray upside down." },
-    { icon: Snowflake, t: "Cool & Dry", b: "Instant relief cooling effect." },
-    { icon: Clock, t: "Durable", b: "Long-lasting protection from moisture & friction." },
-    { icon: ShieldCheck, t: "Skin-Safe", b: "Non-Asbestos Talc. Safe and effective on all skin types." },
+    { icon: RotateCcw, t: "Easy to Use", b: "360° spray valve — works upside down." },
+    { icon: Snowflake, t: "Cool & Dry", b: "Instant cooling on contact." },
+    { icon: Clock, t: "Long-Lasting", b: "8–12 hours of friction protection." },
+    { icon: ShieldCheck, t: "Skin-Safe", b: "Talc-free. Safe on all skin types." },
   ];
   return (
     <section className="bg-sky py-16 sm:py-20 px-5 sm:px-6 lg:px-8">
@@ -279,28 +299,22 @@ function Benefits() {
   );
 }
 
-/* ---------------------------------- ABOUT ---------------------------------
-   Moved to its own page at /about — see src/routes/about.tsx
---------------------------------------------------------------------------- */
-
-
+/* ------------------------------ SKIN TYPES -------------------------------- */
 function SkinTypes() {
   return (
-    <section className="bg-paper pb-16 sm:pb-20 md:pb-24 px-5 sm:px-6 lg:px-8">
+    <section className="bg-paper pt-16 pb-16 sm:pt-20 sm:pb-20 md:pt-24 md:pb-24 px-5 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto text-center">
         <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Whole-body protection</span>
         <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(28px,4.5vw,48px)] leading-[1] text-ink">
           Safe on <span className="text-sky">all skin types.</span>
         </h2>
         <div className="mt-8 rounded-2xl overflow-hidden bg-white">
-          <img src={skinTypes.url} alt="Body diagram showing all areas Dry+Goods protects" loading="lazy" className="w-full h-auto" />
+          <img src={skinTypes.url} alt="Body diagram showing all areas DryGoods protects" loading="lazy" className="w-full h-auto" />
         </div>
       </div>
     </section>
   );
 }
-
-
 
 /* ----------------------------------- BUY ---------------------------------- */
 function Buy() {
@@ -313,7 +327,6 @@ function Buy() {
     "Talc-Free · Dermatologist Approved · Made in USA",
   ];
   const badges = [
-    { icon: Star, label: "★★★★★ Reviews" },
     { icon: Flag, label: "Made in USA" },
     { icon: ShieldCheck, label: "Dermatologist Approved" },
     { icon: Leaf, label: "Talc Free" },
@@ -331,21 +344,17 @@ function Buy() {
         </div>
 
         <div id="buy" className="scroll-mt-24 grid min-w-0 md:grid-cols-2 gap-6 lg:gap-16 items-center bg-white rounded-3xl p-4 sm:p-10 lg:p-14 shadow-xl shadow-sky/10 overflow-hidden">
-          <div className="relative aspect-square rounded-2xl overflow-hidden bg-sky-soft flex items-center justify-center p-6 sm:p-8">
-            <img src={productImg.url} alt="Dry+Goods Athletic 5.4 oz can" loading="lazy" className="max-w-full max-h-full w-auto h-auto object-contain" />
+          <div className="relative aspect-square rounded-2xl overflow-hidden bg-sky-soft flex items-center justify-center p-2 sm:p-3">
+            <img src={productImg.url} alt="DryGoods Athletic 5.4 oz can" loading="lazy" className="w-full h-full object-contain" />
             <span className="absolute top-4 left-4 bg-ink text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">In Stock</span>
           </div>
           <div className="min-w-0">
-            <div className="flex min-w-0 items-center gap-2">
-              <Stars className="shrink-0" />
-              <span className="min-w-0 text-[11px] sm:text-xs font-semibold text-ink/60 uppercase tracking-wide sm:tracking-widest break-words leading-tight">Athlete Approved</span>
-            </div>
-            <h3 className="mt-3 font-display font-black uppercase tracking-normal text-[clamp(24px,6.5vw,40px)] leading-[1.05] text-ink break-words">
-              Dry+Goods™<br />Athletic
+            <h3 className="font-sans font-bold tracking-tight text-[clamp(24px,5.5vw,36px)] leading-[1.1] text-ink break-words">
+              DryGoods™ Athletic
             </h3>
             <p className="mt-2 max-w-full text-sm sm:text-base text-ink/70 leading-relaxed break-words">5.4 oz · The fastest way to prevent chafing.</p>
             <div className="mt-5 grid min-w-0 gap-1 sm:flex sm:flex-wrap sm:items-baseline sm:gap-x-3">
-              <span className="font-display font-black text-4xl sm:text-5xl text-ink leading-none">${selected.price.toFixed(2)}</span>
+              <span className="font-sans font-bold text-4xl sm:text-5xl text-ink leading-none">${selected.price.toFixed(2)}</span>
               <span className="text-xs sm:text-sm text-ink/60 leading-snug break-words">Free shipping over $35</span>
             </div>
             <ul className="mt-6 space-y-2.5">
@@ -365,7 +374,6 @@ function Buy() {
                 <span className="min-w-0 text-center break-words">Also on Amazon</span> <ExternalLink className="size-4 shrink-0" />
               </a>
             </div>
-
           </div>
         </div>
 
@@ -377,54 +385,6 @@ function Buy() {
             </div>
           ))}
         </div>
-
-        {/* Built-for strip */}
-        <div className="mt-10 grid md:grid-cols-2 gap-5">
-          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
-            <img src={raceLine.url} alt="Dry+Goods at the starting line of a road race" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent" />
-            <p className="absolute bottom-5 left-5 right-5 font-display font-black uppercase tracking-tight text-white text-2xl">At the start line.</p>
-          </div>
-          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
-            <img src={runnersOnly.url} alt="Runners in motion" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent" />
-            <p className="absolute bottom-5 left-5 right-5 font-display font-black uppercase tracking-tight text-white text-2xl">Across every mile.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-
-/* --------------------------------- REVIEWS -------------------------------- */
-function Reviews() {
-  const reviews = [
-    { quote: "This spray has been a revelation — sprays upside down, won't clog. More affordable and effective than big-name brands.", name: "ClutchPin", meta: "Verified Customer" },
-    { quote: "Used on my athletes with 100% success and satisfaction every time. Can't recommend it enough.", name: "Angie", meta: "20+ year customer" },
-    { quote: "My husband works construction sweating all day and has ZERO chafing while using this.", name: "Kendra", meta: "Verified Customer" },
-  ];
-  return (
-    <section id="reviews" className="bg-paper py-20 sm:py-24 md:py-32 px-5 sm:px-6 lg:px-8 scroll-mt-16">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Reviews</span>
-          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(32px,5vw,56px)] leading-[1] text-ink">
-            What athletes say.
-          </h2>
-        </div>
-        <div className="grid md:grid-cols-3 gap-5">
-          {reviews.map((r, i) => (
-            <motion.figure key={r.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: i * 0.08 }} className="bg-white border border-ink/10 rounded-2xl p-7 flex flex-col hover:border-sky hover:shadow-xl hover:shadow-sky/10 transition-all">
-              <Stars />
-              <blockquote className="mt-4 text-ink/85 leading-relaxed flex-1">"{r.quote}"</blockquote>
-              <figcaption className="mt-6 pt-5 border-t border-ink/10">
-                <p className="font-bold text-ink">— {r.name}</p>
-                <p className="text-xs uppercase tracking-widest text-ink/55 mt-1">{r.meta}</p>
-              </figcaption>
-            </motion.figure>
-          ))}
-        </div>
       </div>
     </section>
   );
@@ -434,13 +394,13 @@ function Reviews() {
 function FAQ() {
   const faqs: { q: string; a: React.ReactNode }[] = [
     {
-      q: "What's in Dry+Goods? (Key Ingredients)",
+      q: "What's in DryGoods™? (Key Ingredients)",
       a: (
         <div className="space-y-4">
           <p>Every ingredient earns its place. Here's what's doing the work:</p>
           <div>
             <p className="font-bold text-ink">Arrowroot Extract</p>
-            <p>A plant-derived powder that pulls moisture from skin on contact. One of nature's most effective natural absorbents.</p>
+            <p>A plant-derived powder that pulls moisture from skin on contact.</p>
           </div>
           <div>
             <p className="font-bold text-ink">Zinc Oxide</p>
@@ -453,14 +413,13 @@ function FAQ() {
         </div>
       ),
     },
-    
-    { q: "Is it patented?", a: "Yes. Dry+Goods™ is built on a US-patented 360° spray-to-powder valve that delivers an ultra-fine mist and dries instantly on skin." },
+    { q: "Is it patented?", a: "Yes. DryGoods™ is built on a US-patented 360° spray-to-powder valve that delivers an ultra-fine mist and dries instantly on skin." },
     { q: "Where is it made?", a: "Designed, formulated, and assembled in the USA." },
     { q: "Is it talc-free?", a: "Yes. Talc-free, asbestos-free, and cruelty-free — dermatologist approved and safe for all skin types." },
-    { q: "How long does one spray last?", a: "One application delivers 8–12 hours of chafe and blister protection — typically enough for a full workout, long run, or shift." },
-    { q: "Will it stain my clothes or gear?", a: "No. Dry+Goods™ dries to a fine powder on contact and won't leave white residue on skin or fabric." },
+    { q: "Will it stain my clothes or gear?", a: "No. DryGoods™ dries to a fine powder on contact and won't leave white residue on skin or fabric." },
     { q: "Can I spray upside down?", a: "Yes. The patented 360° valve sprays from any angle, including upside down, so you can reach hard-to-cover spots." },
     { q: "What is the return policy?", a: "30-day satisfaction guarantee. If it's not for you, email us for a free return." },
+    { q: "How long does one application last?", a: "One application provides approximately 8–12 hours of protection, depending on your activity level, sweat, and usage." },
   ];
   return (
     <section id="faq" className="scroll-mt-24 bg-paper py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8">
@@ -490,62 +449,32 @@ function FAQ() {
 /* ------------------------------- FINAL CTA -------------------------------- */
 function FinalCTA() {
   const { add } = useCart();
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "ok" | "err">("idle");
-
-  function onSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-      setStatus("err");
-      return;
-    }
-    // TODO: wire to Klaviyo list once API key is added
-    setStatus("ok");
-    setEmail("");
-  }
-
   return (
-    <section className="relative bg-sky text-white py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <img src={runnersBanner.url} alt="" aria-hidden className="w-full h-full object-cover" />
+    <section className="relative bg-ink text-white py-20 sm:py-24 md:py-32 px-5 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="absolute inset-0">
+        <img src={pickleballPaddle.url} alt="" aria-hidden className="w-full h-full object-cover opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-ink/60" />
       </div>
       <div className="relative max-w-3xl mx-auto text-center">
-        <h2 className="font-display font-black uppercase tracking-tight text-[clamp(32px,5.5vw,60px)] leading-[1]">
-          Ready to stop chafing for good?
+        <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">The last word</span>
+        <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(34px,6vw,68px)] leading-[1]">
+          Stay cool, stay dry. <span className="text-sky">Stay unstoppable.</span>
         </h2>
-        <p className="mt-5 text-lg text-white/90 max-w-xl mx-auto">
-          Join the athletes who never train without Dry+Goods™. Get 10% off your first can when you join the list.
+        <p className="mt-6 text-lg text-white/85 max-w-2xl mx-auto leading-relaxed">
+          Don't let discomfort slow down your best performance. Experience the confidence and comfort
+          to push your limits every day.
         </p>
-
-        <div className="mt-8 flex justify-center">
+        <div className="mt-10 flex flex-wrap justify-center gap-4">
           <button
             onClick={() => add("onetime", 1)}
-            className="inline-flex items-center gap-2 bg-white text-sky-deep hover:bg-ink hover:text-white transition-colors px-8 py-4 font-bold text-base uppercase tracking-widest rounded-full shadow-lg"
+            className="inline-flex items-center gap-2 bg-sky hover:bg-sky-deep transition-colors text-white px-8 py-4 font-bold text-base uppercase tracking-widest rounded-full shadow-lg shadow-sky/30"
           >
-            <ShoppingCart className="size-5" /> Shop Dry+Goods — $19.99
+            <ShoppingCart className="size-5" /> Get DryGoods — $19.99
           </button>
+          <a href="#buy" className="inline-flex items-center px-8 py-4 font-bold text-sm uppercase tracking-widest border-2 border-white/40 text-white rounded-full hover:bg-white hover:text-ink transition-colors">
+            See Details
+          </a>
         </div>
-
-        <form onSubmit={onSubmit} className="mt-10 max-w-md mx-auto">
-          <label className="text-xs font-bold uppercase tracking-[0.25em] text-white/90 flex items-center justify-center gap-2 mb-3">
-            <Mail className="size-4" /> Get 10% off — join the list
-          </label>
-          <div className="flex flex-col sm:flex-row gap-2">
-            <input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => { setEmail(e.target.value); setStatus("idle"); }}
-              placeholder="you@email.com"
-              className="flex-1 rounded-full px-5 py-3 text-ink placeholder-ink/40 bg-white focus:outline-none focus:ring-2 focus:ring-white"
-            />
-            <button type="submit" className="rounded-full bg-ink text-white px-6 py-3 font-bold uppercase tracking-widest text-sm hover:bg-black transition-colors">
-              Subscribe
-            </button>
-          </div>
-          {status === "ok" && <p className="mt-3 text-sm text-white">Thanks! Check your inbox for your code.</p>}
-          {status === "err" && <p className="mt-3 text-sm text-white/90">Please enter a valid email.</p>}
-        </form>
       </div>
     </section>
   );
