@@ -50,7 +50,7 @@ function AboutPage() {
             </p>
           </div>
 
-          <div className="mt-14 grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5">
+          <div className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
             {gallery.map((g) => (
               <div key={g.src} className="aspect-square overflow-hidden rounded-2xl bg-white">
                 <img src={g.src} alt={g.alt} loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
