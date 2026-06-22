@@ -21,12 +21,9 @@ export const Route = createFileRoute("/about")({
 function AboutPage() {
   const { add, setOpen } = useCart();
   const gallery = [
-    { src: aboutBenefits.url, alt: "Athlete with Dry+Goods spray showing benefits" },
-    { src: aboutTargeted.url, alt: "Targeted application without the mess" },
-    { src: aboutUpsideDown.url, alt: "Sprayable upside down" },
-    { src: aboutLongLasting.url, alt: "Long lasting protection" },
-    { src: aboutShare.url, alt: "Share the goods" },
-    { src: aboutBooth.url, alt: "Dry+Goods athletes at trade show booth" },
+    { src: aboutPickleballCourt.url, alt: "Dry+Goods can on pickleball court at sunrise" },
+    { src: aboutPickleballPaddle.url, alt: "Dry+Goods can with pickleball paddle and ball" },
+    { src: aboutGolfDusk.url, alt: "Dry+Goods can on golf course at dusk" },
   ];
   const handleAdd = () => {
     void add("onetime", 1);
