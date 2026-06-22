@@ -2,12 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ShoppingCart } from "lucide-react";
 import { Layout } from "@/components/site/Layout";
 import { useCart } from "@/lib/cart-store";
-import aboutBenefits from "@/assets/about-benefits.png.asset.json";
-import aboutBooth from "@/assets/about-booth.jpg.asset.json";
-import aboutTargeted from "@/assets/about-targeted.png.asset.json";
-import aboutUpsideDown from "@/assets/about-upsidedown.png.asset.json";
-import aboutLongLasting from "@/assets/about-longlasting.png.asset.json";
-import aboutShare from "@/assets/about-share.png.asset.json";
+import aboutPickleballCourt from "@/assets/about-pickleball-court.png.asset.json";
+import aboutPickleballPaddle from "@/assets/about-pickleball-paddle.png.asset.json";
+import aboutGolfDusk from "@/assets/about-golf-dusk.png.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -24,12 +21,9 @@ export const Route = createFileRoute("/about")({
 function AboutPage() {
   const { add, setOpen } = useCart();
   const gallery = [
-    { src: aboutBenefits.url, alt: "Athlete with Dry+Goods spray showing benefits" },
-    { src: aboutTargeted.url, alt: "Targeted application without the mess" },
-    { src: aboutUpsideDown.url, alt: "Sprayable upside down" },
-    { src: aboutLongLasting.url, alt: "Long lasting protection" },
-    { src: aboutShare.url, alt: "Share the goods" },
-    { src: aboutBooth.url, alt: "Dry+Goods athletes at trade show booth" },
+    { src: aboutPickleballCourt.url, alt: "Dry+Goods can on pickleball court at sunrise" },
+    { src: aboutPickleballPaddle.url, alt: "Dry+Goods can with pickleball paddle and ball" },
+    { src: aboutGolfDusk.url, alt: "Dry+Goods can on golf course at dusk" },
   ];
   const handleAdd = () => {
     void add("onetime", 1);
@@ -56,7 +50,7 @@ function AboutPage() {
             </p>
           </div>
 
-          <div className="mt-14 grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5">
+          <div className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
             {gallery.map((g) => (
               <div key={g.src} className="aspect-square overflow-hidden rounded-2xl bg-white">
                 <img src={g.src} alt={g.alt} loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
