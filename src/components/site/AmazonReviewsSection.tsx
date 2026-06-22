@@ -22,22 +22,14 @@ export default function AmazonReviewsSection() {
             Reviews
           </span>
           <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(32px,5vw,56px)] leading-[1] text-ink">
-            Loved by Customers
+            See what real customers are saying.
           </h2>
           <p className="mt-4 text-ink/70 leading-relaxed">
-            See what real athletes are saying about this product.
+            Honest feedback from people who use DryGoods™ every day.
           </p>
-          <a
-            href="https://www.amazon.com/dp/B003YTUWJ8"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="mt-6 inline-flex items-center gap-2 bg-ink text-white hover:bg-sky transition-colors px-5 py-2.5 text-xs font-bold uppercase tracking-widest rounded-full"
-          >
-            ★★★★★ Read on Amazon →
-          </a>
         </div>
 
-        <div className="bg-white border border-ink/10 rounded-2xl p-4 sm:p-6 md:p-8 hover:border-sky hover:shadow-xl hover:shadow-sky/10 transition-all overflow-hidden">
+        <div className="bg-white border border-ink/10 rounded-2xl p-4 sm:p-6 md:p-8 overflow-hidden">
           <div className="elfsight-app-ac7d1b96-f589-41c9-bc4c-d318faa011fb" data-elfsight-app-lazy />
         </div>
       </div>

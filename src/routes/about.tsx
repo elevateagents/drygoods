@@ -9,9 +9,9 @@ import aboutGolfDusk from "@/assets/about-golf-dusk.png.asset.json";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Dry+Goods™ — Built by Athletes Who Refused 'Good Enough'" },
-      { name: "description", content: "How Dry+Goods™ Athletic was born from real-world testing — the story behind the patented spray-to-powder formula." },
-      { property: "og:title", content: "About Dry+Goods™" },
+      { title: "About DryGoods™ — Built by Athletes Who Refused 'Good Enough'" },
+      { name: "description", content: "How DryGoods™ Athletic was born from real-world testing — the story behind the patented spray-to-powder formula." },
+      { property: "og:title", content: "About DryGoods™" },
       { property: "og:description", content: "We didn't set out to build a brand. We set out to solve a problem." },
     ],
   }),
@@ -21,9 +21,9 @@ export const Route = createFileRoute("/about")({
 function AboutPage() {
   const { add, setOpen } = useCart();
   const gallery = [
-    { src: aboutPickleballCourt.url, alt: "Dry+Goods can on pickleball court at sunrise" },
-    { src: aboutPickleballPaddle.url, alt: "Dry+Goods can with pickleball paddle and ball" },
-    { src: aboutGolfDusk.url, alt: "Dry+Goods can on golf course at dusk" },
+    { src: aboutPickleballCourt.url, alt: "DryGoods can on pickleball court at sunrise" },
+    { src: aboutPickleballPaddle.url, alt: "DryGoods can with pickleball paddle and ball" },
+    { src: aboutGolfDusk.url, alt: "DryGoods can on golf course at dusk" },
   ];
   const handleAdd = () => {
     void add("onetime", 1);
@@ -38,13 +38,13 @@ function AboutPage() {
             <h1 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(28px,4.5vw,48px)] leading-[1.05] text-ink">
               Keeps skin dry. Prevents blisters &amp; chafing during athletic activities.
             </h1>
-            <p className="mt-6 text-lg text-ink/75 leading-relaxed">
-              Athletes push their limits, and Dry+Goods™ Athletic is built to keep up.
+            <p className="mt-6 font-sans text-base sm:text-lg text-ink/75 leading-relaxed">
+              Athletes push their limits, and DryGoods™ Athletic is built to keep up.
               Designed to combat sweat, moisture, and friction, our advanced formula delivers long-lasting
               dryness and all-day comfort.
             </p>
-            <p className="mt-4 text-lg text-ink/75 leading-relaxed">
-              Whether you're on the field, in the gym, or pushing through intense training, Dry+Goods™ helps
+            <p className="mt-4 font-sans text-base sm:text-lg text-ink/75 leading-relaxed">
+              Whether you're on the field, in the gym, or pushing through intense training, DryGoods™ helps
               you stay cool, dry, and performing at your best. No mess, no residue — just powerful protection
               when you need it most. Try it once, and you'll never train without it.
             </p>
@@ -63,16 +63,16 @@ function AboutPage() {
             <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(24px,3.5vw,36px)] leading-[1.05] text-ink">
               We didn't set out to build a brand. We set out to solve a problem.
             </h2>
-            <p className="mt-5 text-ink/75 leading-relaxed">
+            <p className="mt-5 font-sans text-base text-ink/75 leading-relaxed">
               Early mornings, double sessions, two a days, competitions that push you past what you
               thought possible. At that level, every detail matters — and the wrong gear can cost you.
             </p>
-            <p className="mt-4 text-ink/75 leading-relaxed">
+            <p className="mt-4 font-sans text-base text-ink/75 leading-relaxed">
               Dump-on powder was one of those details that never worked. Wet, chalky, uncomfortable — it
               was a problem athletes just learned to tolerate. We didn't.
             </p>
-            <p className="mt-4 text-ink/75 leading-relaxed">
-              Dry+Goods™ was built by athletes who refused to accept "good enough." After years of
+            <p className="mt-4 font-sans text-base text-ink/75 leading-relaxed">
+              DryGoods™ was built by athletes who refused to accept "good enough." After years of
               real-world testing on athletes, we launched in 2010. What started as a cult product among
               serious competitors has grown into a trusted solution for anyone who trains, competes, and
               refuses to slow down.

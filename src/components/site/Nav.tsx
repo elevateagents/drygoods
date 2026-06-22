@@ -25,10 +25,10 @@ export function Nav() {
   }, [menu]);
 
   return (
-    <nav className="fixed top-0 inset-x-0 z-50 bg-paper border-b border-ink/10 shadow-sm">
+    <nav className="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur border-b border-ink/10 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
-        <Link to="/" onClick={() => setMenu(false)} className="flex items-center gap-2 shrink-0" aria-label="Dry+Goods home">
-          <img src={logo.url} alt="Dry+Goods" className="h-10 w-auto" />
+        <Link to="/" onClick={() => setMenu(false)} className="flex items-center gap-2 shrink-0" aria-label="DryGoods home">
+          <img src={logo.url} alt="DryGoods" className="h-10 w-auto" />
         </Link>
         <div className="hidden md:flex gap-8 text-sm font-bold uppercase tracking-wide">
           {sections.map(s => (
