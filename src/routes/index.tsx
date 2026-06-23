@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import golfer from "@/assets/hero-golf-sunset.png.asset.json";
 import productImg from "@/assets/product-white.png.asset.json";
-import skinTypes from "@/assets/skin-types.png.asset.json";
+import skinTypes from "@/assets/skin-types-body.jpg.asset.json";
 import pickleballPaddle from "@/assets/about-pickleball-paddle.png.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -304,9 +304,8 @@ function SkinTypes() {
   return (
     <section className="bg-paper pt-16 pb-16 sm:pt-20 sm:pb-20 md:pt-24 md:pb-24 px-5 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto text-center">
-        <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Whole-body protection</span>
-        <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(28px,4.5vw,48px)] leading-[1] text-ink">
-          Safe on <span className="text-sky">all skin types.</span>
+        <h2 className="font-display font-black uppercase tracking-tight text-[clamp(28px,4.5vw,48px)] leading-[1] text-ink">
+          Whole-body <span className="text-sky">protection.</span>
         </h2>
         <div className="mt-8 rounded-2xl overflow-hidden bg-white">
           <img src={skinTypes.url} alt="Body diagram showing all areas DryGoods protects" loading="lazy" className="w-full h-auto" />
