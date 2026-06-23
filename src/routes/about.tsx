@@ -81,14 +81,14 @@ function AboutPage() {
 
           <div className="mt-16 max-w-3xl mx-auto rounded-3xl bg-ink text-white p-8 sm:p-10 lg:p-12 text-center shadow-xl shadow-ink/20">
             <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Ready to stay dry?</span>
-            <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(24px,4vw,40px)] leading-[1.05]">
+            <h3 className="mt-3 font-sans font-bold tracking-tight text-[clamp(24px,4vw,40px)] leading-[1.1]">
               Grab a can. We'll handle the rest.
             </h3>
             <p className="mt-4 text-white/75 max-w-xl mx-auto">One 5.4 oz can — add to cart in one tap.</p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <div className="text-left">
                 <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/60">One-time purchase</div>
-                <div className="font-display font-black text-3xl">$19.99</div>
+                <div className="font-sans font-bold text-3xl">$19.99</div>
               </div>
               <button
                 onClick={handleAdd}
