@@ -1,4 +1,7 @@
+import { useEffect } from "react";
+
 const REVIEWS = [
+
   {
     name: "Leonidous",
     text: "Closest replacement I've found to the old DSC Ball Spray. Keeps everything dry, fresh, and comfortable without being overpowering or irritating. Great for long work days, gym sessions, and hot weather.",
@@ -34,11 +37,21 @@ function Stars() {
 }
 
 export default function AmazonReviewsSection() {
+  useEffect(() => {
+    const SRC = "https://apps.elfsight.com/p/platform.js";
+    if (document.querySelector(`script[src="${SRC}"]`)) return;
+    const s = document.createElement("script");
+    s.src = SRC;
+    s.defer = true;
+    document.body.appendChild(s);
+  }, []);
+
   return (
     <section
       id="reviews"
       className="bg-paper py-20 sm:py-24 md:py-32 px-5 sm:px-6 lg:px-8 scroll-mt-16"
     >
+
       <div className="max-w-6xl mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#9CD1B4]">
@@ -68,7 +81,12 @@ export default function AmazonReviewsSection() {
             </figure>
           ))}
         </div>
+
+        <div className="mt-12">
+          <div className="elfsight-app-ac7d1b96-f589-41c9-bc4c-d318faa011fb" data-elfsight-app-lazy />
+        </div>
       </div>
     </section>
   );
 }
+
