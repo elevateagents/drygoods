@@ -23,7 +23,7 @@ const REVIEWS = [
 
 function Stars() {
   return (
-    <div className="flex gap-0.5 text-sky" aria-label="5 out of 5 stars">
+    <div className="flex gap-0.5 text-[#9CD1B4]" aria-label="5 out of 5 stars">
       {Array.from({ length: 5 }).map((_, i) => (
         <svg key={i} width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
           <path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.9l-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z" />
@@ -41,7 +41,7 @@ export default function AmazonReviewsSection() {
     >
       <div className="max-w-6xl mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#9CD1B4]">
             Reviews
           </span>
           <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(32px,5vw,56px)] leading-[1] text-ink">
