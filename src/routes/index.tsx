@@ -206,8 +206,8 @@ function ProblemSolution() {
               ))}
             </ul>
           </div>
-          <div className="rounded-2xl border-2 border-sky bg-sky-soft p-7">
-            <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-sky-deep">DryGoods™</p>
+          <div className="rounded-2xl border-2 border-[#9CD1B4] bg-[#9CD1B4]/15 p-7">
+            <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#5BA37F]">DryGoods™</p>
             <h3 className="mt-2 font-display font-black uppercase tracking-tight text-2xl text-ink">Patented spray-to-powder</h3>
             <ul className="mt-5 space-y-3 text-sm text-ink/85">
               {[
@@ -218,12 +218,13 @@ function ProblemSolution() {
                 "One application = 8–12 hours of protection",
               ].map(x => (
                 <li key={x} className="flex items-start gap-2.5">
-                  <CheckCircle2 className="size-5 text-sky shrink-0 mt-0.5" />
+                  <CheckCircle2 className="size-5 text-[#9CD1B4] shrink-0 mt-0.5" />
                   <span>{x}</span>
                 </li>
               ))}
             </ul>
           </div>
+
         </div>
       </div>
     </section>
@@ -242,9 +243,9 @@ function HowItWorks() {
     <section className="bg-ink text-white py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="max-w-3xl">
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">How it works</span>
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#9CD1B4]">How it works</span>
           <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(30px,5vw,52px)] leading-[1]">
-            The <span className="text-sky">360° spray</span> mechanism.
+            The <span className="text-[#9CD1B4]">360° spray</span> mechanism.
           </h2>
           <p className="mt-5 text-lg text-white/75 leading-relaxed">
             Our patented valve releases an ultra-fine liquid that flash-dries to powder on skin.
@@ -260,13 +261,14 @@ function HowItWorks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="rounded-2xl bg-white/5 border border-white/10 p-6 hover:border-sky hover:bg-white/10 transition-colors"
+              className="rounded-2xl bg-white/5 border border-white/10 p-6 hover:border-[#9CD1B4] hover:bg-white/10 transition-colors"
             >
-              <p className="font-display font-black text-sky text-3xl tracking-tight">{s.n}</p>
+              <p className="font-display font-black text-[#9CD1B4] text-3xl tracking-tight">{s.n}</p>
               <h3 className="mt-3 font-bold text-lg">{s.t}</h3>
               <p className="mt-2 text-sm text-white/70 leading-relaxed">{s.b}</p>
             </motion.div>
           ))}
+
         </div>
       </div>
     </section>
