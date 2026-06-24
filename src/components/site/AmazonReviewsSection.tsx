@@ -85,6 +85,21 @@ export default function AmazonReviewsSection() {
         <div className="mt-12">
           <div className="elfsight-app-ac7d1b96-f589-41c9-bc4c-d318faa011fb" data-elfsight-app-lazy />
         </div>
+
+        <div className="mt-10 flex justify-center">
+          <a
+            href="https://www.amazon.com/dp/B003YTUWJ8"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-ink hover:bg-ink/90 transition-colors text-white px-8 py-4 font-bold text-sm uppercase tracking-widest rounded-full shadow-lg"
+          >
+            See all reviews on Amazon
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M7 17L17 7M9 7h8v8" />
+            </svg>
+          </a>
+        </div>
+
       </div>
     </section>
   );
