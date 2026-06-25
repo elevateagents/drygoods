@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+// Reviews marquee — infinite CSS animation
 
 type Review = {
   name: string;
@@ -115,44 +115,28 @@ function VerifiedBadge() {
 }
 
 export default function AmazonReviewsSection() {
-  const scrollerRef = useRef<HTMLDivElement>(null);
-  const [paused, setPaused] = useState(false);
-  // Duplicate reviews to create a seamless loop
   const loopReviews = [...REVIEWS, ...REVIEWS];
-
-  const scrollBy = (dir: 1 | -1) => {
-    const el = scrollerRef.current;
-    if (!el) return;
-    const card = el.querySelector<HTMLElement>("[data-review-card]");
-    const delta = card ? card.offsetWidth + 20 : 360;
-    el.scrollBy({ left: delta * dir, behavior: "smooth" });
-  };
-
-  // Auto-scroll loop
-  useEffect(() => {
-    const el = scrollerRef.current;
-    if (!el || paused) return;
-    let raf = 0;
-    let last = performance.now();
-    const speed = 40; // px/sec
-    const tick = (now: number) => {
-      const dt = (now - last) / 1000;
-      last = now;
-      const half = el.scrollWidth / 2;
-      let next = el.scrollLeft + speed * dt;
-      if (next >= half) next -= half;
-      el.scrollLeft = next;
-      raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, [paused]);
 
   return (
     <section
       id="reviews"
-      className="bg-paper py-20 sm:py-24 md:py-32 px-5 sm:px-6 lg:px-8 scroll-mt-16"
+      className="bg-paper py-20 sm:py-24 md:py-32 px-5 sm:px-6 lg:px-8 scroll-mt-16 overflow-hidden"
     >
+      <style>{`
+        @keyframes dg-marquee {
+          0% { transform: translate3d(0,0,0); }
+          100% { transform: translate3d(-50%,0,0); }
+        }
+        .dg-marquee-track {
+          animation: dg-marquee 60s linear infinite;
+          width: max-content;
+        }
+        .dg-marquee-mask:hover .dg-marquee-track { animation-play-state: paused; }
+        @media (prefers-reduced-motion: reduce) {
+          .dg-marquee-track { animation: none; }
+        }
+      `}</style>
+
       <div className="max-w-6xl mx-auto">
         {/* Amazon-style header */}
         <div className="flex flex-col items-center text-center mb-10">
@@ -167,31 +151,21 @@ export default function AmazonReviewsSection() {
           </div>
         </div>
 
-        {/* Carousel */}
-        <div className="relative">
-          <button
-            type="button"
-            onClick={() => scrollBy(-1)}
-            aria-label="Previous reviews"
-            className="hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 items-center justify-center rounded-full bg-white border border-ink/10 shadow-md hover:bg-ink hover:text-white transition-colors"
-          >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M15 18l-6-6 6-6" />
-            </svg>
-          </button>
-
-          <div
-            ref={scrollerRef}
-            onMouseEnter={() => setPaused(true)}
-            onMouseLeave={() => setPaused(false)}
-            onTouchStart={() => setPaused(true)}
-            onTouchEnd={() => setPaused(false)}
-            className="flex gap-5 overflow-x-auto pb-4 -mx-5 px-5 sm:mx-0 sm:px-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-          >
+        {/* Infinite marquee carousel */}
+        <div
+          className="dg-marquee-mask relative overflow-hidden"
+          style={{
+            maskImage:
+              "linear-gradient(to right, transparent, black 4%, black 96%, transparent)",
+            WebkitMaskImage:
+              "linear-gradient(to right, transparent, black 4%, black 96%, transparent)",
+          }}
+        >
+          <div className="dg-marquee-track flex gap-5 py-1">
             {loopReviews.map((r, i) => (
               <article
                 key={i}
-                data-review-card
+                aria-hidden={i >= REVIEWS.length}
                 className="shrink-0 w-[300px] sm:w-[340px] bg-white border border-ink/10 rounded-2xl p-6 flex flex-col gap-3"
               >
                 <div className="flex items-center gap-1.5">
@@ -208,18 +182,8 @@ export default function AmazonReviewsSection() {
               </article>
             ))}
           </div>
-
-          <button
-            type="button"
-            onClick={() => scrollBy(1)}
-            aria-label="Next reviews"
-            className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 items-center justify-center rounded-full bg-white border border-ink/10 shadow-md hover:bg-ink hover:text-white transition-colors"
-          >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M9 18l6-6-6-6" />
-            </svg>
-          </button>
         </div>
+
 
         <div className="mt-10 flex justify-center">
           <a
