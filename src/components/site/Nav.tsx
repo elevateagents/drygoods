@@ -25,6 +25,7 @@ export function Nav() {
   }, [menu]);
 
   return (
+    <>
     <nav className="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur border-b border-ink/10 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
         <Link to="/" onClick={() => setMenu(false)} className="flex items-center gap-2 shrink-0" aria-label="DryGoods home">
@@ -60,29 +61,31 @@ export function Nav() {
           </button>
         </div>
       </div>
+    </nav>
 
-      {menu && (
-        <div className="md:hidden fixed inset-x-0 top-16 bottom-0 bg-paper z-[60] overflow-y-auto overscroll-contain">
-          <ul className="flex flex-col py-2">
-            {sections.map(s => (
-              <li key={s.href} className="border-b border-ink/10">
-                <a
-                  href={s.href}
-                  onClick={() => setMenu(false)}
-                  className="block px-6 py-5 font-display text-2xl font-black uppercase tracking-tight hover:bg-sky hover:text-white"
-                >
-                  {s.label}
-                </a>
-              </li>
-            ))}
-            <li className="px-6 py-6">
-              <a href="/#buy" onClick={() => setMenu(false)} className="block text-center bg-sky text-white py-4 font-bold uppercase tracking-widest rounded-full">
-                Shop Now
+    {menu && (
+      <div className="md:hidden fixed inset-x-0 top-16 bottom-0 bg-paper z-[60] overflow-y-auto overscroll-contain">
+        <ul className="flex flex-col py-2">
+          {sections.map(s => (
+            <li key={s.href} className="border-b border-ink/10">
+              <a
+                href={s.href}
+                onClick={() => setMenu(false)}
+                className="block px-6 py-5 font-display text-2xl font-black uppercase tracking-tight hover:bg-sky hover:text-white"
+              >
+                {s.label}
               </a>
             </li>
-          </ul>
-        </div>
-      )}
-    </nav>
+          ))}
+          <li className="px-6 py-6">
+            <a href="/#buy" onClick={() => setMenu(false)} className="block text-center bg-sky text-white py-4 font-bold uppercase tracking-widest rounded-full">
+              Shop Now
+            </a>
+          </li>
+        </ul>
+      </div>
+    )}
+    </>
   );
 }
+
