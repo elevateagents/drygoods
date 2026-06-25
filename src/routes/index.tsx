@@ -139,8 +139,8 @@ function Introducing() {
   return (
     <section id="introducing" className="bg-white py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 border-t border-ink/5">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
-        <div className="relative aspect-square rounded-3xl overflow-hidden bg-sky-soft flex items-center justify-center">
-          <img src={productImg.url} alt="DryGoods Athletic can" loading="lazy" className="w-[90%] h-[90%] object-contain" />
+        <div className="relative aspect-square rounded-3xl overflow-hidden">
+          <img src={productConcrete.url} alt="DryGoods Athletic can" loading="lazy" className="w-full h-full object-cover" />
         </div>
         <div>
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Introducing DryGoods™</span>
