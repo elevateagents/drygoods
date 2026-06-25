@@ -1,89 +1,197 @@
-import { useEffect } from "react";
+import { useRef } from "react";
 
-const REVIEWS = [
+type Review = {
+  name: string;
+  rating: number;
+  title: string;
+  date: string;
+  body: string;
+  helpful?: string;
+};
 
+const REVIEWS: Review[] = [
   {
     name: "Leonidous",
-    text: "Closest replacement I've found to the old DSC Ball Spray. Keeps everything dry, fresh, and comfortable without being overpowering or irritating. Great for long work days, gym sessions, and hot weather.",
+    rating: 5,
+    title: "Balls",
+    date: "Reviewed in the United States on May 22, 2026",
+    body: "I've been trying to find a good replacement for the old DSC Ball Spray ever since they stopped making it, and this is honestly the closest thing I've found. Very similar feel and effectiveness. It keeps everything dry, fresh, and comfortable without being overpowering or irritating. Works great for long work days, gym sessions, or just hot weather in general. The spray goes on clean, dries quickly, and doesn't leave a weird sticky residue like some others I've tried. Definitely happy I gave this a shot.",
+    helpful: "2 people found this helpful",
   },
   {
     name: "Kendra",
-    text: "This is the only thing my husband has found that helps with chafing on inner thighs and below the belt. He works construction, sweats all day, and has zero chafing while using this. It works.",
+    rating: 5,
+    title: "Best out there for chafing",
+    date: "Reviewed in the United States on March 17, 2026",
+    body: "This is the only thing my husband has found to help with chafing on inner thighs and \"below the belt\" he works construction and is sweating all day and has zero chafing while he uses this. It is pricey but IT WORKS. We tried less expensive versions like the aem and hammer dry spray and it just doesn't work like this. ALSO its sprays great from any angle!",
+    helpful: "2 people found this helpful",
+  },
+  {
+    name: "kai",
+    rating: 4,
+    title: "Well worth it!",
+    date: "Reviewed in the United States on October 4, 2012",
+    body: "This stuff really works, keeps me dry and free from chafing, I've tried the powders before and they always seem to leave a mess and cake up. I really like not having powder all over the bathroom floor and the ease of use. Would highly recommend.",
+    helpful: "3 people found this helpful",
   },
   {
     name: "Angie",
-    text: "I have used and loved this product for 20+ years. It's a great mix of cooling and drying powder in spray form, doesn't leave residue on body or clothes, and is easy to travel with.",
+    rating: 5,
+    title: "I can't recommend it enough! I have used and loved this product for 20+ years!",
+    date: "Reviewed in the United States on August 16, 2024",
+    body: "I have used this product for years, before it was even available on the open market. I discovered it at a Sports Medicine conference when the owner/creator first introduced the product. I fell in love with it then and have used it ever since, 20+ years. I've used this on my athletes for a variety of issues, with a 100% success and satisfaction rate every time. The product is a nice mix of a cooling agent and a drying powder in a spray form. It doesn't leave a residue on your body or clothes.",
+    helpful: "8 people found this helpful",
+  },
+  {
+    name: "Adam",
+    rating: 5,
+    title: "This is a Win-Win.............",
+    date: "Reviewed in the United States on July 9, 2016",
+    body: "I have finally found the perfect product!!!! Living here in South Florida in a tropical environment sweat is normal and things tend to get sticky. I finally had a chance to use it today and it is AMAZING!!! It goes on super COLD, which to me is very refreshing. The smell is wonderful like a peppermint candy! It's been 8 plus hours since I have applied and it stops all stickiness down there. No more mess and it works!",
+    helpful: "17 people found this helpful",
+  },
+  {
+    name: "Jackberger",
+    rating: 3,
+    title: "Great but expensive",
+    date: "Reviewed in the United States on June 3, 2026",
+    body: "Great product! But pricey... Not sure why the 5 dollar increase since a month ago!?",
+    helpful: "One person found this helpful",
   },
   {
     name: "ClutchPin",
-    text: "This spray has been a revelation. It sprays upside down, doesn't clog, feels just right, and has a pleasant scent that isn't overwhelming. More affordable and effective than big-name brands.",
+    rating: 5,
+    title: "Stay Fresh from Every Angle – Even Upside Down!",
+    date: "Reviewed in the United States on January 17, 2025",
+    body: "This spray has been a revelation as someone who has struggled to find the perfect dry powder body spray. It's now my go-to for those tricky areas (yes, it will spray upside down and not clog). The application is a breeze, and the feeling is just right. The scent is pleasant, not overwhelming. And the best part? It's more affordable and effective than the big-name brands.",
+    helpful: "2 people found this helpful",
   },
   {
     name: "Tia Charm",
-    text: "Absolutely love it. This works great. I had trouble finding a body spray that was easy to use, and I'm definitely glad I found this one. Highly recommend.",
+    rating: 5,
+    title: "Absolutely love it",
+    date: "Reviewed in the United States on July 20, 2025",
+    body: "This works great. I used to buy Gold Bond, but they must have changed the sprayer or something, and it became too difficult to use. It took some digging to find this, but I am definitely glad I did. Highly recommend this.",
   },
 ];
 
-function Stars() {
+function Stars({ rating, size = 16 }: { rating: number; size?: number }) {
+  const pct = (rating / 5) * 100;
   return (
-    <div className="flex gap-0.5 text-[#9CD1B4]" aria-label="5 out of 5 stars">
-      {Array.from({ length: 5 }).map((_, i) => (
-        <svg key={i} width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
-          <path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.9l-5.3 2.8 1-5.8L1.5 7.7l5.9-.9L10 1.5z" />
-        </svg>
-      ))}
+    <div
+      className="relative inline-block leading-none"
+      style={{ fontSize: size }}
+      aria-label={`${rating} out of 5 stars`}
+    >
+      <span className="text-gray-300 tracking-[1px]">★★★★★</span>
+      <span
+        className="absolute inset-0 overflow-hidden text-[#FFA41C] tracking-[1px]"
+        style={{ width: `${pct}%` }}
+        aria-hidden
+      >
+        ★★★★★
+      </span>
     </div>
   );
 }
 
+function VerifiedBadge() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" className="text-[#1A98FF]" aria-hidden>
+      <path
+        fill="currentColor"
+        d="M12 1l2.5 2.3 3.4-.4.9 3.3 3 1.6-1.2 3.2 1.2 3.2-3 1.6-.9 3.3-3.4-.4L12 21l-2.5-2.3-3.4.4-.9-3.3-3-1.6L3.4 11 2.2 7.8l3-1.6.9-3.3 3.4.4L12 1z"
+      />
+      <path
+        d="M7.5 12.2l3 3 6-6"
+        stroke="white"
+        strokeWidth="2"
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export default function AmazonReviewsSection() {
-  useEffect(() => {
-    const SRC = "https://apps.elfsight.com/p/platform.js";
-    if (document.querySelector(`script[src="${SRC}"]`)) return;
-    const s = document.createElement("script");
-    s.src = SRC;
-    s.defer = true;
-    document.body.appendChild(s);
-  }, []);
+  const scrollerRef = useRef<HTMLDivElement>(null);
+
+  const scrollBy = (dir: 1 | -1) => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const card = el.querySelector<HTMLElement>("[data-review-card]");
+    const delta = card ? card.offsetWidth + 20 : 360;
+    el.scrollBy({ left: delta * dir, behavior: "smooth" });
+  };
 
   return (
     <section
       id="reviews"
       className="bg-paper py-20 sm:py-24 md:py-32 px-5 sm:px-6 lg:px-8 scroll-mt-16"
     >
-
       <div className="max-w-6xl mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#9CD1B4]">
-            Reviews
-          </span>
-          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(32px,5vw,56px)] leading-[1] text-ink">
-            See what real customers are saying.
-          </h2>
-          <p className="mt-4 text-ink/70 leading-relaxed">
-            Honest feedback from people who use DryGoods™ every day.
-          </p>
+        {/* Amazon-style header */}
+        <div className="flex flex-col items-center text-center mb-10">
+          <div className="flex items-baseline gap-2">
+            <span className="font-serif italic text-ink text-xl sm:text-2xl">amazon</span>
+            <span className="text-ink text-xl sm:text-2xl font-medium">Reviews</span>
+          </div>
+          <div className="mt-3 flex items-center gap-2">
+            <span className="text-3xl sm:text-4xl font-bold text-ink">4.5</span>
+            <Stars rating={4.5} size={24} />
+            <span className="text-ink/50 text-sm">(448)</span>
+          </div>
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {REVIEWS.map((r) => (
-            <figure
-              key={r.name}
-              className="bg-white border border-ink/10 rounded-2xl p-6 flex flex-col gap-4"
-            >
-              <Stars />
-              <blockquote className="text-ink/80 leading-relaxed text-[15px]">
-                &ldquo;{r.text}&rdquo;
-              </blockquote>
-              <figcaption className="mt-auto text-sm font-bold text-ink uppercase tracking-wide">
-                {r.name}
-              </figcaption>
-            </figure>
-          ))}
-        </div>
+        {/* Carousel */}
+        <div className="relative">
+          <button
+            type="button"
+            onClick={() => scrollBy(-1)}
+            aria-label="Previous reviews"
+            className="hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 items-center justify-center rounded-full bg-white border border-ink/10 shadow-md hover:bg-ink hover:text-white transition-colors"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
 
-        <div className="mt-12">
-          <div className="elfsight-app-ac7d1b96-f589-41c9-bc4c-d318faa011fb" data-elfsight-app-lazy />
+          <div
+            ref={scrollerRef}
+            className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4 -mx-5 px-5 sm:mx-0 sm:px-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          >
+            {REVIEWS.map((r, i) => (
+              <article
+                key={i}
+                data-review-card
+                className="snap-start shrink-0 w-[300px] sm:w-[340px] bg-white border border-ink/10 rounded-2xl p-6 flex flex-col gap-3"
+              >
+                <div className="flex items-center gap-1.5">
+                  <span className="font-bold text-ink text-sm">{r.name}</span>
+                  <VerifiedBadge />
+                </div>
+                <Stars rating={r.rating} size={16} />
+                <h3 className="font-bold text-ink text-[15px] leading-snug">{r.title}</h3>
+                <p className="text-xs text-ink/50">{r.date}</p>
+                <p className="text-ink/80 text-[14px] leading-relaxed line-clamp-6">{r.body}</p>
+                {r.helpful && (
+                  <p className="mt-auto pt-2 text-xs text-ink/50">{r.helpful}</p>
+                )}
+              </article>
+            ))}
+          </div>
+
+          <button
+            type="button"
+            onClick={() => scrollBy(1)}
+            aria-label="Next reviews"
+            className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 items-center justify-center rounded-full bg-white border border-ink/10 shadow-md hover:bg-ink hover:text-white transition-colors"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
         </div>
 
         <div className="mt-10 flex justify-center">
@@ -99,9 +207,7 @@ export default function AmazonReviewsSection() {
             </svg>
           </a>
         </div>
-
       </div>
     </section>
   );
 }
-
