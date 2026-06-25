@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ShoppingBag, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useCart } from "@/lib/cart-store";
-import logo from "@/assets/dg-logo-nav.jpg.asset.json";
+import logo from "@/assets/dry-goods-logo.svg.asset.json";
 
 const sections = [
   { href: "/about", label: "About", route: true },
@@ -28,7 +28,7 @@ export function Nav() {
     <nav className="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur border-b border-ink/10 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
         <Link to="/" onClick={() => setMenu(false)} className="flex items-center gap-2 shrink-0" aria-label="DryGoods home">
-          <img src={logo.url} alt="DryGoods" className="h-10 w-auto" />
+          <img src={logo.url} alt="DryGoods" className="h-8 sm:h-9 w-auto" />
         </Link>
         <div className="hidden md:flex gap-8 text-sm font-bold uppercase tracking-wide">
           {sections.map(s => (
