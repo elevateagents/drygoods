@@ -459,24 +459,25 @@ function FinalCTA() {
       </div>
       <div className="relative max-w-3xl mx-auto text-center">
         <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">The last word</span>
-        <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(34px,6vw,68px)] leading-[1]">
+        <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(26px,7vw,68px)] leading-[1.05] break-words">
           Stay cool, stay dry. <span className="text-sky">Stay unstoppable.</span>
         </h2>
-        <p className="mt-6 text-lg text-white/85 max-w-2xl mx-auto leading-relaxed">
+        <p className="mt-6 text-base sm:text-lg text-white/85 max-w-2xl mx-auto leading-relaxed">
           Don't let discomfort slow down your best performance. Experience the confidence and comfort
           to push your limits every day.
         </p>
-        <div className="mt-10 flex flex-wrap justify-center gap-4">
+        <div className="mt-10 flex flex-col sm:flex-row sm:flex-wrap justify-center items-stretch sm:items-center gap-3 sm:gap-4">
           <button
             onClick={() => add("onetime", 1)}
-            className="inline-flex items-center gap-2 bg-sky hover:bg-sky-deep transition-colors text-white px-8 py-4 font-bold text-base uppercase tracking-widest rounded-full shadow-lg shadow-sky/30"
+            className="inline-flex items-center justify-center gap-2 bg-sky hover:bg-sky-deep transition-colors text-white px-6 sm:px-8 py-4 font-bold text-sm sm:text-base uppercase tracking-widest rounded-full shadow-lg shadow-sky/30"
           >
             <ShoppingCart className="size-5" /> Get DryGoods — $19.99
           </button>
-          <a href="#buy" className="inline-flex items-center px-8 py-4 font-bold text-sm uppercase tracking-widest border-2 border-white/40 text-white rounded-full hover:bg-white hover:text-ink transition-colors">
+          <a href="#buy" className="inline-flex items-center justify-center px-6 sm:px-8 py-4 font-bold text-sm uppercase tracking-widest border-2 border-white/40 text-white rounded-full hover:bg-white hover:text-ink transition-colors">
             See Details
           </a>
         </div>
+
       </div>
     </section>
   );
