@@ -402,17 +402,26 @@ function FAQ() {
           <p>Every ingredient earns its place. Here's what's doing the work:</p>
           <div>
             <p className="font-bold text-ink">Arrowroot Extract</p>
-            <p>A plant-derived powder that pulls moisture from skin on contact.</p>
+            <p>A plant-derived powder that instantly pulls moisture away from the skin. Nature's most effective natural absorbent.</p>
           </div>
           <div>
             <p className="font-bold text-ink">Zinc Oxide</p>
-            <p>A skin-protective mineral that calms irritation and creates a barrier against friction.</p>
+            <p>A skin-protective mineral that soothes friction and protects skin.</p>
           </div>
           <div>
             <p className="font-bold text-ink">Menthol</p>
-            <p>Activates the skin's cold receptors for an immediate, lasting cooling sensation.</p>
+            <p>That clean cooling sensation you feel on application. Activates cold receptors in the skin for an immediate cooling sensation that lasts.</p>
+          </div>
+          <div className="pt-2 border-t border-ink/10">
+            <p className="font-bold text-ink">Talc-Free — Reformulated With Better Ingredients.</p>
+            <p>We made the call to remove talc and upgrade the formula. Cleaner ingredients, same performance.</p>
+          </div>
+          <div>
+            <p className="font-bold text-ink">No Aluminum Chlorohydrate.</p>
+            <p>That's the aluminum compound in antiperspirants that blocks sweat glands. It's not in here. Dry Goods manages moisture without blocking your body's natural function.</p>
           </div>
         </div>
+
       ),
     },
     { q: "Is it patented?", a: "Yes. DryGoods™ is built on a US-patented 360° spray-to-powder valve that delivers an ultra-fine mist and dries instantly on skin." },
