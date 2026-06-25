@@ -182,13 +182,17 @@ export default function AmazonReviewsSection() {
 
           <div
             ref={scrollerRef}
-            className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4 -mx-5 px-5 sm:mx-0 sm:px-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
+            onTouchStart={() => setPaused(true)}
+            onTouchEnd={() => setPaused(false)}
+            className="flex gap-5 overflow-x-auto pb-4 -mx-5 px-5 sm:mx-0 sm:px-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
           >
-            {REVIEWS.map((r, i) => (
+            {loopReviews.map((r, i) => (
               <article
                 key={i}
                 data-review-card
-                className="snap-start shrink-0 w-[300px] sm:w-[340px] bg-white border border-ink/10 rounded-2xl p-6 flex flex-col gap-3"
+                className="shrink-0 w-[300px] sm:w-[340px] bg-white border border-ink/10 rounded-2xl p-6 flex flex-col gap-3"
               >
                 <div className="flex items-center gap-1.5">
                   <span className="font-bold text-ink text-sm">{r.name}</span>
