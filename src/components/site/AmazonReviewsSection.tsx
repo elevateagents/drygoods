@@ -1,4 +1,5 @@
-// Reviews marquee — infinite CSS animation
+// Reviews marquee — infinite CSS animation with user controls
+import { useRef, useState } from "react";
 
 type Review = {
   name: string;
@@ -116,6 +117,17 @@ function VerifiedBadge() {
 
 export default function AmazonReviewsSection() {
   const loopReviews = [...REVIEWS, ...REVIEWS];
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [paused, setPaused] = useState(false);
+
+  const nudge = (dir: 1 | -1) => {
+    const el = trackRef.current;
+    if (!el) return;
+    // pause animation and shift via scroll on the wrapper
+    setPaused(true);
+    const wrap = el.parentElement;
+    if (wrap) wrap.scrollBy({ left: dir * 360, behavior: "smooth" });
+  };
 
   return (
     <section
@@ -152,22 +164,23 @@ export default function AmazonReviewsSection() {
           width: max-content;
         }
         .dg-marquee-mask:hover .dg-marquee-track { animation-play-state: paused; }
-        @media (prefers-reduced-motion: reduce) {
-          .dg-marquee-track { animation: none; }
-        }
-      `}</style>
+          .dg-marquee-track.is-paused { animation-play-state: paused; }
+          @media (prefers-reduced-motion: reduce) {
+            .dg-marquee-track { animation: none; }
+          }
+        `}</style>
 
-      <div className="relative max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="flex flex-col items-center text-center mb-12">
-          <span className="text-[12px] sm:text-[13px] uppercase tracking-[0.3em] font-bold text-[#1FB6FF] mb-4">
-            Loved by Customers
-          </span>
-          <h2 className="font-display font-black uppercase leading-[0.95] tracking-tight text-ink text-[clamp(36px,7vw,76px)]">
-            Real athletes.
-            <br />
-            <span className="text-[#1FB6FF]">Real reviews.</span>
-          </h2>
+        <div className="relative max-w-6xl mx-auto">
+          {/* Header */}
+          <div className="flex flex-col items-center text-center mb-12">
+            <span className="text-[12px] sm:text-[13px] uppercase tracking-[0.3em] font-bold text-[#1FB6FF] mb-4">
+              Loved by Customers
+            </span>
+            <h2 className="font-display font-black uppercase leading-[0.95] tracking-tight text-ink text-[clamp(36px,7vw,76px)]">
+              Real athletes.
+              <br />
+              <span className="text-[#1FB6FF]">Real reviews.</span>
+            </h2>
           <div className="mt-6 flex items-center gap-2">
             <Stars rating={4.5} size={22} />
             <span className="text-ink/70 text-sm font-semibold">4.5 / 5 · 448 Amazon reviews</span>
@@ -178,15 +191,19 @@ export default function AmazonReviewsSection() {
 
         {/* Infinite marquee carousel */}
         <div
-          className="dg-marquee-mask relative overflow-hidden"
+          className={`dg-marquee-mask relative ${paused ? "overflow-x-auto" : "overflow-hidden"}`}
           style={{
             maskImage:
               "linear-gradient(to right, transparent, black 4%, black 96%, transparent)",
             WebkitMaskImage:
               "linear-gradient(to right, transparent, black 4%, black 96%, transparent)",
+            scrollbarWidth: "none",
           }}
         >
-          <div className="dg-marquee-track flex gap-5 py-1">
+          <div
+            ref={trackRef}
+            className={`dg-marquee-track flex gap-5 py-1 ${paused ? "is-paused" : ""}`}
+          >
             {loopReviews.map((r, i) => (
               <article
                 key={i}
@@ -207,6 +224,44 @@ export default function AmazonReviewsSection() {
               </article>
             ))}
           </div>
+        </div>
+
+        {/* Controls */}
+        <div className="mt-6 flex items-center justify-center gap-3">
+          <button
+            type="button"
+            onClick={() => nudge(-1)}
+            aria-label="Previous review"
+            className="h-10 w-10 inline-flex items-center justify-center rounded-full bg-white border border-ink/15 text-ink hover:bg-ink hover:text-white transition-colors shadow-sm"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button
+            type="button"
+            onClick={() => setPaused((p) => !p)}
+            aria-label={paused ? "Play reviews" : "Pause reviews"}
+            className="h-10 px-4 inline-flex items-center justify-center gap-2 rounded-full bg-ink text-white text-xs font-bold uppercase tracking-widest hover:bg-ink/90 transition-colors shadow-sm"
+          >
+            {paused ? (
+              <>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden><path d="M8 5v14l11-7z"/></svg>
+                Play
+              </>
+            ) : (
+              <>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+                Pause
+              </>
+            )}
+          </button>
+          <button
+            type="button"
+            onClick={() => nudge(1)}
+            aria-label="Next review"
+            className="h-10 w-10 inline-flex items-center justify-center rounded-full bg-white border border-ink/15 text-ink hover:bg-ink hover:text-white transition-colors shadow-sm"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M9 6l6 6-6 6"/></svg>
+          </button>
         </div>
 
 
