@@ -470,7 +470,7 @@ function FinalCTA() {
       <div className="relative max-w-3xl mx-auto text-center">
         <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">The last word</span>
         <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(26px,7vw,68px)] leading-[1.05] break-words">
-          Stay cool, stay dry. <span className="text-sky">Stay unstoppable.</span>
+          Stay cool, stay dry. <span className="text-sky whitespace-nowrap">Stay unstoppable.</span>
         </h2>
         <p className="mt-6 text-base sm:text-lg text-white/85 max-w-2xl mx-auto leading-relaxed">
           Don't let discomfort slow down your best performance. Experience the confidence and comfort
