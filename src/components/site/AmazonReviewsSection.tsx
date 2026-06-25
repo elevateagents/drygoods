@@ -120,7 +120,7 @@ export default function AmazonReviewsSection() {
   return (
     <section
       id="reviews"
-      className="relative py-20 sm:py-24 md:py-32 px-5 sm:px-6 lg:px-8 scroll-mt-16 overflow-hidden bg-gradient-to-b from-sage/20 via-paper to-sage/10"
+      className="relative py-20 sm:py-24 md:py-32 px-5 sm:px-6 lg:px-8 scroll-mt-16 overflow-hidden bg-[linear-gradient(to_bottom,#E8F3EC_0%,#F7F4EC_50%,#EAF4EE_100%)]"
     >
       {/* Decorative background */}
       <div
