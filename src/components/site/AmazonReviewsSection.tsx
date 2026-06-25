@@ -159,18 +159,21 @@ export default function AmazonReviewsSection() {
 
       <div className="relative max-w-6xl mx-auto">
         {/* Header */}
-        <div className="flex flex-col items-center text-center mb-10">
-          <span className="text-[11px] uppercase tracking-[0.25em] text-ink/50 font-medium mb-3">
+        <div className="flex flex-col items-center text-center mb-12">
+          <span className="text-[12px] sm:text-[13px] uppercase tracking-[0.3em] font-bold text-[#1FB6FF] mb-4">
             Loved by Customers
           </span>
-          <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-ink leading-[1.05] max-w-2xl">
-            See what real athletes are saying
+          <h2 className="font-sans font-black uppercase leading-[0.92] tracking-[-0.02em] text-ink text-5xl sm:text-6xl md:text-7xl">
+            Real athletes.
+            <br />
+            <span className="text-[#1FB6FF]">Real reviews.</span>
           </h2>
-          <div className="mt-5 flex items-center gap-2">
+          <div className="mt-6 flex items-center gap-2">
             <Stars rating={4.5} size={22} />
-            <span className="text-ink/70 text-sm font-medium">4.5 / 5 · 448 Amazon reviews</span>
+            <span className="text-ink/70 text-sm font-semibold">4.5 / 5 · 448 Amazon reviews</span>
           </div>
         </div>
+
 
 
         {/* Infinite marquee carousel */}
