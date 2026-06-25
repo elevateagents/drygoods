@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import golfer from "@/assets/hero-golf-sunset.png.asset.json";
 import productImg from "@/assets/product-white.png.asset.json";
+import productConcrete from "@/assets/product-concrete.png.asset.json";
 import skinTypes from "@/assets/skin-types-body.jpg.asset.json";
 import pickleballPaddle from "@/assets/about-pickleball-paddle.png.asset.json";
 
