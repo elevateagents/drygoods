@@ -164,22 +164,23 @@ export default function AmazonReviewsSection() {
           width: max-content;
         }
         .dg-marquee-mask:hover .dg-marquee-track { animation-play-state: paused; }
-        @media (prefers-reduced-motion: reduce) {
-          .dg-marquee-track { animation: none; }
-        }
-      `}</style>
+          .dg-marquee-track.is-paused { animation-play-state: paused; }
+          @media (prefers-reduced-motion: reduce) {
+            .dg-marquee-track { animation: none; }
+          }
+        `}</style>
 
-      <div className="relative max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="flex flex-col items-center text-center mb-12">
-          <span className="text-[12px] sm:text-[13px] uppercase tracking-[0.3em] font-bold text-[#1FB6FF] mb-4">
-            Loved by Customers
-          </span>
-          <h2 className="font-display font-black uppercase leading-[0.95] tracking-tight text-ink text-[clamp(36px,7vw,76px)]">
-            Real athletes.
-            <br />
-            <span className="text-[#1FB6FF]">Real reviews.</span>
-          </h2>
+        <div className="relative max-w-6xl mx-auto">
+          {/* Header */}
+          <div className="flex flex-col items-center text-center mb-12">
+            <span className="text-[12px] sm:text-[13px] uppercase tracking-[0.3em] font-bold text-[#1FB6FF] mb-4">
+              Loved by Customers
+            </span>
+            <h2 className="font-display font-black uppercase leading-[0.95] tracking-tight text-ink text-[clamp(36px,7vw,76px)]">
+              Real athletes.
+              <br />
+              <span className="text-[#1FB6FF]">Real reviews.</span>
+            </h2>
           <div className="mt-6 flex items-center gap-2">
             <Stars rating={4.5} size={22} />
             <span className="text-ink/70 text-sm font-semibold">4.5 / 5 · 448 Amazon reviews</span>
