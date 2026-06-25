@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+// Reviews marquee — infinite CSS animation
 
 type Review = {
   name: string;
