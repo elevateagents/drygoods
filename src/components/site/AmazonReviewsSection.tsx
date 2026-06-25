@@ -117,6 +117,17 @@ function VerifiedBadge() {
 
 export default function AmazonReviewsSection() {
   const loopReviews = [...REVIEWS, ...REVIEWS];
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [paused, setPaused] = useState(false);
+
+  const nudge = (dir: 1 | -1) => {
+    const el = trackRef.current;
+    if (!el) return;
+    // pause animation and shift via scroll on the wrapper
+    setPaused(true);
+    const wrap = el.parentElement;
+    if (wrap) wrap.scrollBy({ left: dir * 360, behavior: "smooth" });
+  };
 
   return (
     <section
