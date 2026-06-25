@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Review = {
   name: string;
@@ -116,6 +116,9 @@ function VerifiedBadge() {
 
 export default function AmazonReviewsSection() {
   const scrollerRef = useRef<HTMLDivElement>(null);
+  const [paused, setPaused] = useState(false);
+  // Duplicate reviews to create a seamless loop
+  const loopReviews = [...REVIEWS, ...REVIEWS];
 
   const scrollBy = (dir: 1 | -1) => {
     const el = scrollerRef.current;
@@ -124,6 +127,26 @@ export default function AmazonReviewsSection() {
     const delta = card ? card.offsetWidth + 20 : 360;
     el.scrollBy({ left: delta * dir, behavior: "smooth" });
   };
+
+  // Auto-scroll loop
+  useEffect(() => {
+    const el = scrollerRef.current;
+    if (!el || paused) return;
+    let raf = 0;
+    let last = performance.now();
+    const speed = 40; // px/sec
+    const tick = (now: number) => {
+      const dt = (now - last) / 1000;
+      last = now;
+      const half = el.scrollWidth / 2;
+      let next = el.scrollLeft + speed * dt;
+      if (next >= half) next -= half;
+      el.scrollLeft = next;
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [paused]);
 
   return (
     <section
@@ -159,13 +182,17 @@ export default function AmazonReviewsSection() {
 
           <div
             ref={scrollerRef}
-            className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4 -mx-5 px-5 sm:mx-0 sm:px-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
+            onTouchStart={() => setPaused(true)}
+            onTouchEnd={() => setPaused(false)}
+            className="flex gap-5 overflow-x-auto pb-4 -mx-5 px-5 sm:mx-0 sm:px-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
           >
-            {REVIEWS.map((r, i) => (
+            {loopReviews.map((r, i) => (
               <article
                 key={i}
                 data-review-card
-                className="snap-start shrink-0 w-[300px] sm:w-[340px] bg-white border border-ink/10 rounded-2xl p-6 flex flex-col gap-3"
+                className="shrink-0 w-[300px] sm:w-[340px] bg-white border border-ink/10 rounded-2xl p-6 flex flex-col gap-3"
               >
                 <div className="flex items-center gap-1.5">
                   <span className="font-bold text-ink text-sm">{r.name}</span>
