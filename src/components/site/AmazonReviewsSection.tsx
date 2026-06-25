@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Review = {
   name: string;
@@ -116,6 +116,9 @@ function VerifiedBadge() {
 
 export default function AmazonReviewsSection() {
   const scrollerRef = useRef<HTMLDivElement>(null);
+  const [paused, setPaused] = useState(false);
+  // Duplicate reviews to create a seamless loop
+  const loopReviews = [...REVIEWS, ...REVIEWS];
 
   const scrollBy = (dir: 1 | -1) => {
     const el = scrollerRef.current;
@@ -124,6 +127,26 @@ export default function AmazonReviewsSection() {
     const delta = card ? card.offsetWidth + 20 : 360;
     el.scrollBy({ left: delta * dir, behavior: "smooth" });
   };
+
+  // Auto-scroll loop
+  useEffect(() => {
+    const el = scrollerRef.current;
+    if (!el || paused) return;
+    let raf = 0;
+    let last = performance.now();
+    const speed = 40; // px/sec
+    const tick = (now: number) => {
+      const dt = (now - last) / 1000;
+      last = now;
+      const half = el.scrollWidth / 2;
+      let next = el.scrollLeft + speed * dt;
+      if (next >= half) next -= half;
+      el.scrollLeft = next;
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [paused]);
 
   return (
     <section
