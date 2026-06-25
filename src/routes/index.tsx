@@ -187,10 +187,10 @@ function ProblemSolution() {
           </p>
         </div>
 
-        <div className="mt-12 grid md:grid-cols-2 gap-6">
-          <div className="rounded-2xl border border-ink/10 bg-white p-7">
+        <div className="mt-12 grid md:grid-cols-2 gap-5 sm:gap-6">
+          <div className="rounded-2xl border border-ink/10 bg-white p-5 sm:p-7">
             <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-ink/50">The old way</p>
-            <h3 className="mt-2 font-display font-black uppercase tracking-tight text-2xl text-ink">Bottle powder</h3>
+            <h3 className="mt-2 font-display font-black uppercase tracking-tight text-xl sm:text-2xl text-ink break-words">Bottle powder</h3>
             <ul className="mt-5 space-y-3 text-sm text-ink/80">
               {[
                 "Cakes & clumps on sweaty skin",
@@ -201,14 +201,14 @@ function ProblemSolution() {
               ].map(x => (
                 <li key={x} className="flex items-start gap-2.5">
                   <XCircle className="size-5 text-ink/40 shrink-0 mt-0.5" />
-                  <span>{x}</span>
+                  <span className="min-w-0 break-words">{x}</span>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="rounded-2xl border-2 border-[#9CD1B4] bg-[#9CD1B4]/15 p-7">
+          <div className="rounded-2xl border-2 border-[#9CD1B4] bg-[#9CD1B4]/15 p-5 sm:p-7">
             <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#5BA37F]">DryGoods™</p>
-            <h3 className="mt-2 font-display font-black uppercase tracking-tight text-2xl text-ink">Patented spray-to-powder</h3>
+            <h3 className="mt-2 font-display font-black uppercase tracking-tight text-xl sm:text-2xl text-ink break-words hyphens-auto">Patented spray-to-powder</h3>
             <ul className="mt-5 space-y-3 text-sm text-ink/85">
               {[
                 "Sprays on wet — dries to powder instantly",
@@ -219,11 +219,12 @@ function ProblemSolution() {
               ].map(x => (
                 <li key={x} className="flex items-start gap-2.5">
                   <CheckCircle2 className="size-5 text-[#9CD1B4] shrink-0 mt-0.5" />
-                  <span>{x}</span>
+                  <span className="min-w-0 break-words">{x}</span>
                 </li>
               ))}
             </ul>
           </div>
+
 
         </div>
       </div>
