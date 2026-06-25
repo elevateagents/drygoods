@@ -1,4 +1,5 @@
-// Reviews marquee — infinite CSS animation
+// Reviews marquee — infinite CSS animation with user controls
+import { useRef, useState } from "react";
 
 type Review = {
   name: string;
