@@ -163,7 +163,7 @@ export default function AmazonReviewsSection() {
           <span className="text-[12px] sm:text-[13px] uppercase tracking-[0.3em] font-bold text-[#1FB6FF] mb-4">
             Loved by Customers
           </span>
-          <h2 className="font-sans font-black uppercase leading-[0.92] tracking-[-0.02em] text-ink text-5xl sm:text-6xl md:text-7xl">
+          <h2 className="font-display font-black uppercase leading-[0.95] tracking-tight text-ink text-[clamp(36px,7vw,76px)]">
             Real athletes.
             <br />
             <span className="text-[#1FB6FF]">Real reviews.</span>
