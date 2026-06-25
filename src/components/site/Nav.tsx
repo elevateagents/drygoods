@@ -62,7 +62,7 @@ export function Nav() {
       </div>
 
       {menu && (
-        <div className="md:hidden fixed inset-x-0 top-16 bottom-0 bg-paper z-30 overflow-y-auto">
+        <div className="md:hidden fixed inset-x-0 top-16 bottom-0 bg-paper z-[60] overflow-y-auto overscroll-contain">
           <ul className="flex flex-col py-2">
             {sections.map(s => (
               <li key={s.href} className="border-b border-ink/10">
