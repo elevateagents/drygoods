@@ -120,8 +120,28 @@ export default function AmazonReviewsSection() {
   return (
     <section
       id="reviews"
-      className="bg-paper py-20 sm:py-24 md:py-32 px-5 sm:px-6 lg:px-8 scroll-mt-16 overflow-hidden"
+      className="relative py-20 sm:py-24 md:py-32 px-5 sm:px-6 lg:px-8 scroll-mt-16 overflow-hidden bg-[linear-gradient(to_bottom,#E8F3EC_0%,#F7F4EC_50%,#EAF4EE_100%)]"
     >
+      {/* Decorative background */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.18]"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 20% 15%, #9CD1B4 0, transparent 45%), radial-gradient(circle at 85% 80%, #9CD1B4 0, transparent 50%)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.06]"
+        style={{
+          backgroundImage:
+            "radial-gradient(currentColor 1px, transparent 1px)",
+          backgroundSize: "22px 22px",
+          color: "#0a0a0a",
+        }}
+      />
+
       <style>{`
         @keyframes dg-marquee {
           0% { transform: translate3d(0,0,0); }
@@ -137,19 +157,21 @@ export default function AmazonReviewsSection() {
         }
       `}</style>
 
-      <div className="max-w-6xl mx-auto">
-        {/* Amazon-style header */}
+      <div className="relative max-w-6xl mx-auto">
+        {/* Header */}
         <div className="flex flex-col items-center text-center mb-10">
-          <div className="flex items-baseline gap-2">
-            <span className="font-serif italic text-ink text-xl sm:text-2xl">amazon</span>
-            <span className="text-ink text-xl sm:text-2xl font-medium">Reviews</span>
-          </div>
-          <div className="mt-3 flex items-center gap-2">
-            <span className="text-3xl sm:text-4xl font-bold text-ink">4.5</span>
-            <Stars rating={4.5} size={24} />
-            <span className="text-ink/50 text-sm">(448)</span>
+          <span className="text-[11px] uppercase tracking-[0.25em] text-ink/50 font-medium mb-3">
+            Loved by Customers
+          </span>
+          <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-ink leading-[1.05] max-w-2xl">
+            See what real athletes are saying
+          </h2>
+          <div className="mt-5 flex items-center gap-2">
+            <Stars rating={4.5} size={22} />
+            <span className="text-ink/70 text-sm font-medium">4.5 / 5 · 448 Amazon reviews</span>
           </div>
         </div>
+
 
         {/* Infinite marquee carousel */}
         <div
