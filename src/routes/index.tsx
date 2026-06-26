@@ -173,31 +173,77 @@ function Introducing() {
 function ConquerChafing() {
   return (
     <section className="bg-white py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 border-t border-ink/5">
-      <div className="max-w-5xl mx-auto text-center">
-        <h2 className="font-display font-black uppercase tracking-tight text-[clamp(32px,6vw,64px)] leading-[1] text-ink">
-          Conquer chafing, <span className="text-sky">unleash your performance.</span>
-        </h2>
-        <div className="mt-12 grid md:grid-cols-2 gap-6 lg:gap-10 text-left">
-          <div className="rounded-3xl bg-ink text-white p-8 sm:p-10">
-            <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-sky">An athlete's silent battle</p>
-            <h3 className="mt-3 font-display font-black uppercase tracking-tight text-2xl sm:text-3xl leading-tight">
-              The chafing nobody talks about.
+      <div className="max-w-6xl mx-auto">
+        {/* Headline */}
+        <div className="text-center max-w-4xl mx-auto">
+          <h2 className="font-display font-black uppercase tracking-tight text-[clamp(32px,6vw,64px)] leading-[1] text-ink">
+            Conquer chafing, <span className="text-sky">unleash your performance.</span>
+          </h2>
+          <p className="mt-6 text-lg sm:text-xl text-ink/75 leading-relaxed max-w-3xl mx-auto">
+            The athletic anti-chafing spray trusted by professionals for over 15 years —
+            engineered for athletes who refuse to slow down.
+          </p>
+        </div>
+
+        {/* Silent Battle */}
+        <div className="mt-20">
+          <div className="text-center max-w-3xl mx-auto">
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">The athlete's silent battle</span>
+            <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(26px,4.5vw,44px)] leading-[1.05] text-ink">
+              The chafing <span className="text-sky">nobody talks about.</span>
             </h3>
-            <p className="mt-5 text-white/80 leading-relaxed">
-              Raw skin. Hot spots. Blisters at mile 18. The friction you don't notice until it ends your run.
-              For too long, athletes have managed it instead of preventing it — and paid the price in lost training days.
-            </p>
           </div>
-          <div className="rounded-3xl bg-sky-soft border border-sky/30 p-8 sm:p-10">
-            <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-sky">DryGoods' revolutionary solution</p>
-            <h3 className="mt-3 font-display font-black uppercase tracking-tight text-2xl sm:text-3xl leading-tight text-ink">
-              One spray. Total protection.
-            </h3>
-            <p className="mt-5 text-ink/80 leading-relaxed">
-              Our patented spray-to-powder formula goes on wet, dries on contact, and builds an invisible
-              friction-free barrier that lasts 8–12 hours. Targeted, fast, and never messy — so you focus
-              on the work, not the rash.
-            </p>
+          <div className="mt-10 grid md:grid-cols-3 gap-5 lg:gap-6">
+            <div className="rounded-3xl bg-ink text-white p-7 sm:p-8">
+              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky">Friction & Sweat</p>
+              <p className="mt-3 text-white/85 leading-relaxed">
+                Moisture and movement combine to create painful irritation that worsens with every stride or pedal stroke.
+              </p>
+            </div>
+            <div className="rounded-3xl bg-ink text-white p-7 sm:p-8">
+              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky">Every sport, every athlete</p>
+              <p className="mt-3 text-white/85 leading-relaxed">
+                From cyclists to marathon runners, chafing affects performance across all disciplines, regardless of fitness level.
+              </p>
+            </div>
+            <div className="rounded-3xl bg-ink text-white p-7 sm:p-8">
+              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky">Lost training days</p>
+              <p className="mt-3 text-white/85 leading-relaxed">
+                Chafing and blisters force athletes to skip workouts, compromising training cycles and competition results.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Revolutionary Solution */}
+        <div className="mt-20">
+          <div className="rounded-3xl bg-sky-soft border border-sky/30 p-8 sm:p-12 lg:p-16">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Introducing</span>
+                <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(28px,4.5vw,48px)] leading-[1] text-ink">
+                  A <span className="text-sky">revolutionary</span> solution.
+                </h3>
+                <p className="mt-5 text-base sm:text-lg text-ink/80 leading-relaxed">
+                  The first spray-on powder engineered specifically to combat chafing and moisture buildup —
+                  no mess, no waste, no compromise.
+                </p>
+              </div>
+              <div className="space-y-5">
+                <div className="bg-white rounded-2xl p-6 border border-ink/5">
+                  <p className="font-display font-black uppercase tracking-tight text-lg text-ink">Spray-on powder technology</p>
+                  <p className="mt-2 text-ink/70 leading-relaxed">
+                    Targeted, precise application to high-friction areas without airborne mess.
+                  </p>
+                </div>
+                <div className="bg-white rounded-2xl p-6 border border-ink/5">
+                  <p className="font-display font-black uppercase tracking-tight text-lg text-ink">15+ years of trust</p>
+                  <p className="mt-2 text-ink/70 leading-relaxed">
+                    Proven and endorsed by professional athletes across multiple sports.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
