@@ -1,7 +1,8 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 import {
-  VARIANT_IDS,
+  VARIANT_ID,
+  SELLING_PLANS,
   createShopifyCart,
   addLineToShopifyCart,
   updateShopifyCartLine,
@@ -13,19 +14,15 @@ import {
 
 export type Plan = "onetime" | "monthly" | "weekly";
 
-export const PLAN_META: Record<Plan, { label: string; price: number; sub?: string; variantId: string }> = {
-  onetime: { label: "One-time", price: 19.99, variantId: VARIANT_IDS.onetime },
-  monthly: { label: "Subscribe Monthly", price: 16.99, sub: "Save 15%", variantId: VARIANT_IDS.monthly },
-  weekly: { label: "Subscribe Weekly", price: 15.99, sub: "Save 20%", variantId: VARIANT_IDS.weekly },
+export const PLAN_META: Record<Plan, { label: string; price: number; sub?: string; sellingPlanId?: string }> = {
+  onetime: { label: "One-time", price: 19.99 },
+  monthly: { label: "Subscribe Monthly", price: 16.99, sub: "Save 15%", sellingPlanId: SELLING_PLANS.monthly },
+  weekly: { label: "Subscribe Weekly", price: 15.99, sub: "Save 20%", sellingPlanId: SELLING_PLANS.weekly },
 };
 
-const PLAN_BY_VARIANT: Record<string, Plan> = Object.fromEntries(
-  (Object.keys(PLAN_META) as Plan[]).map((p) => [PLAN_META[p].variantId, p])
-);
-
 export type CartLine = {
-  id: string; // variantId
-  lineId: string | null; // Shopify cart line id
+  id: string; // composite plan key
+  lineId: string | null;
   plan: Plan;
   qty: number;
   title: string;
@@ -33,6 +30,7 @@ export type CartLine = {
 };
 
 const TITLE = "DryGoods™ Athletic Spray";
+const lineKey = (plan: Plan) => `${VARIANT_ID}::${plan}`;
 
 type CartState = {
   open: boolean;
@@ -66,39 +64,36 @@ export const useCart = create<CartState>()(
 
       add: async (plan, qty = 1) => {
         const meta = PLAN_META[plan];
-        const variantId = meta.variantId;
+        const id = lineKey(plan);
+        const input = { variantId: VARIANT_ID, quantity: qty, sellingPlanId: meta.sellingPlanId };
         const { cartId, lines } = get();
-        const existing = lines.find((l) => l.id === variantId);
+        const existing = lines.find((l) => l.id === id);
 
         set({ isLoading: true, open: true });
         try {
           if (!cartId) {
-            const result = await createShopifyCart(variantId, qty);
+            const result = await createShopifyCart(input);
             if (!result) return;
             set({
               cartId: result.cartId,
               checkoutUrl: result.checkoutUrl,
-              lines: [
-                { id: variantId, lineId: result.lineId, plan, qty, title: TITLE, price: meta.price },
-              ],
+              lines: [{ id, lineId: result.lineId, plan, qty, title: TITLE, price: meta.price }],
             });
           } else if (existing && existing.lineId) {
             const newQty = existing.qty + qty;
             const r = await updateShopifyCartLine(cartId, existing.lineId, newQty);
             if (r.success) {
-              set({
-                lines: get().lines.map((l) => (l.id === variantId ? { ...l, qty: newQty } : l)),
-              });
+              set({ lines: get().lines.map((l) => (l.id === id ? { ...l, qty: newQty } : l)) });
             } else if (r.cartNotFound) {
               get().clear();
             }
           } else {
-            const r = await addLineToShopifyCart(cartId, variantId, qty);
+            const r = await addLineToShopifyCart(cartId, input);
             if (r.success) {
               set({
                 lines: [
                   ...get().lines,
-                  { id: variantId, lineId: r.lineId ?? null, plan, qty, title: TITLE, price: meta.price },
+                  { id, lineId: r.lineId ?? null, plan, qty, title: TITLE, price: meta.price },
                 ],
               });
             } else if (r.cartNotFound) {
@@ -190,5 +185,3 @@ export const useCart = create<CartState>()(
     }
   )
 );
-
-export { PLAN_BY_VARIANT };
