@@ -221,7 +221,7 @@ function ConquerChafing() {
             <div className="text-center max-w-3xl mx-auto">
               <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky-deep">Introducing</span>
               <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(28px,4.5vw,48px)] leading-[1] text-ink">
-                A <span className="underline decoration-sky decoration-4 underline-offset-4">revolutionary</span> solution.
+                A <span className="text-sky-deep">revolutionary</span> solution.
               </h3>
               <p className="mt-5 text-base sm:text-lg text-ink/80 leading-relaxed">
                 The first spray-on powder engineered specifically to combat chafing and moisture buildup —
