@@ -1,5 +1,24 @@
-import matter from "gray-matter";
 import { marked } from "marked";
+
+function parseFrontmatter(raw: string): { data: Record<string, unknown>; content: string } {
+  const m = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
+  if (!m) return { data: {}, content: raw };
+  const data: Record<string, unknown> = {};
+  for (const line of m[1].split(/\r?\n/)) {
+    const kv = line.match(/^([A-Za-z0-9_-]+)\s*:\s*(.*)$/);
+    if (!kv) continue;
+    let val: unknown = kv[2].trim();
+    if (typeof val === "string") {
+      if (/^\[.*\]$/.test(val)) {
+        val = val.slice(1, -1).split(",").map((s) => s.trim().replace(/^["']|["']$/g, "")).filter(Boolean);
+      } else {
+        val = (val as string).replace(/^["']|["']$/g, "");
+      }
+    }
+    data[kv[1]] = val;
+  }
+  return { data, content: m[2] };
+}
 
 export type PostMeta = {
   slug: string;
@@ -27,7 +46,7 @@ function slugFromPath(path: string): string {
 
 const posts: Post[] = Object.entries(files)
   .map(([path, raw]) => {
-    const { data, content } = matter(raw);
+    const { data, content } = parseFrontmatter(raw);
     const html = marked.parse(content, { async: false }) as string;
     return {
       slug: slugFromPath(path),
