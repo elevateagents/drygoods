@@ -74,6 +74,27 @@ const REVIEWS: Review[] = [
     date: "Reviewed in the United States on July 20, 2025",
     body: "This works great. I used to buy Gold Bond, but they must have changed the sprayer or something, and it became too difficult to use. It took some digging to find this, but I am definitely glad I did. Highly recommend this.",
   },
+  {
+    name: "K. E. Norian",
+    rating: 5,
+    title: "I've been searching for a product like this, and I found it!",
+    date: "Reviewed in the United States on February 2, 2025",
+    body: "I tried spray Gold Bond - kept plugging up after a few uses. Tinactin is OK, but I don't need/want the chems in it for fungus. This product is amzing. It works as well or better than powder after a shower, and is avoids all of the mess and dust of powder. I'm in my mid 60s and have been looking for this product for decades! Very happy user.",
+  },
+  {
+    name: "Ellen",
+    rating: 5,
+    title: "Game changer for hot weather",
+    date: "Reviewed in the United States on August 4, 2025",
+    body: "Absolutely love the spray. It has been a lifesaver in the humid weather of Pennsylvania. It has such a pleasant scent and the spray always comes out easily. A must have for all the girlies in summer!",
+  },
+  {
+    name: "Jackson",
+    rating: 5,
+    title: "No chafing, no burn — finally",
+    date: "Reviewed in the United States on June 12, 2025",
+    body: "This is the FIRST continuous spray powder I've ever tried that does NOT burn skin in sensitive, chafed areas. PLEASE try this if you have tried them all and have to keep going back to manual because the propellant burns—this doesn't!",
+  },
 ];
 
 function Stars({ rating, size = 16 }: { rating: number; size?: number }) {
