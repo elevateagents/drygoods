@@ -218,30 +218,28 @@ function ConquerChafing() {
         {/* Revolutionary Solution */}
         <div className="mt-20">
           <div className="rounded-3xl bg-sky-soft border border-sky/30 p-8 sm:p-12 lg:p-16">
-            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-              <div>
-                <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Introducing</span>
-                <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(28px,4.5vw,48px)] leading-[1] text-ink">
-                  A <span className="underline decoration-sky decoration-4 underline-offset-4">revolutionary</span> solution.
-                </h3>
-                <p className="mt-5 text-base sm:text-lg text-ink/80 leading-relaxed">
-                  The first spray-on powder engineered specifically to combat chafing and moisture buildup —
-                  no mess, no waste, no compromise.
+            <div className="text-center max-w-3xl mx-auto">
+              <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky-deep">Introducing</span>
+              <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(28px,4.5vw,48px)] leading-[1] text-ink">
+                A <span className="underline decoration-sky decoration-4 underline-offset-4">revolutionary</span> solution.
+              </h3>
+              <p className="mt-5 text-base sm:text-lg text-ink/80 leading-relaxed">
+                The first spray-on powder engineered specifically to combat chafing and moisture buildup —
+                no mess, no waste, no compromise.
+              </p>
+            </div>
+            <div className="mt-10 grid md:grid-cols-2 gap-5 max-w-3xl mx-auto">
+              <div className="bg-white rounded-2xl p-6 border border-ink/5">
+                <p className="font-display font-black uppercase tracking-tight text-lg text-ink">Spray-on powder technology</p>
+                <p className="mt-2 text-ink/70 leading-relaxed">
+                  Targeted, precise application to high-friction areas without airborne mess.
                 </p>
               </div>
-              <div className="space-y-5">
-                <div className="bg-white rounded-2xl p-6 border border-ink/5">
-                  <p className="font-display font-black uppercase tracking-tight text-lg text-ink">Spray-on powder technology</p>
-                  <p className="mt-2 text-ink/70 leading-relaxed">
-                    Targeted, precise application to high-friction areas without airborne mess.
-                  </p>
-                </div>
-                <div className="bg-white rounded-2xl p-6 border border-ink/5">
-                  <p className="font-display font-black uppercase tracking-tight text-lg text-ink">15+ years of trust</p>
-                  <p className="mt-2 text-ink/70 leading-relaxed">
-                    Proven and endorsed by professional athletes across multiple sports.
-                  </p>
-                </div>
+              <div className="bg-white rounded-2xl p-6 border border-ink/5">
+                <p className="font-display font-black uppercase tracking-tight text-lg text-ink">15+ years of trust</p>
+                <p className="mt-2 text-ink/70 leading-relaxed">
+                  Proven and endorsed by professional athletes across multiple sports.
+                </p>
               </div>
             </div>
           </div>
