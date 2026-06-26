@@ -64,6 +64,7 @@ function HomePage() {
   return (
     <Layout>
       <Hero />
+      <TrustBar />
       <Introducing />
       <ConquerChafing />
       <WhyItExists />
@@ -72,9 +73,11 @@ function HomePage() {
       <AmazonReviewsSection />
       <FAQ />
       <FinalCTA />
+      <MobileStickyCTA />
     </Layout>
   );
 }
+
 
 /* --------------------------------- HERO ---------------------------------- */
 function Hero() {
