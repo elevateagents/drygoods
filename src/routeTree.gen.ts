@@ -16,6 +16,7 @@ import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProductsOriginalRouteImport } from './routes/products.original'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
 const WholesaleRoute = WholesaleRouteImport.update({
   id: '/wholesale',
@@ -52,33 +53,41 @@ const ProductsOriginalRoute = ProductsOriginalRouteImport.update({
   path: '/products/original',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/blog': typeof BlogRoute
+  '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/wholesale': typeof WholesaleRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/products/original': typeof ProductsOriginalRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/blog': typeof BlogRoute
+  '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/wholesale': typeof WholesaleRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/products/original': typeof ProductsOriginalRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/blog': typeof BlogRoute
+  '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/wholesale': typeof WholesaleRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/products/original': typeof ProductsOriginalRoute
 }
 export interface FileRouteTypes {
@@ -90,6 +99,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/sitemap.xml'
     | '/wholesale'
+    | '/blog/$slug'
     | '/products/original'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -99,6 +109,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/sitemap.xml'
     | '/wholesale'
+    | '/blog/$slug'
     | '/products/original'
   id:
     | '__root__'
@@ -108,13 +119,14 @@ export interface FileRouteTypes {
     | '/contact'
     | '/sitemap.xml'
     | '/wholesale'
+    | '/blog/$slug'
     | '/products/original'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  BlogRoute: typeof BlogRoute
+  BlogRoute: typeof BlogRouteWithChildren
   ContactRoute: typeof ContactRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   WholesaleRoute: typeof WholesaleRoute
@@ -172,13 +184,30 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductsOriginalRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof BlogRoute
+    }
   }
 }
+
+interface BlogRouteChildren {
+  BlogSlugRoute: typeof BlogSlugRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogSlugRoute: BlogSlugRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  BlogRoute: BlogRoute,
+  BlogRoute: BlogRouteWithChildren,
   ContactRoute: ContactRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   WholesaleRoute: WholesaleRoute,
