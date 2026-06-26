@@ -301,7 +301,8 @@ function Benefits() {
 /* ----------------------------------- BUY ---------------------------------- */
 function Buy() {
   const { add } = useCart();
-  const selected = { price: 19.99 };
+  const [plan, setPlan] = useState<Plan>("onetime");
+  const selected = PLAN_META[plan];
   const bullets = [
     "Patented 360° spray-to-powder formula",
     "8–12 hours of chafe & blister protection",
@@ -315,6 +316,7 @@ function Buy() {
     { icon: RotateCcw, label: "Free Returns" },
     { icon: Leaf, label: "Cruelty Free" },
   ];
+  const planOptions: Plan[] = ["onetime", "monthly", "weekly"];
   return (
     <section id="buy" className="scroll-mt-20 bg-sky-soft/40 py-16 sm:py-24 md:py-32 px-3 sm:px-6 lg:px-8 overflow-hidden">
       <div className="max-w-6xl mx-auto min-w-0">
@@ -347,8 +349,32 @@ function Buy() {
                 </li>
               ))}
             </ul>
+
+            <div className="mt-6 space-y-2">
+              <p className="text-[11px] font-bold uppercase tracking-widest text-ink/60">Purchase Options</p>
+              {planOptions.map((p) => {
+                const m = PLAN_META[p];
+                const active = plan === p;
+                return (
+                  <button
+                    key={p}
+                    type="button"
+                    onClick={() => setPlan(p)}
+                    className={`w-full flex items-center gap-3 rounded-2xl border-2 px-4 py-3 text-left transition-colors ${active ? "border-sky bg-sky-soft/40" : "border-ink/10 hover:border-ink/30 bg-white"}`}
+                  >
+                    <span className={`size-4 rounded-full border-2 shrink-0 ${active ? "border-sky bg-sky" : "border-ink/30"}`} />
+                    <span className="flex-1 min-w-0">
+                      <span className="block text-sm font-bold text-ink leading-tight">{m.label}</span>
+                      {m.sub && <span className="block text-[11px] font-semibold uppercase tracking-wide text-sky mt-0.5">{m.sub}</span>}
+                    </span>
+                    <span className="font-bold text-ink text-base shrink-0">${m.price.toFixed(2)}</span>
+                  </button>
+                );
+              })}
+            </div>
+
             <div className="mt-6 space-y-3">
-              <button onClick={() => add("onetime", 1)} className="w-full min-w-0 inline-flex items-center justify-center gap-2 bg-sky hover:bg-sky-deep transition-colors text-white px-3 sm:px-4 py-4 sm:py-5 text-[13px] sm:text-base font-bold uppercase tracking-wide sm:tracking-widest rounded-full shadow-lg shadow-sky/30 active:scale-[0.99] leading-tight">
+              <button onClick={() => add(plan, 1)} className="w-full min-w-0 inline-flex items-center justify-center gap-2 bg-sky hover:bg-sky-deep transition-colors text-white px-3 sm:px-4 py-4 sm:py-5 text-[13px] sm:text-base font-bold uppercase tracking-wide sm:tracking-widest rounded-full shadow-lg shadow-sky/30 active:scale-[0.99] leading-tight">
                 <ShoppingCart className="size-5 shrink-0" />
                 <span className="min-w-0 text-center break-words">Add to Cart — ${selected.price.toFixed(2)}</span>
               </button>
