@@ -259,13 +259,14 @@ function WhyItExists() {
           From pain to <span className="text-sky">performance.</span>
         </h2>
         <p className="mt-6 text-lg text-ink/75 leading-relaxed">
-          Chafing doesn't just hurt — it limits you. It cuts workouts short, ruins race days, and shapes
-          the way you train without you realizing it.
+          Chafing doesn't just hurt — it limits you. It cuts workouts short, slows your pace, and
+          plants doubt in your mind at exactly the wrong moment.
         </p>
         <p className="mt-4 text-lg text-ink/75 leading-relaxed">
-          DryGoods™ was built to take that limit off the table. One spray, all-day protection, no compromises —
-          so the only thing setting your ceiling is you.
+          DryGoods™ eliminates that doubt entirely. One spray before activity, and you're free to
+          focus on what actually matters: pushing your limits.
         </p>
+
       </div>
     </section>
   );
