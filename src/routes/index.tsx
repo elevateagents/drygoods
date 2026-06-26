@@ -219,7 +219,7 @@ function ConquerChafing() {
       <div className="max-w-6xl mx-auto">
         {/* Headline */}
         <div className="text-center max-w-4xl mx-auto">
-          <h2 className="font-display font-black uppercase tracking-tight text-[clamp(26px,6vw,64px)] leading-[1] text-ink break-words hyphens-auto">
+          <h2 className="font-display font-black uppercase tracking-tight text-[clamp(24px,6vw,64px)] leading-[1] text-ink text-balance">
             Conquer chafing, <span className="text-sky">unleash your performance.</span>
           </h2>
           <p className="mt-6 text-lg sm:text-xl text-ink/75 leading-relaxed max-w-3xl mx-auto">
@@ -263,7 +263,7 @@ function ConquerChafing() {
           <div className="rounded-3xl bg-sky-soft border border-sky/30 p-8 sm:p-12 lg:p-16">
             <div className="text-center max-w-3xl mx-auto">
               <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky-deep">Introducing</span>
-              <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(24px,4.5vw,48px)] leading-[1] text-ink break-words hyphens-auto">
+              <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(22px,4.5vw,48px)] leading-[1] text-ink text-balance">
                 A <span className="text-sky-deep">revolutionary</span> solution.
               </h3>
               <p className="mt-5 text-base sm:text-lg text-ink/80 leading-relaxed">
@@ -298,7 +298,7 @@ function WhyItExists() {
     <section id="why" className="bg-paper py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 border-t border-ink/5 scroll-mt-16">
       <div className="max-w-3xl mx-auto text-center">
         <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Why it exists</span>
-        <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(26px,5vw,52px)] leading-[1] text-ink break-words hyphens-auto">
+        <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(24px,5vw,52px)] leading-[1] text-ink text-balance">
           From pain to <span className="text-sky">performance.</span>
         </h2>
         <p className="mt-6 text-lg text-ink/75 leading-relaxed">
@@ -519,7 +519,7 @@ function FinalCTA() {
       </div>
       <div className="relative max-w-3xl mx-auto text-center">
         <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">The last word</span>
-        <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(24px,7vw,68px)] leading-[1.05] break-words hyphens-auto">
+        <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(22px,7vw,68px)] leading-[1.05] text-balance">
           Stay cool, stay dry. <span className="text-sky">Stay unstoppable.</span>
         </h2>
         <p className="mt-6 text-base sm:text-lg text-white/85 max-w-2xl mx-auto leading-relaxed">
