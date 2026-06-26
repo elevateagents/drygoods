@@ -533,3 +533,24 @@ function FinalCTA() {
     </section>
   );
 }
+
+/* --------------------------- MOBILE STICKY CTA ---------------------------- */
+function MobileStickyCTA() {
+  const { add } = useCart();
+  return (
+    <div
+      className="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-ink/10 px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-[0_-6px_20px_rgba(0,0,0,0.08)]"
+      role="region"
+      aria-label="Quick add to cart"
+    >
+      <button
+        onClick={() => add("onetime", 1)}
+        className="w-full inline-flex items-center justify-center gap-2 bg-sky hover:bg-sky-deep transition-colors text-white px-4 py-3.5 text-sm font-bold uppercase tracking-widest rounded-full shadow-lg shadow-sky/30"
+      >
+        <ShoppingCart className="size-5" />
+        Add to Cart — $19.99
+      </button>
+    </div>
+  );
+}
+
