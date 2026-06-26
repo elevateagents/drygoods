@@ -1,135 +1,82 @@
-# Cómo publicar un post en el blog 📝
+Hey Tim! Here’s the super simple guide to publish a new blog post on DryGoods.
 
-Hola Tim. Esta es la guía súper simple para subir un artículo nuevo al blog de DryGoods. No necesitas saber programar. Solo seguir los pasos.
+You don’t need to code anything. You’ll just create a new text file in GitHub, and once you save it, the post will automatically appear here:
 
----
+drygoods.lovable.app/blog
 
-## ✍️ Lo que vas a hacer
+It should take around 5 minutes.
 
-Vas a crear **un archivo de texto** en GitHub. Cuando lo guardes, el post aparece solo en la página `drygoods.lovable.app/blog`. Sin botones raros, sin esperar a nadie.
+Steps:
 
-Tiempo: **5 minutos**.
+1. Open the GitHub repo link and log in.
+2. Go to this folder:
 
----
+src → content → blog
 
-## 🪜 Paso a paso
+3. Click Add file → Create new file.
+4. Name the file using lowercase letters, hyphens instead of spaces, and end it with .md.
 
-### 1. Entra al repo en GitHub
-Abre el link del repositorio (el equipo te lo pasa). Inicia sesión con tu cuenta de GitHub.
+Example:
+how-to-prevent-chafing-during-marathons.md
 
-### 2. Abre la carpeta del blog
-En la lista de carpetas, haz click en:
+That becomes:
+drygoods.lovable.app/blog/how-to-prevent-chafing-during-marathons
 
-```
-src  →  content  →  blog
-```
-
-Vas a ver los posts que ya existen (cada uno es un archivo `.md`).
-
-### 3. Crea un archivo nuevo
-Arriba a la derecha, click en el botón **`Add file`** → **`Create new file`**.
-
-### 4. Ponle nombre al archivo
-El nombre se convierte en la URL del post. Reglas simples:
-- Todo en **minúsculas**.
-- Sin espacios — usa **guiones** `-`.
-- Termina en **`.md`**.
-
-✅ Bien: `como-prevenir-chafing-en-maratones.md`
-❌ Mal: `Cómo Prevenir Chafing.md`
-
-URL final → `drygoods.lovable.app/blog/como-prevenir-chafing-en-maratones`
-
-### 5. Copia esta plantilla y pégala en el archivo
+5. Copy and paste this template into the new file:
 
 ```markdown
 ---
-title: "El título de tu post aquí"
-description: "Una frase corta que resume el post. Sale en Google y al compartir en redes."
+title: "Your post title here"
+description: "A short sentence that summarizes the post. This appears on Google and when shared on social media."
 date: "2026-07-01"
 author: "Tim"
 cover: "/og-default.jpg"
 tags: ["running", "tips"]
 ---
 
-Aquí empieza el cuerpo del post. Escribe normal, como un email.
+Start writing the post here. Write normally, like an email.
 
-## Esto es un subtítulo
+## This is a subtitle
 
-Esto es un párrafo. Puedes poner palabras en **negrita** o en *cursiva*.
+This is a paragraph. You can make words **bold** or *italic*.
 
-- Esto es una lista
-- Con varios puntos
-- Lo que quieras
+- This is a list
+- With multiple points
+- Add whatever you want
 
-[Así se hace un enlace](https://drygoods.lovable.app)
+[This is a link](https://drygoods.lovable.app)
 
-![Texto alternativo de la imagen](/ruta-a-la-imagen.jpg)
+![Image alt text](/path-to-image.jpg)
 ```
 
-### 6. Cambia lo que está entre comillas
-Solo edita lo de arriba (entre los dos `---`). Eso es la "ficha técnica":
+6. Edit the info between the two `---` lines:
 
-| Campo | Qué pones |
-|---|---|
-| `title` | El título grande del post |
-| `description` | 1 frase. Aparece en Google y al compartir en WhatsApp/Twitter |
-| `date` | La fecha en formato `AÑO-MES-DÍA` (ej: `2026-07-15`) |
-| `author` | Tu nombre |
-| `cover` | Imagen para compartir (puedes dejarla así por ahora) |
-| `tags` | Etiquetas, entre corchetes y comillas |
+* `title`: the main title
+* `description`: one short summary sentence
+* `date`: use YYYY-MM-DD format
+* `author`: your name
+* `cover`: you can leave it as `/og-default.jpg` for now
+* `tags`: labels inside brackets and quotes
 
-### 7. Escribe el post
-Debajo del segundo `---`, escribe normal. Si quieres que algo sea un **subtítulo**, ponle `##` adelante. Si quieres **negrita**, rodea la palabra con `**`. Eso es todo.
+7. Write the article below the second `---`.
 
-### 8. Guárdalo
-Baja hasta el final de la página. Hay un botón verde que dice **`Commit changes`**. Click. Otra ventana — click **`Commit changes`** de nuevo.
+For formatting:
 
-### 9. ¡Listo!
-En 1 minuto tu post está en vivo en `drygoods.lovable.app/blog`. No hay que avisar a nadie.
+* Use `##` before a subtitle
+* Use `**bold**` for bold text
+* Use `*italic*` for italic text
+* Use `-` for bullet points
 
----
+8. Scroll down and click the green Commit changes button. Then click Commit changes again.
 
-## 🎨 Trucos rápidos de Markdown
+That’s it. The post should be live in about 1 minute.
 
-```markdown
-# Título grande
-## Subtítulo
-### Subtítulo más chico
+Quick checklist before publishing:
 
-**negrita**
-*cursiva*
+* File name is lowercase, uses hyphens, and ends in `.md`
+* The top info block starts and ends with `---`
+* `title` and `description` are filled in
+* Date uses the format `2026-07-15`
+* You clicked Commit changes twice
 
-- punto de lista
-- otro punto
-
-1. lista numerada
-2. segundo
-
-[texto del enlace](https://el-link.com)
-
-![imagen](/ruta-imagen.jpg)
-
-> Una cita destacada
-```
-
----
-
-## ❓ Si algo sale mal
-
-- **No veo mi post:** espera 1-2 minutos y recarga la página.
-- **Me equivoqué en algo:** en GitHub, abre el archivo, click en el lápiz ✏️ arriba a la derecha, edita, **Commit changes**.
-- **Quiero borrar un post:** abre el archivo, click en el bote de basura 🗑️ arriba a la derecha, **Commit changes**.
-- **No funciona nada:** mándale el link del post al equipo y lo revisamos.
-
----
-
-## 📋 Checklist antes de publicar
-
-- [ ] El nombre del archivo está en minúsculas, con guiones y termina en `.md`
-- [ ] Hay `---` arriba y `---` abajo del bloque de ficha técnica
-- [ ] `title` y `description` están llenos
-- [ ] La fecha está en formato `2026-07-15`
-- [ ] Le diste a **Commit changes** dos veces
-
-Eso es todo. Bienvenido al blog. 🚀
+If something goes wrong, send us the post link and we’ll take a look.
