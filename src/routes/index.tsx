@@ -106,7 +106,7 @@ function Hero() {
             New · Patented Formula
           </span>
           <h1 className="font-display font-black uppercase tracking-tight leading-[0.95] text-[clamp(36px,7vw,76px)] [text-shadow:0_2px_16px_rgba(0,0,0,0.45)]">
-            One Spray: <span className="text-sky">Cool,&nbsp; Dry,</span> and Chafe-Free.
+            One Spray: <span className="text-sky">Cool<span className="inline-block w-[0.12em]" />, Dry,</span> and Chafe-Free.
           </h1>
           <p className="mt-5 text-base sm:text-lg text-white max-w-2xl mx-auto leading-relaxed [text-shadow:0_2px_10px_rgba(0,0,0,0.55)]">
             Dry Goods&apos; patented spray goes on cool, dries to an invisible powder, and keeps you
