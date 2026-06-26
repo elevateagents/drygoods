@@ -144,10 +144,25 @@ export default function AmazonReviewsSection() {
   const nudge = (dir: 1 | -1) => {
     const el = trackRef.current;
     if (!el) return;
-    // pause animation and shift via scroll on the wrapper
     setPaused(true);
     const wrap = el.parentElement;
-    if (wrap) wrap.scrollBy({ left: dir * 360, behavior: "smooth" });
+    if (!wrap) return;
+    const step = 360;
+    const maxScroll = wrap.scrollWidth - wrap.clientWidth;
+    const current = wrap.scrollLeft;
+    let target = current + dir * step;
+    // Wrap around: if we're at/past the end going forward, jump to start; vice versa.
+    if (dir === 1 && current >= maxScroll - 4) {
+      wrap.scrollTo({ left: 0, behavior: "smooth" });
+      return;
+    }
+    if (dir === -1 && current <= 4) {
+      wrap.scrollTo({ left: maxScroll, behavior: "smooth" });
+      return;
+    }
+    if (target > maxScroll) target = maxScroll;
+    if (target < 0) target = 0;
+    wrap.scrollTo({ left: target, behavior: "smooth" });
   };
 
   return (
