@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
+import { getPostSlugs } from "@/lib/posts";
 
-const BASE_URL = "";
+const BASE_URL = "https://drygoods.lovable.app";
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
@@ -11,8 +12,10 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/", priority: "1.0" },
           { path: "/products/original", priority: "0.9" },
           { path: "/about", priority: "0.7" },
+          { path: "/blog", priority: "0.7" },
           { path: "/wholesale", priority: "0.6" },
           { path: "/contact", priority: "0.5" },
+          ...getPostSlugs().map((slug) => ({ path: `/blog/${slug}`, priority: "0.6" })),
         ];
         const xml = [
           `<?xml version="1.0" encoding="UTF-8"?>`,
