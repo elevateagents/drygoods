@@ -2,7 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Layout } from "@/components/site/Layout";
 import AmazonReviewsSection from "@/components/site/AmazonReviewsSection";
-import { useCart } from "@/lib/cart-store";
+import { useState } from "react";
+import { useCart, PLAN_META, type Plan } from "@/lib/cart-store";
 import {
   Clock, ShieldCheck, Leaf, Award, Flag,
   ShoppingCart, ExternalLink, RotateCcw, CheckCircle2,
