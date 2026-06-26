@@ -369,13 +369,17 @@ function Buy() {
           </div>
           <div className="min-w-0">
             <h3 className="font-sans font-bold tracking-tight text-[clamp(24px,5.5vw,36px)] leading-[1.1] text-ink break-words">
-              DryGoods™ Athletic Spray
+              Dry Goods™ Athletic Spray
             </h3>
-            <p className="mt-2 max-w-full text-sm sm:text-base text-ink/70 leading-relaxed break-words">The fastest way to prevent chafing.</p>
+            <p className="mt-2 max-w-full text-sm sm:text-base text-ink/70 leading-relaxed break-words">
+              One cool spray. All day dry.
+            </p>
             <div className="mt-5 grid min-w-0 gap-1 sm:flex sm:flex-wrap sm:items-baseline sm:gap-x-3">
               <span className="font-sans font-bold text-4xl sm:text-5xl text-ink leading-none">${selected.price.toFixed(2)}</span>
-              <span className="text-xs sm:text-sm text-ink/60 leading-snug break-words">Free shipping over $35</span>
             </div>
+            <p className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-700">
+              <CheckCircle2 className="size-4" /> In Stock — ships free on 3+ cans
+            </p>
             <ul className="mt-6 space-y-2.5">
               {bullets.map(b => (
                 <li key={b} className="flex min-w-0 items-start gap-2.5 text-sm text-ink/80 leading-snug">
@@ -413,11 +417,15 @@ function Buy() {
                 <ShoppingCart className="size-5 shrink-0" />
                 <span className="min-w-0 text-center break-words">Add to Cart — ${selected.price.toFixed(2)}</span>
               </button>
+              <p className="text-center text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-ink/60">
+                30-Day Money-Back Guarantee · Free Returns
+              </p>
               <a href="https://www.amazon.com/dp/B003YTUWJ8" target="_blank" rel="noreferrer noopener" className="w-full min-w-0 inline-flex items-center justify-center gap-2 border-2 border-ink/80 text-ink hover:bg-ink hover:text-white transition-colors px-3 sm:px-4 py-4 text-xs sm:text-sm font-bold uppercase tracking-wide sm:tracking-widest rounded-full leading-tight">
                 <span className="min-w-0 text-center break-words">Also on Amazon</span> <ExternalLink className="size-4 shrink-0" />
               </a>
             </div>
           </div>
+
         </div>
 
         <div className="mt-10 grid grid-cols-2 justify-center gap-2 sm:flex sm:flex-wrap sm:gap-3">
