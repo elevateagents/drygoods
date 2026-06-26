@@ -106,34 +106,65 @@ function Hero() {
             New · Patented Formula
           </span>
           <h1 className="font-display font-black uppercase tracking-tight leading-[0.95] text-[clamp(36px,7vw,76px)] [text-shadow:0_2px_16px_rgba(0,0,0,0.45)]">
-            Meet the <span className="text-sky">fastest way</span> to prevent chafing.
+            One Spray: <span className="text-sky">Cool, Dry,</span> and Chafe-Free.
           </h1>
-          <p className="mt-5 text-lg sm:text-xl font-bold text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.55)]">
-            Never miss another workout.
-          </p>
-          <p className="mt-4 text-base sm:text-lg text-white max-w-xl mx-auto leading-relaxed [text-shadow:0_2px_10px_rgba(0,0,0,0.55)]">
-            DryGoods™ prevents chafing and blisters in seconds with one spray. No mess. No residue.
-            8–12 hours of protection.
+          <p className="mt-5 text-base sm:text-lg text-white max-w-2xl mx-auto leading-relaxed [text-shadow:0_2px_10px_rgba(0,0,0,0.55)]">
+            Dry Goods&apos; patented spray goes on cool, dries to an invisible powder, and keeps you
+            chafe-free for 8–12 hours. No mess. No residue.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <button
               onClick={() => add("onetime", 1)}
               className="inline-flex items-center gap-2 bg-sky hover:bg-sky-deep transition-colors text-white px-8 py-4 font-bold text-base uppercase tracking-widest rounded-full shadow-lg shadow-sky/30"
             >
-              Shop Now <ShoppingCart className="size-4" />
+              Shop Now — $19.99 <ShoppingCart className="size-4" />
             </button>
-            <a href="#buy" className="text-sm font-bold uppercase tracking-widest text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.6)] hover:text-sky underline-offset-4 hover:underline">
-              See Details →
+            <a href="#how" className="text-sm font-bold uppercase tracking-widest text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.6)] hover:text-sky underline-offset-4 hover:underline">
+              See How It Works →
             </a>
           </div>
-          <div className="mt-6 flex items-center justify-center gap-2 text-sm text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.6)]">
-            <span className="font-semibold">Trusted by customers since 2010</span>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[12px] sm:text-sm text-white font-semibold [text-shadow:0_2px_10px_rgba(0,0,0,0.6)]">
+            <span className="text-sky">★ 4.5/5</span>
+            <span>· 448 Amazon Reviews</span>
+            <span className="opacity-60">|</span>
+            <span>Talc-Free</span>
+            <span className="opacity-60">|</span>
+            <span>Dermatologist Approved</span>
+            <span className="opacity-60">|</span>
+            <span>Made in USA</span>
           </div>
         </motion.div>
       </div>
     </section>
   );
 }
+
+/* ------------------------------- TRUST BAR ------------------------------- */
+function TrustBar() {
+  const items = [
+    "448 Reviews",
+    "4.5★ Rated",
+    "15 Years Trusted",
+    "Talc-Free",
+    "Made in USA",
+    "30-Day Guarantee",
+  ];
+  return (
+    <section aria-label="Trust signals" className="bg-ink text-white border-y border-white/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
+        <ul className="flex flex-wrap items-center justify-center gap-x-5 sm:gap-x-8 gap-y-2 text-[11px] sm:text-[13px] font-bold uppercase tracking-[0.15em]">
+          {items.map((it, i) => (
+            <li key={it} className="flex items-center gap-3 sm:gap-5">
+              <span className="whitespace-nowrap">{it}</span>
+              {i < items.length - 1 && <span aria-hidden className="text-sky">·</span>}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
 
 /* ----------------------------- INTRODUCING ------------------------------- */
 function Introducing() {
