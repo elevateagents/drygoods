@@ -64,6 +64,7 @@ function HomePage() {
   return (
     <Layout>
       <Hero />
+      <TrustBar />
       <Introducing />
       <ConquerChafing />
       <WhyItExists />
@@ -72,9 +73,11 @@ function HomePage() {
       <AmazonReviewsSection />
       <FAQ />
       <FinalCTA />
+      <MobileStickyCTA />
     </Layout>
   );
 }
+
 
 /* --------------------------------- HERO ---------------------------------- */
 function Hero() {
@@ -103,34 +106,65 @@ function Hero() {
             New · Patented Formula
           </span>
           <h1 className="font-display font-black uppercase tracking-tight leading-[0.95] text-[clamp(36px,7vw,76px)] [text-shadow:0_2px_16px_rgba(0,0,0,0.45)]">
-            Meet the <span className="text-sky">fastest way</span> to prevent chafing.
+            One Spray: <span className="text-sky">Cool, Dry,</span> and Chafe-Free.
           </h1>
-          <p className="mt-5 text-lg sm:text-xl font-bold text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.55)]">
-            Never miss another workout.
-          </p>
-          <p className="mt-4 text-base sm:text-lg text-white max-w-xl mx-auto leading-relaxed [text-shadow:0_2px_10px_rgba(0,0,0,0.55)]">
-            DryGoods™ prevents chafing and blisters in seconds with one spray. No mess. No residue.
-            8–12 hours of protection.
+          <p className="mt-5 text-base sm:text-lg text-white max-w-2xl mx-auto leading-relaxed [text-shadow:0_2px_10px_rgba(0,0,0,0.55)]">
+            Dry Goods&apos; patented spray goes on cool, dries to an invisible powder, and keeps you
+            chafe-free for 8–12 hours. No mess. No residue.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <button
               onClick={() => add("onetime", 1)}
               className="inline-flex items-center gap-2 bg-sky hover:bg-sky-deep transition-colors text-white px-8 py-4 font-bold text-base uppercase tracking-widest rounded-full shadow-lg shadow-sky/30"
             >
-              Shop Now <ShoppingCart className="size-4" />
+              Shop Now — $19.99 <ShoppingCart className="size-4" />
             </button>
-            <a href="#buy" className="text-sm font-bold uppercase tracking-widest text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.6)] hover:text-sky underline-offset-4 hover:underline">
-              See Details →
+            <a href="#how" className="text-sm font-bold uppercase tracking-widest text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.6)] hover:text-sky underline-offset-4 hover:underline">
+              See How It Works →
             </a>
           </div>
-          <div className="mt-6 flex items-center justify-center gap-2 text-sm text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.6)]">
-            <span className="font-semibold">Trusted by customers since 2010</span>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[12px] sm:text-sm text-white font-semibold [text-shadow:0_2px_10px_rgba(0,0,0,0.6)]">
+            <span className="text-sky">★ 4.5/5</span>
+            <span>· 448 Amazon Reviews</span>
+            <span className="opacity-60">|</span>
+            <span>Talc-Free</span>
+            <span className="opacity-60">|</span>
+            <span>Dermatologist Approved</span>
+            <span className="opacity-60">|</span>
+            <span>Made in USA</span>
           </div>
         </motion.div>
       </div>
     </section>
   );
 }
+
+/* ------------------------------- TRUST BAR ------------------------------- */
+function TrustBar() {
+  const items = [
+    "448 Reviews",
+    "4.5★ Rated",
+    "15 Years Trusted",
+    "Talc-Free",
+    "Made in USA",
+    "30-Day Guarantee",
+  ];
+  return (
+    <section aria-label="Trust signals" className="bg-ink text-white border-y border-white/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
+        <ul className="flex flex-wrap items-center justify-center gap-x-5 sm:gap-x-8 gap-y-2 text-[11px] sm:text-[13px] font-bold uppercase tracking-[0.15em]">
+          {items.map((it, i) => (
+            <li key={it} className="flex items-center gap-3 sm:gap-5">
+              <span className="whitespace-nowrap">{it}</span>
+              {i < items.length - 1 && <span aria-hidden className="text-sky">·</span>}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
 
 /* ----------------------------- INTRODUCING ------------------------------- */
 function Introducing() {
@@ -173,7 +207,7 @@ function Introducing() {
 /* --------------------------- CONQUER CHAFING ----------------------------- */
 function ConquerChafing() {
   return (
-    <section className="bg-white py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 border-t border-ink/5">
+    <section id="how" className="scroll-mt-20 bg-white py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 border-t border-ink/5">
       <div className="max-w-6xl mx-auto">
         {/* Headline */}
         <div className="text-center max-w-4xl mx-auto">
@@ -335,13 +369,17 @@ function Buy() {
           </div>
           <div className="min-w-0">
             <h3 className="font-sans font-bold tracking-tight text-[clamp(24px,5.5vw,36px)] leading-[1.1] text-ink break-words">
-              DryGoods™ Athletic Spray
+              Dry Goods™ Athletic Spray
             </h3>
-            <p className="mt-2 max-w-full text-sm sm:text-base text-ink/70 leading-relaxed break-words">The fastest way to prevent chafing.</p>
+            <p className="mt-2 max-w-full text-sm sm:text-base text-ink/70 leading-relaxed break-words">
+              One cool spray. All day dry.
+            </p>
             <div className="mt-5 grid min-w-0 gap-1 sm:flex sm:flex-wrap sm:items-baseline sm:gap-x-3">
               <span className="font-sans font-bold text-4xl sm:text-5xl text-ink leading-none">${selected.price.toFixed(2)}</span>
-              <span className="text-xs sm:text-sm text-ink/60 leading-snug break-words">Free shipping over $35</span>
             </div>
+            <p className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-700">
+              <CheckCircle2 className="size-4" /> In Stock — ships free on 3+ cans
+            </p>
             <ul className="mt-6 space-y-2.5">
               {bullets.map(b => (
                 <li key={b} className="flex min-w-0 items-start gap-2.5 text-sm text-ink/80 leading-snug">
@@ -379,11 +417,15 @@ function Buy() {
                 <ShoppingCart className="size-5 shrink-0" />
                 <span className="min-w-0 text-center break-words">Add to Cart — ${selected.price.toFixed(2)}</span>
               </button>
+              <p className="text-center text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-ink/60">
+                30-Day Money-Back Guarantee · Free Returns
+              </p>
               <a href="https://www.amazon.com/dp/B003YTUWJ8" target="_blank" rel="noreferrer noopener" className="w-full min-w-0 inline-flex items-center justify-center gap-2 border-2 border-ink/80 text-ink hover:bg-ink hover:text-white transition-colors px-3 sm:px-4 py-4 text-xs sm:text-sm font-bold uppercase tracking-wide sm:tracking-widest rounded-full leading-tight">
                 <span className="min-w-0 text-center break-words">Also on Amazon</span> <ExternalLink className="size-4 shrink-0" />
               </a>
             </div>
           </div>
+
         </div>
 
         <div className="mt-10 grid grid-cols-2 justify-center gap-2 sm:flex sm:flex-wrap sm:gap-3">
@@ -491,3 +533,24 @@ function FinalCTA() {
     </section>
   );
 }
+
+/* --------------------------- MOBILE STICKY CTA ---------------------------- */
+function MobileStickyCTA() {
+  const { add } = useCart();
+  return (
+    <div
+      className="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-ink/10 px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-[0_-6px_20px_rgba(0,0,0,0.08)]"
+      role="region"
+      aria-label="Quick add to cart"
+    >
+      <button
+        onClick={() => add("onetime", 1)}
+        className="w-full inline-flex items-center justify-center gap-2 bg-sky hover:bg-sky-deep transition-colors text-white px-4 py-3.5 text-sm font-bold uppercase tracking-widest rounded-full shadow-lg shadow-sky/30"
+      >
+        <ShoppingCart className="size-5" />
+        Add to Cart — $19.99
+      </button>
+    </div>
+  );
+}
+
