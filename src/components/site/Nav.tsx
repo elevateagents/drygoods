@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouter } from "@tanstack/react-router";
 import { ShoppingBag, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useCart } from "@/lib/cart-store";
@@ -9,6 +9,7 @@ const sections = [
   { href: "/#buy", label: "Shop" },
   { href: "/#reviews", label: "Reviews" },
   { href: "/#faq", label: "FAQ" },
+  { href: "/blog", label: "Blog", route: true },
   { href: "/contact", label: "Contact", route: true },
 ];
 
@@ -16,6 +17,7 @@ export function Nav() {
   const { setOpen, count } = useCart();
   const [menu, setMenu] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const router = useRouter();
   useEffect(() => { setMounted(true); }, []);
   const c = mounted ? count() : 0;
 
@@ -24,14 +26,31 @@ export function Nav() {
     return () => { document.body.style.overflow = ""; };
   }, [menu]);
 
+  const onLogoClick = (e: React.MouseEvent) => {
+    setMenu(false);
+    // If already on home, scroll to top instead of relying on router no-op
+    if (router.state.location.pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <>
     <nav className="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur border-b border-ink/10 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
-        <Link to="/" onClick={() => setMenu(false)} className="flex items-center gap-2 shrink-0" aria-label="DryGoods home">
-          <img src={logo.url} alt="DryGoods" className="h-8 sm:h-9 w-auto" />
+        <Link to="/" onClick={onLogoClick} className="flex items-center gap-2 shrink-0" aria-label="DryGoods home">
+          <img
+            src={logo.url}
+            alt="DryGoods"
+            width={144}
+            height={36}
+            className="h-9 sm:h-10 w-auto"
+            style={{ imageRendering: "auto" }}
+            decoding="sync"
+          />
         </Link>
-        <div className="hidden md:flex gap-8 text-sm font-bold uppercase tracking-wide">
+        <div className="hidden md:flex gap-7 text-sm font-bold uppercase tracking-wide">
           {sections.map(s => (
             <a key={s.href} href={s.href} className="hover:text-sky transition-colors">{s.label}</a>
           ))}
@@ -88,4 +107,3 @@ export function Nav() {
     </>
   );
 }
-

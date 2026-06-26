@@ -6,20 +6,19 @@ import { useCart } from "@/lib/cart-store";
 import {
   Clock, ShieldCheck, Leaf, Award, Flag,
   ShoppingCart, ExternalLink, RotateCcw, CheckCircle2,
-  Target, Snowflake, Plus, XCircle, Sparkles, Zap,
+  Target, Snowflake, Plus, Sparkles, Zap,
 } from "lucide-react";
 import golfer from "@/assets/hero-golf-sunset.png.asset.json";
 import productImg from "@/assets/product-white.png.asset.json";
 import productConcrete from "@/assets/product-concrete.png.asset.json";
-import skinTypes from "@/assets/skin-types-body.jpg.asset.json";
 import pickleballPaddle from "@/assets/about-pickleball-paddle.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "DryGoods™ Athletic — Prevent Chafing & Blisters" },
-      { name: "description", content: "The fastest way to prevent chafing. Patented 360° spray-to-powder. 8–12 hrs protection. Talc Free. Dermatologist Approved. Made in USA." },
-      { name: "keywords", content: "anti chafing spray, athletic powder, drygoods, prevent blisters, prevent chafing, talc free powder" },
+      { title: "DryGoods™ Athletic Spray — Prevent Chafing & Blisters" },
+      { name: "description", content: "The fastest way to prevent chafing. Patented 360° spray-to-powder. 8–12 hrs protection. Dermatologist Approved. Made in USA." },
+      { name: "keywords", content: "anti chafing spray, athletic powder, drygoods, prevent blisters, prevent chafing" },
       { property: "og:title", content: "DryGoods™ — The fastest way to prevent chafing." },
       { property: "og:description", content: "Patented 360° spray-to-powder valve. 8–12 hours of protection. No mess." },
       { property: "og:type", content: "product" },
@@ -39,11 +38,11 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",
-          name: "DryGoods™ Athletic",
-          description: "Patented 360° spray-to-powder. Prevents chafing and blisters for 8–12 hours. Talc-free, dermatologist approved, made in USA.",
+          name: "DryGoods™ Athletic Spray",
+          description: "Patented 360° spray-to-powder. Prevents chafing and blisters for 8–12 hours. Dermatologist approved, made in USA.",
           brand: { "@type": "Brand", name: "DryGoods" },
           image: [productImg.url],
-          sku: "DG-5.4OZ",
+          sku: "DG-ATH",
           aggregateRating: { "@type": "AggregateRating", ratingValue: "5", reviewCount: "200" },
           offers: {
             "@type": "Offer",
@@ -65,10 +64,9 @@ function HomePage() {
     <Layout>
       <Hero />
       <Introducing />
-      <ProblemSolution />
-      <HowItWorks />
+      <ConquerChafing />
+      <WhyItExists />
       <Benefits />
-      <SkinTypes />
       <Buy />
       <AmazonReviewsSection />
       <FAQ />
@@ -89,7 +87,6 @@ function Hero() {
           aria-hidden="true"
           className="w-full h-full object-cover object-[center_30%]"
         />
-        {/* Stronger top wash for nav contrast */}
         <div className="absolute inset-x-0 top-0 h-[70%] bg-gradient-to-b from-ink/95 via-ink/65 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-[25%] bg-gradient-to-t from-ink/55 to-transparent" />
       </div>
@@ -140,7 +137,7 @@ function Introducing() {
     <section id="introducing" className="bg-white py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 border-t border-ink/5">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
         <div className="relative aspect-square rounded-3xl overflow-hidden">
-          <img src={productConcrete.url} alt="DryGoods Athletic can" loading="lazy" className="w-full h-full object-cover" />
+          <img src={productConcrete.url} alt="DryGoods Athletic Spray can" loading="lazy" className="w-full h-full object-cover" />
         </div>
         <div>
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Introducing DryGoods™</span>
@@ -148,7 +145,7 @@ function Introducing() {
             A new kind of <span className="text-sky">anti-chafe spray.</span>
           </h2>
           <p className="mt-5 text-lg text-ink/75 leading-relaxed">
-            DryGoods™ Athletic is a patented spray that goes on wet and instantly dries to a fine, invisible powder.
+            DryGoods™ is a patented spray that goes on wet and instantly dries to a fine, invisible powder.
             One quick spray creates a smooth, moisture-wicking barrier that keeps your skin dry and friction-free —
             all day, no mess, no residue.
           </p>
@@ -163,7 +160,7 @@ function Introducing() {
             </li>
             <li className="flex items-start gap-3">
               <ShieldCheck className="size-5 text-sky shrink-0 mt-0.5" />
-              <span><strong>Talc-free & dermatologist approved</strong> — safe on all skin types.</span>
+              <span><strong>Dermatologist approved</strong> — safe on all skin types.</span>
             </li>
           </ul>
         </div>
@@ -172,106 +169,59 @@ function Introducing() {
   );
 }
 
-/* --------------------------- PROBLEM / SOLUTION --------------------------- */
-function ProblemSolution() {
+/* --------------------------- CONQUER CHAFING ----------------------------- */
+function ConquerChafing() {
   return (
-    <section id="why" className="bg-paper py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 border-t border-ink/5 scroll-mt-16">
-      <div className="max-w-6xl mx-auto">
-        <div className="max-w-3xl mx-auto text-center">
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Why it exists</span>
-          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(30px,5vw,52px)] leading-[1] text-ink">
-            The problem with <span className="text-sky">old-school powder.</span>
-          </h2>
-          <p className="mt-5 text-lg text-ink/70 leading-relaxed">
-            Traditional powders cake on skin, dust the air, miss the spots that need protection most,
-            and leave white residue on your gear. DryGoods™ fixes every one of those problems.
-          </p>
-        </div>
-
-        <div className="mt-12 grid md:grid-cols-2 gap-5 sm:gap-6">
-          <div className="rounded-2xl border border-ink/10 bg-white p-5 sm:p-7">
-            <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-ink/50">The old way</p>
-            <h3 className="mt-2 font-display font-black uppercase tracking-tight text-xl sm:text-2xl text-ink break-words">Bottle powder</h3>
-            <ul className="mt-5 space-y-3 text-sm text-ink/80">
-              {[
-                "Cakes & clumps on sweaty skin",
-                "Dust cloud — gets everywhere",
-                "Can't reach the back or between toes",
-                "White residue stains gear & clothes",
-                "Reapply constantly",
-              ].map(x => (
-                <li key={x} className="flex items-start gap-2.5">
-                  <XCircle className="size-5 text-ink/40 shrink-0 mt-0.5" />
-                  <span className="min-w-0 break-words">{x}</span>
-                </li>
-              ))}
-            </ul>
+    <section className="bg-white py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 border-t border-ink/5">
+      <div className="max-w-5xl mx-auto text-center">
+        <h2 className="font-display font-black uppercase tracking-tight text-[clamp(32px,6vw,64px)] leading-[1] text-ink">
+          Conquer chafing, <span className="text-sky">unleash your performance.</span>
+        </h2>
+        <div className="mt-12 grid md:grid-cols-2 gap-6 lg:gap-10 text-left">
+          <div className="rounded-3xl bg-ink text-white p-8 sm:p-10">
+            <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-sky">An athlete's silent battle</p>
+            <h3 className="mt-3 font-display font-black uppercase tracking-tight text-2xl sm:text-3xl leading-tight">
+              The chafing nobody talks about.
+            </h3>
+            <p className="mt-5 text-white/80 leading-relaxed">
+              Raw skin. Hot spots. Blisters at mile 18. The friction you don't notice until it ends your run.
+              For too long, athletes have managed it instead of preventing it — and paid the price in lost training days.
+            </p>
           </div>
-          <div className="rounded-2xl border-2 border-[#9CD1B4] bg-[#9CD1B4]/15 p-5 sm:p-7">
-            <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#5BA37F]">DryGoods™</p>
-            <h3 className="mt-2 font-display font-black uppercase tracking-tight text-xl sm:text-2xl text-ink break-words hyphens-auto">Patented spray-to-powder</h3>
-            <ul className="mt-5 space-y-3 text-sm text-ink/85">
-              {[
-                "Sprays on wet — dries to powder instantly",
-                "Zero cloud · zero mess",
-                "360° valve reaches anywhere, even upside down",
-                "No white residue · won't stain",
-                "One application = 8–12 hours of protection",
-              ].map(x => (
-                <li key={x} className="flex items-start gap-2.5">
-                  <CheckCircle2 className="size-5 text-[#9CD1B4] shrink-0 mt-0.5" />
-                  <span className="min-w-0 break-words">{x}</span>
-                </li>
-              ))}
-            </ul>
+          <div className="rounded-3xl bg-sky-soft border border-sky/30 p-8 sm:p-10">
+            <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-sky">DryGoods' revolutionary solution</p>
+            <h3 className="mt-3 font-display font-black uppercase tracking-tight text-2xl sm:text-3xl leading-tight text-ink">
+              One spray. Total protection.
+            </h3>
+            <p className="mt-5 text-ink/80 leading-relaxed">
+              Our patented spray-to-powder formula goes on wet, dries on contact, and builds an invisible
+              friction-free barrier that lasts 8–12 hours. Targeted, fast, and never messy — so you focus
+              on the work, not the rash.
+            </p>
           </div>
-
-
         </div>
       </div>
     </section>
   );
 }
 
-/* ------------------------------ HOW IT WORKS ------------------------------ */
-function HowItWorks() {
-  const steps = [
-    { n: "01", t: "Shake the can", b: "Wakes up the patented spray-to-powder formula." },
-    { n: "02", t: "Spray any angle", b: "360° valve sprays right-side up, sideways, even upside down." },
-    { n: "03", t: "Wet to dry in seconds", b: "Hits skin cool and wet — dries to a fine powder on contact." },
-    { n: "04", t: "Move freely", b: "8–12 hours of friction-free, blister-free protection." },
-  ];
+/* ----------------------------- WHY IT EXISTS ----------------------------- */
+function WhyItExists() {
   return (
-    <section className="bg-ink text-white py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="max-w-3xl">
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#9CD1B4]">How it works</span>
-          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(30px,5vw,52px)] leading-[1]">
-            The <span className="text-[#9CD1B4]">360° spray</span> mechanism.
-          </h2>
-          <p className="mt-5 text-lg text-white/75 leading-relaxed">
-            Our patented valve releases an ultra-fine liquid that flash-dries to powder on skin.
-            Spray any direction — including upside down — and reach the spots a bottle can't.
-          </p>
-        </div>
-
-        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {steps.map((s, i) => (
-            <motion.div
-              key={s.n}
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="rounded-2xl bg-white/5 border border-white/10 p-6 hover:border-[#9CD1B4] hover:bg-white/10 transition-colors"
-            >
-              <p className="font-display font-black text-[#9CD1B4] text-3xl tracking-tight">{s.n}</p>
-              <h3 className="mt-3 font-bold text-lg">{s.t}</h3>
-              <p className="mt-2 text-sm text-white/70 leading-relaxed">{s.b}</p>
-            </motion.div>
-          ))}
-
-        </div>
+    <section id="why" className="bg-paper py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 border-t border-ink/5 scroll-mt-16">
+      <div className="max-w-3xl mx-auto text-center">
+        <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Why it exists</span>
+        <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(30px,5vw,52px)] leading-[1] text-ink">
+          From pain to <span className="text-sky">performance.</span>
+        </h2>
+        <p className="mt-6 text-lg text-ink/75 leading-relaxed">
+          Chafing doesn't just hurt — it limits you. It cuts workouts short, ruins race days, and shapes
+          the way you train without you realizing it.
+        </p>
+        <p className="mt-4 text-lg text-ink/75 leading-relaxed">
+          DryGoods™ was built to take that limit off the table. One spray, all-day protection, no compromises —
+          so the only thing setting your ceiling is you.
+        </p>
       </div>
     </section>
   );
@@ -284,7 +234,7 @@ function Benefits() {
     { icon: RotateCcw, t: "Easy to Use", b: "360° spray valve — works upside down." },
     { icon: Snowflake, t: "Cool & Dry", b: "Instant cooling on contact." },
     { icon: Clock, t: "Long-Lasting", b: "8–12 hours of friction protection." },
-    { icon: ShieldCheck, t: "Skin-Safe", b: "Talc-free. Safe on all skin types." },
+    { icon: ShieldCheck, t: "Skin-Safe", b: "Safe on all skin types." },
   ];
   return (
     <section className="bg-sky py-16 sm:py-20 px-5 sm:px-6 lg:px-8">
@@ -303,22 +253,6 @@ function Benefits() {
   );
 }
 
-/* ------------------------------ SKIN TYPES -------------------------------- */
-function SkinTypes() {
-  return (
-    <section className="bg-paper pt-16 pb-16 sm:pt-20 sm:pb-20 md:pt-24 md:pb-24 px-5 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="font-display font-black uppercase tracking-tight text-[clamp(28px,4.5vw,48px)] leading-[1] text-ink">
-          Whole-body <span className="text-sky">protection.</span>
-        </h2>
-        <div className="mt-8 rounded-2xl overflow-hidden bg-white">
-          <img src={skinTypes.url} alt="Body diagram showing all areas DryGoods protects" loading="lazy" className="w-full h-auto" />
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ----------------------------------- BUY ---------------------------------- */
 function Buy() {
   const { add } = useCart();
@@ -327,14 +261,14 @@ function Buy() {
     "Patented 360° spray-to-powder formula",
     "8–12 hours of chafe & blister protection",
     "Instant cooling · Zero mess · Won't stain",
-    "Talc-Free · Dermatologist Approved · Made in USA",
+    "Dermatologist Approved · Made in USA",
   ];
   const badges = [
     { icon: Flag, label: "Made in USA" },
     { icon: ShieldCheck, label: "Dermatologist Approved" },
-    { icon: Leaf, label: "Talc Free" },
     { icon: Award, label: "US Patented" },
     { icon: RotateCcw, label: "Free Returns" },
+    { icon: Leaf, label: "Cruelty Free" },
   ];
   return (
     <section id="buy" className="scroll-mt-20 bg-sky-soft/40 py-16 sm:py-24 md:py-32 px-3 sm:px-6 lg:px-8 overflow-hidden">
@@ -348,14 +282,14 @@ function Buy() {
 
         <div className="grid min-w-0 md:grid-cols-2 gap-6 lg:gap-16 items-center bg-white rounded-3xl p-4 sm:p-10 lg:p-14 shadow-xl shadow-sky/10 overflow-hidden">
           <div className="relative aspect-square rounded-2xl overflow-hidden bg-sky-soft flex items-center justify-center p-2 sm:p-3">
-            <img src={productImg.url} alt="DryGoods Athletic 5.4 oz can" loading="lazy" className="w-full h-full object-contain" />
+            <img src={productImg.url} alt="DryGoods Athletic Spray can" loading="lazy" className="w-full h-full object-contain" />
             <span className="absolute top-4 left-4 bg-ink text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">In Stock</span>
           </div>
           <div className="min-w-0">
             <h3 className="font-sans font-bold tracking-tight text-[clamp(24px,5.5vw,36px)] leading-[1.1] text-ink break-words">
-              DryGoods™ Athletic
+              DryGoods™ Athletic Spray
             </h3>
-            <p className="mt-2 max-w-full text-sm sm:text-base text-ink/70 leading-relaxed break-words">5.4 oz · The fastest way to prevent chafing.</p>
+            <p className="mt-2 max-w-full text-sm sm:text-base text-ink/70 leading-relaxed break-words">The fastest way to prevent chafing.</p>
             <div className="mt-5 grid min-w-0 gap-1 sm:flex sm:flex-wrap sm:items-baseline sm:gap-x-3">
               <span className="font-sans font-bold text-4xl sm:text-5xl text-ink leading-none">${selected.price.toFixed(2)}</span>
               <span className="text-xs sm:text-sm text-ink/60 leading-snug break-words">Free shipping over $35</span>
@@ -414,20 +348,14 @@ function FAQ() {
             <p>That clean cooling sensation you feel on application. Activates cold receptors in the skin for an immediate cooling sensation that lasts.</p>
           </div>
           <div className="pt-2 border-t border-ink/10">
-            <p className="font-bold text-ink">Talc-Free — Reformulated With Better Ingredients.</p>
-            <p>We made the call to remove talc and upgrade the formula. Cleaner ingredients, same performance.</p>
-          </div>
-          <div>
             <p className="font-bold text-ink">No Aluminum Chlorohydrate.</p>
-            <p>That's the aluminum compound in antiperspirants that blocks sweat glands. It's not in here. Dry Goods manages moisture without blocking your body's natural function.</p>
+            <p>That's the aluminum compound in antiperspirants that blocks sweat glands. It's not in here. DryGoods manages moisture without blocking your body's natural function.</p>
           </div>
         </div>
-
       ),
     },
     { q: "Is it patented?", a: "Yes. DryGoods™ is built on a US-patented 360° spray-to-powder valve that delivers an ultra-fine mist and dries instantly on skin." },
     { q: "Where is it made?", a: "Designed, formulated, and assembled in the USA." },
-    { q: "Is it talc-free?", a: "Yes. Talc-free, asbestos-free, and cruelty-free — dermatologist approved and safe for all skin types." },
     { q: "Will it stain my clothes or gear?", a: "No. DryGoods™ dries to a fine powder on contact and won't leave white residue on skin or fabric." },
     { q: "Can I spray upside down?", a: "Yes. The patented 360° valve sprays from any angle, including upside down, so you can reach hard-to-cover spots." },
     { q: "What is the return policy?", a: "30-day satisfaction guarantee. If it's not for you, email us for a free return." },
@@ -487,7 +415,6 @@ function FinalCTA() {
             See Details
           </a>
         </div>
-
       </div>
     </section>
   );
