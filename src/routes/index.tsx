@@ -10,6 +10,7 @@ import {
   Target, Snowflake, Plus, Sparkles, Zap,
 } from "lucide-react";
 import golfer from "@/assets/hero-two-cans-golf-dusk.png.asset.json";
+import golferMobile from "@/assets/hero-can-mobile-golf-dusk.png.asset.json";
 import productImg from "@/assets/product-white.png.asset.json";
 import productConcrete from "@/assets/product-concrete.png.asset.json";
 import pickleballPaddle from "@/assets/about-pickleball-paddle.png.asset.json";
@@ -86,11 +87,18 @@ function Hero() {
     <section id="top" className="relative isolate overflow-hidden bg-ink text-white">
       <div className="absolute inset-0">
         <img
+          src={golferMobile.url}
+          alt=""
+          aria-hidden="true"
+          className="md:hidden w-full h-full object-cover object-[center_40%]"
+        />
+        <img
           src={golfer.url}
           alt=""
           aria-hidden="true"
-          className="w-full h-full object-cover object-[center_60%]"
+          className="hidden md:block w-full h-full object-cover object-[center_60%]"
         />
+
         <div className="absolute inset-x-0 top-0 h-[70%] bg-gradient-to-b from-ink/95 via-ink/65 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-[25%] bg-gradient-to-t from-ink/55 to-transparent" />
       </div>
