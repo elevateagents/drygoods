@@ -32,7 +32,7 @@ export type CartLine = {
   price: number;
 };
 
-const TITLE = "Dry+Goods™ Athletic · 5.4 oz";
+const TITLE = "DryGoods™ Athletic Spray";
 
 type CartState = {
   open: boolean;

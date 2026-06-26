@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ShoppingCart } from "lucide-react";
+import { ShoppingCart, XCircle, CheckCircle2 } from "lucide-react";
 import { Layout } from "@/components/site/Layout";
 import { useCart } from "@/lib/cart-store";
 import aboutPickleballCourt from "@/assets/about-pickleball-court.png.asset.json";
@@ -10,7 +10,7 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About DryGoods™ — Built by Athletes Who Refused 'Good Enough'" },
-      { name: "description", content: "How DryGoods™ Athletic was born from real-world testing — the story behind the patented spray-to-powder formula." },
+      { name: "description", content: "How DryGoods™ was born from real-world testing — the story behind the patented spray-to-powder formula." },
       { property: "og:title", content: "About DryGoods™" },
       { property: "og:description", content: "We didn't set out to build a brand. We set out to solve a problem." },
     ],
@@ -39,9 +39,11 @@ function AboutPage() {
               Keeps skin dry. Prevents blisters &amp; chafing during athletic activities.
             </h1>
             <p className="mt-6 font-sans text-base sm:text-lg text-ink/75 leading-relaxed">
-              Athletes push their limits, and DryGoods™ Athletic is built to keep up.
-              Designed to combat sweat, moisture, and friction, our advanced formula delivers long-lasting
-              dryness and all-day comfort.
+              Athletes push their limits.
+            </p>
+            <p className="mt-4 font-sans text-base sm:text-lg text-ink/75 leading-relaxed">
+              DryGoods™ is built to keep up. Designed to combat sweat, moisture, and friction, our advanced
+              formula delivers long-lasting dryness and all-day comfort.
             </p>
             <p className="mt-4 font-sans text-base sm:text-lg text-ink/75 leading-relaxed">
               Whether you're on the field, in the gym, or pushing through intense training, DryGoods™ helps
@@ -79,12 +81,65 @@ function AboutPage() {
             </p>
           </div>
 
+          {/* Traditional powders vs DryGoods */}
+          <div className="mt-20 max-w-5xl mx-auto">
+            <div className="text-center max-w-2xl mx-auto">
+              <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Old way vs new way</span>
+              <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(24px,3.5vw,36px)] leading-[1.05] text-ink">
+                The problem with <span className="text-sky">traditional powders.</span>
+              </h2>
+              <p className="mt-5 font-sans text-base text-ink/70 leading-relaxed">
+                Traditional powders cake on skin, dust the air, miss the spots that need protection most,
+                and leave white residue on your gear. DryGoods™ fixes every one of those problems.
+              </p>
+            </div>
+
+            <div className="mt-10 grid md:grid-cols-2 gap-5 sm:gap-6">
+              <div className="rounded-2xl border border-ink/10 bg-white p-5 sm:p-7">
+                <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-ink/50">The old way</p>
+                <h3 className="mt-2 font-display font-black uppercase tracking-tight text-xl sm:text-2xl text-ink break-words">Bottle powder</h3>
+                <ul className="mt-5 space-y-3 text-sm text-ink/80">
+                  {[
+                    "Cakes & clumps on sweaty skin",
+                    "Dust cloud — gets everywhere",
+                    "Can't reach the back or between toes",
+                    "White residue stains gear & clothes",
+                    "Reapply constantly",
+                  ].map(x => (
+                    <li key={x} className="flex items-start gap-2.5">
+                      <XCircle className="size-5 text-ink/40 shrink-0 mt-0.5" />
+                      <span className="min-w-0 break-words">{x}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-2xl border-2 border-sky bg-sky-soft p-5 sm:p-7">
+                <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-sky">DryGoods™</p>
+                <h3 className="mt-2 font-display font-black uppercase tracking-tight text-xl sm:text-2xl text-ink break-words hyphens-auto">Patented spray-to-powder</h3>
+                <ul className="mt-5 space-y-3 text-sm text-ink/85">
+                  {[
+                    "Sprays on wet — dries to powder instantly",
+                    "Zero cloud · zero mess",
+                    "360° valve reaches anywhere, even upside down",
+                    "No white residue · won't stain",
+                    "One application = 8–12 hours of protection",
+                  ].map(x => (
+                    <li key={x} className="flex items-start gap-2.5">
+                      <CheckCircle2 className="size-5 text-sky shrink-0 mt-0.5" />
+                      <span className="min-w-0 break-words">{x}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
           <div className="mt-16 max-w-3xl mx-auto rounded-3xl bg-ink text-white p-8 sm:p-10 lg:p-12 text-center shadow-xl shadow-ink/20">
             <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Ready to stay dry?</span>
             <h3 className="mt-3 font-sans font-bold tracking-tight text-[clamp(24px,4vw,40px)] leading-[1.1]">
               Grab a can. We'll handle the rest.
             </h3>
-            <p className="mt-4 text-white/75 max-w-xl mx-auto">One 5.4 oz can — add to cart in one tap.</p>
+            <p className="mt-4 text-white/75 max-w-xl mx-auto">One can — add to cart in one tap.</p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <div className="text-left">
                 <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/60">One-time purchase</div>

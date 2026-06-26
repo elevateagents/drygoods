@@ -132,20 +132,20 @@ export default function AmazonReviewsSection() {
   return (
     <section
       id="reviews"
-      className="relative py-20 sm:py-24 md:py-32 px-5 sm:px-6 lg:px-8 scroll-mt-16 overflow-hidden bg-[linear-gradient(to_bottom,#E8F3EC_0%,#F7F4EC_50%,#EAF4EE_100%)]"
+      className="relative py-20 sm:py-24 md:py-32 px-5 sm:px-6 lg:px-8 scroll-mt-16 overflow-hidden bg-white"
     >
-      {/* Decorative background */}
+      {/* Decorative background — blue-tinted */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.18]"
+        className="pointer-events-none absolute inset-0 opacity-[0.15]"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 20% 15%, #9CD1B4 0, transparent 45%), radial-gradient(circle at 85% 80%, #9CD1B4 0, transparent 50%)",
+            "radial-gradient(circle at 20% 15%, #1FB6FF 0, transparent 45%), radial-gradient(circle at 85% 80%, #1FB6FF 0, transparent 50%)",
         }}
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.06]"
+        className="pointer-events-none absolute inset-0 opacity-[0.05]"
         style={{
           backgroundImage:
             "radial-gradient(currentColor 1px, transparent 1px)",
@@ -153,6 +153,7 @@ export default function AmazonReviewsSection() {
           color: "#0a0a0a",
         }}
       />
+
 
       <style>{`
         @keyframes dg-marquee {
@@ -173,19 +174,20 @@ export default function AmazonReviewsSection() {
         <div className="relative max-w-6xl mx-auto">
           {/* Header */}
           <div className="flex flex-col items-center text-center mb-12">
-            <span className="text-[12px] sm:text-[13px] uppercase tracking-[0.3em] font-bold text-[#1FB6FF] mb-4">
+            <span className="text-[12px] sm:text-[13px] uppercase tracking-[0.3em] font-bold text-sky mb-4">
               Loved by Customers
             </span>
             <h2 className="font-display font-black uppercase leading-[0.95] tracking-tight text-ink text-[clamp(36px,7vw,76px)]">
-              Real athletes.
+              Real customers.
               <br />
-              <span className="text-[#1FB6FF]">Real reviews.</span>
+              <span className="text-sky">Real reviews.</span>
             </h2>
           <div className="mt-6 flex items-center gap-2">
             <Stars rating={4.5} size={22} />
             <span className="text-ink/70 text-sm font-semibold">4.5 / 5 · 448 Amazon reviews</span>
           </div>
         </div>
+
 
 
 
@@ -226,43 +228,26 @@ export default function AmazonReviewsSection() {
           </div>
         </div>
 
-        {/* Controls */}
-        <div className="mt-6 flex items-center justify-center gap-3">
+        {/* Controls — arrows only */}
+        <div className="mt-6 flex items-center justify-center gap-4">
           <button
             type="button"
             onClick={() => nudge(-1)}
             aria-label="Previous review"
-            className="h-10 w-10 inline-flex items-center justify-center rounded-full bg-white border border-ink/15 text-ink hover:bg-ink hover:text-white transition-colors shadow-sm"
+            className="h-12 w-12 inline-flex items-center justify-center rounded-full bg-white border border-ink/15 text-ink hover:bg-ink hover:text-white transition-colors shadow-sm"
           >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M15 18l-6-6 6-6"/></svg>
-          </button>
-          <button
-            type="button"
-            onClick={() => setPaused((p) => !p)}
-            aria-label={paused ? "Play reviews" : "Pause reviews"}
-            className="h-10 px-4 inline-flex items-center justify-center gap-2 rounded-full bg-ink text-white text-xs font-bold uppercase tracking-widest hover:bg-ink/90 transition-colors shadow-sm"
-          >
-            {paused ? (
-              <>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden><path d="M8 5v14l11-7z"/></svg>
-                Play
-              </>
-            ) : (
-              <>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
-                Pause
-              </>
-            )}
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M15 18l-6-6 6-6"/></svg>
           </button>
           <button
             type="button"
             onClick={() => nudge(1)}
             aria-label="Next review"
-            className="h-10 w-10 inline-flex items-center justify-center rounded-full bg-white border border-ink/15 text-ink hover:bg-ink hover:text-white transition-colors shadow-sm"
+            className="h-12 w-12 inline-flex items-center justify-center rounded-full bg-white border border-ink/15 text-ink hover:bg-ink hover:text-white transition-colors shadow-sm"
           >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M9 6l6 6-6 6"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M9 6l6 6-6 6"/></svg>
           </button>
         </div>
+
 
 
         <div className="mt-10 flex justify-center">
