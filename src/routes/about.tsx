@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ShoppingCart, XCircle, CheckCircle2 } from "lucide-react";
 import { Layout } from "@/components/site/Layout";
 import { useCart } from "@/lib/cart-store";
-import aboutPickleballCourt from "@/assets/about-pickleball-court.png.asset.json";
-import aboutPickleballPaddle from "@/assets/about-pickleball-paddle.png.asset.json";
-import aboutGolfDusk from "@/assets/about-golf-dusk.png.asset.json";
+import aboutRunningTrack from "@/assets/about-running-track.jpg";
+import aboutGymLifting from "@/assets/about-gym-lifting.jpg";
+import aboutCourtAction from "@/assets/about-court-action.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -21,9 +21,9 @@ export const Route = createFileRoute("/about")({
 function AboutPage() {
   const { add, setOpen } = useCart();
   const gallery = [
-    { src: aboutPickleballCourt.url, alt: "DryGoods can on pickleball court at sunrise" },
-    { src: aboutPickleballPaddle.url, alt: "DryGoods can with pickleball paddle and ball" },
-    { src: aboutGolfDusk.url, alt: "DryGoods can on golf course at dusk" },
+    { src: aboutRunningTrack, alt: "Runner sprinting on track at sunrise" },
+    { src: aboutGymLifting, alt: "Athlete training in the gym" },
+    { src: aboutCourtAction, alt: "Basketball player driving to the rim at golden hour" },
   ];
   const handleAdd = () => {
     void add("onetime", 1);
@@ -35,8 +35,8 @@ function AboutPage() {
         <div className="max-w-6xl mx-auto">
           <div className="max-w-4xl mx-auto text-center">
             <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">About Us</span>
-            <h1 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(30px,5vw,52px)] leading-[1] text-ink">
-              Keeps skin dry. Prevents blisters &amp; chafing during <span className="text-sky">athletic activities.</span>
+            <h1 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(34px,6vw,64px)] leading-[1] text-ink">
+              Stay dry. Stay <span className="text-sky">unstoppable.</span>
             </h1>
             <p className="mt-6 font-sans text-base sm:text-lg text-ink/75 leading-relaxed">
               Athletes push their limits.
