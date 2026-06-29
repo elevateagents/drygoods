@@ -254,7 +254,7 @@ function ConquerChafing() {
           <div className="rounded-3xl bg-white/5 border border-white/10 p-8 sm:p-12 lg:p-16">
             <div className="text-center max-w-3xl mx-auto">
               <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Introducing</span>
-              <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(20px,4.5vw,48px)] leading-[1] text-white text-balance break-words">
+              <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(18px,4.5vw,48px)] leading-[1] text-white text-balance break-words">
                 A <span className="text-sky">revolutionary</span> solution.
               </h3>
               <p className="mt-5 text-base sm:text-lg text-white/80 leading-relaxed">
