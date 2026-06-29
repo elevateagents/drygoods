@@ -63,7 +63,7 @@ function AboutPage() {
           <div className="mt-16 -mx-5 sm:-mx-6 lg:-mx-8 bg-gradient-to-tr from-ink via-[#111111] to-black py-16 sm:py-20 px-5 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
               <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">How it all began</span>
-              <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(24px,6vw,64px)] leading-[1] text-white">
+              <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(24px,4.5vw,48px)] leading-[1] text-white">
                 We didn't set out to build a brand. We set out to <span className="text-sky">solve a problem.</span>
               </h2>
               <p className="mt-5 font-sans text-base text-white/75 leading-relaxed">
