@@ -206,14 +206,14 @@ function Introducing() {
 /* --------------------------- CONQUER CHAFING ----------------------------- */
 function ConquerChafing() {
   return (
-    <section id="how" className="scroll-mt-20 bg-white py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 border-t border-ink/5">
+    <section id="how" className="scroll-mt-20 bg-ink text-white py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 border-t border-white/10">
       <div className="max-w-6xl mx-auto">
         {/* Headline */}
         <div className="text-center max-w-4xl mx-auto">
-          <h2 className="font-display font-black uppercase tracking-tight text-[clamp(24px,6vw,64px)] leading-[1] text-ink text-balance">
+          <h2 className="font-display font-black uppercase tracking-tight text-[clamp(24px,6vw,64px)] leading-[1] text-white text-balance">
             Conquer chafing, <span className="text-sky">unleash your performance.</span>
           </h2>
-          <p className="mt-6 text-lg sm:text-xl text-ink/75 leading-relaxed max-w-3xl mx-auto">
+          <p className="mt-6 text-lg sm:text-xl text-white/75 leading-relaxed max-w-3xl mx-auto">
             The athletic anti-chafing spray trusted by professionals for over 15 years —
             engineered for athletes who refuse to slow down.
           </p>
@@ -223,24 +223,24 @@ function ConquerChafing() {
         <div className="mt-20">
           <div className="text-center max-w-3xl mx-auto">
             <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">The athlete's silent battle</span>
-            <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(26px,4.5vw,44px)] leading-[1.05] text-ink">
+            <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(26px,4.5vw,44px)] leading-[1.05] text-white">
               The chafing <span className="text-sky">nobody talks about.</span>
             </h3>
           </div>
           <div className="mt-10 grid md:grid-cols-3 gap-5 lg:gap-6">
-            <div className="rounded-3xl bg-ink text-white p-7 sm:p-8">
+            <div className="rounded-3xl bg-white/10 border border-white/10 text-white p-7 sm:p-8">
               <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky">Friction & Sweat</p>
               <p className="mt-3 text-white/85 leading-relaxed">
                 Moisture and movement combine to create painful irritation that worsens with every stride or pedal stroke.
               </p>
             </div>
-            <div className="rounded-3xl bg-ink text-white p-7 sm:p-8">
+            <div className="rounded-3xl bg-white/10 border border-white/10 text-white p-7 sm:p-8">
               <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky">Every sport, every athlete</p>
               <p className="mt-3 text-white/85 leading-relaxed">
                 From cyclists to marathon runners, chafing affects performance across all disciplines, regardless of fitness level.
               </p>
             </div>
-            <div className="rounded-3xl bg-ink text-white p-7 sm:p-8">
+            <div className="rounded-3xl bg-white/10 border border-white/10 text-white p-7 sm:p-8">
               <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky">Lost training days</p>
               <p className="mt-3 text-white/85 leading-relaxed">
                 Chafing and blisters force athletes to skip workouts, compromising training cycles and competition results.
@@ -251,27 +251,27 @@ function ConquerChafing() {
 
         {/* Revolutionary Solution */}
         <div className="mt-20">
-          <div className="rounded-3xl bg-sky-soft border border-sky/30 p-8 sm:p-12 lg:p-16">
+          <div className="rounded-3xl bg-white/5 border border-white/10 p-8 sm:p-12 lg:p-16">
             <div className="text-center max-w-3xl mx-auto">
-              <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky-deep">Introducing</span>
-              <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(22px,4.5vw,48px)] leading-[1] text-ink text-balance">
-                A <span className="text-sky-deep">revolutionary</span> solution.
+              <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Introducing</span>
+              <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(22px,4.5vw,48px)] leading-[1] text-white text-balance">
+                A <span className="text-sky">revolutionary</span> solution.
               </h3>
-              <p className="mt-5 text-base sm:text-lg text-ink/80 leading-relaxed">
+              <p className="mt-5 text-base sm:text-lg text-white/80 leading-relaxed">
                 The first spray-on powder engineered specifically to combat chafing and moisture buildup —
                 no mess, no waste, no compromise.
               </p>
             </div>
             <div className="mt-10 grid md:grid-cols-2 gap-5 max-w-3xl mx-auto">
-              <div className="bg-white rounded-2xl p-6 border border-ink/5">
-                <p className="font-display font-black uppercase tracking-tight text-lg text-ink">Spray-on powder technology</p>
-                <p className="mt-2 text-ink/70 leading-relaxed">
+              <div className="bg-white/10 rounded-2xl p-6 border border-white/10">
+                <p className="font-display font-black uppercase tracking-tight text-lg text-white">Spray-on powder technology</p>
+                <p className="mt-2 text-white/70 leading-relaxed">
                   Targeted, precise application to high-friction areas without airborne mess.
                 </p>
               </div>
-              <div className="bg-white rounded-2xl p-6 border border-ink/5">
-                <p className="font-display font-black uppercase tracking-tight text-lg text-ink">15+ years of trust</p>
-                <p className="mt-2 text-ink/70 leading-relaxed">
+              <div className="bg-white/10 rounded-2xl p-6 border border-white/10">
+                <p className="font-display font-black uppercase tracking-tight text-lg text-white">15+ years of trust</p>
+                <p className="mt-2 text-white/70 leading-relaxed">
                   Proven and endorsed by professional athletes across multiple sports.
                 </p>
               </div>
