@@ -35,8 +35,8 @@ function AboutPage() {
         <div className="max-w-6xl mx-auto">
           <div className="max-w-4xl mx-auto text-center">
             <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">About Us</span>
-            <h1 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(28px,4.5vw,48px)] leading-[1.05] text-ink">
-              Keeps skin dry. Prevents blisters &amp; chafing during athletic activities.
+            <h1 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(30px,5vw,52px)] leading-[1] text-ink">
+              Keeps skin dry. Prevents blisters &amp; chafing during <span className="text-sky">athletic activities.</span>
             </h1>
             <p className="mt-6 font-sans text-base sm:text-lg text-ink/75 leading-relaxed">
               Athletes push their limits.
@@ -63,8 +63,8 @@ function AboutPage() {
           <div className="mt-16 -mx-5 sm:-mx-6 lg:-mx-8 bg-gradient-to-tr from-ink via-[#111111] to-black py-16 sm:py-20 px-5 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
               <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">How it all began</span>
-              <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(24px,3.5vw,36px)] leading-[1.05] text-white">
-                We didn't set out to build a brand. We set out to solve a problem.
+              <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(24px,6vw,64px)] leading-[1] text-white">
+                We didn't set out to build a brand. We set out to <span className="text-sky">solve a problem.</span>
               </h2>
               <p className="mt-5 font-sans text-base text-white/75 leading-relaxed">
                 Early mornings, double sessions, two a days, competitions that push you past what you
@@ -86,7 +86,7 @@ function AboutPage() {
             <div className="mt-20 max-w-5xl mx-auto">
               <div className="text-center max-w-2xl mx-auto">
                 <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Old way vs new way</span>
-                <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(24px,3.5vw,36px)] leading-[1.05] text-white">
+                <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(26px,4.5vw,44px)] leading-[1.05] text-white">
                   The problem with <span className="text-sky">traditional powders.</span>
                 </h2>
                 <p className="mt-5 font-sans text-base text-white/70 leading-relaxed">
@@ -138,8 +138,8 @@ function AboutPage() {
 
           <div className="mt-16 max-w-3xl mx-auto rounded-3xl bg-ink text-white p-8 sm:p-10 lg:p-12 text-center shadow-xl shadow-ink/20">
             <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Ready to stay dry?</span>
-            <h3 className="mt-3 font-sans font-bold tracking-tight text-[clamp(24px,4vw,40px)] leading-[1.1]">
-              Grab a can. We'll handle the rest.
+            <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(28px,5vw,48px)] leading-[1.05] text-white">
+              Grab a can. We'll handle <span className="text-sky">the rest.</span>
             </h3>
             <p className="mt-4 text-white/75 max-w-xl mx-auto">One can — add to cart in one tap.</p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
