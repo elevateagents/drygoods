@@ -288,8 +288,8 @@ function WhyItExists() {
   return (
     <section id="why" className="bg-paper py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 border-t border-ink/5 scroll-mt-16">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
-        <div className="relative aspect-square rounded-3xl overflow-hidden">
-          <img src={whyItExistsImg.url} alt="Athlete rock climbing over ocean" loading="lazy" className="w-full h-full object-cover" />
+        <div className="relative rounded-3xl overflow-hidden bg-ink/5">
+          <img src={whyItExistsImg.url} alt="Athlete rock climbing over ocean" loading="lazy" className="w-full h-auto object-contain" />
         </div>
         <div>
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Why it exists</span>
