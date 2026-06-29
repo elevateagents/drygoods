@@ -287,20 +287,24 @@ function ConquerChafing() {
 function WhyItExists() {
   return (
     <section id="why" className="bg-paper py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 border-t border-ink/5 scroll-mt-16">
-      <div className="max-w-3xl mx-auto text-center">
-        <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Why it exists</span>
-        <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(24px,5vw,52px)] leading-[1] text-ink text-balance">
-          From pain to <span className="text-sky">performance.</span>
-        </h2>
-        <p className="mt-6 text-lg text-ink/75 leading-relaxed">
-          Chafing doesn't just hurt — it limits you. It cuts workouts short, slows your pace, and
-          plants doubt in your mind at exactly the wrong moment.
-        </p>
-        <p className="mt-4 text-lg text-ink/75 leading-relaxed">
-          DryGoods™ eliminates that doubt entirely. One spray before activity, and you're free to
-          focus on what actually matters: pushing your limits.
-        </p>
-
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className="relative aspect-square rounded-3xl overflow-hidden">
+          <img src={whyItExistsImg.url} alt="Athlete rock climbing over ocean" loading="lazy" className="w-full h-full object-cover" />
+        </div>
+        <div>
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Why it exists</span>
+          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(30px,5vw,52px)] leading-[1] text-ink">
+            From pain to <span className="text-sky">performance.</span>
+          </h2>
+          <p className="mt-5 text-lg text-ink/75 leading-relaxed">
+            Chafing doesn't just hurt — it limits you. It cuts workouts short, slows your pace, and
+            plants doubt in your mind at exactly the wrong moment.
+          </p>
+          <p className="mt-4 text-lg text-ink/75 leading-relaxed">
+            DryGoods™ eliminates that doubt entirely. One spray before activity, and you're free to
+            focus on what actually matters: pushing your limits.
+          </p>
+        </div>
       </div>
     </section>
   );
