@@ -60,7 +60,7 @@ function AboutPage() {
             ))}
           </div>
 
-          <div className="mt-16 -mx-5 sm:-mx-6 lg:-mx-8 bg-ink py-16 sm:py-20 px-5 sm:px-6 lg:px-8">
+          <div className="mt-16 -mx-5 sm:-mx-6 lg:-mx-8 bg-gradient-to-tr from-ink via-[#111111] to-black py-16 sm:py-20 px-5 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
               <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">How it all began</span>
               <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(24px,3.5vw,36px)] leading-[1.05] text-white">
