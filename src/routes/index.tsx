@@ -140,8 +140,8 @@ function Hero() {
 /* ------------------------------- TRUST BAR ------------------------------- */
 function TrustBar() {
   const items = [
-    "448 Reviews",
-    "4.5★ Rated",
+    "647 Reviews",
+    "4.4★ Rated",
     "15 Years Trusted",
     "Talc-Free",
     "Made in USA",

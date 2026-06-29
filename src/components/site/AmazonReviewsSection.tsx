@@ -219,8 +219,8 @@ export default function AmazonReviewsSection() {
               <span className="text-sky">Real reviews.</span>
             </h2>
           <div className="mt-6 flex items-center gap-2">
-            <Stars rating={4.5} size={22} />
-            <span className="text-ink/70 text-sm font-semibold">4.5 / 5 · 448 Amazon reviews</span>
+            <Stars rating={4.4} size={22} />
+            <span className="text-ink/70 text-sm font-semibold">4.4 out of 5 · 647 global ratings</span>
           </div>
         </div>
 
