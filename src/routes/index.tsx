@@ -131,16 +131,6 @@ function Hero() {
               See How It Works →
             </a>
           </div>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[12px] sm:text-sm text-white font-semibold [text-shadow:0_2px_10px_rgba(0,0,0,0.6)]">
-            <span className="text-sky">★ 4.5/5</span>
-            <span>· 448 Amazon Reviews</span>
-            <span className="opacity-60">|</span>
-            <span>Talc-Free</span>
-            <span className="opacity-60">|</span>
-            <span>Dermatologist Approved</span>
-            <span className="opacity-60">|</span>
-            <span>Made in USA</span>
-          </div>
         </motion.div>
       </div>
     </section>
