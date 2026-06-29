@@ -293,7 +293,7 @@ function WhyItExists() {
         </div>
         <div>
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Why it exists</span>
-          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(26px,4.5vw,52px)] leading-[1.05] text-ink text-balance">
+          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(22px,4.5vw,52px)] leading-[1.05] text-ink text-balance break-words">
             From pain to <br className="md:hidden" /><span className="text-sky">performance.</span>
           </h2>
           <p className="mt-5 text-lg text-ink/75 leading-relaxed">
