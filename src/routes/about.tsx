@@ -35,7 +35,7 @@ function AboutPage() {
         <div className="max-w-6xl mx-auto">
           <div className="max-w-4xl mx-auto text-center">
             <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">About Us</span>
-            <h1 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(34px,6vw,64px)] leading-[1] text-ink">
+            <h1 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(28px,4.5vw,48px)] leading-[1] text-ink">
               Stay dry. Stay <span className="text-sky">unstoppable.</span>
             </h1>
             <p className="mt-6 font-sans text-base sm:text-lg text-ink/75 leading-relaxed">
