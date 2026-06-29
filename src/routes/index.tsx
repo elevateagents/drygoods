@@ -206,7 +206,7 @@ function Introducing() {
 /* --------------------------- CONQUER CHAFING ----------------------------- */
 function ConquerChafing() {
   return (
-    <section id="how" className="scroll-mt-20 bg-ink text-white py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 border-t border-white/10">
+    <section id="how" className="scroll-mt-20 bg-gradient-to-tr from-ink via-[#111111] to-black text-white py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 border-t border-white/10">
       <div className="max-w-6xl mx-auto">
         {/* Headline */}
         <div className="text-center max-w-4xl mx-auto">
