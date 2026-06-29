@@ -14,6 +14,7 @@ import golferMobile from "@/assets/hero-can-mobile-golf-dusk.png.asset.json";
 import productImg from "@/assets/product-white.png.asset.json";
 import productConcrete from "@/assets/product-concrete.png.asset.json";
 import pickleballPaddle from "@/assets/about-pickleball-paddle.png.asset.json";
+import whyItExistsImg from "@/assets/why-it-exists-climbing.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
