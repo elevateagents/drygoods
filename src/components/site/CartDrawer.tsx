@@ -128,7 +128,7 @@ export function CartDrawer() {
                     type="button"
                     onClick={() => void syncCart()}
                     disabled={busy}
-                    className="w-full bg-ice text-ink py-4 font-display font-black uppercase tracking-tight text-lg border-2 border-ink hover:bg-ink hover:text-ice transition-colors disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
+                    className="w-full bg-ice text-ink py-4 font-sans font-black uppercase tracking-tight text-lg border-2 border-ink hover:bg-ink hover:text-ice transition-colors disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
                   >
                     <Loader2 className="size-5 animate-spin" />
                   </button>
