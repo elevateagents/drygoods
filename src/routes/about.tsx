@@ -24,8 +24,8 @@ function AboutPage() {
   return (
     <Layout>
       {/* How it all began — WHITE background */}
-      <section className="pt-28 sm:pt-32 pb-16 sm:pb-20 px-5 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-3xl mx-auto">
+      <section className="pt-28 sm:pt-32 pb-16 sm:pb-20 px-5 sm:px-6 lg:px-8 xl:px-12 bg-white">
+        <div className="max-w-3xl xl:max-w-4xl 2xl:max-w-5xl mx-auto">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">How it all began</span>
           <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(24px,4.5vw,48px)] leading-[1] text-ink">
             We didn't set out to build a brand. We set out to <span className="text-sky">solve a problem.</span>
@@ -48,8 +48,8 @@ function AboutPage() {
       </section>
 
       {/* Old way vs new way — DARK full-bleed */}
-      <section className="relative left-1/2 w-screen -translate-x-1/2 bg-gradient-to-tr from-ink via-[#111111] to-black py-16 sm:py-20 px-5 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto">
+      <section className="relative left-1/2 w-screen -translate-x-1/2 bg-gradient-to-tr from-ink via-[#111111] to-black py-16 sm:py-20 px-5 sm:px-6 lg:px-8 xl:px-12">
+        <div className="max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto">
             <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Old way vs new way</span>
             <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(26px,4.5vw,44px)] leading-[1.05] text-white">

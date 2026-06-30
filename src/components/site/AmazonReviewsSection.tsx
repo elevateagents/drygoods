@@ -207,7 +207,7 @@ export default function AmazonReviewsSection() {
           }
         `}</style>
 
-        <div className="relative max-w-6xl mx-auto">
+        <div className="relative max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem] mx-auto">
           {/* Header */}
           <div className="flex flex-col items-center text-center mb-12">
             <span className="text-[12px] sm:text-[13px] uppercase tracking-[0.3em] font-bold text-sky mb-4">
