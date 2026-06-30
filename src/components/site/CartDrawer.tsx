@@ -37,7 +37,7 @@ export function CartDrawer() {
             className="fixed right-0 top-0 bottom-0 w-full sm:w-[440px] bg-paper z-50 flex flex-col shadow-2xl"
           >
             <header className="flex items-center justify-between px-6 py-5 border-b border-ink/10">
-              <h2 className="font-display text-2xl font-black uppercase tracking-tight">
+              <h2 className="font-sans text-2xl font-black uppercase tracking-tight">
                 Your Kit
               </h2>
               <button onClick={() => setOpen(false)} aria-label="Close cart">
@@ -119,7 +119,7 @@ export function CartDrawer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setOpen(false)}
-                    className="w-full bg-ice text-ink py-4 font-display font-black uppercase tracking-tight text-lg border-2 border-ink hover:bg-ink hover:text-ice transition-colors inline-flex items-center justify-center gap-2"
+                    className="w-full bg-ice text-ink py-4 font-sans font-black uppercase tracking-tight text-lg border-2 border-ink hover:bg-ink hover:text-ice transition-colors inline-flex items-center justify-center gap-2"
                   >
                     Checkout →
                   </a>
@@ -128,7 +128,7 @@ export function CartDrawer() {
                     type="button"
                     onClick={() => void syncCart()}
                     disabled={busy}
-                    className="w-full bg-ice text-ink py-4 font-display font-black uppercase tracking-tight text-lg border-2 border-ink hover:bg-ink hover:text-ice transition-colors disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
+                    className="w-full bg-ice text-ink py-4 font-sans font-black uppercase tracking-tight text-lg border-2 border-ink hover:bg-ink hover:text-ice transition-colors disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
                   >
                     <Loader2 className="size-5 animate-spin" />
                   </button>
