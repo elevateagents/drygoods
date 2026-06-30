@@ -70,7 +70,7 @@ function HomePage() {
       <Introducing />
       <ConquerChafing />
       <WhyItExists />
-      
+      <AboutBlurb />
       <Buy />
       <AmazonReviewsSection />
       <FAQ />
