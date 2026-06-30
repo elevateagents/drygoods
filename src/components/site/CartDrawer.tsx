@@ -78,7 +78,7 @@ export function CartDrawer() {
                         <img src={canHero.url} alt="" className="h-16 w-auto" />
                       </div>
                       <div className="flex-1">
-                        <p className="font-bold text-sm leading-tight">{l.title}</p>
+                        <p className="font-sans font-bold tracking-tight text-sm leading-tight">{l.title}</p>
                         <p className="text-xs text-steel uppercase tracking-widest mt-1">
                           {PLAN_META[l.plan].label}
                           {PLAN_META[l.plan].sub && (
