@@ -281,31 +281,6 @@ function WhyItExists() {
   );
 }
 
-/* ------------------------------- BENEFITS --------------------------------- */
-function Benefits() {
-  const items = [
-    { icon: Target, t: "Targeted Application", b: "No mess. No waste." },
-    { icon: RotateCcw, t: "Easy to Use", b: "360° spray valve — works upside down." },
-    { icon: Snowflake, t: "Cool & Dry", b: "Instant cooling on contact." },
-    { icon: Clock, t: "Long-Lasting", b: "8–12 hours of friction protection." },
-    { icon: ShieldCheck, t: "Skin-Safe", b: "Safe on all skin types." },
-  ];
-  return (
-    <section className="bg-sky py-16 sm:py-20 px-5 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
-          {items.map((it) => (
-            <div key={it.t} className="text-center text-white p-6">
-              <it.icon className="mx-auto size-12 mb-5" strokeWidth={1.8} />
-              <h3 className="font-bold text-sm sm:text-base">{it.t}</h3>
-              <p className="mt-2 text-xs sm:text-sm text-white/90 leading-snug">{it.b}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* ----------------------------------- BUY ---------------------------------- */
 function Buy() {
