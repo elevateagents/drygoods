@@ -111,7 +111,7 @@ export function CartDrawer() {
               <footer className="border-t border-ink/10 px-6 py-5 space-y-4">
                 <div className="flex justify-between text-sm">
                   <span className="uppercase tracking-widest font-semibold">Subtotal</span>
-                  <span className="font-bold">${total.toFixed(2)}</span>
+                  <span className="font-sans font-bold">${total.toFixed(2)}</span>
                 </div>
                 {checkoutUrl && !busy ? (
                   <a
