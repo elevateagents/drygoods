@@ -70,7 +70,7 @@ function HomePage() {
       <Introducing />
       <ConquerChafing />
       <WhyItExists />
-      
+      <AboutBlurb />
       <Buy />
       <AmazonReviewsSection />
       <FAQ />
@@ -281,6 +281,31 @@ function WhyItExists() {
   );
 }
 
+/* ------------------------------ ABOUT BLURB ------------------------------ */
+function AboutBlurb() {
+  return (
+    <section className="bg-white py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 border-t border-ink/5">
+      <div className="max-w-4xl mx-auto text-center">
+        <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">About Us</span>
+        <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(28px,4.5vw,48px)] leading-[1] text-ink">
+          Stay dry. Stay <span className="text-sky">unstoppable.</span>
+        </h2>
+        <p className="mt-6 font-sans text-base sm:text-lg text-ink/75 leading-relaxed">
+          Athletes push their limits.
+        </p>
+        <p className="mt-4 font-sans text-base sm:text-lg text-ink/75 leading-relaxed">
+          DryGoods™ is built to keep up. Designed to combat sweat, moisture, and friction, our advanced
+          formula delivers long-lasting dryness and all-day comfort.
+        </p>
+        <p className="mt-4 font-sans text-base sm:text-lg text-ink/75 leading-relaxed">
+          Whether you&apos;re on the field, in the gym, or pushing through intense training, DryGoods™ helps
+          you stay cool, dry, and performing at your best. No mess, no residue — just powerful protection
+          when you need it most. Try it once, and you&apos;ll never train without it.
+        </p>
+      </div>
+    </section>
+  );
+}
 
 /* ----------------------------------- BUY ---------------------------------- */
 function Buy() {
