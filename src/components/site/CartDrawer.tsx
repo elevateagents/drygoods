@@ -37,7 +37,7 @@ export function CartDrawer() {
             className="fixed right-0 top-0 bottom-0 w-full sm:w-[440px] bg-paper z-50 flex flex-col shadow-2xl"
           >
             <header className="flex items-center justify-between px-6 py-5 border-b border-ink/10">
-              <h2 className="font-display text-2xl font-black uppercase tracking-tighter">
+              <h2 className="font-display text-2xl font-black uppercase tracking-tight">
                 Your Kit
               </h2>
               <button onClick={() => setOpen(false)} aria-label="Close cart">
