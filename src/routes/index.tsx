@@ -221,12 +221,6 @@ function ConquerChafing() {
 
         {/* Silent Battle */}
         <div className="mt-20">
-          <div className="text-center max-w-3xl mx-auto">
-            <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">The athlete's silent battle</span>
-            <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(26px,4.5vw,44px)] leading-[1.05] text-white">
-              The chafing <span className="text-sky">nobody talks about.</span>
-            </h3>
-          </div>
           <div className="mt-10 grid md:grid-cols-3 gap-5 lg:gap-6">
             <div className="rounded-3xl bg-white/10 border border-white/10 text-white p-7 sm:p-8">
               <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky">Friction & Sweat</p>
