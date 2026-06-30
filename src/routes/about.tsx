@@ -25,33 +25,6 @@ function AboutPage() {
     <Layout>
       <section className="bg-paper pt-28 pb-20 sm:pt-32 sm:pb-24 px-5 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="max-w-4xl mx-auto text-center">
-            <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">About Us</span>
-            <h1 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(28px,4.5vw,48px)] leading-[1] text-ink">
-              Stay dry. Stay <span className="text-sky">unstoppable.</span>
-            </h1>
-            <p className="mt-6 font-sans text-base sm:text-lg text-ink/75 leading-relaxed">
-              Athletes push their limits.
-            </p>
-            <p className="mt-4 font-sans text-base sm:text-lg text-ink/75 leading-relaxed">
-              DryGoods™ is built to keep up. Designed to combat sweat, moisture, and friction, our advanced
-              formula delivers long-lasting dryness and all-day comfort.
-            </p>
-            <p className="mt-4 font-sans text-base sm:text-lg text-ink/75 leading-relaxed">
-              Whether you're on the field, in the gym, or pushing through intense training, DryGoods™ helps
-              you stay cool, dry, and performing at your best. No mess, no residue — just powerful protection
-              when you need it most. Try it once, and you'll never train without it.
-            </p>
-          </div>
-
-          <div className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
-            {gallery.map((g) => (
-              <div key={g.src} className="aspect-square overflow-hidden rounded-2xl bg-white">
-                <img src={g.src} alt={g.alt} loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-              </div>
-            ))}
-          </div>
-
           <div className="mt-16 relative left-1/2 w-screen -translate-x-1/2 bg-gradient-to-tr from-ink via-[#111111] to-black py-16 sm:py-20 px-5 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
               <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">How it all began</span>
