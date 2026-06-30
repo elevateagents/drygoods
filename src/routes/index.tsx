@@ -117,7 +117,7 @@ function Hero() {
             One Spray: <span className="text-sky">Cool<span className="inline-block w-[0.12em]" />, Dry,</span> and Chafe-Free.
           </h1>
           <p className="mt-5 text-base sm:text-lg text-white max-w-2xl mx-auto leading-relaxed [text-shadow:0_2px_10px_rgba(0,0,0,0.55)]">
-            Dry Goods&apos; patented spray goes on cool, dries to an invisible powder, and keeps you
+            DryGoods™ patented spray goes on cool, dries to an invisible powder, and keeps you
             chafe-free for 8–12 hours. No mess. No residue.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
