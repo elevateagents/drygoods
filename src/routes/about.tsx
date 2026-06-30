@@ -17,11 +17,6 @@ export const Route = createFileRoute("/about")({
 
 function AboutPage() {
   const { add, setOpen } = useCart();
-  const gallery = [
-    { src: aboutRunningTrack, alt: "Runner sprinting on track at sunrise" },
-    { src: aboutGymLifting, alt: "Athlete training in the gym" },
-    { src: aboutCourtAction, alt: "Basketball player driving to the rim at golden hour" },
-  ];
   const handleAdd = () => {
     void add("onetime", 1);
     setOpen(true);
