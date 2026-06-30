@@ -37,7 +37,7 @@ export function CartDrawer() {
             className="fixed right-0 top-0 bottom-0 w-full sm:w-[440px] bg-paper z-50 flex flex-col shadow-2xl"
           >
             <header className="flex items-center justify-between px-6 py-5 border-b border-ink/10">
-              <h2 className="font-display text-2xl font-black uppercase tracking-tighter">
+              <h2 className="font-display text-2xl font-black uppercase tracking-tight">
                 Your Kit
               </h2>
               <button onClick={() => setOpen(false)} aria-label="Close cart">
@@ -78,7 +78,7 @@ export function CartDrawer() {
                         <img src={canHero.url} alt="" className="h-16 w-auto" />
                       </div>
                       <div className="flex-1">
-                        <p className="font-bold text-sm leading-tight">{l.title}</p>
+                        <p className="font-sans font-bold tracking-tight text-sm leading-tight">{l.title}</p>
                         <p className="text-xs text-steel uppercase tracking-widest mt-1">
                           {PLAN_META[l.plan].label}
                           {PLAN_META[l.plan].sub && (
@@ -95,7 +95,7 @@ export function CartDrawer() {
                               <Plus className="size-3" />
                             </button>
                           </div>
-                          <p className="font-bold">${(l.price * l.qty).toFixed(2)}</p>
+                          <p className="font-sans font-bold">${(l.price * l.qty).toFixed(2)}</p>
                         </div>
                         <button onClick={() => remove(l.id)} className="text-[10px] uppercase tracking-widest text-steel hover:text-heat mt-2">
                           Remove
@@ -111,7 +111,7 @@ export function CartDrawer() {
               <footer className="border-t border-ink/10 px-6 py-5 space-y-4">
                 <div className="flex justify-between text-sm">
                   <span className="uppercase tracking-widest font-semibold">Subtotal</span>
-                  <span className="font-bold">${total.toFixed(2)}</span>
+                  <span className="font-sans font-bold">${total.toFixed(2)}</span>
                 </div>
                 {checkoutUrl && !busy ? (
                   <a
