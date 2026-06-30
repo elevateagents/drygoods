@@ -119,7 +119,7 @@ export function CartDrawer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setOpen(false)}
-                    className="w-full bg-ice text-ink py-4 font-display font-black uppercase tracking-tight text-lg border-2 border-ink hover:bg-ink hover:text-ice transition-colors inline-flex items-center justify-center gap-2"
+                    className="w-full bg-ice text-ink py-4 font-sans font-black uppercase tracking-tight text-lg border-2 border-ink hover:bg-ink hover:text-ice transition-colors inline-flex items-center justify-center gap-2"
                   >
                     Checkout →
                   </a>
