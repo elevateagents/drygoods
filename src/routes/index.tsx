@@ -71,8 +71,8 @@ function HomePage() {
       <ConquerChafing />
       <WhyItExists />
       <AboutBlurb />
-      <Buy />
       <AmazonReviewsSection />
+      <Buy />
       <FAQ />
       <FinalCTA />
       <MobileStickyCTA />
