@@ -249,35 +249,6 @@ function ConquerChafing() {
           </div>
         </div>
 
-        {/* Revolutionary Solution */}
-        <div className="mt-20">
-          <div className="rounded-3xl bg-white/5 border border-white/10 p-8 sm:p-12 lg:p-16">
-            <div className="text-center max-w-3xl mx-auto">
-              <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Introducing</span>
-              <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(18px,4.5vw,48px)] leading-[1] text-white text-balance break-words">
-                A <span className="text-sky">revolutionary</span> solution.
-              </h3>
-              <p className="mt-5 text-base sm:text-lg text-white/80 leading-relaxed">
-                The first spray-on powder engineered specifically to combat chafing and moisture buildup —
-                no mess, no waste, no compromise.
-              </p>
-            </div>
-            <div className="mt-10 grid md:grid-cols-2 gap-5 max-w-3xl mx-auto">
-              <div className="bg-white/10 rounded-2xl p-6 border border-white/10">
-                <p className="font-display font-black uppercase tracking-tight text-lg text-white">Spray-on powder technology</p>
-                <p className="mt-2 text-white/70 leading-relaxed">
-                  Targeted, precise application to high-friction areas without airborne mess.
-                </p>
-              </div>
-              <div className="bg-white/10 rounded-2xl p-6 border border-white/10">
-                <p className="font-display font-black uppercase tracking-tight text-lg text-white">15+ years of trust</p>
-                <p className="mt-2 text-white/70 leading-relaxed">
-                  Proven and endorsed by professional athletes across multiple sports.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
