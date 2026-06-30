@@ -5,14 +5,13 @@ import AmazonReviewsSection from "@/components/site/AmazonReviewsSection";
 import { useState } from "react";
 import { useCart, PLAN_META, type Plan } from "@/lib/cart-store";
 import {
-  Clock, ShieldCheck, Leaf, Award, Flag,
+  ShieldCheck, Leaf, Award, Flag,
   ShoppingCart, ExternalLink, RotateCcw, CheckCircle2,
-  Target, Snowflake, Plus, Sparkles, Zap,
+  Plus,
 } from "lucide-react";
 import golfer from "@/assets/hero-two-cans-golf-dusk.png.asset.json";
 import golferMobile from "@/assets/hero-can-mobile-golf-dusk.png.asset.json";
 import productImg from "@/assets/product-white.png.asset.json";
-import productConcrete from "@/assets/product-concrete.png.asset.json";
 import pickleballPaddle from "@/assets/about-pickleball-paddle.png.asset.json";
 import whyItExistsImg from "@/assets/why-it-exists-climbing.jpg.asset.json";
 
@@ -67,10 +66,8 @@ function HomePage() {
     <Layout>
       <Hero />
       <TrustBar />
-      <Introducing />
       <ConquerChafing />
       <WhyItExists />
-      <Benefits />
       <Buy />
       <AmazonReviewsSection />
       <FAQ />
@@ -165,43 +162,6 @@ function TrustBar() {
 }
 
 
-/* ----------------------------- INTRODUCING ------------------------------- */
-function Introducing() {
-  return (
-    <section id="introducing" className="bg-white py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 border-t border-ink/5">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
-        <div className="relative aspect-square rounded-3xl overflow-hidden">
-          <img src={productConcrete.url} alt="DryGoods Athletic Spray can" loading="lazy" className="w-full h-full object-cover" />
-        </div>
-        <div>
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Introducing DryGoods™</span>
-          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(30px,5vw,52px)] leading-[1] text-ink">
-            A new kind of <span className="text-sky">anti-chafe spray.</span>
-          </h2>
-          <p className="mt-5 text-lg text-ink/75 leading-relaxed">
-            DryGoods™ is a patented spray that goes on wet and instantly dries to a fine, invisible powder.
-            One quick spray creates a smooth, moisture-wicking barrier that keeps your skin dry and friction-free —
-            all day, no mess, no residue.
-          </p>
-          <ul className="mt-6 space-y-3 text-ink/85">
-            <li className="flex items-start gap-3">
-              <Sparkles className="size-5 text-sky shrink-0 mt-0.5" />
-              <span><strong>Wet-to-powder formula</strong> — sprays on cool, dries instantly.</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <Zap className="size-5 text-sky shrink-0 mt-0.5" />
-              <span><strong>360° patented valve</strong> — reaches anywhere, even upside down.</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <ShieldCheck className="size-5 text-sky shrink-0 mt-0.5" />
-              <span><strong>Dermatologist approved</strong> — safe on all skin types.</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* --------------------------- CONQUER CHAFING ----------------------------- */
 function ConquerChafing() {
@@ -249,35 +209,6 @@ function ConquerChafing() {
           </div>
         </div>
 
-        {/* Revolutionary Solution */}
-        <div className="mt-20">
-          <div className="rounded-3xl bg-white/5 border border-white/10 p-8 sm:p-12 lg:p-16">
-            <div className="text-center max-w-3xl mx-auto">
-              <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Introducing</span>
-              <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(18px,4.5vw,48px)] leading-[1] text-white text-balance break-words">
-                A <span className="text-sky">revolutionary</span> solution.
-              </h3>
-              <p className="mt-5 text-base sm:text-lg text-white/80 leading-relaxed">
-                The first spray-on powder engineered specifically to combat chafing and moisture buildup —
-                no mess, no waste, no compromise.
-              </p>
-            </div>
-            <div className="mt-10 grid md:grid-cols-2 gap-5 max-w-3xl mx-auto">
-              <div className="bg-white/10 rounded-2xl p-6 border border-white/10">
-                <p className="font-display font-black uppercase tracking-tight text-lg text-white">Spray-on powder technology</p>
-                <p className="mt-2 text-white/70 leading-relaxed">
-                  Targeted, precise application to high-friction areas without airborne mess.
-                </p>
-              </div>
-              <div className="bg-white/10 rounded-2xl p-6 border border-white/10">
-                <p className="font-display font-black uppercase tracking-tight text-lg text-white">15+ years of trust</p>
-                <p className="mt-2 text-white/70 leading-relaxed">
-                  Proven and endorsed by professional athletes across multiple sports.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
@@ -310,31 +241,6 @@ function WhyItExists() {
   );
 }
 
-/* ------------------------------- BENEFITS --------------------------------- */
-function Benefits() {
-  const items = [
-    { icon: Target, t: "Targeted Application", b: "No mess. No waste." },
-    { icon: RotateCcw, t: "Easy to Use", b: "360° spray valve — works upside down." },
-    { icon: Snowflake, t: "Cool & Dry", b: "Instant cooling on contact." },
-    { icon: Clock, t: "Long-Lasting", b: "8–12 hours of friction protection." },
-    { icon: ShieldCheck, t: "Skin-Safe", b: "Safe on all skin types." },
-  ];
-  return (
-    <section className="bg-sky py-16 sm:py-20 px-5 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
-          {items.map((it) => (
-            <div key={it.t} className="text-center text-white p-6">
-              <it.icon className="mx-auto size-12 mb-5" strokeWidth={1.8} />
-              <h3 className="font-bold text-sm sm:text-base">{it.t}</h3>
-              <p className="mt-2 text-xs sm:text-sm text-white/90 leading-snug">{it.b}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* ----------------------------------- BUY ---------------------------------- */
 function Buy() {
