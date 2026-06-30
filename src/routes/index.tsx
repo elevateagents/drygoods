@@ -5,14 +5,13 @@ import AmazonReviewsSection from "@/components/site/AmazonReviewsSection";
 import { useState } from "react";
 import { useCart, PLAN_META, type Plan } from "@/lib/cart-store";
 import {
-  Clock, ShieldCheck, Leaf, Award, Flag,
+  ShieldCheck, Leaf, Award, Flag,
   ShoppingCart, ExternalLink, RotateCcw, CheckCircle2,
-  Target, Snowflake, Plus, Sparkles, Zap,
+  Plus,
 } from "lucide-react";
 import golfer from "@/assets/hero-two-cans-golf-dusk.png.asset.json";
 import golferMobile from "@/assets/hero-can-mobile-golf-dusk.png.asset.json";
 import productImg from "@/assets/product-white.png.asset.json";
-import productConcrete from "@/assets/product-concrete.png.asset.json";
 import pickleballPaddle from "@/assets/about-pickleball-paddle.png.asset.json";
 import whyItExistsImg from "@/assets/why-it-exists-climbing.jpg.asset.json";
 
