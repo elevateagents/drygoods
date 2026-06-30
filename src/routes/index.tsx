@@ -5,9 +5,9 @@ import AmazonReviewsSection from "@/components/site/AmazonReviewsSection";
 import { useState } from "react";
 import { useCart, PLAN_META, type Plan } from "@/lib/cart-store";
 import {
-  Clock, ShieldCheck, Leaf, Award, Flag,
+  ShieldCheck, Leaf, Award, Flag,
   ShoppingCart, ExternalLink, RotateCcw, CheckCircle2,
-  Target, Snowflake, Plus, Sparkles, Zap,
+  Plus, Sparkles, Zap,
 } from "lucide-react";
 import golfer from "@/assets/hero-two-cans-golf-dusk.png.asset.json";
 import golferMobile from "@/assets/hero-can-mobile-golf-dusk.png.asset.json";
@@ -70,7 +70,7 @@ function HomePage() {
       <Introducing />
       <ConquerChafing />
       <WhyItExists />
-      <Benefits />
+      
       <Buy />
       <AmazonReviewsSection />
       <FAQ />
@@ -249,35 +249,6 @@ function ConquerChafing() {
           </div>
         </div>
 
-        {/* Revolutionary Solution */}
-        <div className="mt-20">
-          <div className="rounded-3xl bg-white/5 border border-white/10 p-8 sm:p-12 lg:p-16">
-            <div className="text-center max-w-3xl mx-auto">
-              <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Introducing</span>
-              <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(18px,4.5vw,48px)] leading-[1] text-white text-balance break-words">
-                A <span className="text-sky">revolutionary</span> solution.
-              </h3>
-              <p className="mt-5 text-base sm:text-lg text-white/80 leading-relaxed">
-                The first spray-on powder engineered specifically to combat chafing and moisture buildup —
-                no mess, no waste, no compromise.
-              </p>
-            </div>
-            <div className="mt-10 grid md:grid-cols-2 gap-5 max-w-3xl mx-auto">
-              <div className="bg-white/10 rounded-2xl p-6 border border-white/10">
-                <p className="font-display font-black uppercase tracking-tight text-lg text-white">Spray-on powder technology</p>
-                <p className="mt-2 text-white/70 leading-relaxed">
-                  Targeted, precise application to high-friction areas without airborne mess.
-                </p>
-              </div>
-              <div className="bg-white/10 rounded-2xl p-6 border border-white/10">
-                <p className="font-display font-black uppercase tracking-tight text-lg text-white">15+ years of trust</p>
-                <p className="mt-2 text-white/70 leading-relaxed">
-                  Proven and endorsed by professional athletes across multiple sports.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
@@ -310,31 +281,6 @@ function WhyItExists() {
   );
 }
 
-/* ------------------------------- BENEFITS --------------------------------- */
-function Benefits() {
-  const items = [
-    { icon: Target, t: "Targeted Application", b: "No mess. No waste." },
-    { icon: RotateCcw, t: "Easy to Use", b: "360° spray valve — works upside down." },
-    { icon: Snowflake, t: "Cool & Dry", b: "Instant cooling on contact." },
-    { icon: Clock, t: "Long-Lasting", b: "8–12 hours of friction protection." },
-    { icon: ShieldCheck, t: "Skin-Safe", b: "Safe on all skin types." },
-  ];
-  return (
-    <section className="bg-sky py-16 sm:py-20 px-5 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
-          {items.map((it) => (
-            <div key={it.t} className="text-center text-white p-6">
-              <it.icon className="mx-auto size-12 mb-5" strokeWidth={1.8} />
-              <h3 className="font-bold text-sm sm:text-base">{it.t}</h3>
-              <p className="mt-2 text-xs sm:text-sm text-white/90 leading-snug">{it.b}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* ----------------------------------- BUY ---------------------------------- */
 function Buy() {
