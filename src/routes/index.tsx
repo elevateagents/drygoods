@@ -5,9 +5,9 @@ import AmazonReviewsSection from "@/components/site/AmazonReviewsSection";
 import { useState } from "react";
 import { useCart, PLAN_META, type Plan } from "@/lib/cart-store";
 import {
-  Clock, ShieldCheck, Leaf, Award, Flag,
+  ShieldCheck, Leaf, Award, Flag,
   ShoppingCart, ExternalLink, RotateCcw, CheckCircle2,
-  Target, Snowflake, Plus, Sparkles, Zap,
+  Plus, Sparkles, Zap,
 } from "lucide-react";
 import golfer from "@/assets/hero-two-cans-golf-dusk.png.asset.json";
 import golferMobile from "@/assets/hero-can-mobile-golf-dusk.png.asset.json";
