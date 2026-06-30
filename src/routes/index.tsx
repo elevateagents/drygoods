@@ -327,7 +327,7 @@ function Buy() {
   ];
   const planOptions: Plan[] = ["onetime", "monthly", "weekly"];
   return (
-    <section id="buy" className="scroll-mt-20 bg-sky-soft/40 py-16 sm:py-24 md:py-32 px-3 sm:px-6 lg:px-8 overflow-hidden">
+    <section id="buy" className="scroll-mt-20 bg-sky-soft/40 min-h-screen flex flex-col justify-center py-16 sm:py-24 md:py-32 px-3 sm:px-6 lg:px-8 overflow-hidden">
       <div className="max-w-6xl mx-auto min-w-0">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Get Yours</span>
