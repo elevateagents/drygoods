@@ -95,7 +95,7 @@ export function CartDrawer() {
                               <Plus className="size-3" />
                             </button>
                           </div>
-                          <p className="font-bold">${(l.price * l.qty).toFixed(2)}</p>
+                          <p className="font-sans font-bold">${(l.price * l.qty).toFixed(2)}</p>
                         </div>
                         <button onClick={() => remove(l.id)} className="text-[10px] uppercase tracking-widest text-steel hover:text-heat mt-2">
                           Remove
