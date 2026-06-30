@@ -259,10 +259,10 @@ function ConquerChafing() {
 /* ----------------------------- WHY IT EXISTS ----------------------------- */
 function WhyItExists() {
   return (
-    <section id="why" className="bg-paper py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 border-t border-ink/5 scroll-mt-16">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
+    <section id="why" className="bg-paper py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 xl:px-12 border-t border-ink/5 scroll-mt-16">
+      <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem] mx-auto grid md:grid-cols-2 gap-10 lg:gap-16 xl:gap-24 items-center">
         <div className="relative rounded-3xl overflow-hidden bg-ink/5">
-          <img src={whyItExistsImg.url} alt="Athlete rock climbing over ocean" loading="lazy" className="w-full h-auto object-contain" />
+          <img src={whyItExistsImg.url} alt="Athlete rock climbing over ocean" loading="lazy" className="w-full h-full object-cover" />
         </div>
         <div>
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Why it exists</span>
@@ -304,8 +304,8 @@ function Buy() {
   ];
   const planOptions: Plan[] = ["onetime", "monthly", "weekly"];
   return (
-    <section id="buy" className="scroll-mt-20 bg-sky-soft/40 min-h-screen flex flex-col justify-center py-16 sm:py-24 md:py-32 px-3 sm:px-6 lg:px-8 overflow-hidden">
-      <div className="max-w-6xl mx-auto min-w-0">
+    <section id="buy" className="scroll-mt-20 bg-sky-soft/40 min-h-screen flex flex-col justify-center py-16 sm:py-24 md:py-32 px-3 sm:px-6 lg:px-8 xl:px-12 overflow-hidden">
+      <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem] mx-auto min-w-0">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Get Yours</span>
           <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(32px,5vw,56px)] leading-[1] text-ink">
@@ -313,7 +313,7 @@ function Buy() {
           </h2>
         </div>
 
-        <div className="grid min-w-0 md:grid-cols-2 gap-6 lg:gap-16 items-center bg-white rounded-3xl p-4 sm:p-10 lg:p-14 shadow-xl shadow-sky/10 overflow-hidden">
+        <div className="grid min-w-0 md:grid-cols-2 gap-6 lg:gap-16 xl:gap-24 items-center bg-white rounded-3xl p-4 sm:p-10 lg:p-14 xl:p-20 shadow-xl shadow-sky/10 overflow-hidden">
           <div className="relative aspect-square rounded-2xl overflow-hidden bg-sky-soft flex items-center justify-center p-2 sm:p-3">
             <img src={productImg.url} alt="DryGoods Athletic Spray can" loading="lazy" className="w-full h-full object-contain" />
             <span className="absolute top-4 left-4 bg-ink text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">In Stock</span>
@@ -427,11 +427,11 @@ function FAQ() {
     { q: "How long does one application last?", a: "One application provides approximately 8–12 hours of protection, depending on your activity level, sweat, and usage." },
   ];
   return (
-    <section id="faq" className="scroll-mt-24 bg-paper py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8">
-      <div className="max-w-3xl mx-auto">
+    <section id="faq" className="scroll-mt-24 bg-paper py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 xl:px-12">
+      <div className="max-w-3xl xl:max-w-4xl 2xl:max-w-5xl mx-auto">
         <div className="text-center mb-12">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">FAQ</span>
-          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(30px,5vw,52px)] leading-[1] text-ink">
+          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(30px,5vw,64px)] leading-[1] text-ink">
             Questions, <span className="text-sky">answered.</span>
           </h2>
         </div>
@@ -455,12 +455,12 @@ function FAQ() {
 function FinalCTA() {
   const { add } = useCart();
   return (
-    <section className="relative bg-ink text-white py-20 sm:py-24 md:py-32 px-5 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="relative bg-ink text-white py-20 sm:py-24 md:py-32 px-5 sm:px-6 lg:px-8 xl:px-12 overflow-hidden">
       <div className="absolute inset-0">
         <img src={pickleballPaddle.url} alt="" aria-hidden className="w-full h-full object-cover opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-ink/60" />
       </div>
-      <div className="relative max-w-3xl mx-auto text-center">
+      <div className="relative max-w-3xl xl:max-w-4xl 2xl:max-w-5xl mx-auto text-center">
         <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">The last word</span>
         <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(22px,7vw,68px)] leading-[1.05] text-balance">
           Stay cool, stay dry. <span className="text-sky">Stay unstoppable.</span>
