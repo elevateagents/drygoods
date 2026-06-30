@@ -50,7 +50,7 @@ function AboutPage() {
             {/* Traditional powders vs DryGoods */}
             <div className="mt-20 max-w-5xl mx-auto">
               <div className="text-center max-w-2xl mx-auto">
-                <span className="public class="text-xs font-bold uppercase tracking-[0.25em] text-sky">Old way vs new way</span>
+                <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Old way vs new way</span>
                 <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(26px,4.5vw,44px)] leading-[1.05] text-white">
                   The problem with <span className="text-sky">traditional powders.</span>
                 </h2>
