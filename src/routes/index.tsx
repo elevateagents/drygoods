@@ -210,12 +210,21 @@ function ConquerChafing() {
       <div className="max-w-6xl mx-auto">
         {/* Headline */}
         <div className="text-center max-w-4xl mx-auto">
-          <h2 className="font-display font-black uppercase tracking-tight text-[clamp(20px,6vw,64px)] leading-[1] text-white text-balance break-words">
-            Conquer chafing, <span className="text-sky">unleash your performance.</span>
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">About Us</span>
+          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(20px,6vw,64px)] leading-[1] text-white text-balance break-words">
+            Stay dry. Stay <span className="text-sky">unstoppable.</span>
           </h2>
           <p className="mt-6 text-lg sm:text-xl text-white/75 leading-relaxed max-w-3xl mx-auto">
-            The athletic anti-chafing spray trusted by professionals for over 15 years —
-            engineered for athletes who refuse to slow down.
+            Athletes push their limits.
+          </p>
+          <p className="mt-4 text-lg sm:text-xl text-white/75 leading-relaxed max-w-3xl mx-auto">
+            DryGoods™ is built to keep up. Designed to combat sweat, moisture, and friction, our advanced
+            formula delivers long-lasting dryness and all-day comfort.
+          </p>
+          <p className="mt-4 text-lg sm:text-xl text-white/75 leading-relaxed max-w-3xl mx-auto">
+            Whether you&apos;re on the field, in the gym, or pushing through intense training, DryGoods™ helps
+            you stay cool, dry, and performing at your best. No mess, no residue — just powerful protection
+            when you need it most. Try it once, and you&apos;ll never train without it.
           </p>
         </div>
 
