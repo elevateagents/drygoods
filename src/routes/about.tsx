@@ -2,9 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ShoppingCart, XCircle, CheckCircle2 } from "lucide-react";
 import { Layout } from "@/components/site/Layout";
 import { useCart } from "@/lib/cart-store";
-import aboutRunningTrack from "@/assets/about-running-track.jpg";
-import aboutGymLifting from "@/assets/about-gym-lifting.jpg";
-import aboutCourtAction from "@/assets/about-court-action.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
