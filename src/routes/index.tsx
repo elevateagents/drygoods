@@ -68,7 +68,7 @@ function HomePage() {
       <Hero />
       <TrustBar />
       <Introducing />
-      <ConquerChafing />
+      
       <WhyItExists />
       <AmazonReviewsSection />
       <Buy />
