@@ -70,7 +70,7 @@ function HomePage() {
       <Introducing />
       <ConquerChafing />
       <WhyItExists />
-      <Benefits />
+      
       <Buy />
       <AmazonReviewsSection />
       <FAQ />
