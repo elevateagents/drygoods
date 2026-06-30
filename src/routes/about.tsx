@@ -23,9 +23,9 @@ function AboutPage() {
   };
   return (
     <Layout>
-      <section className="bg-ink pt-28 pb-20 sm:pt-32 sm:pb-24">
-        <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
-          <div className="mt-16">
+      <section className="bg-paper pt-28 pb-20 sm:pt-32 sm:pb-24 px-5 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="mt-16 relative left-1/2 w-screen -translate-x-1/2 bg-gradient-to-tr from-ink via-[#111111] to-black py-16 sm:py-20 px-5 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
               <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">How it all began</span>
               <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(24px,4.5vw,48px)] leading-[1] text-white">
@@ -101,7 +101,7 @@ function AboutPage() {
             </div>
           </div>
 
-          <div className="mt-16 max-w-3xl mx-auto rounded-3xl bg-ink text-white p-8 sm:p-10 lg:p-12 text-center">
+          <div className="mt-16 max-w-3xl mx-auto rounded-3xl bg-ink text-white p-8 sm:p-10 lg:p-12 text-center shadow-xl shadow-ink/20">
             <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Ready to stay dry?</span>
             <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(28px,5vw,48px)] leading-[1.05] text-white">
               Grab a can. We'll handle <span className="text-sky">the rest.</span>
