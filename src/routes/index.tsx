@@ -209,9 +209,8 @@ function ConquerChafing() {
       <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem] mx-auto">
         {/* Headline */}
         <div className="text-center max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto">
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">About Us</span>
-          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(20px,5vw,72px)] leading-[1.05] text-white text-balance break-words">
-            Stay dry. Stay <span className="text-sky">unstoppable.</span>
+          <h2 className="font-display font-black uppercase tracking-tight text-[clamp(20px,5vw,72px)] leading-[1.05] text-white text-balance break-words">
+            Why it <span className="text-sky">exists.</span>
           </h2>
           <p className="mt-6 text-lg sm:text-xl text-white/75 leading-relaxed max-w-3xl mx-auto">
             Athletes push their limits.
@@ -265,8 +264,7 @@ function WhyItExists() {
           <img src={whyItExistsImg.url} alt="Athlete rock climbing over ocean" loading="lazy" className="w-full h-full object-cover" />
         </div>
         <div>
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Why it exists</span>
-          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(22px,4.5vw,52px)] leading-[1.05] text-ink text-balance break-words">
+          <h2 className="font-display font-black uppercase tracking-tight text-[clamp(22px,4.5vw,52px)] leading-[1.05] text-ink text-balance break-words">
             From pain to <br className="md:hidden" /><span className="text-sky">performance.</span>
           </h2>
           <p className="mt-5 text-lg text-ink/75 leading-relaxed">
