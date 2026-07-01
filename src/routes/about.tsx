@@ -3,6 +3,20 @@ import { ShoppingCart, XCircle, CheckCircle2 } from "lucide-react";
 import { Layout } from "@/components/site/Layout";
 import { useCart } from "@/lib/cart-store";
 
+const clientLogoModules = import.meta.glob<string>("../assets/client-logos/*.{png,jpg,jpeg,webp,gif}", {
+  eager: true,
+  import: "default",
+  query: "?url",
+});
+
+const clientLogos = Object.entries(clientLogoModules)
+  .map(([path, src]) => {
+    const fileName = path.split("/").pop() ?? "Client logo";
+    const name = fileName.replace(/\.[^.]+$/, "").replace(/[_-]+/g, " ");
+    return { name, src };
+  })
+  .sort((a, b) => a.name.localeCompare(b.name));
+
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
@@ -131,24 +145,69 @@ function AboutPage() {
 }
 
 function ClientLogos() {
-  const logos = ["Endurance Club", "Pickleball League", "Training Room", "Run Crew", "Court Collective", "Athlete Lab"];
+  const marqueeLogos = [...clientLogos, ...clientLogos];
 
   return (
     <section className="bg-paper px-5 sm:px-6 lg:px-8 pb-20">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto">
+        <style>{`
+          @keyframes client-logo-marquee {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
+          }
+          .client-logo-track {
+            animation: client-logo-marquee 70s linear infinite;
+          }
+          .client-logo-mask:hover .client-logo-track {
+            animation-play-state: paused;
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .client-logo-track { animation: none; }
+          }
+        `}</style>
         <div className="text-center max-w-2xl mx-auto">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Trusted by teams</span>
           <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(26px,4vw,42px)] leading-[1.08] text-ink">
-            Client logos coming soon.
+            Trusted by athletes, teams, and retailers.
           </h2>
           <p className="mt-4 text-ink/70 leading-relaxed">
-            Placeholder marks are ready to swap once Ricardo provides final logo files.
+            Dry Goods Athletic Spray Powder has supported performance programs and specialty partners across sport, retail, and training rooms.
           </p>
         </div>
-        <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-          {logos.map((name) => (
-            <div key={name} className="grid min-h-24 place-items-center rounded-2xl border border-ink/10 bg-white px-4 text-center shadow-sm shadow-ink/5">
-              <span className="font-display text-sm font-black uppercase leading-tight tracking-tight text-ink/45">{name}</span>
+        <div
+          className="client-logo-mask mt-10 overflow-hidden"
+          style={{
+            maskImage: "linear-gradient(to right, transparent, black 5%, black 95%, transparent)",
+            WebkitMaskImage: "linear-gradient(to right, transparent, black 5%, black 95%, transparent)",
+          }}
+        >
+          <div className="client-logo-track flex w-max gap-3 py-2">
+            {marqueeLogos.map((logo, index) => (
+              <div key={`${logo.name}-${index}`} className="grid h-24 w-40 shrink-0 place-items-center rounded-2xl border border-ink/10 bg-white px-4 py-5 shadow-sm shadow-ink/5 sm:w-44 lg:w-48">
+                <img src={logo.src} alt={`${logo.name} logo`} loading="lazy" className="max-h-12 w-auto max-w-full object-contain" />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div
+          className="client-logo-mask mt-3 overflow-hidden"
+          style={{
+            maskImage: "linear-gradient(to right, transparent, black 5%, black 95%, transparent)",
+            WebkitMaskImage: "linear-gradient(to right, transparent, black 5%, black 95%, transparent)",
+          }}
+        >
+          <div className="client-logo-track flex w-max gap-3 py-2 [animation-direction:reverse] [animation-duration:85s]">
+            {marqueeLogos.slice().reverse().map((logo, index) => (
+              <div key={`${logo.name}-reverse-${index}`} className="grid h-24 w-40 shrink-0 place-items-center rounded-2xl border border-ink/10 bg-white px-4 py-5 shadow-sm shadow-ink/5 sm:w-44 lg:w-48">
+                <img src={logo.src} alt="" loading="lazy" className="max-h-12 w-auto max-w-full object-contain" />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="sr-only">
+          {clientLogos.map((logo) => (
+            <div key={logo.name}>
+              {logo.name}
             </div>
           ))}
         </div>

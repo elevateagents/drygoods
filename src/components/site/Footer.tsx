@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/dry-goods-logo.svg.asset.json";
+import logo from "@/assets/dry-goods-logo-white.png";
 
 const socials = [
   { label: "Instagram", href: "https://www.instagram.com/drygoods/", icon: InstagramIcon },
@@ -13,7 +13,7 @@ export function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr_1fr] pb-10 border-b border-white/15">
           <a href="#top" className="inline-flex w-fit" aria-label="Dry Goods home">
-            <img src={logo.url} alt="Dry Goods Athletic Spray Powder" className="h-12 w-auto object-contain brightness-0 invert" loading="lazy" />
+            <img src={logo} alt="Dry Goods Athletic Spray Powder" className="h-12 w-auto object-contain" loading="lazy" />
           </a>
           <nav className="flex flex-wrap gap-x-8 gap-y-3 text-sm font-bold uppercase tracking-widest lg:justify-center">
             <a href="/#buy" className="hover:text-sky">Shop</a>

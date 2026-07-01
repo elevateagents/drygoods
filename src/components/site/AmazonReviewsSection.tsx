@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Review = {
   name: string;
@@ -137,27 +137,57 @@ function VerifiedBadge() {
 
 export default function AmazonReviewsSection() {
   const wrapRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<(HTMLElement | null)[]>([]);
+  const resumeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [autoPaused, setAutoPaused] = useState(false);
 
-  const nudge = (dir: 1 | -1) => {
-    const wrap = wrapRef.current;
-    if (!wrap) return;
-    const firstCard = wrap.querySelector<HTMLElement>("article");
-    const step = firstCard ? firstCard.offsetWidth + 20 : 360;
-    const maxScroll = wrap.scrollWidth - wrap.clientWidth;
-    const current = wrap.scrollLeft;
-    let target = current + dir * step;
-    if (dir === 1 && current >= maxScroll - 4) {
-      wrap.scrollTo({ left: 0, behavior: "smooth" });
-      return;
-    }
-    if (dir === -1 && current <= 4) {
-      wrap.scrollTo({ left: maxScroll, behavior: "smooth" });
-      return;
-    }
-    if (target > maxScroll) target = maxScroll;
-    if (target < 0) target = 0;
-    wrap.scrollTo({ left: target, behavior: "smooth" });
+  const pauseAuto = () => {
+    setAutoPaused(true);
+    if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
+    resumeTimerRef.current = setTimeout(() => setAutoPaused(false), 5000);
   };
+
+  const nearestIndex = () => {
+    const wrap = wrapRef.current;
+    if (!wrap) return 0;
+    let index = 0;
+    let distance = Number.POSITIVE_INFINITY;
+    cardRefs.current.forEach((card, i) => {
+      if (!card) return;
+      const nextDistance = Math.abs(card.offsetLeft - wrap.scrollLeft);
+      if (nextDistance < distance) {
+        distance = nextDistance;
+        index = i;
+      }
+    });
+    return index;
+  };
+
+  const scrollToIndex = (index: number) => {
+    const wrap = wrapRef.current;
+    const card = cardRefs.current[index];
+    if (!wrap || !card) return;
+    wrap.scrollTo({ left: index === 0 ? 0 : card.offsetLeft, behavior: "smooth" });
+  };
+
+  const nudge = (dir: 1 | -1, pause = true) => {
+    if (pause) pauseAuto();
+    const current = nearestIndex();
+    const next = (current + dir + REVIEWS.length) % REVIEWS.length;
+    scrollToIndex(next);
+  };
+
+  useEffect(() => {
+    if (autoPaused) return;
+    const interval = setInterval(() => nudge(1, false), 4500);
+    return () => clearInterval(interval);
+  }, [autoPaused]);
+
+  useEffect(() => {
+    return () => {
+      if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
+    };
+  }, []);
 
   return (
     <section
@@ -226,6 +256,10 @@ export default function AmazonReviewsSection() {
         <div
           ref={wrapRef}
           className="dg-review-mask relative overflow-x-auto overscroll-x-contain scroll-smooth snap-x snap-mandatory"
+          onPointerDown={pauseAuto}
+          onWheel={pauseAuto}
+          onMouseEnter={() => setAutoPaused(true)}
+          onMouseLeave={() => setAutoPaused(false)}
         >
           <div
             className="flex w-max gap-5 py-2"
@@ -233,6 +267,7 @@ export default function AmazonReviewsSection() {
             {REVIEWS.map((r, i) => (
               <article
                 key={i}
+                ref={(node) => { cardRefs.current[i] = node; }}
                 className="snap-start scroll-ml-0 shrink-0 w-[300px] sm:w-[340px] bg-white border border-ink/10 rounded-2xl p-6 flex flex-col gap-3"
               >
                 <div className="flex items-center gap-1.5">
