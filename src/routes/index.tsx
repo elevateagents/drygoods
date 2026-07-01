@@ -292,14 +292,6 @@ function Buy() {
     "Patented 360° spray-to-powder formula",
     "8–12 hours of chafe & blister protection",
     "Instant cooling · Zero mess · Won't stain",
-    "Dermatologist Approved · Made in USA",
-  ];
-  const badges = [
-    { icon: Flag, label: "Made in USA" },
-    { icon: ShieldCheck, label: "Dermatologist Approved" },
-    { icon: Award, label: "US Patented" },
-    { icon: RotateCcw, label: "Free Returns" },
-    { icon: Leaf, label: "Cruelty Free" },
   ];
   const planOptions: Plan[] = ["onetime", "monthly", "weekly"];
   return (
@@ -368,7 +360,7 @@ function Buy() {
                 <span className="min-w-0 text-center break-words">Add to Cart — ${selected.price.toFixed(2)}</span>
               </button>
               <p className="text-center text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-ink/60">
-                30-Day Money-Back Guarantee · Free Returns
+                30-Day Money-Back Guarantee
               </p>
               <a href="https://www.amazon.com/dp/B003YTUWJ8" target="_blank" rel="noreferrer noopener" className="w-full min-w-0 inline-flex items-center justify-center gap-2 border-2 border-ink/80 text-ink hover:bg-ink hover:text-white transition-colors px-3 sm:px-4 py-4 text-xs sm:text-sm font-bold uppercase tracking-wide sm:tracking-widest rounded-full leading-tight">
                 <span className="min-w-0 text-center break-words">Also on Amazon</span> <ExternalLink className="size-4 shrink-0" />
@@ -378,14 +370,6 @@ function Buy() {
 
         </div>
 
-        <div className="mt-10 grid grid-cols-2 justify-center gap-2 sm:flex sm:flex-wrap sm:gap-3">
-          {badges.map((b) => (
-            <div key={b.label} className="min-w-0 inline-flex items-center justify-center gap-1.5 bg-white border border-ink/10 text-ink rounded-full px-2.5 sm:px-4 py-2 text-[10px] sm:text-xs font-bold uppercase tracking-wide sm:tracking-widest leading-tight text-center">
-              <b.icon className="size-3.5 text-sky shrink-0" />
-              <span className="min-w-0 break-words">{b.label}</span>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
