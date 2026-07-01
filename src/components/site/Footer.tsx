@@ -11,7 +11,7 @@ export function Footer() {
   return (
     <footer className="bg-ink text-white px-5 pt-16 pb-10 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-10 border-b border-white/15 pb-10 md:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_1fr_1fr] lg:gap-12">
+        <div className="grid gap-10 border-b border-white/15 pb-10 md:grid-cols-2 lg:grid-cols-[minmax(280px,1.5fr)_minmax(120px,0.7fr)_minmax(220px,1fr)_minmax(220px,1fr)] lg:items-start lg:gap-12">
           <div className="space-y-5">
             <a href="#top" className="inline-flex w-fit" aria-label="Dry Goods home">
               <img src={logo} alt="Dry Goods Athletic Spray Powder" className="h-12 w-auto object-contain" loading="lazy" />
@@ -44,9 +44,9 @@ export function Footer() {
             </div>
           </div>
 
-          <div>
+          <div className="lg:justify-self-end lg:text-right">
             <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-white/45">Connect</p>
-            <div className="mt-5 flex gap-3" aria-label="Social media links">
+            <div className="mt-5 flex gap-3 lg:justify-end" aria-label="Social media links">
               {socials.map(({ label, href, icon: Icon }) => (
                 <a key={label} href={href} target="_blank" rel="noreferrer noopener" aria-label={label} className="grid size-10 place-items-center rounded-full border border-white/20 text-white transition-colors hover:border-sky hover:text-sky">
                   <Icon />
@@ -58,9 +58,10 @@ export function Footer() {
             </p>
           </div>
         </div>
-        <div className="flex flex-col gap-3 pt-8 text-xs text-white/60 md:flex-row md:justify-between">
+        <div className="grid gap-3 pt-8 text-xs text-white/60 md:grid-cols-[1fr_auto_1fr] md:items-center">
           <p>Joyce Labs LLC, Raleigh, North Carolina, 2026</p>
-          <p className="font-editorial italic text-white/80">"No mess. No waste. Just powerful protection."</p>
+          <Link to="/legal" className="font-bold uppercase tracking-widest text-white/70 hover:text-sky">Privacy Policy</Link>
+          <p className="font-editorial italic text-white/80 md:text-right">"No mess. No waste. Just powerful protection."</p>
         </div>
       </div>
     </footer>
