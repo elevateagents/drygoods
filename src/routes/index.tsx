@@ -68,7 +68,7 @@ function HomePage() {
       <Hero />
       <TrustBar />
       <Introducing />
-      
+      <ConquerChafing />
       <WhyItExists />
       <AmazonReviewsSection />
       <Buy />
@@ -267,7 +267,7 @@ function WhyItExists() {
         <div>
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Why it exists</span>
           <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(22px,4.5vw,52px)] leading-[1.05] text-ink text-balance break-words">
-            Stay dry. Stay <span className="text-sky">unstoppable.</span>
+            From pain to <br className="md:hidden" /><span className="text-sky">performance.</span>
           </h2>
           <p className="mt-5 text-lg text-ink/75 leading-relaxed">
             Chafing doesn't just hurt — it limits you. It cuts workouts short, slows your pace, and
