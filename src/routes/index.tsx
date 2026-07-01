@@ -110,27 +110,28 @@ function Hero() {
           transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
           className="text-center mx-auto max-w-3xl"
         >
-          <span className="inline-block px-3 py-1 bg-sky text-white text-[11px] font-bold uppercase tracking-[0.2em] rounded-full mb-5">
+          <span className="inline-block px-3 py-1 2xl:px-4 2xl:py-1.5 bg-sky text-white text-[11px] 2xl:text-[13px] font-bold uppercase tracking-[0.2em] rounded-full mb-5 2xl:mb-7">
             New · Patented Formula
           </span>
-          <h1 className="font-display font-black uppercase tracking-tight leading-[0.95] text-[clamp(36px,7vw,76px)] [text-shadow:0_2px_16px_rgba(0,0,0,0.45)]">
+          <h1 className="font-display font-black uppercase tracking-tight leading-[0.95] text-[clamp(36px,7vw,76px)] 2xl:text-[clamp(76px,5.2vw,120px)] [text-shadow:0_2px_16px_rgba(0,0,0,0.45)]">
             One Spray: <span className="text-sky">Cool<span className="inline-block w-[0.12em]" />, Dry,</span> and Chafe-Free.
           </h1>
-          <p className="mt-5 text-base sm:text-lg text-white max-w-2xl mx-auto leading-relaxed [text-shadow:0_2px_10px_rgba(0,0,0,0.55)]">
+          <p className="mt-5 2xl:mt-8 text-base sm:text-lg 2xl:text-2xl text-white max-w-2xl 2xl:max-w-3xl mx-auto leading-relaxed [text-shadow:0_2px_10px_rgba(0,0,0,0.55)]">
             DryGoods™ patented spray goes on cool, dries to an invisible powder, and keeps you
             chafe-free for 8–12 hours. No mess. No residue.
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-8 2xl:mt-10 flex flex-wrap items-center justify-center gap-4 2xl:gap-6">
             <button
               onClick={() => add("onetime", 1)}
-              className="inline-flex items-center gap-2 bg-sky hover:bg-sky-deep transition-colors text-white px-8 py-4 font-bold text-base uppercase tracking-widest rounded-full shadow-lg shadow-sky/30"
+              className="inline-flex items-center gap-2 bg-sky hover:bg-sky-deep transition-colors text-white px-8 py-4 2xl:px-10 2xl:py-5 font-bold text-base 2xl:text-lg uppercase tracking-widest rounded-full shadow-lg shadow-sky/30"
             >
-              Shop Now — $19.99 <ShoppingCart className="size-4" />
+              Shop Now — $19.99 <ShoppingCart className="size-4 2xl:size-5" />
             </button>
-            <a href="#how" className="text-sm font-bold uppercase tracking-widest text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.6)] hover:text-sky underline-offset-4 hover:underline">
+            <a href="#how" className="text-sm 2xl:text-base font-bold uppercase tracking-widest text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.6)] hover:text-sky underline-offset-4 hover:underline">
               See How It Works →
             </a>
           </div>
+
         </motion.div>
       </div>
     </section>
@@ -149,15 +150,16 @@ function TrustBar() {
   ];
   return (
     <section aria-label="Trust signals" className="bg-ink text-white border-y border-white/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
-        <ul className="flex flex-wrap items-center justify-center gap-x-5 sm:gap-x-8 gap-y-2 text-[11px] sm:text-[13px] font-bold uppercase tracking-[0.15em]">
+      <div className="max-w-7xl 2xl:max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 2xl:py-6">
+        <ul className="flex flex-wrap items-center justify-center gap-x-5 sm:gap-x-8 2xl:gap-x-12 gap-y-2 text-[11px] sm:text-[13px] 2xl:text-[15px] font-bold uppercase tracking-[0.15em]">
           {items.map((it, i) => (
-            <li key={it} className="flex items-center gap-3 sm:gap-5">
+            <li key={it} className="flex items-center gap-3 sm:gap-5 2xl:gap-8">
               <span className="whitespace-nowrap">{it}</span>
               {i < items.length - 1 && <span aria-hidden className="text-sky">·</span>}
             </li>
           ))}
         </ul>
+
       </div>
     </section>
   );
