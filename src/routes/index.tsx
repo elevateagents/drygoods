@@ -106,17 +106,17 @@ function Hero() {
         <div className="absolute inset-x-0 bottom-0 h-[25%] bg-gradient-to-t from-ink/55 to-transparent" />
       </div>
 
-      <div className="relative z-10 max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 xl:px-12 py-16 md:py-20 min-h-[95vh] flex flex-col justify-center">
+      <div className="relative z-10 w-full px-5 sm:px-6 lg:px-8 xl:px-12 py-16 md:py-20 min-h-[95vh] flex flex-col justify-center">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
-          className="text-center mx-auto max-w-4xl xl:max-w-5xl"
+          className="text-center mx-auto w-full max-w-[min(92vw,72rem)]"
         >
           <span className="inline-block px-3 py-1 2xl:px-4 2xl:py-1.5 bg-sky text-white text-[11px] 2xl:text-[13px] font-bold uppercase tracking-[0.2em] rounded-full mb-5 2xl:mb-7">
             New · Patented Formula
           </span>
-          <h1 className="font-display font-black uppercase tracking-tight leading-[0.98] text-[clamp(36px,6.4vw,82px)] 2xl:text-[clamp(76px,4.9vw,112px)] [text-shadow:0_2px_16px_rgba(0,0,0,0.45)]">
+          <h1 className="mx-auto w-full text-center font-display font-black uppercase tracking-tight leading-[0.98] text-[clamp(36px,5.8vw,96px)] [text-shadow:0_2px_16px_rgba(0,0,0,0.45)]">
             <span className="block">One Spray:</span>
             <span className="block text-center text-sky whitespace-nowrap">Cool and Dry,</span>
             <span className="block text-center text-sky whitespace-nowrap">Chafe Free.</span>
