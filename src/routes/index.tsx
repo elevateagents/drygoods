@@ -117,7 +117,13 @@ function Hero() {
             New · Patented Formula
           </span>
           <h1 className="font-display font-black uppercase tracking-tight leading-[0.98] text-[clamp(36px,6.4vw,82px)] 2xl:text-[clamp(76px,4.9vw,112px)] [text-shadow:0_2px_16px_rgba(0,0,0,0.45)]">
-            One Spray: <span className="text-sky whitespace-nowrap">Cool and Dry</span>, <span className="text-sky whitespace-nowrap">Chafe Free</span>.
+            <span className="block">One Spray:</span>
+            <span className="mx-auto grid w-[min(100%,11.5em)] grid-cols-3 items-baseline text-sky">
+              <span className="justify-self-end">Cool</span>
+              <span className="justify-self-center">and</span>
+              <span className="justify-self-start">Dry,</span>
+            </span>
+            <span className="block text-sky">Chafe Free.</span>
           </h1>
           <p className="mt-5 2xl:mt-8 text-base sm:text-lg 2xl:text-2xl text-white max-w-2xl 2xl:max-w-3xl mx-auto leading-relaxed [text-shadow:0_2px_10px_rgba(0,0,0,0.55)]">
             Dry Goods™ patented spray goes on cool, dries to a powder, and keeps you
