@@ -6,9 +6,9 @@ import { useCart } from "@/lib/cart-store";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About DryGoods™ — Built by Athletes Who Refused 'Good Enough'" },
-      { name: "description", content: "How DryGoods™ was born from real-world testing — the story behind the patented spray-to-powder formula." },
-      { property: "og:title", content: "About DryGoods™" },
+      { title: "About Dry Goods™ — Built by Athletes Who Refused 'Good Enough'" },
+      { name: "description", content: "How Dry Goods™ was born from real-world testing — the story behind the patented spray-to-powder formula." },
+      { property: "og:title", content: "About Dry Goods™" },
       { property: "og:description", content: "We didn't set out to build a brand. We set out to solve a problem." },
     ],
   }),
@@ -39,7 +39,7 @@ function AboutPage() {
             was a problem athletes just learned to tolerate. We didn't.
           </p>
           <p className="mt-4 font-sans text-base text-ink/75 leading-relaxed">
-            DryGoods™ was built by athletes who refused to accept "good enough." After years of
+            Dry Goods™ was built by athletes who refused to accept "good enough." After years of
             real-world testing on athletes, we launched in 2010. What started as a cult product among
             serious competitors has grown into a trusted solution for anyone who trains, competes, and
             refuses to slow down.
@@ -57,7 +57,7 @@ function AboutPage() {
             </h2>
             <p className="mt-5 font-sans text-base text-white/70 leading-relaxed">
               Traditional powders cake on skin, dust the air, miss the spots that need protection most,
-              and leave white residue on your gear. DryGoods™ fixes every one of those problems.
+              and leave white residue on your gear. Dry Goods™ fixes every one of those problems.
             </p>
           </div>
 
@@ -81,7 +81,7 @@ function AboutPage() {
               </ul>
             </div>
             <div className="rounded-2xl border-2 border-sky bg-sky-soft p-5 sm:p-7">
-              <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-sky">DryGoods™</p>
+              <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-sky">Dry Goods Athletic Spray Powder</p>
               <h3 className="mt-2 font-display font-black uppercase tracking-tight text-xl sm:text-2xl text-ink break-words hyphens-auto">Patented spray-to-powder</h3>
               <ul className="mt-5 space-y-3 text-sm text-ink/85">
                 {[
@@ -109,7 +109,7 @@ function AboutPage() {
           <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(28px,5vw,48px)] leading-[1.05] text-white">
             Grab a can. We'll handle <span className="text-sky">the rest.</span>
           </h3>
-          <p className="mt-4 text-white/75 max-w-xl mx-auto">One can — add to cart in one tap.</p>
+          <p className="mt-4 text-white/75 max-w-xl mx-auto">Add to cart in one tap.</p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <div className="text-left">
               <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/60">One-time purchase</div>
@@ -124,6 +124,35 @@ function AboutPage() {
           </div>
         </div>
       </section>
+
+      <ClientLogos />
     </Layout>
+  );
+}
+
+function ClientLogos() {
+  const logos = ["Endurance Club", "Pickleball League", "Training Room", "Run Crew", "Court Collective", "Athlete Lab"];
+
+  return (
+    <section className="bg-paper px-5 sm:px-6 lg:px-8 pb-20">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center max-w-2xl mx-auto">
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Trusted by teams</span>
+          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(26px,4vw,42px)] leading-[1.08] text-ink">
+            Client logos coming soon.
+          </h2>
+          <p className="mt-4 text-ink/70 leading-relaxed">
+            Placeholder marks are ready to swap once Ricardo provides final logo files.
+          </p>
+        </div>
+        <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+          {logos.map((name) => (
+            <div key={name} className="grid min-h-24 place-items-center rounded-2xl border border-ink/10 bg-white px-4 text-center shadow-sm shadow-ink/5">
+              <span className="font-display text-sm font-black uppercase leading-tight tracking-tight text-ink/45">{name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }

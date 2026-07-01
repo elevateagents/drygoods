@@ -12,10 +12,10 @@ export const Route = createFileRoute("/blog/$slug")({
   head: ({ loaderData, params }) => {
     const post = loaderData?.post;
     const url = `https://drygoods.lovable.app/blog/${params.slug}`;
-    if (!post) return { meta: [{ title: "Post not found — DryGoods™" }] };
+    if (!post) return { meta: [{ title: "Post not found — Dry Goods™" }] };
     return {
       meta: [
-        { title: `${post.title} — DryGoods™` },
+        { title: `${post.title} — Dry Goods™` },
         { name: "description", content: post.description },
         { property: "og:title", content: post.title },
         { property: "og:description", content: post.description },

@@ -1,5 +1,4 @@
-// Reviews marquee — infinite CSS animation with user controls
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
 type Review = {
   name: string;
@@ -137,21 +136,16 @@ function VerifiedBadge() {
 }
 
 export default function AmazonReviewsSection() {
-  const loopReviews = [...REVIEWS, ...REVIEWS];
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [paused, setPaused] = useState(false);
+  const wrapRef = useRef<HTMLDivElement>(null);
 
   const nudge = (dir: 1 | -1) => {
-    const el = trackRef.current;
-    if (!el) return;
-    setPaused(true);
-    const wrap = el.parentElement;
+    const wrap = wrapRef.current;
     if (!wrap) return;
-    const step = 360;
+    const firstCard = wrap.querySelector<HTMLElement>("article");
+    const step = firstCard ? firstCard.offsetWidth + 20 : 360;
     const maxScroll = wrap.scrollWidth - wrap.clientWidth;
     const current = wrap.scrollLeft;
     let target = current + dir * step;
-    // Wrap around: if we're at/past the end going forward, jump to start; vice versa.
     if (dir === 1 && current >= maxScroll - 4) {
       wrap.scrollTo({ left: 0, behavior: "smooth" });
       return;
@@ -192,18 +186,19 @@ export default function AmazonReviewsSection() {
 
 
       <style>{`
-        @keyframes dg-marquee {
-          0% { transform: translate3d(0,0,0); }
-          100% { transform: translate3d(-50%,0,0); }
-        }
-        .dg-marquee-track {
-          animation: dg-marquee 60s linear infinite;
-          width: max-content;
-        }
-        .dg-marquee-mask:hover .dg-marquee-track { animation-play-state: paused; }
-          .dg-marquee-track.is-paused { animation-play-state: paused; }
-          @media (prefers-reduced-motion: reduce) {
-            .dg-marquee-track { animation: none; }
+          .dg-review-mask {
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+            scroll-padding-left: 0;
+          }
+          .dg-review-mask::-webkit-scrollbar {
+            display: none;
+          }
+          @media (min-width: 640px) {
+            .dg-review-mask {
+              mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+              -webkit-mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+            }
           }
         `}</style>
 
@@ -213,51 +208,43 @@ export default function AmazonReviewsSection() {
             <span className="text-[12px] sm:text-[13px] uppercase tracking-[0.3em] font-bold text-sky mb-4">
               Loved by Customers
             </span>
-            <h2 className="font-display font-black uppercase leading-[0.95] tracking-tight text-ink text-[clamp(26px,7vw,76px)] break-words">
+            <h2 className="font-display font-black uppercase leading-[1.08] tracking-tight text-ink text-[clamp(26px,7vw,76px)] break-words pb-1">
               Real customers.
               <br />
               <span className="text-sky">Real reviews.</span>
             </h2>
-          <div className="mt-6 flex items-center gap-2">
-            <Stars rating={4.4} size={22} />
-            <span className="text-ink/70 text-sm font-semibold">4.4 out of 5 · 647 global ratings</span>
+          <div className="mt-6 flex items-center gap-2 leading-normal">
+            <Stars rating={4.5} size={22} />
+            <span className="text-ink/70 text-sm font-semibold leading-normal">4.5 out of 5 · 647 global ratings</span>
           </div>
         </div>
 
 
 
 
-        {/* Infinite marquee carousel */}
+        {/* Swipe carousel */}
         <div
-          className={`dg-marquee-mask relative ${paused ? "overflow-x-auto" : "overflow-hidden"}`}
-          style={{
-            maskImage:
-              "linear-gradient(to right, transparent, black 4%, black 96%, transparent)",
-            WebkitMaskImage:
-              "linear-gradient(to right, transparent, black 4%, black 96%, transparent)",
-            scrollbarWidth: "none",
-          }}
+          ref={wrapRef}
+          className="dg-review-mask relative overflow-x-auto overscroll-x-contain scroll-smooth snap-x snap-mandatory"
         >
           <div
-            ref={trackRef}
-            className={`dg-marquee-track flex gap-5 py-1 ${paused ? "is-paused" : ""}`}
+            className="flex w-max gap-5 py-2"
           >
-            {loopReviews.map((r, i) => (
+            {REVIEWS.map((r, i) => (
               <article
                 key={i}
-                aria-hidden={i >= REVIEWS.length}
-                className="shrink-0 w-[300px] sm:w-[340px] bg-white border border-ink/10 rounded-2xl p-6 flex flex-col gap-3"
+                className="snap-start scroll-ml-0 shrink-0 w-[300px] sm:w-[340px] bg-white border border-ink/10 rounded-2xl p-6 flex flex-col gap-3"
               >
                 <div className="flex items-center gap-1.5">
-                  <span className="font-bold text-ink text-sm">{r.name}</span>
+                  <span className="font-bold text-ink text-sm leading-normal">{r.name}</span>
                   <VerifiedBadge />
                 </div>
                 <Stars rating={r.rating} size={16} />
-                <h3 className="font-bold text-ink text-[15px] leading-snug">{r.title}</h3>
-                <p className="text-xs text-ink/50">{r.date}</p>
+                <h3 className="font-sans font-bold text-ink text-[15px] leading-[1.35] pb-0.5">{r.title}</h3>
+                <p className="text-xs text-ink/50 leading-normal">{r.date}</p>
                 <p className="text-ink/80 text-[14px] leading-relaxed line-clamp-6">{r.body}</p>
                 {r.helpful && (
-                  <p className="mt-auto pt-2 text-xs text-ink/50">{r.helpful}</p>
+                  <p className="mt-auto pt-2 text-xs text-ink/50 leading-normal">{r.helpful}</p>
                 )}
               </article>
             ))}

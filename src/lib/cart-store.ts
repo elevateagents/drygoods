@@ -29,7 +29,7 @@ export type CartLine = {
   price: number;
 };
 
-const TITLE = "DryGoods™ Athletic Spray";
+const TITLE = "Dry Goods Athletic Spray Powder";
 const lineKey = (plan: Plan) => `${VARIANT_ID}::${plan}`;
 
 type CartState = {

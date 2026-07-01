@@ -39,10 +39,10 @@ export function Nav() {
     <>
     <nav className="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur border-b border-ink/10 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
-        <Link to="/" onClick={onLogoClick} className="flex items-center gap-2 shrink-0" aria-label="DryGoods home">
+        <Link to="/" onClick={onLogoClick} className="flex items-center gap-2 shrink-0" aria-label="Dry Goods Athletic Spray Powder home">
           <img
             src={logo.url}
-            alt="DryGoods"
+            alt="Dry Goods Athletic Spray Powder"
             width={144}
             height={36}
             className="h-9 sm:h-10 w-auto"
@@ -60,7 +60,7 @@ export function Nav() {
             href="/#buy"
             className="hidden sm:inline-flex items-center bg-sky text-white px-4 py-2.5 text-xs font-bold uppercase tracking-widest hover:bg-sky-deep transition-colors rounded-full"
           >
-            Shop Now
+            Shop Powder
           </a>
           <button
             onClick={() => setOpen(true)}
@@ -98,7 +98,7 @@ export function Nav() {
           ))}
           <li className="px-6 py-6">
             <a href="/#buy" onClick={() => setMenu(false)} className="block text-center bg-sky text-white py-4 font-bold uppercase tracking-widest rounded-full">
-              Shop Now
+              Shop Powder
             </a>
           </li>
         </ul>

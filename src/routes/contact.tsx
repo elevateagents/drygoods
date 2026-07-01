@@ -6,8 +6,8 @@ import { Layout } from "@/components/site/Layout";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — DryGoods™" },
-      { name: "description", content: "Reach DryGoods. We answer the phone. 305-769-8397 · info@drygoods.com." },
+      { title: "Contact — Dry Goods™" },
+      { name: "description", content: "Reach Dry Goods. We answer the phone. 305-769-8397 · info@drygoods.com." },
     ],
   }),
   component: Contact,
