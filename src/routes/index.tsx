@@ -5,8 +5,8 @@ import AmazonReviewsSection from "@/components/site/AmazonReviewsSection";
 import { useState } from "react";
 import { useCart, PLAN_META, type Plan } from "@/lib/cart-store";
 import {
-  ShieldCheck, Leaf, Award, Flag,
-  ShoppingCart, ExternalLink, RotateCcw, CheckCircle2,
+  ShieldCheck,
+  ShoppingCart, ExternalLink, CheckCircle2,
   Plus, Sparkles, Zap,
 } from "lucide-react";
 import golfer from "@/assets/hero-two-cans-golf-dusk.png.asset.json";
@@ -293,13 +293,6 @@ function Buy() {
     "Instant cooling · Zero mess · Won't stain",
     "Dermatologist Approved · Made in USA",
   ];
-  const badges = [
-    { icon: Flag, label: "Made in USA" },
-    { icon: ShieldCheck, label: "Dermatologist Approved" },
-    { icon: Award, label: "US Patented" },
-    { icon: RotateCcw, label: "Free Returns" },
-    { icon: Leaf, label: "Cruelty Free" },
-  ];
   const planOptions: Plan[] = ["onetime", "monthly", "weekly"];
   return (
     <section id="buy" className="scroll-mt-20 bg-sky-soft/40 min-h-screen flex flex-col justify-center py-16 sm:py-24 md:py-32 px-3 sm:px-6 lg:px-8 xl:px-12 overflow-hidden">
@@ -377,14 +370,6 @@ function Buy() {
 
         </div>
 
-        <div className="mt-10 grid grid-cols-2 justify-center gap-2 sm:flex sm:flex-wrap sm:gap-3">
-          {badges.map((b) => (
-            <div key={b.label} className="min-w-0 inline-flex items-center justify-center gap-1.5 bg-white border border-ink/10 text-ink rounded-full px-2.5 sm:px-4 py-2 text-[10px] sm:text-xs font-bold uppercase tracking-wide sm:tracking-widest leading-tight text-center">
-              <b.icon className="size-3.5 text-sky shrink-0" />
-              <span className="min-w-0 break-words">{b.label}</span>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
