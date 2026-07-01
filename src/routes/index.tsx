@@ -306,8 +306,8 @@ function Buy() {
           </h2>
         </div>
 
-        <div className="grid min-w-0 md:grid-cols-2 gap-6 lg:gap-16 xl:gap-24 items-center bg-white rounded-3xl p-4 sm:p-10 lg:p-14 xl:p-20 shadow-xl shadow-sky/10 overflow-hidden">
-          <div className="relative aspect-square rounded-2xl overflow-hidden bg-sky-soft flex items-center justify-center p-2 sm:p-3">
+        <div className="grid min-w-0 md:grid-cols-2 gap-6 lg:gap-16 xl:gap-24 items-center bg-sky-soft rounded-3xl p-4 sm:p-10 lg:p-14 xl:p-20 shadow-xl shadow-sky/10 overflow-hidden">
+          <div className="relative aspect-square rounded-2xl overflow-hidden bg-white flex items-center justify-center p-2 sm:p-3">
             <img src={productImg.url} alt="DryGoods Athletic Spray can" loading="lazy" className="w-full h-full object-contain" />
             <span className="absolute top-4 left-4 bg-ink text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">In Stock</span>
           </div>
