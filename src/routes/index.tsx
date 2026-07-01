@@ -267,7 +267,7 @@ function WhyItExists() {
         </div>
         <div>
           <h2 className="font-display font-black uppercase tracking-tight text-[clamp(22px,4.5vw,52px)] leading-[1.05] text-ink text-balance break-words">
-            From pain to <br className="md:hidden" /><span className="text-sky">performance.</span>
+            From pain to <br className="md:hidden" /><span className="text-sky whitespace-nowrap">performance.</span>
           </h2>
           <p className="mt-5 text-lg text-ink/75 leading-relaxed">
             Chafing doesn't just hurt — it limits you. It cuts workouts short, slows your pace, and
