@@ -9,36 +9,56 @@ const socials = [
 
 export function Footer() {
   return (
-    <footer className="bg-ink text-white pt-16 pb-10 px-5 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr_1fr] pb-10 border-b border-white/15">
-          <a href="#top" className="inline-flex w-fit" aria-label="Dry Goods home">
-            <img src={logo} alt="Dry Goods Athletic Spray Powder" className="h-12 w-auto object-contain" loading="lazy" />
-          </a>
-          <nav className="flex flex-wrap gap-x-8 gap-y-3 text-sm font-bold uppercase tracking-widest lg:justify-center">
-            <a href="/#buy" className="hover:text-sky">Shop</a>
-            <Link to="/blog" className="hover:text-sky">Blog</Link>
-            <a href="https://www.amazon.com/dp/B003YTUWJ8" target="_blank" rel="noreferrer noopener" className="hover:text-sky">Amazon</a>
-            <Link to="/contact" className="hover:text-sky">Contact</Link>
-          </nav>
-          <div className="space-y-4 text-sm text-white/70 lg:text-right">
-            <p className="font-bold uppercase tracking-widest text-white">Add to cart in one tap.</p>
-            <p>
-              Patent: <a href="https://patents.google.com/patent/US8778406B2/en" target="_blank" rel="noreferrer noopener" className="font-semibold text-white hover:text-sky underline underline-offset-4">US 8,778,406 B2</a>
+    <footer className="bg-ink text-white px-5 pt-16 pb-10 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid gap-10 border-b border-white/15 pb-10 md:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_1fr_1fr] lg:gap-12">
+          <div className="space-y-5">
+            <a href="#top" className="inline-flex w-fit" aria-label="Dry Goods home">
+              <img src={logo} alt="Dry Goods Athletic Spray Powder" className="h-12 w-auto object-contain" loading="lazy" />
+            </a>
+            <p className="max-w-sm text-sm leading-relaxed text-white/65">
+              Dry Goods Athletic Spray Powder keeps athletes cool, dry, and protected from friction with one clean spray.
             </p>
-            <p>
-              Wholesale inquiries: <a href="tel:3057698397" className="font-semibold text-white hover:text-sky">305-769-8397</a> · <a href="mailto:info@drygoods.com" className="font-semibold text-white hover:text-sky">info@drygoods.com</a>
-            </p>
-            <div className="flex gap-3 lg:justify-end" aria-label="Social media links">
+            <a href="/#buy" className="inline-flex w-fit rounded-full bg-sky px-5 py-3 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-sky-deep">
+              Add to cart in one tap
+            </a>
+          </div>
+
+          <div>
+            <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-white/45">Explore</p>
+            <nav className="mt-5 grid gap-3 text-sm font-bold uppercase tracking-widest text-white/80">
+              <a href="/#buy" className="hover:text-sky">Shop</a>
+              <a href="/#reviews" className="hover:text-sky">Reviews</a>
+              <Link to="/blog" className="hover:text-sky">Blog</Link>
+              <a href="https://www.amazon.com/dp/B003YTUWJ8" target="_blank" rel="noreferrer noopener" className="hover:text-sky">Amazon</a>
+              <Link to="/contact" className="hover:text-sky">Contact</Link>
+            </nav>
+          </div>
+
+          <div>
+            <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-white/45">Wholesale</p>
+            <div className="mt-5 space-y-3 text-sm leading-relaxed text-white/70">
+              <p>For teams, retailers, training rooms, and bulk orders.</p>
+              <p><a href="tel:3057698397" className="font-semibold text-white hover:text-sky">305-769-8397</a></p>
+              <p><a href="mailto:info@drygoods.com" className="font-semibold text-white hover:text-sky">info@drygoods.com</a></p>
+            </div>
+          </div>
+
+          <div>
+            <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-white/45">Connect</p>
+            <div className="mt-5 flex gap-3" aria-label="Social media links">
               {socials.map(({ label, href, icon: Icon }) => (
-                <a key={label} href={href} target="_blank" rel="noreferrer noopener" aria-label={label} className="grid size-10 place-items-center rounded-full border border-white/20 text-white hover:border-sky hover:text-sky transition-colors">
+                <a key={label} href={href} target="_blank" rel="noreferrer noopener" aria-label={label} className="grid size-10 place-items-center rounded-full border border-white/20 text-white transition-colors hover:border-sky hover:text-sky">
                   <Icon />
                 </a>
               ))}
             </div>
+            <p className="mt-6 text-sm text-white/65">
+              Patent: <a href="https://patents.google.com/patent/US8778406B2/en" target="_blank" rel="noreferrer noopener" className="font-semibold text-white underline underline-offset-4 hover:text-sky">US 8,778,406 B2</a>
+            </p>
           </div>
         </div>
-        <div className="pt-8 flex flex-col md:flex-row md:justify-between gap-3 text-xs text-white/60">
+        <div className="flex flex-col gap-3 pt-8 text-xs text-white/60 md:flex-row md:justify-between">
           <p>Joyce Labs LLC, Raleigh, North Carolina, 2026</p>
           <p className="font-editorial italic text-white/80">"No mess. No waste. Just powerful protection."</p>
         </div>

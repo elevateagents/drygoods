@@ -116,7 +116,7 @@ function Hero() {
           <span className="inline-block px-3 py-1 2xl:px-4 2xl:py-1.5 bg-sky text-white text-[11px] 2xl:text-[13px] font-bold uppercase tracking-[0.2em] rounded-full mb-5 2xl:mb-7">
             New · Patented Formula
           </span>
-          <h1 className="mx-auto w-full text-center font-display font-black uppercase tracking-tight leading-[0.98] text-[clamp(36px,5.8vw,96px)] [text-shadow:0_2px_16px_rgba(0,0,0,0.45)]">
+          <h1 className="mx-auto w-full text-center font-display font-black uppercase tracking-tight leading-[0.98] text-[clamp(30px,13vw,52px)] sm:text-[clamp(44px,8vw,76px)] lg:text-[clamp(60px,5.8vw,96px)] [text-shadow:0_2px_16px_rgba(0,0,0,0.45)]">
             <span className="block">One Spray:</span>
             <span className="block text-center text-sky whitespace-nowrap">Cool and Dry,</span>
             <span className="block text-center text-sky whitespace-nowrap">Chafe Free.</span>
