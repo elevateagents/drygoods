@@ -144,7 +144,6 @@ function TrustBar() {
     "4.4★ Rated",
     "15 Years Trusted",
     "Talc-Free",
-    "Made in USA",
     "30-Day Guarantee",
   ];
   return (
