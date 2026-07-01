@@ -4,7 +4,7 @@ import logo from "@/assets/dry-goods-logo-white.png";
 const socials = [
   { label: "Instagram", href: "https://www.instagram.com/drygoods/", icon: InstagramIcon },
   { label: "Facebook", href: "https://www.facebook.com/drygoods/", icon: FacebookIcon },
-  { label: "TikTok", href: "https://www.tiktok.com/@drygoods", icon: TikTokIcon },
+  { label: "TikTok", href: "https://www.tiktok.com/@drygoodsspray", icon: TikTokIcon },
 ];
 
 export function Footer() {
