@@ -293,13 +293,6 @@ function Buy() {
     "Instant cooling · Zero mess · Won't stain",
     "Dermatologist Approved · Made in USA",
   ];
-  const badges = [
-    { icon: Flag, label: "Made in USA" },
-    { icon: ShieldCheck, label: "Dermatologist Approved" },
-    { icon: Award, label: "US Patented" },
-    { icon: RotateCcw, label: "Free Returns" },
-    { icon: Leaf, label: "Cruelty Free" },
-  ];
   const planOptions: Plan[] = ["onetime", "monthly", "weekly"];
   return (
     <section id="buy" className="scroll-mt-20 bg-sky-soft/40 min-h-screen flex flex-col justify-center py-16 sm:py-24 md:py-32 px-3 sm:px-6 lg:px-8 xl:px-12 overflow-hidden">
