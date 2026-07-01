@@ -370,14 +370,6 @@ function Buy() {
 
         </div>
 
-        <div className="mt-10 grid grid-cols-2 justify-center gap-2 sm:flex sm:flex-wrap sm:gap-3">
-          {badges.map((b) => (
-            <div key={b.label} className="min-w-0 inline-flex items-center justify-center gap-1.5 bg-white border border-ink/10 text-ink rounded-full px-2.5 sm:px-4 py-2 text-[10px] sm:text-xs font-bold uppercase tracking-wide sm:tracking-widest leading-tight text-center">
-              <b.icon className="size-3.5 text-sky shrink-0" />
-              <span className="min-w-0 break-words">{b.label}</span>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
