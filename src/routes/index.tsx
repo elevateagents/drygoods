@@ -14,7 +14,7 @@ import golferMobile from "@/assets/hero-can-mobile-golf-dusk.png.asset.json";
 import productImg from "@/assets/product-white.png.asset.json";
 import productConcrete from "@/assets/product-concrete.png.asset.json";
 import pickleballPaddle from "@/assets/about-pickleball-paddle.png.asset.json";
-import whyItExistsImg from "@/assets/why-it-exists-climbing.jpg.asset.json";
+import skinTypesImg from "@/assets/skin-types.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -271,8 +271,8 @@ function WhyItExists() {
   return (
     <section id="why" className="bg-paper py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 xl:px-12 border-t border-ink/5 scroll-mt-16">
       <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem] mx-auto grid md:grid-cols-2 gap-10 lg:gap-16 xl:gap-24 items-center">
-        <div className="relative rounded-3xl overflow-hidden bg-ink/5">
-          <img src={whyItExistsImg.url} alt="Athlete rock climbing over ocean" loading="lazy" className="w-full h-full object-cover" />
+        <div className="relative rounded-3xl overflow-hidden bg-white p-3 shadow-sm shadow-ink/5">
+          <img src={skinTypesImg.url} alt="Safe on all skin types benefits diagram" loading="lazy" className="w-full h-full object-contain" />
         </div>
         <div>
           <h2 className="font-display font-black uppercase tracking-tight text-[clamp(22px,4.5vw,52px)] leading-[1.05] text-ink text-balance break-words">
