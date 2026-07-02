@@ -60,7 +60,7 @@ export function Nav() {
             href="/#buy"
             className="hidden sm:inline-flex items-center bg-sky text-white px-4 py-2.5 text-xs font-bold uppercase tracking-widest hover:bg-sky-deep transition-colors rounded-full"
           >
-            Shop Powder
+            Shop
           </a>
           <button
             onClick={() => setOpen(true)}
@@ -98,7 +98,7 @@ export function Nav() {
           ))}
           <li className="px-6 py-6">
             <a href="/#buy" onClick={() => setMenu(false)} className="block text-center bg-sky text-white py-4 font-bold uppercase tracking-widest rounded-full">
-              Shop Powder
+              Shop
             </a>
           </li>
         </ul>

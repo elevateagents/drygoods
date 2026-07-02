@@ -116,10 +116,10 @@ function Hero() {
           <span className="inline-block px-3 py-1 2xl:px-4 2xl:py-1.5 bg-sky text-white text-[11px] 2xl:text-[13px] font-bold uppercase tracking-[0.2em] rounded-full mb-5 2xl:mb-7">
             New · Patented Formula
           </span>
-          <h1 className="mx-auto w-full text-center font-display font-black uppercase tracking-tight leading-[0.98] text-[clamp(30px,13vw,52px)] sm:text-[clamp(44px,8vw,76px)] lg:text-[clamp(60px,5.8vw,96px)] [text-shadow:0_2px_16px_rgba(0,0,0,0.45)]">
-            <span className="block">One Spray:</span>
-            <span className="block text-center text-sky whitespace-nowrap">Cool and Dry,</span>
-            <span className="block text-center text-sky whitespace-nowrap">Chafe Free.</span>
+          <h1 className="mx-auto max-w-[19rem] text-center font-display text-[clamp(34px,11vw,46px)] font-black uppercase leading-[0.95] tracking-tight sm:max-w-none sm:text-[clamp(44px,8vw,76px)] lg:text-[clamp(60px,5.8vw,96px)] [text-shadow:0_2px_16px_rgba(0,0,0,0.45)]">
+            <span className="block">One Spray.</span>
+            <span className="block text-sky">Cool &amp; Dry.</span>
+            <span className="block text-sky">Chafe Free.</span>
           </h1>
           <p className="mt-5 2xl:mt-8 text-base sm:text-lg 2xl:text-2xl text-white max-w-2xl 2xl:max-w-3xl mx-auto leading-relaxed [text-shadow:0_2px_10px_rgba(0,0,0,0.55)]">
             Dry Goods™ patented spray goes on cool, dries to a powder, and keeps you
@@ -179,12 +179,14 @@ function Introducing() {
         <div className="relative aspect-square rounded-3xl overflow-hidden">
           <img src={productConcrete.url} alt="Dry Goods Athletic Spray Powder can" loading="lazy" className="w-full h-full object-cover" />
         </div>
-        <div>
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Introducing Dry Goods Athletic Spray Powder</span>
-          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(30px,5vw,52px)] leading-[1] text-ink">
-            A new kind of <span className="text-sky">anti-chafe spray.</span>
+        <div className="text-center md:text-left">
+          <span className="mx-auto block max-w-[18rem] text-[10px] font-bold uppercase leading-snug tracking-[0.16em] text-sky sm:max-w-none sm:text-xs sm:tracking-[0.25em] md:mx-0">
+            Introducing <span className="sm:hidden">Dry Goods Spray Powder</span><span className="hidden sm:inline">Dry Goods Athletic Spray Powder</span>
+          </span>
+          <h2 className="mx-auto mt-3 max-w-[19rem] font-display text-[clamp(30px,9vw,42px)] font-black uppercase leading-[0.98] tracking-tight text-ink sm:max-w-none sm:text-[clamp(30px,5vw,52px)] md:mx-0">
+            A new kind of <span className="block text-sky sm:inline">anti-chafe spray.</span>
           </h2>
-          <p className="mt-5 text-lg text-ink/75 leading-relaxed">
+          <p className="mt-5 text-base leading-relaxed text-ink/75 sm:text-lg">
             Dry Goods Athletic Spray Powder is a patented spray that goes on wet and instantly dries to a fine powder.
             One quick spray creates a smooth, moisture-wicking barrier that keeps your skin dry and friction-free —
             all day, no mess, no residue.
@@ -308,9 +310,9 @@ function Buy() {
   return (
     <section id="buy" className="scroll-mt-20 bg-white min-h-screen flex flex-col justify-center py-16 sm:py-24 md:py-32 px-3 sm:px-6 lg:px-8 xl:px-12 overflow-hidden">
       <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem] mx-auto min-w-0">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Get Yours</span>
-          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(32px,5vw,56px)] leading-[1] text-ink">
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+          <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky sm:text-xs sm:tracking-[0.25em]">Get Yours</span>
+          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(30px,10vw,52px)] leading-[1] text-ink sm:text-[clamp(32px,5vw,56px)]">
             One spray. <span className="text-sky">All day dry.</span>
           </h2>
         </div>
@@ -320,9 +322,10 @@ function Buy() {
             <img src={productImg.url} alt="Dry Goods Athletic Spray Powder can" loading="lazy" className="w-full h-full object-contain" />
             <span className="absolute top-4 left-4 bg-ink text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">In Stock</span>
           </div>
-          <div className="min-w-0">
-            <h3 className="font-sans font-bold tracking-tight text-[clamp(24px,5.5vw,36px)] leading-[1.1] text-ink break-words">
-              Dry Goods Athletic Spray Powder
+          <div className="min-w-0 text-center md:text-left">
+            <h3 className="font-sans text-[clamp(22px,7vw,36px)] font-bold leading-[1.08] tracking-tight text-ink sm:text-[clamp(24px,5.5vw,36px)]">
+              <span className="block">Dry Goods</span>
+              <span className="block">Athletic Spray Powder</span>
             </h3>
             <p className="mt-2 max-w-full text-sm sm:text-base text-ink/70 leading-relaxed break-words">
               One cool spray. All day dry.

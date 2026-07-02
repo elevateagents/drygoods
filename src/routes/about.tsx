@@ -157,9 +157,8 @@ function ClientLogos() {
           }
           .client-logo-track {
             animation: client-logo-marquee 140s linear infinite;
-          }
-          .client-logo-mask:hover .client-logo-track {
-            animation-play-state: paused;
+            backface-visibility: hidden;
+            will-change: transform;
           }
           @media (prefers-reduced-motion: reduce) {
             .client-logo-track { animation: none; }

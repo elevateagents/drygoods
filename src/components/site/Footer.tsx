@@ -9,14 +9,14 @@ const socials = [
 
 export function Footer() {
   return (
-    <footer className="bg-ink text-white px-5 pt-16 pb-10 sm:px-6 lg:px-8">
+    <footer className="bg-ink text-white px-5 pt-12 pb-10 sm:px-6 sm:pt-16 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-10 border-b border-white/15 pb-10 md:grid-cols-2 lg:grid-cols-[minmax(280px,1.5fr)_minmax(120px,0.7fr)_minmax(220px,1fr)_minmax(220px,1fr)] lg:items-start lg:gap-12">
+        <div className="grid gap-9 border-b border-white/15 pb-10 text-center md:grid-cols-2 md:text-left lg:grid-cols-[minmax(280px,1.5fr)_minmax(120px,0.7fr)_minmax(220px,1fr)_minmax(220px,1fr)] lg:items-start lg:gap-12">
           <div className="space-y-5">
-            <a href="#top" className="inline-flex w-fit" aria-label="Dry Goods home">
+            <a href="#top" className="mx-auto inline-flex w-fit md:mx-0" aria-label="Dry Goods home">
               <img src={logo} alt="Dry Goods Athletic Spray Powder" className="h-12 w-auto object-contain" loading="lazy" />
             </a>
-            <p className="max-w-sm text-sm leading-relaxed text-white/65">
+            <p className="mx-auto max-w-sm text-sm leading-relaxed text-white/65 md:mx-0">
               Dry Goods Athletic Spray Powder keeps athletes cool, dry, and protected from friction with one clean spray.
             </p>
             <a href="/#buy" className="inline-flex w-fit rounded-full bg-sky px-5 py-3 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-sky-deep">
@@ -26,7 +26,7 @@ export function Footer() {
 
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-white/45">Explore</p>
-            <nav className="mt-5 grid gap-3 text-sm font-bold uppercase tracking-widest text-white/80">
+            <nav className="mt-5 grid grid-cols-2 gap-3 text-sm font-bold uppercase tracking-widest text-white/80 sm:grid-cols-none">
               <a href="/#buy" className="hover:text-sky">Shop</a>
               <a href="/#reviews" className="hover:text-sky">Reviews</a>
               <Link to="/blog" className="hover:text-sky">Blog</Link>
@@ -46,7 +46,7 @@ export function Footer() {
 
           <div className="lg:justify-self-end lg:text-right">
             <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-white/45">Connect</p>
-            <div className="mt-5 flex gap-3 lg:justify-end" aria-label="Social media links">
+            <div className="mt-5 flex justify-center gap-3 md:justify-start lg:justify-end" aria-label="Social media links">
               {socials.map(({ label, href, icon: Icon }) => (
                 <a key={label} href={href} target="_blank" rel="noreferrer noopener" aria-label={label} className="grid size-10 place-items-center rounded-full border border-white/20 text-white transition-colors hover:border-sky hover:text-sky">
                   <Icon />
@@ -58,7 +58,7 @@ export function Footer() {
             </p>
           </div>
         </div>
-        <div className="grid gap-3 pt-8 text-xs text-white/60 md:grid-cols-[1fr_auto_1fr] md:items-center">
+        <div className="grid gap-4 pt-8 text-center text-xs text-white/60 md:grid-cols-[1fr_auto_1fr] md:items-center md:text-left">
           <p>Joyce Labs LLC, Raleigh, North Carolina, 2026</p>
           <Link to="/legal" className="font-bold uppercase tracking-widest text-white/70 hover:text-sky">Privacy Policy</Link>
           <p className="font-editorial italic text-white/80 md:text-right">"No mess. No waste. Just powerful protection."</p>

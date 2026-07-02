@@ -258,8 +258,6 @@ export default function AmazonReviewsSection() {
           className="dg-review-mask relative overflow-x-auto overscroll-x-contain scroll-smooth snap-x snap-mandatory"
           onPointerDown={pauseAuto}
           onWheel={pauseAuto}
-          onMouseEnter={() => setAutoPaused(true)}
-          onMouseLeave={() => setAutoPaused(false)}
         >
           <div
             className="flex w-max gap-5 py-2"
