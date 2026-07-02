@@ -397,10 +397,6 @@ function FAQ() {
       a: (
         <div className="space-y-4">
           <p>Every ingredient earns its place. Here's what's doing the work:</p>
-          <div className="rounded-2xl border border-sky/25 bg-sky-soft/60 p-4">
-            <p className="font-bold text-ink">Talc-Free — Reformulated With Better Ingredients.</p>
-            <p>We made the call to remove talc and upgrade the formula. Cleaner ingredients, same performance.</p>
-          </div>
           <div>
             <p className="font-bold text-ink">Arrowroot Extract</p>
             <p>A plant-derived powder that instantly pulls moisture away from the skin. Nature's most effective natural absorbent.</p>
