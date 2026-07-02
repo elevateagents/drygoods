@@ -118,24 +118,24 @@ export const Route = createFileRoute("/legal")({
 function LegalPage() {
   return (
     <Layout>
-      <section className="bg-paper px-5 pb-20 pt-28 sm:px-6 sm:pt-32 lg:px-8">
+      <section className="bg-paper px-3 pb-14 pt-24 sm:px-6 sm:pb-20 sm:pt-32 lg:px-8">
         <div className="mx-auto max-w-4xl">
-          <div className="rounded-[2rem] border border-ink/10 bg-white p-6 shadow-xl shadow-ink/5 sm:p-10 lg:p-12">
-            <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Legal Notice</span>
-            <h1 className="mt-3 font-display text-[clamp(34px,6vw,64px)] font-black uppercase leading-none tracking-tight text-ink">
+          <div className="overflow-hidden rounded-3xl border border-ink/10 bg-white px-4 py-6 shadow-lg shadow-ink/5 sm:rounded-[2rem] sm:p-10 sm:shadow-xl lg:p-12">
+            <span className="block text-[11px] font-bold uppercase tracking-[0.22em] text-sky sm:text-xs sm:tracking-[0.25em]">Legal Notice</span>
+            <h1 className="mt-3 font-display text-[clamp(32px,15vw,64px)] font-black uppercase leading-[0.95] tracking-tight text-ink break-words">
               Privacy Policy
             </h1>
-            <p className="mt-5 text-sm leading-relaxed text-ink/70 sm:text-base">
+            <p className="mt-5 max-w-3xl text-[15px] leading-7 text-ink/70 break-words sm:text-base sm:leading-relaxed">
               This notice explains how Joyce Labs, LLC collects, uses, shares, and stores information about visitors and interactions with DryGoods.com. Last updated March 1, 2020.
             </p>
 
-            <div className="mt-10 space-y-9">
+            <div className="mt-8 space-y-7 sm:mt-10 sm:space-y-9">
               {sections.map((section) => (
-                <section key={section.title} className="border-t border-ink/10 pt-7">
-                  <h2 className="font-display text-2xl font-black uppercase leading-tight tracking-tight text-ink">
+                <section key={section.title} className="border-t border-ink/10 pt-6 sm:pt-7">
+                  <h2 className="font-display text-xl font-black uppercase leading-tight tracking-tight text-ink break-words sm:text-2xl">
                     {section.title}
                   </h2>
-                  <div className="mt-4 space-y-4 text-sm leading-relaxed text-ink/75 sm:text-base">
+                  <div className="mt-3 space-y-3 text-[15px] leading-7 text-ink/75 break-words sm:mt-4 sm:space-y-4 sm:text-base sm:leading-relaxed">
                     {section.body.map((paragraph) => (
                       <p key={paragraph}>{paragraph}</p>
                     ))}

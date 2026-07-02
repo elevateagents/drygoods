@@ -406,10 +406,6 @@ function FAQ() {
             <p>A skin-protective mineral that soothes friction and protects skin.</p>
           </div>
           <div>
-            <p className="font-bold text-ink">Menthol</p>
-            <p>That clean cooling sensation you feel on application. Activates cold receptors in the skin for an immediate cooling sensation that lasts.</p>
-          </div>
-          <div>
             <p className="font-bold text-ink">Talc-Free — Reformulated With Better Ingredients.</p>
             <p>We made the call to remove talc and upgrade the formula. Cleaner ingredients, same performance.</p>
           </div>
