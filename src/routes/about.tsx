@@ -156,12 +156,14 @@ function ClientLogos() {
             100% { transform: translate3d(-50%, 0, 0); }
           }
           .client-logo-track {
-            animation: client-logo-marquee 140s linear infinite;
             backface-visibility: hidden;
             will-change: transform;
           }
-          @media (prefers-reduced-motion: reduce) {
-            .client-logo-track { animation: none; }
+          .client-logo-track-primary {
+            animation: client-logo-marquee 140s linear infinite;
+          }
+          .client-logo-track-secondary {
+            animation: client-logo-marquee 170s linear infinite reverse;
           }
         `}</style>
         <div className="text-center max-w-2xl mx-auto">
@@ -180,7 +182,7 @@ function ClientLogos() {
             WebkitMaskImage: "linear-gradient(to right, transparent, black 5%, black 95%, transparent)",
           }}
         >
-          <div className="client-logo-track flex w-max gap-3 py-2">
+          <div className="client-logo-track client-logo-track-primary flex w-max gap-3 py-2">
             {marqueeLogos.map((logo, index) => (
               <div key={`${logo.name}-${index}`} className="grid h-24 w-40 shrink-0 place-items-center rounded-2xl border border-ink/10 bg-white px-4 py-5 shadow-sm shadow-ink/5 sm:w-44 lg:w-48">
                 <img src={logo.src} alt={`${logo.name} logo`} decoding="async" className="max-h-12 w-auto max-w-full object-contain" />
@@ -195,7 +197,7 @@ function ClientLogos() {
             WebkitMaskImage: "linear-gradient(to right, transparent, black 5%, black 95%, transparent)",
           }}
         >
-          <div className="client-logo-track flex w-max gap-3 py-2 [animation-direction:reverse] [animation-duration:170s]">
+          <div className="client-logo-track client-logo-track-secondary flex w-max gap-3 py-2">
             {marqueeLogos.slice().reverse().map((logo, index) => (
               <div key={`${logo.name}-reverse-${index}`} className="grid h-24 w-40 shrink-0 place-items-center rounded-2xl border border-ink/10 bg-white px-4 py-5 shadow-sm shadow-ink/5 sm:w-44 lg:w-48">
                 <img src={logo.src} alt="" decoding="async" className="max-h-12 w-auto max-w-full object-contain" />
