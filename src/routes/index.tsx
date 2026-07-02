@@ -393,7 +393,7 @@ function Buy() {
 function FAQ() {
   const faqs: { q: string; a: React.ReactNode }[] = [
     {
-      q: "What's in Dry Goods Athletic Spray Powder? (Key Ingredients)",
+      q: "What's in Dry Goods?",
       a: (
         <div className="space-y-4">
           <p>Every ingredient earns its place. Here's what's doing the work:</p>
@@ -405,7 +405,15 @@ function FAQ() {
             <p className="font-bold text-ink">Zinc Oxide</p>
             <p>A skin-protective mineral that soothes friction and protects skin.</p>
           </div>
-          <div className="pt-2 border-t border-ink/10">
+          <div>
+            <p className="font-bold text-ink">Menthol</p>
+            <p>That clean cooling sensation you feel on application. Activates cold receptors in the skin for an immediate cooling sensation that lasts.</p>
+          </div>
+          <div>
+            <p className="font-bold text-ink">Talc-Free — Reformulated With Better Ingredients.</p>
+            <p>We made the call to remove talc and upgrade the formula. Cleaner ingredients, same performance.</p>
+          </div>
+          <div>
             <p className="font-bold text-ink">No Aluminum Chlorohydrate.</p>
             <p>That's the aluminum compound in antiperspirants that blocks sweat glands. It's not in here. Dry Goods manages moisture without blocking your body's natural function.</p>
           </div>
