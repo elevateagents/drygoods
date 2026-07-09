@@ -61,7 +61,6 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-
 function HomePage() {
   return (
     <Layout>
@@ -69,8 +68,8 @@ function HomePage() {
       <TrustBar />
       <Introducing />
       <ComparisonSection />
-      <ConquerChafing />
       <WhyItExists />
+      <PerformanceCardsSection />
       <AmazonReviewsSection />
       <Buy />
       <FAQ />
@@ -79,7 +78,6 @@ function HomePage() {
     </Layout>
   );
 }
-
 
 /* --------------------------------- HERO ---------------------------------- */
 function Hero() {
@@ -133,11 +131,10 @@ function Hero() {
             >
               Shop Now — $19.99 <ShoppingCart className="size-4 2xl:size-5" />
             </button>
-            <a href="#how" className="text-sm 2xl:text-base font-bold uppercase tracking-widest text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.6)] hover:text-sky underline-offset-4 hover:underline">
+            <a href="#why" className="text-sm 2xl:text-base font-bold uppercase tracking-widest text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.6)] hover:text-sky underline-offset-4 hover:underline">
               See How It Works →
             </a>
           </div>
-
         </motion.div>
       </div>
     </section>
@@ -165,12 +162,10 @@ function TrustBar() {
             </li>
           ))}
         </ul>
-
       </div>
     </section>
   );
 }
-
 
 /* ----------------------------- INTRODUCING ------------------------------- */
 function Introducing() {
@@ -279,60 +274,6 @@ function ComparisonSection() {
   );
 }
 
-/* --------------------------- CONQUER CHAFING ----------------------------- */
-function ConquerChafing() {
-  return (
-    <section id="how" className="scroll-mt-20 bg-gradient-to-tr from-ink via-[#111111] to-black text-white py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 xl:px-12 border-t border-white/10">
-      <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem] mx-auto">
-        {/* Headline */}
-        <div className="text-center max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto">
-          <h2 className="font-display font-black uppercase tracking-tight text-[clamp(20px,5vw,72px)] leading-[1.05] text-white text-balance break-words">
-            Why it <span className="text-sky">exists.</span>
-          </h2>
-          <p className="mt-6 text-lg sm:text-xl text-white/75 leading-relaxed max-w-3xl mx-auto">
-            Athletes push their limits.
-          </p>
-          <p className="mt-4 text-lg sm:text-xl text-white/75 leading-relaxed max-w-3xl mx-auto">
-            Dry Goods™ is built to keep up. Designed to combat sweat, moisture, and friction, our advanced
-            formula delivers long-lasting dryness and all-day comfort.
-          </p>
-          <p className="mt-4 text-lg sm:text-xl text-white/75 leading-relaxed max-w-3xl mx-auto">
-            Whether you&apos;re on the field, in the gym, or pushing through intense training, Dry Goods™ helps
-            you stay cool, dry, and performing at your best. No mess, no residue — just powerful protection
-            when you need it most. Try it once, and you&apos;ll never train without it.
-          </p>
-        </div>
-
-        {/* Silent Battle */}
-        <div className="mt-20">
-          <div className="mt-10 grid md:grid-cols-3 2xl:grid-cols-3 gap-5 lg:gap-6 xl:gap-8">
-            <div className="rounded-3xl bg-white/10 border border-white/10 text-white p-7 sm:p-8">
-              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky">Friction & Sweat</p>
-              <p className="mt-3 text-white/85 leading-relaxed">
-                Moisture and movement combine to create painful irritation that worsens with every stride or pedal stroke.
-              </p>
-            </div>
-            <div className="rounded-3xl bg-white/10 border border-white/10 text-white p-7 sm:p-8">
-              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky">From marathon runners to pickleball players</p>
-              <p className="mt-3 text-white/85 leading-relaxed">
-                Chafing affects performance across every sport. No matter your level.
-              </p>
-            </div>
-            <div className="rounded-3xl bg-white/10 border border-white/10 text-white p-7 sm:p-8">
-              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky">Lost training days</p>
-              <p className="mt-3 text-white/85 leading-relaxed">
-                Chafing and blisters force athletes to skip workouts, compromising training cycles and competition results.
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-  );
-}
-
-/* ----------------------------- WHY IT EXISTS ----------------------------- */
 function WhyItExists() {
   return (
     <section id="why" className="bg-paper py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 xl:px-12 border-t border-ink/5 scroll-mt-16">
@@ -341,16 +282,21 @@ function WhyItExists() {
           <img src={bodyDiagramImg} alt="Safe on all skin types benefits diagram" loading="lazy" className="w-full h-full object-contain" />
         </div>
         <div>
-          <h2 className="font-display font-black uppercase tracking-tight text-[clamp(22px,4.5vw,52px)] leading-[1.05] text-ink text-balance break-words">
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Why it exists</span>
+          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(22px,4.5vw,52px)] leading-[1.05] text-ink text-balance break-words">
             From pain to <br className="md:hidden" /><span className="text-sky whitespace-nowrap">performance.</span>
           </h2>
           <p className="mt-5 text-lg text-ink/75 leading-relaxed">
-            Chafing doesn't just hurt — it limits you. It cuts workouts short, slows your pace, and
-            plants doubt in your mind at exactly the wrong moment.
+            Athletes push their limits.
           </p>
           <p className="mt-4 text-lg text-ink/75 leading-relaxed">
-            Dry Goods™ eliminates that doubt entirely. One spray before activity, and you're free to
-            focus on what actually matters: pushing your limits.
+            Dry Goods™ is built to keep up. Designed to combat sweat, moisture, and friction, our advanced
+            formula delivers long-lasting dryness and all-day comfort.
+          </p>
+          <p className="mt-4 text-lg text-ink/75 leading-relaxed">
+            Whether you&apos;re on the field, in the gym, or pushing through intense training, Dry Goods™ helps
+            you stay cool, dry, and performing at your best. No mess, no residue — just powerful protection
+            when you need it most. Try it once, and you&apos;ll never train without it.
           </p>
         </div>
       </div>
@@ -358,6 +304,43 @@ function WhyItExists() {
   );
 }
 
+function PerformanceCardsSection() {
+  const cards = [
+    {
+      title: "Friction & Sweat",
+      body: "Moisture and movement combine to create painful irritation that worsens with every stride or pedal stroke.",
+    },
+    {
+      title: "From marathon runners to pickleball players",
+      body: "Chafing affects performance across every sport. No matter your level.",
+    },
+    {
+      title: "Lost training days",
+      body: "Chafing and blisters force athletes to skip workouts, compromising training cycles and competition results.",
+    },
+  ];
+
+  return (
+    <section className="bg-[#edf6fb] py-12 sm:py-14 px-5 sm:px-6 lg:px-8 xl:px-12 border-t border-ink/5">
+      <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem] mx-auto">
+        <div className="max-w-3xl">
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">What gets in the way</span>
+          <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(20px,3.8vw,38px)] leading-[1.05] text-ink">
+            The everyday friction that pulls athletes off pace.
+          </h3>
+        </div>
+        <div className="mt-8 grid gap-4 md:grid-cols-3 lg:gap-5">
+          {cards.map((card) => (
+            <div key={card.title} className="rounded-[1.75rem] border border-ink/10 bg-white px-6 py-6 shadow-sm shadow-sky/10">
+              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky">{card.title}</p>
+              <p className="mt-4 text-base leading-relaxed text-ink/80">{card.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 /* ----------------------------------- BUY ---------------------------------- */
 function Buy() {
@@ -401,7 +384,7 @@ function Buy() {
               <CheckCircle2 className="size-4" /> In Stock — ships free on 3+ cans
             </p>
             <ul className="mt-6 space-y-2.5">
-              {bullets.map(b => (
+              {bullets.map((b) => (
                 <li key={b} className="flex min-w-0 items-start gap-2.5 text-sm text-ink/80 leading-snug">
                   <CheckCircle2 className="size-5 text-sky shrink-0 mt-0.5" />
                   <span className="min-w-0 break-words">{b}</span>
@@ -445,9 +428,7 @@ function Buy() {
               </a>
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
   );
