@@ -15,6 +15,7 @@ const hiddenClientLogoFiles = new Set([
 ]);
 
 const clientLogoClassByFile: Record<string, string> = {
+  "Colts.png": "scale-[0.82]",
   "Hamilton.jpg": "scale-[1.45]",
   "HS.png": "scale-[1.7]",
   "iTri.png": "scale-[1.8]",
@@ -155,7 +156,7 @@ function ClientLogos() {
                   src={logo.src}
                   alt={`${logo.name} logo`}
                   decoding="async"
-                  className={`client-logo-mark max-h-14 w-auto max-w-full object-contain sm:max-h-16 ${logo.className}`}
+                  className={`client-logo-mark max-h-12 w-auto max-w-full object-contain sm:max-h-14 ${logo.className}`}
                 />
               </div>
             ))}
@@ -175,7 +176,7 @@ function ClientLogos() {
                   src={logo.src}
                   alt=""
                   decoding="async"
-                  className={`client-logo-mark max-h-14 w-auto max-w-full object-contain sm:max-h-16 ${logo.className}`}
+                  className={`client-logo-mark max-h-12 w-auto max-w-full object-contain sm:max-h-14 ${logo.className}`}
                 />
               </div>
             ))}
