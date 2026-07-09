@@ -206,7 +206,7 @@ function Introducing() {
             </li>
             <li className="flex items-start gap-3">
               <CheckCircle2 className="size-5 text-sky shrink-0 mt-0.5" />
-              <span><strong>Long lasting protection</strong> keeps you cool and dry.</span>
+              <span><strong>Long lasting protection</strong> Keeps you cool and dry for up to 8 hours.</span>
             </li>
           </ul>
         </div>
