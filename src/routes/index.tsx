@@ -7,7 +7,7 @@ import { useCart, PLAN_META, type Plan } from "@/lib/cart-store";
 import {
   ShieldCheck,
   ShoppingCart, ExternalLink, CheckCircle2,
-  Plus, Sparkles, Zap,
+  Plus, Sparkles, Zap, XCircle,
 } from "lucide-react";
 import golfer from "@/assets/hero-two-cans-golf-dusk.png.asset.json";
 import golferMobile from "@/assets/hero-can-mobile-golf-dusk.png.asset.json";
@@ -68,6 +68,7 @@ function HomePage() {
       <Hero />
       <TrustBar />
       <Introducing />
+      <ComparisonSection />
       <ConquerChafing />
       <WhyItExists />
       <AmazonReviewsSection />
@@ -209,6 +210,69 @@ function Introducing() {
               <span><strong>Long lasting protection</strong> — Keeps you cool and dry for up to 8 hours.</span>
             </li>
           </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ComparisonSection() {
+  return (
+    <section className="bg-gradient-to-tr from-ink via-[#111111] to-black py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 xl:px-12">
+      <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem] mx-auto">
+        <div className="text-center max-w-4xl xl:max-w-5xl mx-auto">
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Old way vs new way</span>
+          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(30px,6vw,72px)] leading-[0.98] text-white">
+            The problem with <span className="block text-sky">traditional powders.</span>
+          </h2>
+          <p className="mt-6 text-base sm:text-lg text-white/75 leading-relaxed max-w-4xl mx-auto">
+            Traditional powders cake on skin, dust the air, miss the spots that need protection most,
+            and leave white residue on your gear. Dry Goods™ fixes every one of those problems.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:gap-10">
+          <div className="rounded-[2rem] border border-white/12 bg-white/10 p-6 sm:p-8 lg:p-10">
+            <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-white/50">The old way</p>
+            <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(28px,5vw,56px)] leading-[0.95] text-white">
+              Bottle powder
+            </h3>
+            <ul className="mt-6 space-y-4 text-sm sm:text-base text-white/82">
+              {[
+                "Cakes & clumps on sweaty skin",
+                "Dust cloud — gets everywhere",
+                "Can't reach the back or between toes",
+                "White residue stains gear & clothes",
+                "Reapply constantly",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <XCircle className="size-5 shrink-0 text-white/40 mt-0.5" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="rounded-[2rem] border-2 border-sky bg-sky-soft p-6 sm:p-8 lg:p-10">
+            <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-sky">Dry Goods Athletic Spray Powder</p>
+            <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(28px,5vw,56px)] leading-[0.95] text-ink">
+              Patented spray-to-powder
+            </h3>
+            <ul className="mt-6 space-y-4 text-sm sm:text-base text-ink/85">
+              {[
+                "Sprays on wet — dries to powder instantly",
+                "Zero cloud · zero mess",
+                "360° valve reaches anywhere, even upside down",
+                "No white residue · won't stain",
+                "One application = 8–12 hours of protection",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <CheckCircle2 className="size-5 shrink-0 text-sky mt-0.5" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
