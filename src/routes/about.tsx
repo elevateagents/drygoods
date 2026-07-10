@@ -103,7 +103,7 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-[linear-gradient(180deg,#121d2b_0%,#0f1722_100%)] px-5 pb-16 pt-10 sm:px-6 sm:pb-20 sm:pt-12 lg:px-8">
+      <section className="bg-[linear-gradient(180deg,#121d2b_0%,#0f1722_100%)] px-5 pt-10 pb-16 sm:px-6 sm:pt-12 sm:pb-20 lg:px-8">
         <div className="mx-auto max-w-3xl rounded-3xl border border-sky/20 bg-ink p-8 text-center text-white shadow-xl shadow-black/25 sm:p-10 lg:p-12">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Ready to stay dry?</span>
           <h3 className="mt-3 font-display text-[clamp(28px,5vw,48px)] font-black uppercase tracking-tight leading-[1.05] text-white">
@@ -209,7 +209,7 @@ function ClientLogos() {
   }, [shouldWarmLogos, uniqueLogoSources]);
 
   return (
-    <section ref={sectionRef} className="bg-paper px-5 pb-20 sm:px-6 lg:px-8">
+    <section ref={sectionRef} className="bg-paper px-5 pt-8 pb-20 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
         <style>{`
           @keyframes client-logo-marquee {
