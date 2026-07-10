@@ -12,6 +12,7 @@ const clientLogoModules = import.meta.glob<string>("../assets/client-logos/*.{pn
 const hiddenClientLogoFiles = new Set([
   "Exclusive.jpg",
   "SchoolHealth.jpg",
+  "images (1).png",
 ]);
 
 const clientLogoClassByFile: Record<string, string> = {
@@ -79,8 +80,30 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="px-5 py-16 sm:px-6 sm:py-20 lg:px-8">
-        <div className="mx-auto max-w-3xl rounded-3xl bg-ink p-8 text-center text-white shadow-xl shadow-ink/20 sm:p-10 lg:p-12">
+      <section className="bg-[linear-gradient(180deg,#0f1722_0%,#121d2b_100%)] px-5 pt-16 sm:px-6 sm:pt-20 lg:px-8 xl:px-12">
+        <div className="mx-auto max-w-3xl xl:max-w-4xl 2xl:max-w-5xl">
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Why we are better</span>
+          <h2 className="mt-3 font-display text-[clamp(26px,4.6vw,44px)] font-black uppercase tracking-tight leading-[1.02] text-white">
+            Built for real athletes. Better than <span className="text-sky">the old way.</span>
+          </h2>
+          <p className="mt-5 text-base leading-relaxed text-white/78">
+            Most people are familiar with our competition. They know it by powder clouds, powder pancakes,
+            or sticks that make your skin sticky. And they know it by chafe marks and blisters when the
+            product failed them.
+          </p>
+          <p className="mt-4 text-base leading-relaxed text-white/78">
+            As opposed to the competition — who targets the casual user — Dry Goods™ was designed to be
+            durable under the most strenuous athletic conditions and with endurance in mind from the start.
+          </p>
+          <p className="mt-4 text-base leading-relaxed text-white/78">
+            Funny enough, shortly after gaining traction a major powder competitor immediately tried to
+            recreate our spray product, but Dry Goods™ outperformed theirs — and still does today.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-[linear-gradient(180deg,#121d2b_0%,#0f1722_100%)] px-5 pb-16 pt-10 sm:px-6 sm:pb-20 sm:pt-12 lg:px-8">
+        <div className="mx-auto max-w-3xl rounded-3xl border border-sky/20 bg-ink p-8 text-center text-white shadow-xl shadow-black/25 sm:p-10 lg:p-12">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Ready to stay dry?</span>
           <h3 className="mt-3 font-display text-[clamp(28px,5vw,48px)] font-black uppercase tracking-tight leading-[1.05] text-white">
             Grab a can. We'll handle <span className="text-sky">the rest.</span>
@@ -98,28 +121,6 @@ function AboutPage() {
               Add to cart <ShoppingCart className="size-4" />
             </button>
           </div>
-        </div>
-      </section>
-
-      <section className="bg-paper px-5 py-16 sm:px-6 sm:py-20 lg:px-8 xl:px-12">
-        <div className="mx-auto max-w-3xl xl:max-w-4xl 2xl:max-w-5xl">
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Why we are better</span>
-          <h2 className="mt-3 font-display text-[clamp(26px,4.6vw,44px)] font-black uppercase tracking-tight leading-[1.02] text-ink">
-            Built for real athletes. Better than <span className="text-sky">the old way.</span>
-          </h2>
-          <p className="mt-5 text-base leading-relaxed text-ink/75">
-            Most people are familiar with our competition. They know it by powder clouds, powder pancakes,
-            or sticks that make your skin sticky. And they know it by chafe marks and blisters when the
-            product failed them.
-          </p>
-          <p className="mt-4 text-base leading-relaxed text-ink/75">
-            As opposed to the competition — who targets the casual user — Dry Goods™ was designed to be
-            durable under the most strenuous athletic conditions and with endurance in mind from the start.
-          </p>
-          <p className="mt-4 text-base leading-relaxed text-ink/75">
-            Funny enough, shortly after gaining traction a major powder competitor immediately tried to
-            recreate our spray product, but Dry Goods™ outperformed theirs — and still does today.
-          </p>
         </div>
       </section>
 
