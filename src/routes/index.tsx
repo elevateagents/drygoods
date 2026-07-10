@@ -277,7 +277,7 @@ function WhyItExists() {
   return (
     <section id="why" className="scroll-mt-16 bg-white px-4 py-16 sm:px-6 sm:py-24 md:py-28 lg:px-8 xl:px-12">
       <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem]">
-        <div className="grid items-start gap-10 xl:grid-cols-[minmax(0,1fr)_minmax(0,0.88fr)] xl:items-center xl:gap-16 2xl:gap-20">
+        <div className="grid items-start gap-10 xl:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] xl:items-center xl:gap-14 2xl:gap-18">
           <div className="overflow-hidden rounded-3xl border border-ink/6 bg-white p-3 shadow-sm shadow-ink/5">
             <img
               src={bodyDiagramImg}
@@ -287,15 +287,15 @@ function WhyItExists() {
               className="h-full w-full object-contain"
             />
           </div>
-          <div className="min-w-0 self-center text-center xl:text-left">
+          <div className="min-w-0 self-center text-center xl:pl-2 xl:text-left 2xl:pl-6">
             <span className="block text-xs font-bold uppercase tracking-[0.25em] text-sky">Why it exists</span>
-            <div className="mx-auto mt-4 max-w-[18rem] overflow-hidden sm:max-w-[24rem] md:max-w-[28rem] lg:max-w-[32rem] xl:mx-0 xl:max-w-[34rem]">
-              <h2 className="text-balance font-display text-[clamp(2rem,5vw,4.25rem)] font-black uppercase leading-[0.94] tracking-tight text-ink">
-                <span className="block">From pain to</span>
-                <span className="mt-1 block text-sky">Performance</span>
+            <div className="mx-auto mt-4 max-w-full xl:mx-0">
+              <h2 className="max-w-full text-balance font-display font-black uppercase leading-[0.9] tracking-[-0.045em] text-ink">
+                <span className="block text-[clamp(2rem,4.7vw,4.4rem)]">From pain to</span>
+                <span className="mt-1 block text-[clamp(1.9rem,4.2vw,3.85rem)] text-sky">Performance</span>
               </h2>
             </div>
-            <div className="mx-auto mt-6 max-w-[36rem] space-y-4 text-base leading-relaxed text-ink/75 sm:text-lg xl:mx-0">
+            <div className="mx-auto mt-6 max-w-[38rem] space-y-4 text-base leading-relaxed text-ink/75 sm:text-lg xl:mx-0">
               <p>Athletes push their limits.</p>
               <p>
                 Dry Goods™ is built to keep up. Designed to combat sweat, moisture, and friction, our advanced
