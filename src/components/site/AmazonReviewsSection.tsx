@@ -51,14 +51,6 @@ const REVIEWS: Review[] = [
     helpful: "17 people found this helpful",
   },
   {
-    name: "Jackberger",
-    rating: 3,
-    title: "Great but expensive",
-    date: "Reviewed in the United States on June 3, 2026",
-    body: "Great product! But pricey... Not sure why the 5 dollar increase since a month ago!?",
-    helpful: "One person found this helpful",
-  },
-  {
     name: "ClutchPin",
     rating: 5,
     title: "Stay Fresh from Every Angle – Even Upside Down!",
@@ -214,7 +206,6 @@ export default function AmazonReviewsSection() {
         }}
       />
 
-
       <style>{`
           .dg-review-mask {
             scrollbar-width: none;
@@ -232,25 +223,22 @@ export default function AmazonReviewsSection() {
           }
         `}</style>
 
-        <div className="relative max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem] mx-auto">
-          {/* Header */}
-          <div className="flex flex-col items-center text-center mb-12">
-            <span className="text-[12px] sm:text-[13px] uppercase tracking-[0.3em] font-bold text-sky mb-4">
-              Loved by Customers
-            </span>
-            <h2 className="font-display font-black uppercase leading-[1.08] tracking-tight text-ink text-[clamp(26px,7vw,76px)] break-words pb-1">
-              Real customers.
-              <br />
-              <span className="text-sky">Real reviews.</span>
-            </h2>
+      <div className="relative max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem] mx-auto">
+        {/* Header */}
+        <div className="flex flex-col items-center text-center mb-12">
+          <span className="text-[12px] sm:text-[13px] uppercase tracking-[0.3em] font-bold text-sky mb-4">
+            Loved by Customers
+          </span>
+          <h2 className="font-display font-black uppercase leading-[1.08] tracking-tight text-ink text-[clamp(26px,7vw,76px)] break-words pb-1">
+            Real customers.
+            <br />
+            <span className="text-sky">Real reviews.</span>
+          </h2>
           <div className="mt-6 flex items-center gap-2 leading-normal">
             <Stars rating={4.5} size={22} />
             <span className="text-ink/70 text-sm font-semibold leading-normal">4.5 out of 5 · 647 global ratings</span>
           </div>
         </div>
-
-
-
 
         {/* Swipe carousel */}
         <div
@@ -259,9 +247,7 @@ export default function AmazonReviewsSection() {
           onPointerDown={pauseAuto}
           onWheel={pauseAuto}
         >
-          <div
-            className="flex w-max gap-5 py-2"
-          >
+          <div className="flex w-max gap-5 py-2">
             {REVIEWS.map((r, i) => (
               <article
                 key={i}
@@ -303,8 +289,6 @@ export default function AmazonReviewsSection() {
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M9 6l6 6-6 6"/></svg>
           </button>
         </div>
-
-
 
         <div className="mt-10 flex justify-center">
           <a
