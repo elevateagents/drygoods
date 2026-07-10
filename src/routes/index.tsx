@@ -289,10 +289,14 @@ function WhyItExists() {
           </div>
           <div className="text-center xl:text-left">
             <span className="block text-xs font-bold uppercase tracking-[0.25em] text-sky">Why it exists</span>
-            <div className="mx-auto mt-3 w-full max-w-[18rem] sm:max-w-[26rem] lg:max-w-[32rem] xl:mx-0 xl:max-w-[34rem]">
-              <h2 className="text-center font-display text-[clamp(1.5rem,6vw,4.75rem)] font-black uppercase leading-[0.92] tracking-tight text-ink xl:text-left">
-                <span className="block">From pain to</span>
-                <span className="mt-1 block text-sky">Performance</span>
+            <div className="mx-auto mt-3 max-w-[19rem] sm:max-w-[23rem] md:max-w-[26rem] lg:max-w-[30rem] xl:mx-0 xl:max-w-[32rem]">
+              <h2 className="font-display font-black uppercase leading-[0.92] tracking-tight text-center xl:text-left">
+                <span className="block whitespace-nowrap text-[2rem] text-ink sm:text-[2.5rem] md:text-[2.9rem] lg:text-[3.35rem] xl:text-[3.9rem]">
+                  From pain to
+                </span>
+                <span className="mt-1 block whitespace-nowrap text-[2.15rem] text-sky sm:text-[2.7rem] md:text-[3.15rem] lg:text-[3.6rem] xl:text-[4.15rem]">
+                  Performance
+                </span>
               </h2>
             </div>
             <p className="mx-auto mt-5 max-w-[36rem] text-base leading-relaxed text-ink/75 sm:text-lg xl:mx-0">
