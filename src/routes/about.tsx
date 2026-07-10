@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { ShoppingCart } from "lucide-react";
 import { Layout } from "@/components/site/Layout";
 import { useCart } from "@/lib/cart-store";
@@ -130,10 +131,85 @@ function AboutPage() {
 }
 
 function ClientLogos() {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const [shouldWarmLogos, setShouldWarmLogos] = useState(false);
   const marqueeLogos = [...clientLogos, ...clientLogos];
+  const uniqueLogoSources = useMemo(
+    () => Array.from(new Set(clientLogos.map((logo) => logo.src))),
+    [],
+  );
+  const eagerlyLoadedPerTrack = 6;
+
+  useEffect(() => {
+    const node = sectionRef.current;
+    if (!node || typeof IntersectionObserver === "undefined") {
+      setShouldWarmLogos(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldWarmLogos(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "600px 0px" },
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!shouldWarmLogos || typeof Image === "undefined") {
+      return;
+    }
+
+    let cancelled = false;
+    const queue = [...uniqueLogoSources];
+    const cache = new Set<string>();
+    const concurrency = 4;
+    let active = 0;
+
+    const pump = () => {
+      if (cancelled) {
+        return;
+      }
+
+      while (active < concurrency && queue.length > 0) {
+        const src = queue.shift();
+        if (!src || cache.has(src)) {
+          continue;
+        }
+
+        active += 1;
+        const image = new Image();
+        image.decoding = "async";
+
+        const finalize = () => {
+          if (cache.has(src)) {
+            return;
+          }
+          cache.add(src);
+          active -= 1;
+          pump();
+        };
+
+        image.onload = finalize;
+        image.onerror = finalize;
+        image.src = src;
+      }
+    };
+
+    pump();
+    return () => {
+      cancelled = true;
+    };
+  }, [shouldWarmLogos, uniqueLogoSources]);
 
   return (
-    <section className="bg-paper px-5 pb-20 sm:px-6 lg:px-8">
+    <section ref={sectionRef} className="bg-paper px-5 pb-20 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
         <style>{`
           @keyframes client-logo-marquee {
@@ -171,17 +247,21 @@ function ClientLogos() {
           }}
         >
           <div className="client-logo-track client-logo-track-primary flex w-max gap-3 py-2">
-            {marqueeLogos.map((logo, index) => (
-              <div key={`${logo.name}-${index}`} className="grid h-24 w-40 shrink-0 place-items-center rounded-2xl border border-ink/10 bg-white px-4 py-5 shadow-sm shadow-ink/5 sm:w-44 lg:w-48">
-                <img
-                  src={logo.src}
-                  alt={`${logo.name} logo`}
-                  decoding="async"
-                  loading="lazy"
-                  className={`client-logo-mark max-h-12 w-auto max-w-full object-contain sm:max-h-14 ${logo.className}`}
-                />
-              </div>
-            ))}
+            {marqueeLogos.map((logo, index) => {
+              const shouldEagerLoad = index < eagerlyLoadedPerTrack;
+              return (
+                <div key={`${logo.name}-${index}`} className="grid h-24 w-40 shrink-0 place-items-center rounded-2xl border border-ink/10 bg-white px-4 py-5 shadow-sm shadow-ink/5 sm:w-44 lg:w-48">
+                  <img
+                    src={logo.src}
+                    alt={`${logo.name} logo`}
+                    decoding="async"
+                    loading={shouldEagerLoad ? "eager" : "lazy"}
+                    fetchPriority={shouldEagerLoad ? "high" : "auto"}
+                    className={`client-logo-mark max-h-12 w-auto max-w-full object-contain sm:max-h-14 ${logo.className}`}
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
         <div
@@ -192,17 +272,21 @@ function ClientLogos() {
           }}
         >
           <div className="client-logo-track client-logo-track-secondary flex w-max gap-3 py-2">
-            {marqueeLogos.slice().reverse().map((logo, index) => (
-              <div key={`${logo.name}-reverse-${index}`} className="grid h-24 w-40 shrink-0 place-items-center rounded-2xl border border-ink/10 bg-white px-4 py-5 shadow-sm shadow-ink/5 sm:w-44 lg:w-48">
-                <img
-                  src={logo.src}
-                  alt=""
-                  decoding="async"
-                  loading="lazy"
-                  className={`client-logo-mark max-h-12 w-auto max-w-full object-contain sm:max-h-14 ${logo.className}`}
-                />
-              </div>
-            ))}
+            {marqueeLogos.slice().reverse().map((logo, index) => {
+              const shouldEagerLoad = index < eagerlyLoadedPerTrack;
+              return (
+                <div key={`${logo.name}-reverse-${index}`} className="grid h-24 w-40 shrink-0 place-items-center rounded-2xl border border-ink/10 bg-white px-4 py-5 shadow-sm shadow-ink/5 sm:w-44 lg:w-48">
+                  <img
+                    src={logo.src}
+                    alt=""
+                    decoding="async"
+                    loading={shouldEagerLoad ? "eager" : "lazy"}
+                    fetchPriority={shouldEagerLoad ? "high" : "auto"}
+                    className={`client-logo-mark max-h-12 w-auto max-w-full object-contain sm:max-h-14 ${logo.className}`}
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
         <div className="sr-only">
