@@ -216,7 +216,7 @@ function ComparisonSection() {
     <section className="bg-gradient-to-tr from-ink via-[#111111] to-black py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 xl:px-12">
       <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem] mx-auto">
         <div className="text-center max-w-4xl xl:max-w-5xl mx-auto">
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Old way vs new way</span>
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Old way vs our way</span>
           <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(30px,6vw,72px)] leading-[0.98] text-white">
             The problem with <span className="block text-sky">traditional powders.</span>
           </h2>
@@ -321,19 +321,19 @@ function PerformanceCardsSection() {
   ];
 
   return (
-    <section className="bg-[#edf6fb] py-12 sm:py-14 px-5 sm:px-6 lg:px-8 xl:px-12 border-t border-ink/5">
+    <section className="bg-ink py-12 sm:py-14 px-5 sm:px-6 lg:px-8 xl:px-12 border-t border-white/10">
       <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem] mx-auto">
         <div className="max-w-3xl">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">What gets in the way</span>
-          <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(20px,3.8vw,38px)] leading-[1.05] text-ink">
+          <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(20px,3.8vw,38px)] leading-[1.05] text-white">
             The everyday friction that pulls athletes off pace.
           </h3>
         </div>
         <div className="mt-8 grid gap-4 md:grid-cols-3 lg:gap-5">
           {cards.map((card) => (
-            <div key={card.title} className="rounded-[1.75rem] border border-ink/10 bg-white px-6 py-6 shadow-sm shadow-sky/10">
+            <div key={card.title} className="rounded-[1.75rem] border border-white/10 bg-white/10 px-6 py-6 shadow-sm shadow-black/20">
               <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky">{card.title}</p>
-              <p className="mt-4 text-base leading-relaxed text-ink/80">{card.body}</p>
+              <p className="mt-4 text-base leading-relaxed text-white/82">{card.body}</p>
             </div>
           ))}
         </div>
