@@ -96,7 +96,7 @@ function Hero() {
               fetchPriority="high"
               decoding="async"
               sizes="100vw"
-              className="h-full w-full object-cover object-[center_45%] md:block md:h-full md:w-full md:max-w-none md:object-[center_56%] lg:object-[center_57%] xl:object-[center_58%]"
+              className="h-full w-full object-cover object-[center_45%] md:max-lg:object-contain md:max-lg:scale-[1.03] md:max-lg:object-center lg:h-full lg:w-full lg:max-w-none lg:object-[center_57%] xl:object-[center_58%]"
             />
           </picture>
         </motion.div>
@@ -170,15 +170,15 @@ function TrustBar() {
 function Introducing() {
   return (
     <section id="introducing" className="border-t border-ink/5 bg-white px-4 py-16 sm:px-6 sm:py-24 md:py-28 lg:px-8 xl:px-12">
-      <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-2 lg:gap-16 xl:max-w-7xl xl:gap-24 2xl:max-w-[90rem]">
+      <div className="mx-auto grid max-w-6xl items-center gap-8 xl:grid-cols-2 xl:gap-24 xl:max-w-7xl 2xl:max-w-[90rem]">
         <div className="relative aspect-[4/5] overflow-hidden rounded-3xl sm:aspect-square">
           <img src={productConcrete} alt="Dry Goods Athletic Spray Powder can" loading="lazy" decoding="async" className="h-full w-full object-cover" />
         </div>
-        <div className="text-center lg:text-left">
-          <span className="mx-auto block max-w-[18rem] text-[10px] font-bold uppercase leading-snug tracking-[0.16em] text-sky sm:max-w-none sm:text-xs sm:tracking-[0.25em] lg:mx-0">
+        <div className="text-center xl:text-left">
+          <span className="mx-auto block max-w-[18rem] text-[10px] font-bold uppercase leading-snug tracking-[0.16em] text-sky sm:max-w-none sm:text-xs sm:tracking-[0.25em] xl:mx-0">
             Introducing <span className="sm:hidden">Dry Goods Spray Powder</span><span className="hidden sm:inline">Dry Goods Athletic Spray Powder</span>
           </span>
-          <h2 className="mx-auto mt-3 max-w-[22rem] text-balance font-display text-[clamp(1.9rem,9vw,3.25rem)] font-black uppercase leading-[0.98] tracking-tight text-ink sm:max-w-[30rem] lg:mx-0 lg:max-w-none">
+          <h2 className="mx-auto mt-3 max-w-[22rem] text-balance font-display text-[clamp(1.9rem,9vw,3.25rem)] font-black uppercase leading-[0.98] tracking-tight text-ink sm:max-w-[30rem] xl:mx-0 xl:max-w-none">
             A new kind of <span className="block text-sky sm:inline">anti-chafe spray.</span>
           </h2>
           <p className="mt-5 text-base leading-relaxed text-ink/75 sm:text-lg">
@@ -225,8 +225,8 @@ function ComparisonSection() {
           </p>
         </div>
 
-        <div className="mt-12 grid items-stretch gap-6 lg:grid-cols-2 xl:gap-10">
-          <div className="rounded-[2rem] border border-white/12 bg-white/10 p-6 text-center sm:p-8 lg:text-left lg:p-10">
+        <div className="mt-12 grid items-stretch gap-6 xl:grid-cols-2 xl:gap-10">
+          <div className="rounded-[2rem] border border-white/12 bg-white/10 p-6 text-center sm:p-8 xl:text-left xl:p-10">
             <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-white/50">The old way</p>
             <h3 className="mt-3 text-balance break-words font-display text-[clamp(1.8rem,5vw,3.5rem)] font-black uppercase leading-[0.95] tracking-tight text-white">
               Bottle powder
@@ -247,7 +247,7 @@ function ComparisonSection() {
             </ul>
           </div>
 
-          <div className="rounded-[2rem] border-2 border-sky bg-sky-soft p-6 text-center sm:p-8 lg:text-left lg:p-10">
+          <div className="rounded-[2rem] border-2 border-sky bg-sky-soft p-6 text-center sm:p-8 xl:text-left xl:p-10">
             <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-sky">Dry Goods Athletic Spray Powder</p>
             <h3 className="mt-3 text-balance break-words font-display text-[clamp(1.8rem,5vw,3.5rem)] font-black uppercase leading-[0.95] tracking-tight text-ink">
               Patented spray-to-powder
@@ -275,31 +275,37 @@ function ComparisonSection() {
 
 function WhyItExists() {
   return (
-    <section id="why" className="scroll-mt-16 border-t border-ink/5 bg-paper px-4 py-16 sm:px-6 sm:py-24 md:py-28 lg:px-8 xl:px-12">
-      <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-2 lg:gap-16 xl:max-w-7xl xl:gap-24 2xl:max-w-[90rem]">
-        <div className="relative overflow-hidden rounded-3xl bg-white p-3 shadow-sm shadow-ink/5">
-          <img src={bodyDiagramImg} alt="Safe on all skin types benefits diagram" loading="lazy" decoding="async" className="h-full w-full object-contain" />
-        </div>
-        <div className="text-center lg:text-left">
-          <span className="block text-xs font-bold uppercase tracking-[0.25em] text-sky">Why it exists</span>
-          <div className="mt-3 block max-w-full text-center lg:text-left">
-            <h2 className="mx-auto max-w-[16rem] pb-1 font-display text-[clamp(1.9rem,6vw,3.4rem)] font-black uppercase leading-[0.92] tracking-tight text-ink sm:max-w-[20rem] lg:mx-0 lg:max-w-none lg:text-[clamp(2.3rem,4vw,4.4rem)]">
-              <span className="block whitespace-nowrap">From pain to</span>
-              <span className="block whitespace-nowrap text-sky">Performance</span>
-            </h2>
+    <section id="why" className="scroll-mt-16 bg-white px-4 py-16 sm:px-6 sm:py-24 md:py-28 lg:px-8 xl:px-12">
+      <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem]">
+        <div className="grid gap-8 xl:grid-cols-[minmax(0,1.02fr)_minmax(0,0.98fr)] xl:items-center xl:gap-20">
+          <div className="overflow-hidden rounded-3xl border border-ink/6 bg-white p-3 shadow-sm shadow-ink/5">
+            <img
+              src={bodyDiagramImg}
+              alt="Safe on all skin types benefits diagram"
+              loading="lazy"
+              decoding="async"
+              className="h-full w-full object-contain"
+            />
           </div>
-          <p className="mx-auto mt-5 max-w-[34rem] text-base leading-relaxed text-ink/75 sm:text-lg lg:mx-0">
-            Athletes push their limits.
-          </p>
-          <p className="mx-auto mt-4 max-w-[34rem] text-base leading-relaxed text-ink/75 sm:text-lg lg:mx-0">
-            Dry Goods™ is built to keep up. Designed to combat sweat, moisture, and friction, our advanced
-            formula delivers long-lasting dryness and all-day comfort.
-          </p>
-          <p className="mx-auto mt-4 max-w-[34rem] text-base leading-relaxed text-ink/75 sm:text-lg lg:mx-0">
-            Whether you&apos;re on the field, in the gym, or pushing through intense training, Dry Goods™ helps
-            you stay cool, dry, and performing at your best. No mess, no residue — just powerful protection
-            when you need it most. Try it once, and you&apos;ll never train without it.
-          </p>
+          <div className="text-center xl:text-left">
+            <span className="block text-xs font-bold uppercase tracking-[0.25em] text-sky">Why it exists</span>
+            <h2 className="mx-auto mt-3 max-w-[18rem] font-display text-[clamp(1.85rem,6vw,3.35rem)] font-black uppercase leading-[0.94] tracking-tight text-ink sm:max-w-[22rem] xl:mx-0 xl:max-w-[24rem] xl:text-[clamp(2.5rem,4vw,4.15rem)]">
+              <span className="block">From pain to</span>
+              <span className="mt-1 block text-sky">Performance</span>
+            </h2>
+            <p className="mx-auto mt-5 max-w-[36rem] text-base leading-relaxed text-ink/75 sm:text-lg xl:mx-0">
+              Athletes push their limits.
+            </p>
+            <p className="mx-auto mt-4 max-w-[36rem] text-base leading-relaxed text-ink/75 sm:text-lg xl:mx-0">
+              Dry Goods™ is built to keep up. Designed to combat sweat, moisture, and friction, our advanced
+              formula delivers long-lasting dryness and all-day comfort.
+            </p>
+            <p className="mx-auto mt-4 max-w-[36rem] text-base leading-relaxed text-ink/75 sm:text-lg xl:mx-0">
+              Whether you&apos;re on the field, in the gym, or pushing through intense training, Dry Goods™ helps
+              you stay cool, dry, and performing at your best. No mess, no residue — just powerful protection
+              when you need it most. Try it once, and you&apos;ll never train without it.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -331,9 +337,9 @@ function PerformanceCardsSection() {
             The everyday friction that pulls athletes off pace.
           </h3>
         </div>
-        <div className="mt-8 grid gap-4 lg:grid-cols-3 lg:gap-5 xl:gap-6">
+        <div className="mt-8 grid gap-4 xl:grid-cols-3 xl:gap-6">
           {cards.map((card) => (
-            <div key={card.title} className="rounded-[1.75rem] border border-white/10 bg-white/10 px-6 py-6 text-center shadow-sm shadow-black/20 sm:p-7 lg:text-left">
+            <div key={card.title} className="rounded-[1.75rem] border border-white/10 bg-white/10 px-6 py-6 text-center shadow-sm shadow-black/20 sm:p-7 xl:text-left">
               <p className="text-balance text-[11px] font-bold uppercase tracking-[0.2em] text-sky">{card.title}</p>
               <p className="mt-4 text-base leading-relaxed text-white/82">{card.body}</p>
             </div>
@@ -366,12 +372,12 @@ function Buy() {
           </h2>
         </div>
 
-        <div className="grid min-w-0 items-start gap-6 overflow-hidden rounded-3xl bg-grey p-4 shadow-xl shadow-ink/5 sm:p-8 lg:grid-cols-2 lg:items-center lg:gap-14 lg:p-12 xl:gap-20 xl:p-16">
+        <div className="grid min-w-0 items-start gap-6 overflow-hidden rounded-3xl bg-grey p-4 shadow-xl shadow-ink/5 sm:p-8 xl:grid-cols-2 xl:items-center xl:gap-20 xl:p-16">
           <div className="relative flex aspect-square items-center justify-center overflow-hidden rounded-2xl bg-white p-2 sm:p-3">
             <img src={productImg} alt="Dry Goods Athletic Spray Powder can" loading="lazy" decoding="async" className="h-full w-full object-contain" />
             <span className="absolute left-4 top-4 rounded-full bg-ink px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-white">In Stock</span>
           </div>
-          <div className="min-w-0 text-center lg:text-left">
+          <div className="min-w-0 text-center xl:text-left">
             <h3 className="font-sans text-[clamp(22px,7vw,36px)] font-bold leading-[1.08] tracking-tight text-ink sm:text-[clamp(24px,5.5vw,36px)]">
               <span className="block">Dry Goods</span>
               <span className="block">Athletic Spray Powder</span>
@@ -422,7 +428,7 @@ function Buy() {
                 <ShoppingCart className="size-5 shrink-0" />
                 <span className="min-w-0 break-words text-center">Add to Cart — ${selected.price.toFixed(2)}</span>
               </button>
-              <p className="text-center text-[11px] font-semibold uppercase tracking-wider text-ink/60 sm:text-xs lg:text-left">
+              <p className="text-center text-[11px] font-semibold uppercase tracking-wider text-ink/60 sm:text-xs xl:text-left">
                 30-Day Money-Back Guarantee · Free Returns
               </p>
             </div>
