@@ -289,9 +289,9 @@ function WhyItExists() {
           </div>
           <div className="text-center xl:text-left">
             <span className="block text-xs font-bold uppercase tracking-[0.25em] text-sky">Why it exists</span>
-            <div className="mx-auto mt-3 flex max-w-[15rem] flex-col items-center xl:mx-0 xl:max-w-[21rem] xl:items-start">
-              <h2 className="text-center font-display text-[clamp(1.5rem,4.8vw,3.5rem)] font-black uppercase leading-[0.92] tracking-tight text-ink xl:text-left">
-                <span className="block whitespace-nowrap">From pain to</span>
+            <div className="mx-auto mt-3 w-full max-w-[18rem] sm:max-w-[26rem] lg:max-w-[32rem] xl:mx-0 xl:max-w-[34rem]">
+              <h2 className="text-center font-display text-[clamp(1.5rem,6vw,4.75rem)] font-black uppercase leading-[0.92] tracking-tight text-ink xl:text-left">
+                <span className="block">From pain to</span>
                 <span className="mt-1 block text-sky">Performance</span>
               </h2>
             </div>
@@ -303,9 +303,9 @@ function WhyItExists() {
               formula delivers long-lasting dryness and all-day comfort.
             </p>
             <p className="mx-auto mt-4 max-w-[36rem] text-base leading-relaxed text-ink/75 sm:text-lg xl:mx-0">
-              Whether you&apos;re on the field, in the gym, or pushing through intense training, Dry Goods™ helps
+              Whether you're on the field, in the gym, or pushing through intense training, Dry Goods™ helps
               you stay cool, dry, and performing at your best. No mess, no residue — just powerful protection
-              when you need it most. Try it once, and you&apos;ll never train without it.
+              when you need it most. Try it once, and you'll never train without it.
             </p>
           </div>
         </div>
