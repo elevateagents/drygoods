@@ -184,7 +184,7 @@ export default function AmazonReviewsSection() {
   return (
     <section
       id="reviews"
-      className="relative py-20 sm:py-24 md:py-32 px-5 sm:px-6 lg:px-8 scroll-mt-16 overflow-hidden bg-white"
+      className="relative scroll-mt-16 overflow-hidden bg-white px-4 py-16 sm:px-6 sm:py-24 md:py-28 lg:px-8"
     >
       {/* Decorative background — blue-tinted */}
       <div
@@ -223,47 +223,47 @@ export default function AmazonReviewsSection() {
           }
         `}</style>
 
-      <div className="relative max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem] mx-auto">
+      <div className="relative mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem]">
         {/* Header */}
-        <div className="flex flex-col items-center text-center mb-12">
-          <span className="text-[12px] sm:text-[13px] uppercase tracking-[0.3em] font-bold text-sky mb-4">
+        <div className="mb-12 flex flex-col items-center text-center">
+          <span className="mb-4 text-[12px] font-bold uppercase tracking-[0.3em] text-sky sm:text-[13px]">
             Loved by Customers
           </span>
-          <h2 className="font-display font-black uppercase leading-[1.08] tracking-tight text-ink text-[clamp(26px,7vw,76px)] break-words pb-1">
+          <h2 className="pb-1 font-display text-[clamp(1.9rem,7vw,4.75rem)] font-black uppercase leading-[1.08] tracking-tight text-ink text-balance">
             Real customers.
             <br />
             <span className="text-sky">Real reviews.</span>
           </h2>
-          <div className="mt-6 flex items-center gap-2 leading-normal">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-2 leading-normal">
             <Stars rating={4.5} size={22} />
-            <span className="text-ink/70 text-sm font-semibold leading-normal">4.5 out of 5 · 647 global ratings</span>
+            <span className="text-sm font-semibold leading-normal text-ink/70">4.5 out of 5 · 647 global ratings</span>
           </div>
         </div>
 
         {/* Swipe carousel */}
         <div
           ref={wrapRef}
-          className="dg-review-mask relative overflow-x-auto overscroll-x-contain scroll-smooth snap-x snap-mandatory"
+          className="dg-review-mask relative overflow-x-auto overscroll-x-contain scroll-smooth snap-x snap-mandatory px-1"
           onPointerDown={pauseAuto}
           onWheel={pauseAuto}
         >
-          <div className="flex w-max gap-5 py-2">
+          <div className="flex w-max gap-4 py-2 sm:gap-5">
             {REVIEWS.map((r, i) => (
               <article
                 key={i}
                 ref={(node) => { cardRefs.current[i] = node; }}
-                className="snap-start scroll-ml-0 shrink-0 w-[300px] sm:w-[340px] bg-white border border-ink/10 rounded-2xl p-6 flex flex-col gap-3"
+                className="snap-start scroll-ml-0 flex w-[82vw] max-w-[340px] shrink-0 flex-col gap-3 rounded-2xl border border-ink/10 bg-white p-5 sm:w-[340px] sm:p-6"
               >
                 <div className="flex items-center gap-1.5">
-                  <span className="font-bold text-ink text-sm leading-normal">{r.name}</span>
+                  <span className="text-sm font-bold leading-normal text-ink">{r.name}</span>
                   <VerifiedBadge />
                 </div>
                 <Stars rating={r.rating} size={16} />
-                <h3 className="font-sans font-bold text-ink text-[15px] leading-[1.35] pb-0.5">{r.title}</h3>
-                <p className="text-xs text-ink/50 leading-normal">{r.date}</p>
-                <p className="text-ink/80 text-[14px] leading-relaxed line-clamp-6">{r.body}</p>
+                <h3 className="pb-0.5 font-sans text-[15px] font-bold leading-[1.35] text-ink">{r.title}</h3>
+                <p className="text-xs leading-normal text-ink/50">{r.date}</p>
+                <p className="text-[14px] leading-relaxed text-ink/80 line-clamp-6">{r.body}</p>
                 {r.helpful && (
-                  <p className="mt-auto pt-2 text-xs text-ink/50 leading-normal">{r.helpful}</p>
+                  <p className="mt-auto pt-2 text-xs leading-normal text-ink/50">{r.helpful}</p>
                 )}
               </article>
             ))}
@@ -276,7 +276,7 @@ export default function AmazonReviewsSection() {
             type="button"
             onClick={() => nudge(-1)}
             aria-label="Previous review"
-            className="h-12 w-12 inline-flex items-center justify-center rounded-full bg-white border border-ink/15 text-ink hover:bg-ink hover:text-white transition-colors shadow-sm"
+            className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-ink/15 bg-white text-ink shadow-sm transition-colors hover:bg-ink hover:text-white"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M15 18l-6-6 6-6"/></svg>
           </button>
@@ -284,7 +284,7 @@ export default function AmazonReviewsSection() {
             type="button"
             onClick={() => nudge(1)}
             aria-label="Next review"
-            className="h-12 w-12 inline-flex items-center justify-center rounded-full bg-white border border-ink/15 text-ink hover:bg-ink hover:text-white transition-colors shadow-sm"
+            className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-ink/15 bg-white text-ink shadow-sm transition-colors hover:bg-ink hover:text-white"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M9 6l6 6-6 6"/></svg>
           </button>
@@ -295,7 +295,7 @@ export default function AmazonReviewsSection() {
             href="https://www.amazon.com/dp/B003YTUWJ8"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-ink hover:bg-ink/90 transition-colors text-white px-8 py-4 font-bold text-sm uppercase tracking-widest rounded-full shadow-lg"
+            className="inline-flex min-h-12 items-center gap-2 rounded-full bg-ink px-6 py-4 text-center text-sm font-bold uppercase tracking-[0.18em] text-white shadow-lg transition-colors hover:bg-ink/90 sm:px-8"
           >
             See all reviews on Amazon
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
