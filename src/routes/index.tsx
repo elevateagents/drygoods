@@ -291,8 +291,8 @@ function WhyItExists() {
             <span className="block text-xs font-bold uppercase tracking-[0.25em] text-sky">Why it exists</span>
             <div className="mx-auto mt-4 max-w-full xl:mx-0">
               <h2 className="max-w-full text-balance font-display font-black uppercase leading-[0.9] tracking-[-0.045em] text-ink">
-                <span className="block text-[clamp(2rem,4.7vw,4.4rem)]">From pain to</span>
-                <span className="mt-1 block text-[clamp(1.9rem,4.2vw,3.85rem)] text-sky">Performance</span>
+                <span className="block text-[clamp(1.6rem,8vw,4.4rem)] sm:text-[clamp(2rem,4.7vw,4.4rem)]">From pain to</span>
+                <span className="mt-1 block text-[clamp(1.45rem,7.2vw,3.25rem)] text-sky sm:text-[clamp(1.9rem,4.2vw,3.85rem)]">Performance</span>
               </h2>
             </div>
             <div className="mx-auto mt-6 max-w-[38rem] space-y-4 text-base leading-relaxed text-ink/75 sm:text-lg xl:mx-0">
@@ -387,7 +387,7 @@ function Buy() {
             <p className="mt-2 max-w-full break-words text-sm leading-relaxed text-ink/70 sm:text-base">
               One cool spray. All day dry.
             </p>
-            <div className="mt-5 grid min-w-0 gap-1 sm:flex sm:flex-wrap sm:items-baseline sm:gap-x-3">
+            <div className="mt-5 flex min-w-0 items-baseline justify-center gap-x-3 xl:justify-start">
               <span className="font-sans text-4xl font-bold leading-none text-ink sm:text-5xl">${selected.price.toFixed(2)}</span>
             </div>
             <p className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-700">
