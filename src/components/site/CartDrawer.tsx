@@ -75,7 +75,7 @@ export function CartDrawer() {
                   {lines.map((l: import("@/lib/cart-store").CartLine) => (
                     <li key={l.id} className="flex gap-4">
                       <div className="size-20 bg-ice/40 shrink-0 grid place-items-center">
-                        <img src={canHero.url} alt="" className="h-16 w-auto" />
+                        <img src={canHero.url} alt="" loading="lazy" decoding="async" className="h-16 w-auto" />
                       </div>
                       <div className="flex-1">
                         <p className="font-sans font-bold tracking-tight text-sm leading-tight">{l.title}</p>
