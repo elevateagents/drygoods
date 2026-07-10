@@ -88,6 +88,9 @@ const REVIEWS: Review[] = [
   },
 ];
 
+const LOOP_REVIEWS = [...REVIEWS, ...REVIEWS, ...REVIEWS];
+const LOOP_START_INDEX = REVIEWS.length;
+
 function Stars({ rating, size = 16 }: { rating: number; size?: number }) {
   const pct = (rating / 5) * 100;
   return (
@@ -139,10 +142,17 @@ export default function AmazonReviewsSection() {
     resumeTimerRef.current = setTimeout(() => setAutoPaused(false), 5000);
   };
 
+  const scrollToIndex = (index: number, behavior: ScrollBehavior = "smooth") => {
+    const wrap = wrapRef.current;
+    const card = cardRefs.current[index];
+    if (!wrap || !card) return;
+    wrap.scrollTo({ left: card.offsetLeft, behavior });
+  };
+
   const nearestIndex = () => {
     const wrap = wrapRef.current;
-    if (!wrap) return 0;
-    let index = 0;
+    if (!wrap) return LOOP_START_INDEX;
+    let index = LOOP_START_INDEX;
     let distance = Number.POSITIVE_INFINITY;
     cardRefs.current.forEach((card, i) => {
       if (!card) return;
@@ -155,25 +165,45 @@ export default function AmazonReviewsSection() {
     return index;
   };
 
-  const scrollToIndex = (index: number) => {
-    const wrap = wrapRef.current;
-    const card = cardRefs.current[index];
-    if (!wrap || !card) return;
-    wrap.scrollTo({ left: index === 0 ? 0 : card.offsetLeft, behavior: "smooth" });
+  const normalizeLoopPosition = (index: number) => {
+    if (index < REVIEWS.length) {
+      scrollToIndex(index + REVIEWS.length, "auto");
+      return index + REVIEWS.length;
+    }
+    if (index >= REVIEWS.length * 2) {
+      scrollToIndex(index - REVIEWS.length, "auto");
+      return index - REVIEWS.length;
+    }
+    return index;
   };
 
   const nudge = (dir: 1 | -1, pause = true) => {
     if (pause) pauseAuto();
-    const current = nearestIndex();
-    const next = (current + dir + REVIEWS.length) % REVIEWS.length;
-    scrollToIndex(next);
+    const current = normalizeLoopPosition(nearestIndex());
+    scrollToIndex(current + dir);
   };
+
+  useEffect(() => {
+    scrollToIndex(LOOP_START_INDEX, "auto");
+  }, []);
 
   useEffect(() => {
     if (autoPaused) return;
     const interval = setInterval(() => nudge(1, false), 4500);
     return () => clearInterval(interval);
   }, [autoPaused]);
+
+  useEffect(() => {
+    const wrap = wrapRef.current;
+    if (!wrap) return;
+
+    const handleScroll = () => {
+      normalizeLoopPosition(nearestIndex());
+    };
+
+    wrap.addEventListener("scroll", handleScroll, { passive: true });
+    return () => wrap.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     return () => {
@@ -186,7 +216,6 @@ export default function AmazonReviewsSection() {
       id="reviews"
       className="relative scroll-mt-16 overflow-hidden bg-white px-4 py-16 sm:px-6 sm:py-24 md:py-28 lg:px-8"
     >
-      {/* Decorative background — blue-tinted */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-[0.15]"
@@ -224,7 +253,6 @@ export default function AmazonReviewsSection() {
         `}</style>
 
       <div className="relative mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem]">
-        {/* Header */}
         <div className="mb-12 flex flex-col items-center text-center">
           <span className="mb-4 text-[12px] font-bold uppercase tracking-[0.3em] text-sky sm:text-[13px]">
             Loved by Customers
@@ -240,7 +268,6 @@ export default function AmazonReviewsSection() {
           </div>
         </div>
 
-        {/* Swipe carousel */}
         <div
           ref={wrapRef}
           className="dg-review-mask relative overflow-x-auto overscroll-x-contain scroll-smooth snap-x snap-mandatory px-1"
@@ -248,11 +275,11 @@ export default function AmazonReviewsSection() {
           onWheel={pauseAuto}
         >
           <div className="flex w-max gap-4 py-2 sm:gap-5">
-            {REVIEWS.map((r, i) => (
+            {LOOP_REVIEWS.map((r, i) => (
               <article
-                key={i}
+                key={`${r.name}-${i}`}
                 ref={(node) => { cardRefs.current[i] = node; }}
-                className="snap-start scroll-ml-0 flex w-[82vw] max-w-[340px] shrink-0 flex-col gap-3 rounded-2xl border border-ink/10 bg-white p-5 sm:w-[340px] sm:p-6"
+                className="snap-start scroll-ml-0 flex w-[88vw] max-w-[420px] shrink-0 flex-col gap-3 rounded-2xl border border-ink/10 bg-white p-5 sm:w-[420px] sm:p-6"
               >
                 <div className="flex items-center gap-1.5">
                   <span className="text-sm font-bold leading-normal text-ink">{r.name}</span>
@@ -261,7 +288,7 @@ export default function AmazonReviewsSection() {
                 <Stars rating={r.rating} size={16} />
                 <h3 className="pb-0.5 font-sans text-[15px] font-bold leading-[1.35] text-ink">{r.title}</h3>
                 <p className="text-xs leading-normal text-ink/50">{r.date}</p>
-                <p className="text-[14px] leading-relaxed text-ink/80 line-clamp-6">{r.body}</p>
+                <p className="text-[14px] leading-relaxed text-ink/80">{r.body}</p>
                 {r.helpful && (
                   <p className="mt-auto pt-2 text-xs leading-normal text-ink/50">{r.helpful}</p>
                 )}
@@ -270,7 +297,6 @@ export default function AmazonReviewsSection() {
           </div>
         </div>
 
-        {/* Controls — arrows only */}
         <div className="mt-6 flex items-center justify-center gap-4">
           <button
             type="button"
