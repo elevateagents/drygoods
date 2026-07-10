@@ -6,7 +6,7 @@ const sections = [
     title: "I. Who We Are",
     body: [
       "Joyce Labs, LLC is an outsourced ecommerce retail center. DryGoods.com is the official website of Joyce Labs, LLC.",
-      "Contact details: Joyce Labs, LLC, 4805 Wynneford Way, Raleigh, NC 27614. Email: info@drygoods.com. Phone: 919-873-4800.",
+      "Contact details: Joyce Labs, LLC, 4805 Wynneford Way, Raleigh, NC 27614. Email: info@drygoods.com. Phone: 305-769-8397.",
       "Questions about data practices may be sent to the same postal address, email, or phone number.",
     ],
   },
@@ -122,20 +122,20 @@ function LegalPage() {
         <div className="mx-auto max-w-4xl">
           <div className="overflow-hidden rounded-3xl border border-ink/10 bg-white px-4 py-6 shadow-lg shadow-ink/5 sm:rounded-[2rem] sm:p-10 sm:shadow-xl lg:p-12">
             <span className="block text-[11px] font-bold uppercase tracking-[0.22em] text-sky sm:text-xs sm:tracking-[0.25em]">Legal Notice</span>
-            <h1 className="mt-3 font-display text-[clamp(32px,15vw,64px)] font-black uppercase leading-[0.95] tracking-tight text-ink break-words">
+            <h1 className="mt-3 break-words font-display text-[clamp(32px,15vw,64px)] font-black uppercase leading-[0.95] tracking-tight text-ink">
               Privacy Policy
             </h1>
-            <p className="mt-5 max-w-3xl text-[15px] leading-7 text-ink/70 break-words sm:text-base sm:leading-relaxed">
+            <p className="mt-5 max-w-3xl break-words text-[15px] leading-7 text-ink/70 sm:text-base sm:leading-relaxed">
               This notice explains how Joyce Labs, LLC collects, uses, shares, and stores information about visitors and interactions with DryGoods.com. Last updated March 1, 2020.
             </p>
 
             <div className="mt-8 space-y-7 sm:mt-10 sm:space-y-9">
               {sections.map((section) => (
                 <section key={section.title} className="border-t border-ink/10 pt-6 sm:pt-7">
-                  <h2 className="font-display text-xl font-black uppercase leading-tight tracking-tight text-ink break-words sm:text-2xl">
+                  <h2 className="break-words font-display text-xl font-black uppercase leading-tight tracking-tight text-ink sm:text-2xl">
                     {section.title}
                   </h2>
-                  <div className="mt-3 space-y-3 text-[15px] leading-7 text-ink/75 break-words sm:mt-4 sm:space-y-4 sm:text-base sm:leading-relaxed">
+                  <div className="mt-3 space-y-3 break-words text-[15px] leading-7 text-ink/75 sm:mt-4 sm:space-y-4 sm:text-base sm:leading-relaxed">
                     {section.body.map((paragraph) => (
                       <p key={paragraph}>{paragraph}</p>
                     ))}
