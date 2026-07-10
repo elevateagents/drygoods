@@ -289,10 +289,12 @@ function WhyItExists() {
           </div>
           <div className="text-center xl:text-left">
             <span className="block text-xs font-bold uppercase tracking-[0.25em] text-sky">Why it exists</span>
-            <h2 className="mx-auto mt-3 max-w-[18rem] font-display text-[clamp(1.85rem,6vw,3.35rem)] font-black uppercase leading-[0.94] tracking-tight text-ink sm:max-w-[22rem] xl:mx-0 xl:max-w-[24rem] xl:text-[clamp(2.5rem,4vw,4.15rem)]">
-              <span className="block">From pain to</span>
-              <span className="mt-1 block text-sky">Performance</span>
-            </h2>
+            <div className="mx-auto mt-3 flex max-w-[15rem] flex-col items-center xl:mx-0 xl:max-w-[21rem] xl:items-start">
+              <h2 className="text-center font-display text-[clamp(1.5rem,4.8vw,3.5rem)] font-black uppercase leading-[0.92] tracking-tight text-ink xl:text-left">
+                <span className="block whitespace-nowrap">From pain to</span>
+                <span className="mt-1 block text-sky">Performance</span>
+              </h2>
+            </div>
             <p className="mx-auto mt-5 max-w-[36rem] text-base leading-relaxed text-ink/75 sm:text-lg xl:mx-0">
               Athletes push their limits.
             </p>
