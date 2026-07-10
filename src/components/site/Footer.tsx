@@ -9,7 +9,7 @@ const socials = [
 
 export function Footer() {
   return (
-    <footer className="bg-ink px-4 pb-10 pt-12 text-white sm:px-6 sm:pt-16 lg:px-8">
+    <footer className="bg-ink px-4 pb-[calc(5.5rem+env(safe-area-inset-bottom))] pt-12 text-white sm:px-6 sm:pb-10 sm:pt-16 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-9 border-b border-white/15 pb-10 text-center md:grid-cols-2 md:text-left lg:grid-cols-[minmax(280px,1.5fr)_minmax(120px,0.7fr)_minmax(220px,1fr)_minmax(220px,1fr)] lg:items-start lg:gap-12">
           <div className="space-y-5">
