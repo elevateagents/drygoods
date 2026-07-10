@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { X, Minus, Plus, Loader2 } from "lucide-react";
 import { useEffect } from "react";
 import { useCart, PLAN_META } from "@/lib/cart-store";
-import canHero from "@/assets/product-white.png.asset.json";
+import canHero from "@/assets/product-white.webp";
 
 const FREE_SHIP = 35;
 
@@ -75,7 +75,7 @@ export function CartDrawer() {
                   {lines.map((l: import("@/lib/cart-store").CartLine) => (
                     <li key={l.id} className="flex gap-4">
                       <div className="size-20 bg-ice/40 shrink-0 grid place-items-center">
-                        <img src={canHero.url} alt="" loading="lazy" decoding="async" className="h-16 w-auto" />
+                        <img src={canHero} alt="" loading="lazy" decoding="async" className="h-16 w-auto" />
                       </div>
                       <div className="flex-1">
                         <p className="font-sans font-bold tracking-tight text-sm leading-tight">{l.title}</p>
