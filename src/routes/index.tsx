@@ -9,11 +9,11 @@ import {
   ShoppingCart, CheckCircle2,
   Plus, Sparkles, Zap, XCircle,
 } from "lucide-react";
-import golfer from "@/assets/hero-two-cans-golf-dusk.png.asset.json";
-import golferMobile from "@/assets/hero-can-mobile-golf-dusk.png.asset.json";
-import productImg from "@/assets/product-white.png.asset.json";
-import productConcrete from "@/assets/product-concrete.png.asset.json";
-import pickleballPaddle from "@/assets/about-pickleball-paddle.png.asset.json";
+import golfer from "@/assets/hero-two-cans-golf-dusk.webp";
+import golferMobile from "@/assets/hero-can-golf-dusk.webp";
+import productImg from "@/assets/product-white.webp";
+import productConcrete from "@/assets/product-concrete.webp";
+import pickleballPaddle from "@/assets/about-pickleball-paddle.webp";
 import bodyDiagramImg from "@/assets/body-diagram.jpg";
 
 export const Route = createFileRoute("/")({
@@ -26,11 +26,11 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: "Patented 360° spray-to-powder valve. 8–12 hours of protection. No mess." },
       { property: "og:type", content: "product" },
       { property: "og:url", content: "https://drygoods.lovable.app/" },
-      { property: "og:image", content: productImg.url },
+      { property: "og:image", content: productImg },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Dry Goods™ — The fastest way to prevent chafing." },
       { name: "twitter:description", content: "Patented 360° spray-to-powder valve. 8–12 hours of protection. No mess." },
-      { name: "twitter:image", content: productImg.url },
+      { name: "twitter:image", content: productImg },
     ],
     links: [
       { rel: "canonical", href: "https://drygoods.lovable.app/" },
@@ -44,7 +44,7 @@ export const Route = createFileRoute("/")({
           name: "Dry Goods Athletic Spray Powder",
           description: "Patented 360° spray-to-powder. Prevents chafing and blisters for 8–12 hours. Dermatologist approved, made in USA.",
           brand: { "@type": "Brand", name: "Dry Goods" },
-          image: [productImg.url],
+          image: [productImg],
           sku: "DG-ATH",
           aggregateRating: { "@type": "AggregateRating", ratingValue: "5", reviewCount: "200" },
           offers: {
@@ -87,23 +87,20 @@ function Hero() {
   return (
     <section id="top" className="relative isolate overflow-hidden bg-ink text-white">
       <div className="absolute inset-0">
-        <img
-          src={golferMobile.url}
-          alt=""
-          aria-hidden="true"
-          decoding="async"
-          fetchPriority="high"
-          className="md:hidden w-full h-full object-cover object-[center_40%]"
-        />
-        <motion.img
-          src={golfer.url}
-          alt=""
-          aria-hidden="true"
-          decoding="async"
-          fetchPriority="high"
-          style={{ y: heroY }}
-          className="hidden md:block w-[112%] max-w-none h-[calc(100%+70px)] -mt-10 -ml-[6%] object-cover object-[center_58%]"
-        />
+        <motion.div className="absolute inset-0" style={{ y: heroY }}>
+          <picture>
+            <source media="(min-width: 768px)" srcSet={golfer} type="image/webp" />
+            <img
+              src={golferMobile}
+              alt=""
+              aria-hidden="true"
+              fetchPriority="high"
+              decoding="async"
+              sizes="100vw"
+              className="w-full h-full object-cover object-[center_40%] md:w-[112%] md:max-w-none md:h-[calc(100%+70px)] md:-mt-10 md:-ml-[6%] md:object-[center_58%]"
+            />
+          </picture>
+        </motion.div>
 
         <div className="absolute inset-x-0 top-0 h-[70%] bg-gradient-to-b from-ink/95 via-ink/65 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-[25%] bg-gradient-to-t from-ink/55 to-transparent" />
@@ -177,7 +174,7 @@ function Introducing() {
     <section id="introducing" className="bg-white py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 xl:px-12 border-t border-ink/5">
       <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem] mx-auto grid md:grid-cols-2 gap-10 lg:gap-16 xl:gap-24 items-center">
         <div className="relative aspect-square rounded-3xl overflow-hidden">
-          <img src={productConcrete.url} alt="Dry Goods Athletic Spray Powder can" loading="lazy" decoding="async" className="w-full h-full object-cover" />
+          <img src={productConcrete} alt="Dry Goods Athletic Spray Powder can" loading="lazy" decoding="async" className="w-full h-full object-cover" />
         </div>
         <div className="text-center md:text-left">
           <span className="mx-auto block max-w-[18rem] text-[10px] font-bold uppercase leading-snug tracking-[0.16em] text-sky sm:max-w-none sm:text-xs sm:tracking-[0.25em] md:mx-0">
@@ -370,7 +367,7 @@ function Buy() {
 
         <div className="grid min-w-0 md:grid-cols-2 gap-6 lg:gap-14 xl:gap-20 items-center bg-grey rounded-3xl p-4 sm:p-10 lg:p-14 xl:p-18 shadow-xl shadow-ink/5 overflow-hidden">
           <div className="relative aspect-square rounded-2xl overflow-hidden bg-white flex items-center justify-center p-2 sm:p-3">
-            <img src={productImg.url} alt="Dry Goods Athletic Spray Powder can" loading="lazy" decoding="async" className="w-full h-full object-contain" />
+            <img src={productImg} alt="Dry Goods Athletic Spray Powder can" loading="lazy" decoding="async" className="w-full h-full object-contain" />
             <span className="absolute top-4 left-4 bg-ink text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">In Stock</span>
           </div>
           <div className="min-w-0 text-center md:text-left">
@@ -500,7 +497,7 @@ function FinalCTA() {
   return (
     <section className="relative bg-ink text-white py-20 sm:py-24 md:py-32 px-5 sm:px-6 lg:px-8 xl:px-12 overflow-hidden">
       <div className="absolute inset-0">
-        <img src={pickleballPaddle.url} alt="" aria-hidden loading="lazy" decoding="async" className="w-full h-full object-cover opacity-30" />
+        <img src={pickleballPaddle} alt="" aria-hidden loading="lazy" decoding="async" className="w-full h-full object-cover opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-ink/60" />
       </div>
       <div className="relative max-w-3xl xl:max-w-4xl 2xl:max-w-5xl mx-auto text-center">
