@@ -14,7 +14,7 @@ export function Footer() {
         <div className="grid gap-9 border-b border-white/15 pb-10 text-center md:grid-cols-2 md:text-left lg:grid-cols-[minmax(280px,1.5fr)_minmax(120px,0.7fr)_minmax(220px,1fr)_minmax(220px,1fr)] lg:items-start lg:gap-12">
           <div className="space-y-5">
             <a href="#top" className="mx-auto inline-flex w-fit md:mx-0" aria-label="Dry Goods home">
-              <img src={logo} alt="Dry Goods Athletic Spray Powder" className="h-12 w-auto object-contain" loading="lazy" />
+              <img src={logo} alt="Dry Goods Athletic Spray Powder" className="h-12 w-auto object-contain" loading="lazy" decoding="async" />
             </a>
             <p className="mx-auto max-w-sm text-sm leading-relaxed text-white/65 md:mx-0">
               Dry Goods Athletic Spray Powder keeps athletes cool, dry, and protected from friction with one clean spray.
