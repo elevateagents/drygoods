@@ -60,7 +60,7 @@ export function Footer() {
         </div>
         <div className="grid gap-4 pt-8 text-center text-xs text-white/60 md:grid-cols-[1fr_auto_1fr] md:items-center md:text-left">
           <p>Joyce Labs LLC, Raleigh, North Carolina, 2026</p>
-          <Link to="/legal" className="font-bold uppercase tracking-[0.18em] text-white/70 hover:text-sky">Privacy Policy</Link>
+          <a href="/privacy-policy" className="font-bold uppercase tracking-[0.18em] text-white/70 hover:text-sky">Privacy Policy</a>
           <p className="font-editorial italic text-white/80 md:text-right">"No mess. No waste. Just powerful protection."</p>
         </div>
       </div>
