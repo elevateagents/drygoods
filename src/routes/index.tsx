@@ -74,7 +74,6 @@ function HomePage() {
       <Buy />
       <FAQ />
       <FinalCTA />
-      <MobileStickyCTA />
     </Layout>
   );
 }
@@ -85,7 +84,7 @@ function Hero() {
   const { scrollY } = useScroll();
   const heroY = useTransform(scrollY, [0, 700], [0, 70]);
   return (
-    <section id="top" className="relative isolate overflow-hidden bg-ink text-white">
+    <section id="top" className="relative isolate min-h-[100svh] overflow-hidden bg-ink text-white md:min-h-screen">
       <div className="absolute inset-0">
         <motion.div className="absolute inset-0" style={{ y: heroY }}>
           <picture>
@@ -97,7 +96,7 @@ function Hero() {
               fetchPriority="high"
               decoding="async"
               sizes="100vw"
-              className="w-full h-full object-cover object-[center_40%] md:w-[112%] md:max-w-none md:h-[calc(100%+70px)] md:-mt-10 md:-ml-[6%] md:object-[center_58%]"
+              className="h-full w-full object-cover object-[center_42%] md:h-[calc(100%+70px)] md:w-[112%] md:max-w-none md:-ml-[6%] md:-mt-10 md:object-[center_58%]"
             />
           </picture>
         </motion.div>
@@ -106,33 +105,33 @@ function Hero() {
         <div className="absolute inset-x-0 bottom-0 h-[25%] bg-gradient-to-t from-ink/55 to-transparent" />
       </div>
 
-      <div className="relative z-10 w-full px-5 sm:px-6 lg:px-8 xl:px-12 py-16 md:py-20 min-h-[95vh] flex flex-col justify-center">
+      <div className="relative z-10 flex min-h-[100svh] w-full flex-col justify-center px-4 py-20 sm:px-6 sm:py-24 md:min-h-[95vh] md:py-28 lg:px-8 xl:px-12">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
-          className="text-center mx-auto w-full max-w-[min(92vw,72rem)]"
+          className="mx-auto w-full max-w-[min(100%,72rem)] text-center"
         >
-          <span className="inline-block px-3 py-1 2xl:px-4 2xl:py-1.5 bg-sky text-white text-[11px] 2xl:text-[13px] font-bold uppercase tracking-[0.2em] rounded-full mb-5 2xl:mb-7">
+          <span className="mb-5 inline-block rounded-full bg-sky px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white sm:text-[11px] 2xl:mb-7 2xl:px-4 2xl:py-1.5 2xl:text-[13px]">
             New · Patented Formula
           </span>
-          <h1 className="mx-auto max-w-[19rem] text-center font-display text-[clamp(34px,11vw,46px)] font-black uppercase leading-[0.95] tracking-tight sm:max-w-none sm:text-[clamp(44px,8vw,76px)] lg:text-[clamp(60px,5.8vw,96px)] [text-shadow:0_2px_16px_rgba(0,0,0,0.45)]">
+          <h1 className="mx-auto max-w-[20rem] text-balance text-center font-display text-[clamp(2.5rem,13vw,4.75rem)] font-black uppercase leading-[0.95] tracking-tight sm:max-w-[32rem] sm:text-[clamp(3.25rem,9vw,5.25rem)] md:max-w-none lg:text-[clamp(4.25rem,5.8vw,6rem)] [text-shadow:0_2px_16px_rgba(0,0,0,0.45)]">
             <span className="block">One Spray.</span>
             <span className="block text-sky">Cool &amp; Dry.</span>
             <span className="block text-sky">Chafe Free.</span>
           </h1>
-          <p className="mt-5 2xl:mt-8 text-base sm:text-lg 2xl:text-2xl text-white max-w-2xl 2xl:max-w-3xl mx-auto leading-relaxed [text-shadow:0_2px_10px_rgba(0,0,0,0.55)]">
+          <p className="mx-auto mt-5 max-w-[36rem] text-[15px] leading-relaxed text-white sm:text-lg 2xl:mt-8 2xl:max-w-3xl 2xl:text-2xl [text-shadow:0_2px_10px_rgba(0,0,0,0.55)]">
             Dry Goods™ patented spray goes on cool, dries to a powder, and keeps you
             chafe-free for 8–12 hours. No mess. No residue.
           </p>
-          <div className="mt-8 2xl:mt-10 flex flex-wrap items-center justify-center gap-4 2xl:gap-6">
+          <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center 2xl:mt-10 2xl:gap-6">
             <button
               onClick={() => add("onetime", 1)}
-              className="inline-flex items-center gap-2 bg-sky hover:bg-sky-deep transition-colors text-white px-8 py-4 2xl:px-10 2xl:py-5 font-bold text-base 2xl:text-lg uppercase tracking-widest rounded-full shadow-lg shadow-sky/30"
+              className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-sky px-6 py-4 text-sm font-bold uppercase tracking-[0.18em] text-white shadow-lg shadow-sky/30 transition-colors hover:bg-sky-deep sm:w-auto sm:px-8 sm:text-base 2xl:px-10 2xl:py-5 2xl:text-lg"
             >
               Shop Now — $19.99 <ShoppingCart className="size-4 2xl:size-5" />
             </button>
-            <a href="#why" className="text-sm 2xl:text-base font-bold uppercase tracking-widest text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.6)] hover:text-sky underline-offset-4 hover:underline">
+            <a href="#why" className="inline-flex min-h-12 items-center justify-center text-sm font-bold uppercase tracking-[0.18em] text-white underline-offset-4 hover:text-sky hover:underline sm:w-auto 2xl:text-base [text-shadow:0_2px_10px_rgba(0,0,0,0.6)]">
               See How It Works →
             </a>
           </div>
@@ -171,16 +170,16 @@ function TrustBar() {
 /* ----------------------------- INTRODUCING ------------------------------- */
 function Introducing() {
   return (
-    <section id="introducing" className="bg-white py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 xl:px-12 border-t border-ink/5">
-      <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem] mx-auto grid md:grid-cols-2 gap-10 lg:gap-16 xl:gap-24 items-center">
-        <div className="relative aspect-square rounded-3xl overflow-hidden">
-          <img src={productConcrete} alt="Dry Goods Athletic Spray Powder can" loading="lazy" decoding="async" className="w-full h-full object-cover" />
+    <section id="introducing" className="border-t border-ink/5 bg-white px-4 py-16 sm:px-6 sm:py-24 md:py-28 lg:px-8 xl:px-12">
+      <div className="mx-auto grid max-w-6xl items-center gap-8 md:grid-cols-2 md:gap-10 lg:gap-16 xl:max-w-7xl xl:gap-24 2xl:max-w-[90rem]">
+        <div className="relative aspect-[4/5] overflow-hidden rounded-3xl sm:aspect-square">
+          <img src={productConcrete} alt="Dry Goods Athletic Spray Powder can" loading="lazy" decoding="async" className="h-full w-full object-cover" />
         </div>
         <div className="text-center md:text-left">
           <span className="mx-auto block max-w-[18rem] text-[10px] font-bold uppercase leading-snug tracking-[0.16em] text-sky sm:max-w-none sm:text-xs sm:tracking-[0.25em] md:mx-0">
             Introducing <span className="sm:hidden">Dry Goods Spray Powder</span><span className="hidden sm:inline">Dry Goods Athletic Spray Powder</span>
           </span>
-          <h2 className="mx-auto mt-3 max-w-[19rem] font-display text-[clamp(30px,9vw,42px)] font-black uppercase leading-[0.98] tracking-tight text-ink sm:max-w-none sm:text-[clamp(30px,5vw,52px)] md:mx-0">
+          <h2 className="mx-auto mt-3 max-w-[22rem] text-balance font-display text-[clamp(1.9rem,9vw,3.25rem)] font-black uppercase leading-[0.98] tracking-tight text-ink sm:max-w-[30rem] md:mx-0 md:max-w-none">
             A new kind of <span className="block text-sky sm:inline">anti-chafe spray.</span>
           </h2>
           <p className="mt-5 text-base leading-relaxed text-ink/75 sm:text-lg">
@@ -188,21 +187,21 @@ function Introducing() {
             One quick spray creates a smooth, moisture-wicking barrier that keeps your skin dry and friction-free —
             all day, no mess, no residue.
           </p>
-          <ul className="mt-6 space-y-3 text-ink/85">
+          <ul className="mt-6 space-y-3 text-left text-ink/85">
             <li className="flex items-start gap-3">
-              <Sparkles className="size-5 text-sky shrink-0 mt-0.5" />
+              <Sparkles className="size-5 shrink-0 mt-0.5 text-sky" />
               <span><strong>Wet-to-powder formula</strong> — sprays on cool, dries instantly.</span>
             </li>
             <li className="flex items-start gap-3">
-              <Zap className="size-5 text-sky shrink-0 mt-0.5" />
+              <Zap className="size-5 shrink-0 mt-0.5 text-sky" />
               <span><strong>360° patented valve</strong> — reaches anywhere, even upside down.</span>
             </li>
             <li className="flex items-start gap-3">
-              <ShieldCheck className="size-5 text-sky shrink-0 mt-0.5" />
+              <ShieldCheck className="size-5 shrink-0 mt-0.5 text-sky" />
               <span><strong>Dermatologist approved</strong> — safe on all skin types.</span>
             </li>
             <li className="flex items-start gap-3">
-              <CheckCircle2 className="size-5 text-sky shrink-0 mt-0.5" />
+              <CheckCircle2 className="size-5 shrink-0 mt-0.5 text-sky" />
               <span><strong>Long lasting protection</strong> — Keeps you cool and dry for up to 8 hours.</span>
             </li>
           </ul>
@@ -214,26 +213,26 @@ function Introducing() {
 
 function ComparisonSection() {
   return (
-    <section className="bg-gradient-to-tr from-ink via-[#111111] to-black py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 xl:px-12">
-      <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem] mx-auto">
-        <div className="text-center max-w-4xl xl:max-w-5xl mx-auto">
+    <section className="bg-gradient-to-tr from-ink via-[#111111] to-black px-4 py-16 sm:px-6 sm:py-24 md:py-28 lg:px-8 xl:px-12">
+      <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem]">
+        <div className="mx-auto max-w-4xl text-center xl:max-w-5xl">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Old way vs our way</span>
-          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(30px,6vw,72px)] leading-[0.98] text-white">
+          <h2 className="mt-3 text-balance font-display text-[clamp(1.9rem,7vw,4.5rem)] font-black uppercase leading-[0.98] tracking-tight text-white">
             The problem with <span className="block text-sky">traditional powders.</span>
           </h2>
-          <p className="mt-6 text-base sm:text-lg text-white/75 leading-relaxed max-w-4xl mx-auto">
+          <p className="mx-auto mt-6 max-w-4xl text-base leading-relaxed text-white/75 sm:text-lg">
             Traditional powders cake on skin, dust the air, miss the spots that need protection most,
             and leave white residue on your gear. Dry Goods™ fixes every one of those problems.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:gap-10">
+        <div className="mt-12 grid items-stretch gap-6 md:grid-cols-2 xl:gap-10">
           <div className="rounded-[2rem] border border-white/12 bg-white/10 p-6 sm:p-8 lg:p-10">
             <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-white/50">The old way</p>
-            <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(28px,5vw,56px)] leading-[0.95] text-white">
+            <h3 className="mt-3 break-words font-display text-[clamp(1.8rem,5vw,3.5rem)] font-black uppercase leading-[0.95] tracking-tight text-white">
               Bottle powder
             </h3>
-            <ul className="mt-6 space-y-4 text-sm sm:text-base text-white/82">
+            <ul className="mt-6 space-y-4 text-sm text-white/82 sm:text-base">
               {[
                 "Cakes & clumps on sweaty skin",
                 "Dust cloud — gets everywhere",
@@ -242,7 +241,7 @@ function ComparisonSection() {
                 "Reapply constantly",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <XCircle className="size-5 shrink-0 text-white/40 mt-0.5" />
+                  <XCircle className="mt-0.5 size-5 shrink-0 text-white/40" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -251,10 +250,10 @@ function ComparisonSection() {
 
           <div className="rounded-[2rem] border-2 border-sky bg-sky-soft p-6 sm:p-8 lg:p-10">
             <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-sky">Dry Goods Athletic Spray Powder</p>
-            <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(28px,5vw,56px)] leading-[0.95] text-ink">
+            <h3 className="mt-3 break-words font-display text-[clamp(1.8rem,5vw,3.5rem)] font-black uppercase leading-[0.95] tracking-tight text-ink">
               Patented spray-to-powder
             </h3>
-            <ul className="mt-6 space-y-4 text-sm sm:text-base text-ink/85">
+            <ul className="mt-6 space-y-4 text-sm text-ink/85 sm:text-base">
               {[
                 "Sprays on wet — dries to powder instantly",
                 "Zero cloud · zero mess",
@@ -263,7 +262,7 @@ function ComparisonSection() {
                 "One application = 8–12 hours of protection",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <CheckCircle2 className="size-5 shrink-0 text-sky mt-0.5" />
+                  <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-sky" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -277,24 +276,24 @@ function ComparisonSection() {
 
 function WhyItExists() {
   return (
-    <section id="why" className="bg-paper py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 xl:px-12 border-t border-ink/5 scroll-mt-16">
-      <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem] mx-auto grid md:grid-cols-2 gap-10 lg:gap-16 xl:gap-24 items-center">
-        <div className="relative rounded-3xl overflow-hidden bg-white p-3 shadow-sm shadow-ink/5">
-          <img src={bodyDiagramImg} alt="Safe on all skin types benefits diagram" loading="lazy" decoding="async" className="w-full h-full object-contain" />
+    <section id="why" className="scroll-mt-16 border-t border-ink/5 bg-paper px-4 py-16 sm:px-6 sm:py-24 md:py-28 lg:px-8 xl:px-12">
+      <div className="mx-auto grid max-w-6xl items-center gap-8 md:grid-cols-2 md:gap-10 lg:gap-16 xl:max-w-7xl xl:gap-24 2xl:max-w-[90rem]">
+        <div className="relative overflow-hidden rounded-3xl bg-white p-3 shadow-sm shadow-ink/5">
+          <img src={bodyDiagramImg} alt="Safe on all skin types benefits diagram" loading="lazy" decoding="async" className="h-full w-full object-contain" />
         </div>
         <div>
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Why it exists</span>
-          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(22px,4.5vw,52px)] leading-[1.05] text-ink text-balance break-words">
-            From pain to <br className="md:hidden" /><span className="text-sky whitespace-nowrap">performance.</span>
+          <h2 className="mt-3 text-balance font-display text-[clamp(1.75rem,5vw,3.25rem)] font-black uppercase leading-[1.05] tracking-tight text-ink">
+            From pain to <br className="md:hidden" /><span className="text-sky">performance.</span>
           </h2>
-          <p className="mt-5 text-lg text-ink/75 leading-relaxed">
+          <p className="mt-5 text-base leading-relaxed text-ink/75 sm:text-lg">
             Athletes push their limits.
           </p>
-          <p className="mt-4 text-lg text-ink/75 leading-relaxed">
+          <p className="mt-4 text-base leading-relaxed text-ink/75 sm:text-lg">
             Dry Goods™ is built to keep up. Designed to combat sweat, moisture, and friction, our advanced
             formula delivers long-lasting dryness and all-day comfort.
           </p>
-          <p className="mt-4 text-lg text-ink/75 leading-relaxed">
+          <p className="mt-4 text-base leading-relaxed text-ink/75 sm:text-lg">
             Whether you&apos;re on the field, in the gym, or pushing through intense training, Dry Goods™ helps
             you stay cool, dry, and performing at your best. No mess, no residue — just powerful protection
             when you need it most. Try it once, and you&apos;ll never train without it.
@@ -322,17 +321,17 @@ function PerformanceCardsSection() {
   ];
 
   return (
-    <section className="bg-ink py-12 sm:py-14 px-5 sm:px-6 lg:px-8 xl:px-12 border-t border-white/10">
-      <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem] mx-auto">
+    <section className="border-t border-white/10 bg-ink px-4 py-16 sm:px-6 sm:py-20 lg:px-8 xl:px-12">
+      <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem]">
         <div className="max-w-3xl">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">What gets in the way</span>
-          <h3 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(20px,3.8vw,38px)] leading-[1.05] text-white">
+          <h3 className="mt-3 text-balance font-display text-[clamp(1.6rem,3.8vw,2.375rem)] font-black uppercase leading-[1.05] tracking-tight text-white">
             The everyday friction that pulls athletes off pace.
           </h3>
         </div>
-        <div className="mt-8 grid gap-4 md:grid-cols-3 lg:gap-5">
+        <div className="mt-8 grid gap-4 md:grid-cols-3 lg:gap-5 xl:gap-6">
           {cards.map((card) => (
-            <div key={card.title} className="rounded-[1.75rem] border border-white/10 bg-white/10 px-6 py-6 shadow-sm shadow-black/20">
+            <div key={card.title} className="rounded-[1.75rem] border border-white/10 bg-white/10 px-6 py-6 shadow-sm shadow-black/20 sm:p-7">
               <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky">{card.title}</p>
               <p className="mt-4 text-base leading-relaxed text-white/82">{card.body}</p>
             </div>
@@ -356,38 +355,38 @@ function Buy() {
   ];
   const planOptions: Plan[] = ["onetime", "monthly", "weekly"];
   return (
-    <section id="buy" className="scroll-mt-20 bg-white py-16 sm:py-24 md:py-28 px-3 sm:px-6 lg:px-8 xl:px-12 overflow-hidden">
-      <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem] mx-auto min-w-0">
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+    <section id="buy" className="scroll-mt-20 overflow-hidden bg-white px-3 py-16 sm:px-6 sm:py-24 md:py-28 lg:px-8 xl:px-12">
+      <div className="mx-auto min-w-0 max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem]">
+        <div className="mx-auto mb-10 max-w-2xl text-center sm:mb-12">
           <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky sm:text-xs sm:tracking-[0.25em]">Get Yours</span>
-          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(30px,10vw,52px)] leading-[1] text-ink sm:text-[clamp(32px,5vw,56px)]">
+          <h2 className="mt-3 font-display text-[clamp(30px,10vw,52px)] font-black uppercase leading-[1] tracking-tight text-ink sm:text-[clamp(32px,5vw,56px)]">
             One spray. <span className="text-sky">All day dry.</span>
           </h2>
         </div>
 
-        <div className="grid min-w-0 md:grid-cols-2 gap-6 lg:gap-14 xl:gap-20 items-center bg-grey rounded-3xl p-4 sm:p-10 lg:p-14 xl:p-18 shadow-xl shadow-ink/5 overflow-hidden">
-          <div className="relative aspect-square rounded-2xl overflow-hidden bg-white flex items-center justify-center p-2 sm:p-3">
-            <img src={productImg} alt="Dry Goods Athletic Spray Powder can" loading="lazy" decoding="async" className="w-full h-full object-contain" />
-            <span className="absolute top-4 left-4 bg-ink text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">In Stock</span>
+        <div className="grid min-w-0 items-start gap-6 overflow-hidden rounded-3xl bg-grey p-4 shadow-xl shadow-ink/5 sm:p-8 md:grid-cols-2 md:items-center lg:gap-14 lg:p-12 xl:gap-20 xl:p-16">
+          <div className="relative aspect-square rounded-2xl overflow-hidden bg-white p-2 sm:p-3 flex items-center justify-center">
+            <img src={productImg} alt="Dry Goods Athletic Spray Powder can" loading="lazy" decoding="async" className="h-full w-full object-contain" />
+            <span className="absolute left-4 top-4 rounded-full bg-ink px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-white">In Stock</span>
           </div>
           <div className="min-w-0 text-center md:text-left">
             <h3 className="font-sans text-[clamp(22px,7vw,36px)] font-bold leading-[1.08] tracking-tight text-ink sm:text-[clamp(24px,5.5vw,36px)]">
               <span className="block">Dry Goods</span>
               <span className="block">Athletic Spray Powder</span>
             </h3>
-            <p className="mt-2 max-w-full text-sm sm:text-base text-ink/70 leading-relaxed break-words">
+            <p className="mt-2 max-w-full break-words text-sm leading-relaxed text-ink/70 sm:text-base">
               One cool spray. All day dry.
             </p>
             <div className="mt-5 grid min-w-0 gap-1 sm:flex sm:flex-wrap sm:items-baseline sm:gap-x-3">
-              <span className="font-sans font-bold text-4xl sm:text-5xl text-ink leading-none">${selected.price.toFixed(2)}</span>
+              <span className="font-sans text-4xl font-bold leading-none text-ink sm:text-5xl">${selected.price.toFixed(2)}</span>
             </div>
             <p className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-700">
               <CheckCircle2 className="size-4" /> In Stock — ships free on 3+ cans
             </p>
             <ul className="mt-6 space-y-2.5">
               {bullets.map((b) => (
-                <li key={b} className="flex min-w-0 items-start gap-2.5 text-sm text-ink/80 leading-snug">
-                  <CheckCircle2 className="size-5 text-sky shrink-0 mt-0.5" />
+                <li key={b} className="flex min-w-0 items-start gap-2.5 text-sm leading-snug text-ink/80">
+                  <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-sky" />
                   <span className="min-w-0 break-words">{b}</span>
                 </li>
               ))}
@@ -403,25 +402,25 @@ function Buy() {
                     key={p}
                     type="button"
                     onClick={() => setPlan(p)}
-                    className={`w-full flex items-center gap-3 rounded-2xl border-2 px-4 py-3 text-left transition-colors ${active ? "border-sky bg-sky-soft/40" : "border-ink/10 hover:border-ink/30 bg-white"}`}
+                    className={`w-full flex items-center gap-2 rounded-2xl border-2 px-4 py-3 text-left transition-colors sm:gap-3 ${active ? "border-sky bg-sky-soft/40" : "border-ink/10 hover:border-ink/30 bg-white"}`}
                   >
-                    <span className={`size-4 rounded-full border-2 shrink-0 ${active ? "border-sky bg-sky" : "border-ink/30"}`} />
-                    <span className="flex-1 min-w-0">
-                      <span className="block text-sm font-bold text-ink leading-tight">{m.label}</span>
-                      {m.sub && <span className="block text-[11px] font-semibold uppercase tracking-wide text-sky mt-0.5">{m.sub}</span>}
+                    <span className={`size-4 shrink-0 rounded-full border-2 ${active ? "border-sky bg-sky" : "border-ink/30"}`} />
+                    <span className="min-w-0 flex-1">
+                      <span className="block text-sm font-bold leading-tight text-ink">{m.label}</span>
+                      {m.sub && <span className="mt-0.5 block text-[11px] font-semibold uppercase tracking-wide text-sky">{m.sub}</span>}
                     </span>
-                    <span className="font-bold text-ink text-base shrink-0">${m.price.toFixed(2)}</span>
+                    <span className="shrink-0 text-sm font-bold text-ink sm:text-base">${m.price.toFixed(2)}</span>
                   </button>
                 );
               })}
             </div>
 
             <div className="mt-6 space-y-3">
-              <button onClick={() => add(plan, 1)} className="w-full min-w-0 inline-flex items-center justify-center gap-2 bg-sky hover:bg-sky-deep transition-colors text-white px-3 sm:px-4 py-4 sm:py-5 text-[13px] sm:text-base font-bold uppercase tracking-wide sm:tracking-widest rounded-full shadow-lg shadow-sky/30 active:scale-[0.99] leading-tight">
+              <button onClick={() => add(plan, 1)} className="inline-flex min-h-12 w-full min-w-0 items-center justify-center gap-2 rounded-full bg-sky px-3 py-4 text-[13px] font-bold uppercase leading-tight tracking-wide text-white shadow-lg shadow-sky/30 transition-colors hover:bg-sky-deep active:scale-[0.99] sm:px-4 sm:py-5 sm:text-base sm:tracking-widest">
                 <ShoppingCart className="size-5 shrink-0" />
-                <span className="min-w-0 text-center break-words">Add to Cart — ${selected.price.toFixed(2)}</span>
+                <span className="min-w-0 break-words text-center">Add to Cart — ${selected.price.toFixed(2)}</span>
               </button>
-              <p className="text-center md:text-left text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-ink/60">
+              <p className="text-center text-[11px] font-semibold uppercase tracking-wider text-ink/60 sm:text-xs md:text-left">
                 30-Day Money-Back Guarantee · Free Returns
               </p>
             </div>
@@ -467,22 +466,22 @@ function FAQ() {
     { q: "How long does one application last?", a: "One application provides approximately 8–12 hours of protection, depending on your activity level, sweat, and usage." },
   ];
   return (
-    <section id="faq" className="scroll-mt-24 bg-paper py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 xl:px-12">
-      <div className="max-w-3xl xl:max-w-4xl 2xl:max-w-5xl mx-auto">
-        <div className="text-center mb-12">
+    <section id="faq" className="scroll-mt-24 bg-paper px-4 py-16 sm:px-6 sm:py-24 md:py-28 lg:px-8 xl:px-12">
+      <div className="mx-auto max-w-3xl xl:max-w-4xl 2xl:max-w-5xl">
+        <div className="mb-12 text-center">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">FAQ</span>
-          <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(30px,5vw,64px)] leading-[1] text-ink">
+          <h2 className="mt-3 text-balance font-display text-[clamp(1.9rem,5vw,4rem)] font-black uppercase leading-[1] tracking-tight text-ink">
             Questions, <span className="text-sky">answered.</span>
           </h2>
         </div>
         <div className="divide-y divide-ink/10 border-y border-ink/10">
           {faqs.map((f) => (
             <details key={f.q} className="group py-5">
-              <summary className="cursor-pointer flex items-start justify-between gap-4 list-none font-bold text-ink text-lg">
+              <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-base font-bold text-ink sm:text-lg">
                 <span>{f.q}</span>
-                <Plus className="size-5 shrink-0 mt-1 text-sky transition-transform group-open:rotate-45" />
+                <Plus className="mt-1 size-5 shrink-0 text-sky transition-transform group-open:rotate-45" />
               </summary>
-              <div className="mt-3 text-ink/70 leading-relaxed">{f.a}</div>
+              <div className="mt-3 leading-relaxed text-ink/70">{f.a}</div>
             </details>
           ))}
         </div>
@@ -495,52 +494,32 @@ function FAQ() {
 function FinalCTA() {
   const { add } = useCart();
   return (
-    <section className="relative bg-ink text-white py-20 sm:py-24 md:py-32 px-5 sm:px-6 lg:px-8 xl:px-12 overflow-hidden">
+    <section className="relative overflow-hidden bg-ink px-4 py-16 text-white sm:px-6 sm:py-24 md:py-28 lg:px-8 xl:px-12">
       <div className="absolute inset-0">
-        <img src={pickleballPaddle} alt="" aria-hidden loading="lazy" decoding="async" className="w-full h-full object-cover opacity-30" />
+        <img src={pickleballPaddle} alt="" aria-hidden loading="lazy" decoding="async" className="h-full w-full object-cover opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-ink/60" />
       </div>
-      <div className="relative max-w-3xl xl:max-w-4xl 2xl:max-w-5xl mx-auto text-center">
+      <div className="relative mx-auto max-w-3xl text-center xl:max-w-4xl 2xl:max-w-5xl">
         <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">The last word</span>
-        <h2 className="mt-3 font-display font-black uppercase tracking-tight text-[clamp(22px,7vw,68px)] leading-[1.05] text-balance">
+        <h2 className="mt-3 text-balance font-display text-[clamp(1.75rem,7vw,4.25rem)] font-black uppercase leading-[1.05] tracking-tight">
           Stay cool, stay dry. <span className="text-sky">Stay unstoppable.</span>
         </h2>
-        <p className="mt-6 text-base sm:text-lg text-white/85 max-w-2xl mx-auto leading-relaxed">
+        <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/85 sm:text-lg">
           Don't let discomfort slow down your best performance. Experience the confidence and comfort
           to push your limits every day.
         </p>
-        <div className="mt-10 flex flex-col sm:flex-row sm:flex-wrap justify-center items-stretch sm:items-center gap-3 sm:gap-4">
+        <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
           <button
             onClick={() => add("onetime", 1)}
-            className="inline-flex items-center justify-center gap-2 bg-sky hover:bg-sky-deep transition-colors text-white px-6 sm:px-8 py-4 font-bold text-sm sm:text-base uppercase tracking-widest rounded-full shadow-lg shadow-sky/30"
+            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-sky px-6 py-4 text-sm font-bold uppercase tracking-[0.18em] text-white shadow-lg shadow-sky/30 transition-colors hover:bg-sky-deep sm:px-8 sm:text-base"
           >
             <ShoppingCart className="size-5" /> Get Dry Goods — $19.99
           </button>
-          <a href="#buy" className="inline-flex items-center justify-center px-6 sm:px-8 py-4 font-bold text-sm uppercase tracking-widest border-2 border-white/40 text-white rounded-full hover:bg-white hover:text-ink transition-colors">
+          <a href="#buy" className="inline-flex min-h-12 items-center justify-center rounded-full border-2 border-white/40 px-6 py-4 text-sm font-bold uppercase tracking-[0.18em] text-white transition-colors hover:bg-white hover:text-ink sm:px-8">
             See Details
           </a>
         </div>
       </div>
     </section>
-  );
-}
-
-/* --------------------------- MOBILE STICKY CTA ---------------------------- */
-function MobileStickyCTA() {
-  const { add } = useCart();
-  return (
-    <div
-      className="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-ink/10 px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-[0_-6px_20px_rgba(0,0,0,0.08)]"
-      role="region"
-      aria-label="Quick add to cart"
-    >
-      <button
-        onClick={() => add("onetime", 1)}
-        className="w-full inline-flex items-center justify-center gap-2 bg-sky hover:bg-sky-deep transition-colors text-white px-4 py-3.5 text-sm font-bold uppercase tracking-widest rounded-full shadow-lg shadow-sky/30"
-      >
-        <ShoppingCart className="size-5" />
-        Add to Cart — $19.99
-      </button>
-    </div>
   );
 }
