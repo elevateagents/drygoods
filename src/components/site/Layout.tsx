@@ -9,7 +9,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen bg-paper text-ink">
       <Nav />
-      <main className="pt-16 pb-24 md:pb-0">{children}</main>
+      <main className="pt-16">{children}</main>
       <Footer />
       <CartDrawer />
       <MobileBuyBar />
