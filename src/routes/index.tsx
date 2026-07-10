@@ -96,35 +96,34 @@ function Hero() {
               fetchPriority="high"
               decoding="async"
               sizes="100vw"
-              className="h-full w-full object-cover object-[center_42%] md:h-[calc(100%+70px)] md:w-[112%] md:max-w-none md:-ml-[6%] md:-mt-10 md:object-[center_58%]"
+              className="h-full w-full object-cover object-[center_45%] md:h-[calc(100%+70px)] md:w-[112%] md:max-w-none md:-ml-[6%] md:-mt-10 md:object-[center_58%]"
             />
           </picture>
         </motion.div>
 
-        <div className="absolute inset-x-0 top-0 h-[70%] bg-gradient-to-b from-ink/95 via-ink/65 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-[25%] bg-gradient-to-t from-ink/55 to-transparent" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(9,13,20,0.9)_0%,rgba(9,13,20,0.52)_36%,rgba(9,13,20,0.28)_62%,rgba(9,13,20,0.55)_100%)]" />
       </div>
 
-      <div className="relative z-10 flex min-h-[100svh] w-full flex-col justify-center px-4 py-20 sm:px-6 sm:py-24 md:min-h-[95vh] md:py-28 lg:px-8 xl:px-12">
+      <div className="relative z-10 flex min-h-[100svh] w-full flex-col justify-center px-4 py-24 sm:px-6 sm:py-28 md:min-h-[95vh] md:py-28 lg:px-8 xl:px-12">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
-          className="mx-auto w-full max-w-[min(100%,72rem)] text-center"
+          className="mx-auto flex w-full max-w-[min(100%,74rem)] flex-col items-center text-center"
         >
           <span className="mb-5 inline-block rounded-full bg-sky px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white sm:text-[11px] 2xl:mb-7 2xl:px-4 2xl:py-1.5 2xl:text-[13px]">
             New · Patented Formula
           </span>
-          <h1 className="mx-auto max-w-[20rem] text-balance text-center font-display text-[clamp(2.5rem,13vw,4.75rem)] font-black uppercase leading-[0.95] tracking-tight sm:max-w-[32rem] sm:text-[clamp(3.25rem,9vw,5.25rem)] md:max-w-none lg:text-[clamp(4.25rem,5.8vw,6rem)] [text-shadow:0_2px_16px_rgba(0,0,0,0.45)]">
-            <span className="block">One Spray.</span>
-            <span className="block text-sky">Cool &amp; Dry.</span>
+          <h1 className="mx-auto max-w-[10ch] text-balance font-display text-[clamp(3rem,15vw,5.4rem)] font-black uppercase leading-[0.9] tracking-tight sm:max-w-[12ch] sm:text-[clamp(3.6rem,10vw,5.8rem)] md:max-w-[13ch] lg:text-[clamp(4.4rem,6.4vw,6.2rem)] [text-shadow:0_2px_16px_rgba(0,0,0,0.45)]">
+            <span className="block text-white">One Spray.</span>
+            <span className="block text-sky">Cool, Dry &amp;</span>
             <span className="block text-sky">Chafe Free.</span>
           </h1>
-          <p className="mx-auto mt-5 max-w-[36rem] text-[15px] leading-relaxed text-white sm:text-lg 2xl:mt-8 2xl:max-w-3xl 2xl:text-2xl [text-shadow:0_2px_10px_rgba(0,0,0,0.55)]">
+          <p className="mx-auto mt-5 max-w-[38rem] text-[15px] leading-relaxed text-white/95 sm:text-lg 2xl:mt-8 2xl:max-w-3xl 2xl:text-2xl [text-shadow:0_2px_10px_rgba(0,0,0,0.55)]">
             Dry Goods™ patented spray goes on cool, dries to a powder, and keeps you
             chafe-free for 8–12 hours. No mess. No residue.
           </p>
-          <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center 2xl:mt-10 2xl:gap-6">
+          <div className="mt-8 flex w-full max-w-xl flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center 2xl:mt-10 2xl:gap-6">
             <button
               onClick={() => add("onetime", 1)}
               className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-sky px-6 py-4 text-sm font-bold uppercase tracking-[0.18em] text-white shadow-lg shadow-sky/30 transition-colors hover:bg-sky-deep sm:w-auto sm:px-8 sm:text-base 2xl:px-10 2xl:py-5 2xl:text-lg"
@@ -227,12 +226,12 @@ function ComparisonSection() {
         </div>
 
         <div className="mt-12 grid items-stretch gap-6 md:grid-cols-2 xl:gap-10">
-          <div className="rounded-[2rem] border border-white/12 bg-white/10 p-6 sm:p-8 lg:p-10">
+          <div className="rounded-[2rem] border border-white/12 bg-white/10 p-6 text-center sm:p-8 md:text-left lg:p-10">
             <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-white/50">The old way</p>
-            <h3 className="mt-3 break-words font-display text-[clamp(1.8rem,5vw,3.5rem)] font-black uppercase leading-[0.95] tracking-tight text-white">
+            <h3 className="mt-3 text-balance break-words font-display text-[clamp(1.8rem,5vw,3.5rem)] font-black uppercase leading-[0.95] tracking-tight text-white">
               Bottle powder
             </h3>
-            <ul className="mt-6 space-y-4 text-sm text-white/82 sm:text-base">
+            <ul className="mt-6 space-y-4 text-left text-sm text-white/82 sm:text-base">
               {[
                 "Cakes & clumps on sweaty skin",
                 "Dust cloud — gets everywhere",
@@ -248,12 +247,12 @@ function ComparisonSection() {
             </ul>
           </div>
 
-          <div className="rounded-[2rem] border-2 border-sky bg-sky-soft p-6 sm:p-8 lg:p-10">
+          <div className="rounded-[2rem] border-2 border-sky bg-sky-soft p-6 text-center sm:p-8 md:text-left lg:p-10">
             <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-sky">Dry Goods Athletic Spray Powder</p>
-            <h3 className="mt-3 break-words font-display text-[clamp(1.8rem,5vw,3.5rem)] font-black uppercase leading-[0.95] tracking-tight text-ink">
+            <h3 className="mt-3 text-balance break-words font-display text-[clamp(1.8rem,5vw,3.5rem)] font-black uppercase leading-[0.95] tracking-tight text-ink">
               Patented spray-to-powder
             </h3>
-            <ul className="mt-6 space-y-4 text-sm text-ink/85 sm:text-base">
+            <ul className="mt-6 space-y-4 text-left text-sm text-ink/85 sm:text-base">
               {[
                 "Sprays on wet — dries to powder instantly",
                 "Zero cloud · zero mess",
@@ -281,19 +280,19 @@ function WhyItExists() {
         <div className="relative overflow-hidden rounded-3xl bg-white p-3 shadow-sm shadow-ink/5">
           <img src={bodyDiagramImg} alt="Safe on all skin types benefits diagram" loading="lazy" decoding="async" className="h-full w-full object-contain" />
         </div>
-        <div>
+        <div className="text-center md:text-left">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Why it exists</span>
-          <h2 className="mt-3 text-balance font-display text-[clamp(1.75rem,5vw,3.25rem)] font-black uppercase leading-[1.05] tracking-tight text-ink">
-            From pain to <br className="md:hidden" /><span className="text-sky">performance.</span>
+          <h2 className="mx-auto mt-3 max-w-[12ch] text-balance font-display text-[clamp(2rem,8vw,4rem)] font-black uppercase leading-[0.98] tracking-tight text-ink md:mx-0 md:max-w-[13ch]">
+            From pain to <span className="text-sky">performance.</span>
           </h2>
-          <p className="mt-5 text-base leading-relaxed text-ink/75 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-[34rem] text-base leading-relaxed text-ink/75 sm:text-lg md:mx-0">
             Athletes push their limits.
           </p>
-          <p className="mt-4 text-base leading-relaxed text-ink/75 sm:text-lg">
+          <p className="mx-auto mt-4 max-w-[34rem] text-base leading-relaxed text-ink/75 sm:text-lg md:mx-0">
             Dry Goods™ is built to keep up. Designed to combat sweat, moisture, and friction, our advanced
             formula delivers long-lasting dryness and all-day comfort.
           </p>
-          <p className="mt-4 text-base leading-relaxed text-ink/75 sm:text-lg">
+          <p className="mx-auto mt-4 max-w-[34rem] text-base leading-relaxed text-ink/75 sm:text-lg md:mx-0">
             Whether you&apos;re on the field, in the gym, or pushing through intense training, Dry Goods™ helps
             you stay cool, dry, and performing at your best. No mess, no residue — just powerful protection
             when you need it most. Try it once, and you&apos;ll never train without it.
@@ -323,16 +322,16 @@ function PerformanceCardsSection() {
   return (
     <section className="border-t border-white/10 bg-ink px-4 py-16 sm:px-6 sm:py-20 lg:px-8 xl:px-12">
       <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem]">
-        <div className="max-w-3xl">
+        <div className="mx-auto max-w-3xl text-center">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">What gets in the way</span>
-          <h3 className="mt-3 text-balance font-display text-[clamp(1.6rem,3.8vw,2.375rem)] font-black uppercase leading-[1.05] tracking-tight text-white">
+          <h3 className="mt-3 text-balance font-display text-[clamp(1.6rem,6vw,2.375rem)] font-black uppercase leading-[1.02] tracking-tight text-white">
             The everyday friction that pulls athletes off pace.
           </h3>
         </div>
         <div className="mt-8 grid gap-4 md:grid-cols-3 lg:gap-5 xl:gap-6">
           {cards.map((card) => (
-            <div key={card.title} className="rounded-[1.75rem] border border-white/10 bg-white/10 px-6 py-6 shadow-sm shadow-black/20 sm:p-7">
-              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky">{card.title}</p>
+            <div key={card.title} className="rounded-[1.75rem] border border-white/10 bg-white/10 px-6 py-6 text-center shadow-sm shadow-black/20 sm:p-7 md:text-left">
+              <p className="text-balance text-[11px] font-bold uppercase tracking-[0.2em] text-sky">{card.title}</p>
               <p className="mt-4 text-base leading-relaxed text-white/82">{card.body}</p>
             </div>
           ))}
@@ -359,7 +358,7 @@ function Buy() {
       <div className="mx-auto min-w-0 max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem]">
         <div className="mx-auto mb-10 max-w-2xl text-center sm:mb-12">
           <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky sm:text-xs sm:tracking-[0.25em]">Get Yours</span>
-          <h2 className="mt-3 font-display text-[clamp(30px,10vw,52px)] font-black uppercase leading-[1] tracking-tight text-ink sm:text-[clamp(32px,5vw,56px)]">
+          <h2 className="mt-3 text-balance font-display text-[clamp(30px,10vw,52px)] font-black uppercase leading-[1] tracking-tight text-ink sm:text-[clamp(32px,5vw,56px)]">
             One spray. <span className="text-sky">All day dry.</span>
           </h2>
         </div>
