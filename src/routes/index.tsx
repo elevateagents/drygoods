@@ -91,12 +91,16 @@ function Hero() {
           src={golferMobile.url}
           alt=""
           aria-hidden="true"
+          decoding="async"
+          fetchPriority="high"
           className="md:hidden w-full h-full object-cover object-[center_40%]"
         />
         <motion.img
           src={golfer.url}
           alt=""
           aria-hidden="true"
+          decoding="async"
+          fetchPriority="high"
           style={{ y: heroY }}
           className="hidden md:block w-[112%] max-w-none h-[calc(100%+70px)] -mt-10 -ml-[6%] object-cover object-[center_58%]"
         />
@@ -173,7 +177,7 @@ function Introducing() {
     <section id="introducing" className="bg-white py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 xl:px-12 border-t border-ink/5">
       <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem] mx-auto grid md:grid-cols-2 gap-10 lg:gap-16 xl:gap-24 items-center">
         <div className="relative aspect-square rounded-3xl overflow-hidden">
-          <img src={productConcrete.url} alt="Dry Goods Athletic Spray Powder can" loading="lazy" className="w-full h-full object-cover" />
+          <img src={productConcrete.url} alt="Dry Goods Athletic Spray Powder can" loading="lazy" decoding="async" className="w-full h-full object-cover" />
         </div>
         <div className="text-center md:text-left">
           <span className="mx-auto block max-w-[18rem] text-[10px] font-bold uppercase leading-snug tracking-[0.16em] text-sky sm:max-w-none sm:text-xs sm:tracking-[0.25em] md:mx-0">
@@ -279,7 +283,7 @@ function WhyItExists() {
     <section id="why" className="bg-paper py-20 sm:py-24 md:py-28 px-5 sm:px-6 lg:px-8 xl:px-12 border-t border-ink/5 scroll-mt-16">
       <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem] mx-auto grid md:grid-cols-2 gap-10 lg:gap-16 xl:gap-24 items-center">
         <div className="relative rounded-3xl overflow-hidden bg-white p-3 shadow-sm shadow-ink/5">
-          <img src={bodyDiagramImg} alt="Safe on all skin types benefits diagram" loading="lazy" className="w-full h-full object-contain" />
+          <img src={bodyDiagramImg} alt="Safe on all skin types benefits diagram" loading="lazy" decoding="async" className="w-full h-full object-contain" />
         </div>
         <div>
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Why it exists</span>
@@ -366,7 +370,7 @@ function Buy() {
 
         <div className="grid min-w-0 md:grid-cols-2 gap-6 lg:gap-14 xl:gap-20 items-center bg-grey rounded-3xl p-4 sm:p-10 lg:p-14 xl:p-18 shadow-xl shadow-ink/5 overflow-hidden">
           <div className="relative aspect-square rounded-2xl overflow-hidden bg-white flex items-center justify-center p-2 sm:p-3">
-            <img src={productImg.url} alt="Dry Goods Athletic Spray Powder can" loading="lazy" className="w-full h-full object-contain" />
+            <img src={productImg.url} alt="Dry Goods Athletic Spray Powder can" loading="lazy" decoding="async" className="w-full h-full object-contain" />
             <span className="absolute top-4 left-4 bg-ink text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">In Stock</span>
           </div>
           <div className="min-w-0 text-center md:text-left">
@@ -496,7 +500,7 @@ function FinalCTA() {
   return (
     <section className="relative bg-ink text-white py-20 sm:py-24 md:py-32 px-5 sm:px-6 lg:px-8 xl:px-12 overflow-hidden">
       <div className="absolute inset-0">
-        <img src={pickleballPaddle.url} alt="" aria-hidden className="w-full h-full object-cover opacity-30" />
+        <img src={pickleballPaddle.url} alt="" aria-hidden loading="lazy" decoding="async" className="w-full h-full object-cover opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-ink/60" />
       </div>
       <div className="relative max-w-3xl xl:max-w-4xl 2xl:max-w-5xl mx-auto text-center">
