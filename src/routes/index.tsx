@@ -277,7 +277,7 @@ function WhyItExists() {
   return (
     <section id="why" className="scroll-mt-16 bg-white px-4 py-16 sm:px-6 sm:py-24 md:py-28 lg:px-8 xl:px-12">
       <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem]">
-        <div className="grid gap-8 xl:grid-cols-[minmax(0,1.02fr)_minmax(0,0.98fr)] xl:items-center xl:gap-20">
+        <div className="grid items-start gap-10 xl:grid-cols-[minmax(0,1fr)_minmax(0,0.88fr)] xl:items-center xl:gap-16 2xl:gap-20">
           <div className="overflow-hidden rounded-3xl border border-ink/6 bg-white p-3 shadow-sm shadow-ink/5">
             <img
               src={bodyDiagramImg}
@@ -287,30 +287,26 @@ function WhyItExists() {
               className="h-full w-full object-contain"
             />
           </div>
-          <div className="text-center xl:text-left">
+          <div className="min-w-0 self-center text-center xl:text-left">
             <span className="block text-xs font-bold uppercase tracking-[0.25em] text-sky">Why it exists</span>
-            <div className="mx-auto mt-3 max-w-[19rem] sm:max-w-[23rem] md:max-w-[26rem] lg:max-w-[30rem] xl:mx-0 xl:max-w-[32rem]">
-              <h2 className="font-display font-black uppercase leading-[0.92] tracking-tight text-center xl:text-left">
-                <span className="block whitespace-nowrap text-[2rem] text-ink sm:text-[2.5rem] md:text-[2.9rem] lg:text-[3.35rem] xl:text-[3.9rem]">
-                  From pain to
-                </span>
-                <span className="mt-1 block whitespace-nowrap text-[2.15rem] text-sky sm:text-[2.7rem] md:text-[3.15rem] lg:text-[3.6rem] xl:text-[4.15rem]">
-                  Performance
-                </span>
+            <div className="mx-auto mt-4 max-w-[18rem] overflow-hidden sm:max-w-[24rem] md:max-w-[28rem] lg:max-w-[32rem] xl:mx-0 xl:max-w-[34rem]">
+              <h2 className="text-balance font-display text-[clamp(2rem,5vw,4.25rem)] font-black uppercase leading-[0.94] tracking-tight text-ink">
+                <span className="block">From pain to</span>
+                <span className="mt-1 block text-sky">Performance</span>
               </h2>
             </div>
-            <p className="mx-auto mt-5 max-w-[36rem] text-base leading-relaxed text-ink/75 sm:text-lg xl:mx-0">
-              Athletes push their limits.
-            </p>
-            <p className="mx-auto mt-4 max-w-[36rem] text-base leading-relaxed text-ink/75 sm:text-lg xl:mx-0">
-              Dry Goods™ is built to keep up. Designed to combat sweat, moisture, and friction, our advanced
-              formula delivers long-lasting dryness and all-day comfort.
-            </p>
-            <p className="mx-auto mt-4 max-w-[36rem] text-base leading-relaxed text-ink/75 sm:text-lg xl:mx-0">
-              Whether you're on the field, in the gym, or pushing through intense training, Dry Goods™ helps
-              you stay cool, dry, and performing at your best. No mess, no residue — just powerful protection
-              when you need it most. Try it once, and you'll never train without it.
-            </p>
+            <div className="mx-auto mt-6 max-w-[36rem] space-y-4 text-base leading-relaxed text-ink/75 sm:text-lg xl:mx-0">
+              <p>Athletes push their limits.</p>
+              <p>
+                Dry Goods™ is built to keep up. Designed to combat sweat, moisture, and friction, our advanced
+                formula delivers long-lasting dryness and all-day comfort.
+              </p>
+              <p>
+                Whether you're on the field, in the gym, or pushing through intense training, Dry Goods™ helps
+                you stay cool, dry, and performing at your best. No mess, no residue — just powerful protection
+                when you need it most. Try it once, and you'll never train without it.
+              </p>
+            </div>
           </div>
         </div>
       </div>
