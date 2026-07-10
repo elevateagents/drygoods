@@ -28,7 +28,6 @@ export function Nav() {
 
   const onLogoClick = (e: React.MouseEvent) => {
     setMenu(false);
-    // If already on home, scroll to top instead of relying on router no-op
     if (router.state.location.pathname === "/") {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -37,73 +36,74 @@ export function Nav() {
 
   return (
     <>
-    <nav className="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur border-b border-ink/10 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
-        <Link to="/" onClick={onLogoClick} className="flex items-center gap-2 shrink-0" aria-label="Dry Goods Athletic Spray Powder home">
-          <img
-            src={logo.url}
-            alt="Dry Goods Athletic Spray Powder"
-            width={144}
-            height={36}
-            className="h-9 sm:h-10 w-auto"
-            style={{ imageRendering: "auto" }}
-            decoding="sync"
-          />
-        </Link>
-        <div className="hidden md:flex gap-7 text-sm font-bold uppercase tracking-wide">
-          {sections.map(s => (
-            <a key={s.href} href={s.href} className="hover:text-sky transition-colors">{s.label}</a>
-          ))}
-        </div>
-        <div className="flex items-center gap-2">
-          <a
-            href="/#buy"
-            className="hidden sm:inline-flex items-center bg-sky text-white px-4 py-2.5 text-xs font-bold uppercase tracking-widest hover:bg-sky-deep transition-colors rounded-full"
-          >
-            Shop
-          </a>
-          <button
-            onClick={() => setOpen(true)}
-            className="relative p-2.5 min-h-[44px] min-w-[44px] grid place-items-center hover:text-sky"
-            aria-label="Open cart"
-          >
-            <ShoppingBag className="size-7" strokeWidth={2.25} />
-            {c > 0 && <span className="absolute top-0 right-0 bg-sky text-white text-[10px] font-bold rounded-full size-5 grid place-items-center">{c}</span>}
-          </button>
-          <button
-            onClick={() => setMenu(v => !v)}
-            className="md:hidden p-2.5 -mr-2 min-h-[40px] min-w-[40px] grid place-items-center"
-            aria-label={menu ? "Close menu" : "Open menu"}
-            aria-expanded={menu}
-          >
-            {menu ? <X className="size-5" /> : <Menu className="size-5" />}
-          </button>
-        </div>
-      </div>
-    </nav>
-
-    {menu && (
-      <div className="md:hidden fixed inset-x-0 top-16 bottom-0 bg-paper z-[60] overflow-y-auto overscroll-contain">
-        <ul className="flex flex-col py-2">
-          {sections.map(s => (
-            <li key={s.href} className="border-b border-ink/10">
-              <a
-                href={s.href}
-                onClick={() => setMenu(false)}
-                className="block px-6 py-5 font-display text-2xl font-black uppercase tracking-tight hover:bg-sky hover:text-white"
-              >
-                {s.label}
-              </a>
-            </li>
-          ))}
-          <li className="px-6 py-6">
-            <a href="/#buy" onClick={() => setMenu(false)} className="block text-center bg-sky text-white py-4 font-bold uppercase tracking-widest rounded-full">
+      <nav className="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur border-b border-ink/10 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
+          <Link to="/" onClick={onLogoClick} className="flex items-center gap-2 shrink-0" aria-label="Dry Goods Athletic Spray Powder home">
+            <img
+              src={logo.url}
+              alt="Dry Goods Athletic Spray Powder"
+              width={144}
+              height={36}
+              className="h-9 sm:h-10 w-auto"
+              style={{ imageRendering: "auto" }}
+              decoding="async"
+              fetchPriority="high"
+            />
+          </Link>
+          <div className="hidden md:flex gap-7 text-sm font-bold uppercase tracking-wide">
+            {sections.map(s => (
+              <a key={s.href} href={s.href} className="hover:text-sky transition-colors">{s.label}</a>
+            ))}
+          </div>
+          <div className="flex items-center gap-2">
+            <a
+              href="/#buy"
+              className="hidden sm:inline-flex items-center bg-sky text-white px-4 py-2.5 text-xs font-bold uppercase tracking-widest hover:bg-sky-deep transition-colors rounded-full"
+            >
               Shop
             </a>
-          </li>
-        </ul>
-      </div>
-    )}
+            <button
+              onClick={() => setOpen(true)}
+              className="relative p-2.5 min-h-[44px] min-w-[44px] grid place-items-center hover:text-sky"
+              aria-label="Open cart"
+            >
+              <ShoppingBag className="size-7" strokeWidth={2.25} />
+              {c > 0 && <span className="absolute top-0 right-0 bg-sky text-white text-[10px] font-bold rounded-full size-5 grid place-items-center">{c}</span>}
+            </button>
+            <button
+              onClick={() => setMenu(v => !v)}
+              className="md:hidden p-2.5 -mr-2 min-h-[40px] min-w-[40px] grid place-items-center"
+              aria-label={menu ? "Close menu" : "Open menu"}
+              aria-expanded={menu}
+            >
+              {menu ? <X className="size-5" /> : <Menu className="size-5" />}
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      {menu && (
+        <div className="md:hidden fixed inset-x-0 top-16 bottom-0 bg-paper z-[60] overflow-y-auto overscroll-contain">
+          <ul className="flex flex-col py-2">
+            {sections.map(s => (
+              <li key={s.href} className="border-b border-ink/10">
+                <a
+                  href={s.href}
+                  onClick={() => setMenu(false)}
+                  className="block px-6 py-5 font-display text-2xl font-black uppercase tracking-tight hover:bg-sky hover:text-white"
+                >
+                  {s.label}
+                </a>
+              </li>
+            ))}
+            <li className="px-6 py-6">
+              <a href="/#buy" onClick={() => setMenu(false)} className="block text-center bg-sky text-white py-4 font-bold uppercase tracking-widest rounded-full">
+                Shop
+              </a>
+            </li>
+          </ul>
+        </div>
+      )}
     </>
   );
 }
