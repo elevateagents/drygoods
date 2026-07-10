@@ -282,8 +282,9 @@ function WhyItExists() {
         </div>
         <div className="text-center md:text-left">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Why it exists</span>
-          <h2 className="mx-auto mt-3 max-w-[12ch] text-balance font-display text-[clamp(2rem,8vw,4rem)] font-black uppercase leading-[0.98] tracking-tight text-ink md:mx-0 md:max-w-[13ch]">
-            From pain to <span className="text-sky">performance.</span>
+          <h2 className="mx-auto mt-3 max-w-[8.5ch] text-balance font-display text-[clamp(1.8rem,7.8vw,3.5rem)] font-black uppercase leading-[0.94] tracking-tight text-ink md:mx-0 md:max-w-[11ch] md:text-[clamp(2.4rem,5vw,4rem)]">
+            <span className="block">From pain to</span>
+            <span className="block text-sky">performance.</span>
           </h2>
           <p className="mx-auto mt-5 max-w-[34rem] text-base leading-relaxed text-ink/75 sm:text-lg md:mx-0">
             Athletes push their limits.
