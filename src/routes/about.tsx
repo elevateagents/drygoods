@@ -156,6 +156,7 @@ function ClientLogos() {
                   src={logo.src}
                   alt={`${logo.name} logo`}
                   decoding="async"
+                  loading="lazy"
                   className={`client-logo-mark max-h-12 w-auto max-w-full object-contain sm:max-h-14 ${logo.className}`}
                 />
               </div>
@@ -176,6 +177,7 @@ function ClientLogos() {
                   src={logo.src}
                   alt=""
                   decoding="async"
+                  loading="lazy"
                   className={`client-logo-mark max-h-12 w-auto max-w-full object-contain sm:max-h-14 ${logo.className}`}
                 />
               </div>
