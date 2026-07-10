@@ -96,7 +96,7 @@ function Hero() {
               fetchPriority="high"
               decoding="async"
               sizes="100vw"
-              className="h-full w-full object-cover object-[center_45%] md:h-[calc(100%+70px)] md:w-[112%] md:max-w-none md:-ml-[6%] md:-mt-10 md:object-[center_58%]"
+              className="h-full w-full object-cover object-[center_45%] md:block md:h-full md:w-full md:max-w-none md:object-[center_56%] lg:object-[center_57%] xl:object-[center_58%]"
             />
           </picture>
         </motion.div>
