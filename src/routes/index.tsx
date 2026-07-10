@@ -506,7 +506,7 @@ function FinalCTA() {
   return (
     <section className="relative overflow-hidden bg-ink px-4 py-16 text-white sm:px-6 sm:py-24 md:py-28 lg:px-8 xl:px-12">
       <div className="absolute inset-0">
-        <img src={pickleballPaddle} alt="" aria-hidden loading="lazy" decoding="async" className="h-full w-full object-cover opacity-30" />
+        <img src={pickleballPaddle} alt="" aria-hidden loading="lazy" decoding="async" className="h-full w-full object-cover object-[center_54%] md:object-[center_46%] md:scale-[0.94] lg:object-[center_44%] lg:scale-[0.9] xl:object-[center_40%] xl:scale-[0.88] opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-ink/60" />
       </div>
       <div className="relative mx-auto max-w-3xl text-center xl:max-w-4xl 2xl:max-w-5xl">
