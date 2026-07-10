@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useCart, PLAN_META, type Plan } from "@/lib/cart-store";
 import {
   ShieldCheck,
-  ShoppingCart, ExternalLink, CheckCircle2,
+  ShoppingCart, CheckCircle2,
   Plus, Sparkles, Zap, XCircle,
 } from "lucide-react";
 import golfer from "@/assets/hero-two-cans-golf-dusk.png.asset.json";
@@ -311,7 +311,7 @@ function PerformanceCardsSection() {
       body: "Moisture and movement combine to create painful irritation that worsens with every stride or pedal stroke.",
     },
     {
-      title: "From marathon runners to pickleball players",
+      title: "From marathon runners to Golf players",
       body: "Chafing affects performance across every sport. No matter your level.",
     },
     {
@@ -355,7 +355,7 @@ function Buy() {
   ];
   const planOptions: Plan[] = ["onetime", "monthly", "weekly"];
   return (
-    <section id="buy" className="scroll-mt-20 bg-white min-h-screen flex flex-col justify-center py-16 sm:py-24 md:py-32 px-3 sm:px-6 lg:px-8 xl:px-12 overflow-hidden">
+    <section id="buy" className="scroll-mt-20 bg-white py-16 sm:py-24 md:py-28 px-3 sm:px-6 lg:px-8 xl:px-12 overflow-hidden">
       <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem] mx-auto min-w-0">
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
           <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky sm:text-xs sm:tracking-[0.25em]">Get Yours</span>
@@ -364,7 +364,7 @@ function Buy() {
           </h2>
         </div>
 
-        <div className="grid min-w-0 md:grid-cols-2 gap-6 lg:gap-16 xl:gap-24 items-center bg-grey rounded-3xl p-4 sm:p-10 lg:p-14 xl:p-20 shadow-xl shadow-ink/5 overflow-hidden">
+        <div className="grid min-w-0 md:grid-cols-2 gap-6 lg:gap-14 xl:gap-20 items-center bg-grey rounded-3xl p-4 sm:p-10 lg:p-14 xl:p-18 shadow-xl shadow-ink/5 overflow-hidden">
           <div className="relative aspect-square rounded-2xl overflow-hidden bg-white flex items-center justify-center p-2 sm:p-3">
             <img src={productImg.url} alt="Dry Goods Athletic Spray Powder can" loading="lazy" className="w-full h-full object-contain" />
             <span className="absolute top-4 left-4 bg-ink text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">In Stock</span>
@@ -420,12 +420,9 @@ function Buy() {
                 <ShoppingCart className="size-5 shrink-0" />
                 <span className="min-w-0 text-center break-words">Add to Cart — ${selected.price.toFixed(2)}</span>
               </button>
-              <p className="text-center text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-ink/60">
+              <p className="text-center md:text-left text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-ink/60">
                 30-Day Money-Back Guarantee · Free Returns
               </p>
-              <a href="https://www.amazon.com/dp/B003YTUWJ8" target="_blank" rel="noreferrer noopener" className="w-full min-w-0 inline-flex items-center justify-center gap-2 border-2 border-ink/80 text-ink hover:bg-ink hover:text-white transition-colors px-3 sm:px-4 py-4 text-xs sm:text-sm font-bold uppercase tracking-wide sm:tracking-widest rounded-full leading-tight">
-                <span className="min-w-0 text-center break-words">Also on Amazon</span> <ExternalLink className="size-4 shrink-0" />
-              </a>
             </div>
           </div>
         </div>
