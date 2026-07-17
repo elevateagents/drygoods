@@ -116,7 +116,7 @@ function Hero() {
           </span>
           <h1 className="dg-hero-title mx-auto max-w-[21rem] text-center uppercase text-white sm:max-w-[36rem] md:max-w-[58rem] [text-shadow:0_2px_16px_rgba(0,0,0,0.45)]">
             <span className="block">One Spray.</span>
-            <span className="block text-sky">Cool<span aria-hidden="true">, </span>Dry <span className="dg-hero-amp">&amp;</span></span>
+            <span className="block text-sky">Cool<span aria-hidden="true">, </span>Dry,</span>
             <span className="block text-sky">Chafe Free.</span>
           </h1>
           <p className="mx-auto mt-5 max-w-[38rem] text-[15px] leading-relaxed text-white/95 sm:text-lg 2xl:mt-8 2xl:max-w-3xl 2xl:text-2xl [text-shadow:0_2px_10px_rgba(0,0,0,0.55)]">
