@@ -104,7 +104,7 @@ function Hero() {
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(9,13,20,0.9)_0%,rgba(9,13,20,0.52)_36%,rgba(9,13,20,0.28)_62%,rgba(9,13,20,0.55)_100%)]" />
       </div>
 
-      <div className="relative z-10 flex min-h-[100svh] w-full flex-col justify-center px-4 py-22 sm:px-6 sm:py-26 md:min-h-[95vh] md:py-28 lg:px-8 xl:px-12">
+      <div className="relative z-10 flex min-h-[100svh] w-full flex-col justify-center px-4 py-24 sm:px-6 sm:py-28 md:min-h-[95vh] md:py-28 lg:px-8 xl:px-12">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -116,7 +116,7 @@ function Hero() {
           </span>
           <h1 className="dg-hero-title mx-auto max-w-[21rem] text-center uppercase text-white sm:max-w-[36rem] md:max-w-[58rem] [text-shadow:0_2px_16px_rgba(0,0,0,0.45)]">
             <span className="block">One Spray.</span>
-            <span className="block text-sky">Cool, Dry &amp;</span>
+            <span className="block text-sky">Cool<span aria-hidden="true">, </span>Dry <span className="dg-hero-amp">&amp;</span></span>
             <span className="block text-sky">Chafe Free.</span>
           </h1>
           <p className="mx-auto mt-5 max-w-[38rem] text-[15px] leading-relaxed text-white/95 sm:text-lg 2xl:mt-8 2xl:max-w-3xl 2xl:text-2xl [text-shadow:0_2px_10px_rgba(0,0,0,0.55)]">
@@ -318,7 +318,7 @@ function PerformanceCardsSection() {
       body: "Moisture and movement combine to create painful irritation that worsens with every stride or pedal stroke.",
     },
     {
-      title: "From marathon runners to Golf players",
+      title: "From marathon runners to golfers",
       body: "Chafing affects performance across every sport. No matter your level.",
     },
     {
