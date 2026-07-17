@@ -104,7 +104,7 @@ function Hero() {
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(9,13,20,0.9)_0%,rgba(9,13,20,0.52)_36%,rgba(9,13,20,0.28)_62%,rgba(9,13,20,0.55)_100%)]" />
       </div>
 
-      <div className="relative z-10 flex min-h-[100svh] w-full flex-col justify-center px-4 py-24 sm:px-6 sm:py-28 md:min-h-[95vh] md:py-28 lg:px-8 xl:px-12">
+      <div className="relative z-10 flex min-h-[100svh] w-full flex-col justify-center px-4 py-22 sm:px-6 sm:py-26 md:min-h-[95vh] md:py-28 lg:px-8 xl:px-12">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -114,8 +114,8 @@ function Hero() {
           <span className="mb-5 inline-block rounded-full bg-sky px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white sm:text-[11px] 2xl:mb-7 2xl:px-4 2xl:py-1.5 2xl:text-[13px]">
             New · Patented Formula
           </span>
-          <h1 className="mx-auto max-w-[10ch] text-balance font-display text-[clamp(3rem,15vw,5.4rem)] font-black uppercase leading-[0.9] tracking-tight sm:max-w-[12ch] sm:text-[clamp(3.6rem,10vw,5.8rem)] md:max-w-[13ch] lg:text-[clamp(4.4rem,6.4vw,6.2rem)] [text-shadow:0_2px_16px_rgba(0,0,0,0.45)]">
-            <span className="block text-white">One Spray.</span>
+          <h1 className="dg-hero-title mx-auto max-w-[21rem] text-center uppercase text-white sm:max-w-[36rem] md:max-w-[58rem] [text-shadow:0_2px_16px_rgba(0,0,0,0.45)]">
+            <span className="block">One Spray.</span>
             <span className="block text-sky">Cool, Dry &amp;</span>
             <span className="block text-sky">Chafe Free.</span>
           </h1>
@@ -169,16 +169,16 @@ function TrustBar() {
 /* ----------------------------- INTRODUCING ------------------------------- */
 function Introducing() {
   return (
-    <section id="introducing" className="border-t border-ink/5 bg-white px-4 py-16 sm:px-6 sm:py-24 md:py-28 lg:px-8 xl:px-12">
-      <div className="mx-auto grid max-w-6xl items-center gap-8 xl:grid-cols-2 xl:gap-24 xl:max-w-7xl 2xl:max-w-[90rem]">
+    <section id="introducing" className="border-t border-ink/5 bg-white px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8 xl:px-12">
+      <div className="mx-auto grid max-w-6xl items-center gap-8 xl:grid-cols-2 xl:gap-20 xl:max-w-7xl 2xl:max-w-[90rem]">
         <div className="relative aspect-[4/5] overflow-hidden rounded-3xl sm:aspect-square">
           <img src={productConcrete} alt="Dry Goods Athletic Spray Powder can" loading="lazy" decoding="async" className="h-full w-full object-cover" />
         </div>
         <div className="text-center xl:text-left">
-          <span className="mx-auto block max-w-[18rem] text-[10px] font-bold uppercase leading-snug tracking-[0.16em] text-sky sm:max-w-none sm:text-xs sm:tracking-[0.25em] xl:mx-0">
+          <span className="dg-section-eyebrow mx-auto block max-w-[18rem] sm:max-w-none xl:mx-0">
             Introducing <span className="sm:hidden">Dry Goods Spray Powder</span><span className="hidden sm:inline">Dry Goods Athletic Spray Powder</span>
           </span>
-          <h2 className="mx-auto mt-3 max-w-[22rem] text-balance font-display text-[clamp(1.9rem,9vw,3.25rem)] font-black uppercase leading-[0.98] tracking-tight text-ink sm:max-w-[30rem] xl:mx-0 xl:max-w-none">
+          <h2 className="dg-section-title-compact mx-auto mt-3 max-w-[22rem] text-balance text-ink sm:max-w-[30rem] xl:mx-0 xl:max-w-none">
             A new kind of <span className="block text-sky sm:inline">anti-chafe spray.</span>
           </h2>
           <p className="mt-5 text-base leading-relaxed text-ink/75 sm:text-lg">
@@ -212,11 +212,11 @@ function Introducing() {
 
 function ComparisonSection() {
   return (
-    <section className="bg-gradient-to-tr from-ink via-[#111111] to-black px-4 py-16 sm:px-6 sm:py-24 md:py-28 lg:px-8 xl:px-12">
+    <section className="bg-gradient-to-tr from-ink via-[#111111] to-black px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8 xl:px-12">
       <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem]">
         <div className="mx-auto max-w-4xl text-center xl:max-w-5xl">
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">Old way vs our way</span>
-          <h2 className="mt-3 text-balance font-display text-[clamp(1.9rem,7vw,4.5rem)] font-black uppercase leading-[0.98] tracking-tight text-white">
+          <span className="dg-section-eyebrow">Old way vs our way</span>
+          <h2 className="dg-section-title mt-3 text-balance text-white">
             The problem with <span className="block text-sky">traditional powders.</span>
           </h2>
           <p className="mx-auto mt-6 max-w-4xl text-base leading-relaxed text-white/75 sm:text-lg">
@@ -225,7 +225,7 @@ function ComparisonSection() {
           </p>
         </div>
 
-        <div className="mt-12 grid items-stretch gap-6 xl:grid-cols-2 xl:gap-10">
+        <div className="mt-10 grid items-stretch gap-6 xl:grid-cols-2 xl:gap-10">
           <div className="rounded-[2rem] border border-white/12 bg-white/10 p-6 text-center sm:p-8 xl:text-left xl:p-10">
             <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-white/50">The old way</p>
             <h3 className="mt-3 text-balance break-words font-display text-[clamp(1.8rem,5vw,3.5rem)] font-black uppercase leading-[0.95] tracking-tight text-white">
@@ -275,7 +275,7 @@ function ComparisonSection() {
 
 function WhyItExists() {
   return (
-    <section id="why" className="scroll-mt-16 bg-white px-4 py-16 sm:px-6 sm:py-24 md:py-28 lg:px-8 xl:px-12">
+    <section id="why" className="scroll-mt-16 bg-white px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8 xl:px-12">
       <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem]">
         <div className="grid items-start gap-10 xl:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] xl:items-center xl:gap-14 2xl:gap-18">
           <div className="overflow-hidden rounded-3xl border border-ink/6 bg-white p-3 shadow-sm shadow-ink/5">
@@ -288,13 +288,10 @@ function WhyItExists() {
             />
           </div>
           <div className="min-w-0 self-center text-center xl:pl-2 xl:text-left 2xl:pl-6">
-            <span className="block text-xs font-bold uppercase tracking-[0.25em] text-sky">Why it exists</span>
-            <div className="mx-auto mt-4 max-w-full xl:mx-0">
-              <h2 className="max-w-full text-balance font-display font-black uppercase leading-[0.9] tracking-[-0.045em] text-ink">
-                <span className="block text-[clamp(1.6rem,8vw,4.4rem)] sm:text-[clamp(2rem,4.7vw,4.4rem)]">From pain to</span>
-                <span className="mt-1 block text-[clamp(1.45rem,7.2vw,3.25rem)] text-sky sm:text-[clamp(1.9rem,4.2vw,3.85rem)]">Performance</span>
-              </h2>
-            </div>
+            <span className="dg-section-eyebrow block">Why it exists</span>
+            <h2 className="dg-section-title-compact mx-auto mt-4 max-w-[13ch] text-balance text-ink xl:mx-0 xl:max-w-none">
+              From pain to <span className="text-sky">performance.</span>
+            </h2>
             <div className="mx-auto mt-6 max-w-[38rem] space-y-4 text-base leading-relaxed text-ink/75 sm:text-lg xl:mx-0">
               <p>Athletes push their limits.</p>
               <p>
@@ -331,11 +328,11 @@ function PerformanceCardsSection() {
   ];
 
   return (
-    <section className="border-t border-white/10 bg-ink px-4 py-16 sm:px-6 sm:py-20 lg:px-8 xl:px-12">
+    <section className="border-t border-white/10 bg-ink px-4 py-12 sm:px-6 sm:py-16 lg:px-8 xl:px-12">
       <div className="mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem]">
         <div className="mx-auto max-w-3xl text-center">
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">What gets in the way</span>
-          <h3 className="mt-3 text-balance font-display text-[clamp(1.6rem,6vw,2.375rem)] font-black uppercase leading-[1.02] tracking-tight text-white">
+          <span className="dg-section-eyebrow">What gets in the way</span>
+          <h3 className="dg-section-title-compact mt-3 text-balance text-white">
             The everyday friction that pulls athletes off pace.
           </h3>
         </div>
@@ -365,11 +362,11 @@ function Buy() {
   ];
   const planOptions: Plan[] = ["onetime", "monthly", "weekly"];
   return (
-    <section id="buy" className="scroll-mt-20 overflow-hidden bg-white px-3 py-16 sm:px-6 sm:py-24 md:py-28 lg:px-8 xl:px-12">
+    <section id="buy" className="scroll-mt-20 overflow-hidden bg-white px-3 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8 xl:px-12">
       <div className="mx-auto min-w-0 max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem]">
-        <div className="mx-auto mb-10 max-w-2xl text-center sm:mb-12">
-          <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky sm:text-xs sm:tracking-[0.25em]">Get Yours</span>
-          <h2 className="mt-3 text-balance font-display text-[clamp(30px,10vw,52px)] font-black uppercase leading-[1] tracking-tight text-ink sm:text-[clamp(32px,5vw,56px)]">
+        <div className="mx-auto mb-8 max-w-2xl text-center sm:mb-10">
+          <span className="dg-section-eyebrow">Get Yours</span>
+          <h2 className="dg-section-title-compact mt-3 text-balance text-ink">
             One spray. <span className="text-sky">All day dry.</span>
           </h2>
         </div>
@@ -476,11 +473,11 @@ function FAQ() {
     { q: "How long does one application last?", a: "One application provides approximately 8–12 hours of protection, depending on your activity level, sweat, and usage." },
   ];
   return (
-    <section id="faq" className="scroll-mt-24 bg-paper px-4 py-16 sm:px-6 sm:py-24 md:py-28 lg:px-8 xl:px-12">
+    <section id="faq" className="scroll-mt-24 bg-paper px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8 xl:px-12">
       <div className="mx-auto max-w-3xl xl:max-w-4xl 2xl:max-w-5xl">
-        <div className="mb-12 text-center">
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">FAQ</span>
-          <h2 className="mt-3 text-balance font-display text-[clamp(1.9rem,5vw,4rem)] font-black uppercase leading-[1] tracking-tight text-ink">
+        <div className="mb-10 text-center sm:mb-12">
+          <span className="dg-section-eyebrow">FAQ</span>
+          <h2 className="dg-section-title-compact mt-3 text-balance text-ink">
             Questions, <span className="text-sky">answered.</span>
           </h2>
         </div>
@@ -504,14 +501,14 @@ function FAQ() {
 function FinalCTA() {
   const { add } = useCart();
   return (
-    <section className="relative overflow-hidden bg-ink px-4 py-16 text-white sm:px-6 sm:py-24 md:py-28 lg:px-8 xl:px-12">
+    <section className="relative overflow-hidden bg-ink px-4 py-12 text-white sm:px-6 sm:py-16 md:py-20 lg:px-8 xl:px-12">
       <div className="absolute inset-0">
         <img src={pickleballPaddle} alt="" aria-hidden loading="lazy" decoding="async" className="h-full w-full object-cover object-[center_54%] md:object-[center_46%] md:scale-[0.94] lg:object-[center_44%] lg:scale-[0.9] xl:object-[center_40%] xl:scale-[0.88] opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-ink/60" />
       </div>
       <div className="relative mx-auto max-w-3xl text-center xl:max-w-4xl 2xl:max-w-5xl">
-        <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky">The last word</span>
-        <h2 className="mt-3 text-balance font-display text-[clamp(1.75rem,7vw,4.25rem)] font-black uppercase leading-[1.05] tracking-tight">
+        <span className="dg-section-eyebrow">The last word</span>
+        <h2 className="dg-section-title-compact mt-3 text-balance">
           Stay cool, stay dry. <span className="text-sky">Stay unstoppable.</span>
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/85 sm:text-lg">
