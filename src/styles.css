@@ -140,13 +140,19 @@
     font-weight: 900;
   }
 
+  .dg-hero-title span[aria-hidden="true"] {
+    display: inline-block;
+    padding-right: 0.22em;
+  }
+
   .dg-hero-amp {
     display: inline-block;
-    font-family: var(--font-editorial) !important;
-    font-style: italic;
-    font-weight: 600;
-    line-height: 0.75;
-    transform: translateY(-0.03em) scale(1.08);
+    font-family: var(--font-sans) !important;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 0.78;
+    margin-left: 0.03em;
+    transform: translateY(-0.02em) scale(0.94);
   }
 
   @media (min-width: 390px) {
