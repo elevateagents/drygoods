@@ -133,34 +133,43 @@
   }
 
   .dg-hero-title {
-    font-family: "Archivo Black", var(--font-display) !important;
-    font-size: 2.8rem;
-    line-height: 0.98;
+    font-family: var(--font-sans) !important;
+    font-size: 3.15rem;
+    line-height: 0.96;
     letter-spacing: 0 !important;
-    font-weight: 400;
+    font-weight: 800;
+  }
+
+  .dg-hero-amp {
+    display: inline-block;
+    font-family: var(--font-editorial) !important;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 0.75;
+    transform: translateY(-0.03em) scale(1.08);
   }
 
   @media (min-width: 390px) {
     .dg-hero-title {
-      font-size: 3.2rem;
+      font-size: 3.55rem;
     }
   }
 
   @media (min-width: 640px) {
     .dg-hero-title {
-      font-size: 4.65rem;
+      font-size: 5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .dg-hero-title {
-      font-size: 5.45rem;
+      font-size: 5.75rem;
     }
   }
 
   @media (min-width: 1536px) {
     .dg-hero-title {
-      font-size: 6rem;
+      font-size: 6.25rem;
     }
   }
 }
