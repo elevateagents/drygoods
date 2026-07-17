@@ -50,6 +50,7 @@
   --font-display: "Syne", "Inter Tight", sans-serif;
   --font-sans: "Inter Tight", "Inter", sans-serif;
   --font-editorial: "Fraunces", Georgia, serif;
+  --font-amp: "Chunk Five", "ChunkFive", var(--font-display);
 
   --radius: 0;
   --radius-sm: 0;
@@ -69,6 +70,15 @@
     0% { transform: translateY(100%); clip-path: inset(0 0 100% 0); }
     100% { transform: translateY(0); clip-path: inset(0 0 0 0); }
   }
+}
+
+@font-face {
+  font-family: "Chunk Five";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("https://cdn.jsdelivr.net/fontsource/fonts/chunk-five@latest/latin-400-normal.woff2") format("woff2"),
+       url("https://cdn.jsdelivr.net/fontsource/fonts/chunk-five@latest/latin-400-normal.woff") format("woff");
 }
 
 :root {
@@ -142,17 +152,17 @@
 
   .dg-hero-title span[aria-hidden="true"] {
     display: inline-block;
-    padding-right: 0.22em;
+    padding-right: 0.3em;
   }
 
   .dg-hero-amp {
     display: inline-block;
-    font-family: var(--font-sans) !important;
+    font-family: var(--font-amp) !important;
     font-style: normal;
-    font-weight: 800;
-    line-height: 0.78;
-    margin-left: 0.03em;
-    transform: translateY(-0.02em) scale(0.94);
+    font-weight: 400;
+    line-height: 0.72;
+    margin-left: 0.04em;
+    transform: translateY(-0.01em) scale(1.02);
   }
 
   @media (min-width: 390px) {
