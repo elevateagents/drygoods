@@ -38,13 +38,13 @@ export function Nav() {
     <>
       <nav className="fixed inset-x-0 top-0 z-50 border-b border-ink/10 bg-white/95 backdrop-blur shadow-sm">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-2 px-4 sm:px-6 lg:px-8">
-          <Link to="/" onClick={onLogoClick} className="flex min-w-0 shrink items-center gap-2" aria-label="Dry Goods Athletic Spray Powder home">
+          <Link to="/" onClick={onLogoClick} className="flex shrink-0 items-center gap-2" aria-label="Dry Goods Athletic Spray Powder home">
             <img
               src={logo.url}
               alt="Dry Goods Athletic Spray Powder"
               width={144}
               height={36}
-              className="h-8 w-auto sm:h-9 md:h-10"
+              className="h-7 w-auto max-w-[150px] sm:h-8 md:h-9"
               style={{ imageRendering: "auto" }}
               decoding="async"
               fetchPriority="high"
