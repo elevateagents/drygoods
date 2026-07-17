@@ -214,7 +214,7 @@ export default function AmazonReviewsSection() {
   return (
     <section
       id="reviews"
-      className="relative scroll-mt-16 overflow-hidden bg-white px-4 py-16 sm:px-6 sm:py-24 md:py-28 lg:px-8"
+      className="relative scroll-mt-16 overflow-hidden bg-white px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8"
     >
       <div
         aria-hidden
@@ -253,11 +253,11 @@ export default function AmazonReviewsSection() {
         `}</style>
 
       <div className="relative mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem]">
-        <div className="mb-12 flex flex-col items-center text-center">
-          <span className="mb-4 text-[12px] font-bold uppercase tracking-[0.3em] text-sky sm:text-[13px]">
+        <div className="mb-10 flex flex-col items-center text-center sm:mb-12">
+          <span className="dg-section-eyebrow mb-4">
             Loved by Customers
           </span>
-          <h2 className="pb-1 font-display text-[clamp(1.9rem,7vw,4.75rem)] font-black uppercase leading-[1.08] tracking-tight text-ink text-balance">
+          <h2 className="dg-section-title pb-1 text-ink text-balance">
             Real customers.
             <br />
             <span className="text-sky">Real reviews.</span>
