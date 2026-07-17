@@ -157,9 +157,9 @@
 
   .dg-hero-amp {
     display: inline-block;
-    font-family: var(--font-amp) !important;
+    font-family: var(--font-display) !important;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 900;
     line-height: 0.72;
     margin-left: 0.04em;
     transform: translateY(-0.01em) scale(1.02);
