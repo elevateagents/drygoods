@@ -133,11 +133,11 @@
   }
 
   .dg-hero-title {
-    font-family: var(--font-sans) !important;
+    font-family: var(--font-display) !important;
     font-size: 3.15rem;
     line-height: 0.96;
     letter-spacing: 0 !important;
-    font-weight: 800;
+    font-weight: 900;
   }
 
   .dg-hero-amp {
