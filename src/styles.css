@@ -118,3 +118,49 @@
   ::selection { background: var(--ice); color: var(--ink); }
   h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
 }
+
+@layer components {
+  .dg-section-eyebrow {
+    @apply text-[11px] font-bold uppercase leading-snug tracking-[0.22em] text-sky sm:text-xs sm:tracking-[0.25em];
+  }
+
+  .dg-section-title {
+    @apply font-display text-4xl font-black uppercase leading-[1.04] tracking-normal sm:text-5xl lg:text-6xl xl:text-7xl;
+  }
+
+  .dg-section-title-compact {
+    @apply font-display text-3xl font-black uppercase leading-[1.05] tracking-normal sm:text-4xl lg:text-5xl;
+  }
+
+  .dg-hero-title {
+    font-family: var(--font-sans) !important;
+    font-size: 3.15rem;
+    line-height: 0.96;
+    letter-spacing: 0 !important;
+    font-weight: 800;
+  }
+
+  @media (min-width: 390px) {
+    .dg-hero-title {
+      font-size: 3.55rem;
+    }
+  }
+
+  @media (min-width: 640px) {
+    .dg-hero-title {
+      font-size: 5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .dg-hero-title {
+      font-size: 5.75rem;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .dg-hero-title {
+      font-size: 6.25rem;
+    }
+  }
+}
